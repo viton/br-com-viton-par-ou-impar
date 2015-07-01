@@ -76,6 +76,7 @@
 		4DBB9B4D1B4428DF00B49658 /* DataRequestService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataRequestService.swift; sourceTree = "<group>"; };
 		4DBB9B4F1B442A7700B49658 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4DBB9B501B442A7700B49658 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		4DBB9B901B44346B00B49658 /* par_ou_impar-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "par_ou_impar-Bridging-Header.h"; sourceTree = "<group>"; };
 		6E734F9821E2E00AC2CF5BE6 /* Pods-par-ou-impar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-par-ou-impar.release.xcconfig"; path = "Pods/Target Support Files/Pods-par-ou-impar/Pods-par-ou-impar.release.xcconfig"; sourceTree = "<group>"; };
 		A696C356A9A5315EAD107F01 /* Pods-par-ou-impar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-par-ou-impar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-par-ou-impar/Pods-par-ou-impar.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -139,6 +140,7 @@
 		4DA674051B4426E50081BDB3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4DBB9B901B44346B00B49658 /* par_ou_impar-Bridging-Header.h */,
 				4DA674061B4426E50081BDB3 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -578,6 +580,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -622,6 +625,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -644,6 +648,7 @@
 			baseConfigurationReference = A696C356A9A5315EAD107F01 /* Pods-par-ou-impar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = "par-ou-impar/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -656,6 +661,7 @@
 			baseConfigurationReference = 6E734F9821E2E00AC2CF5BE6 /* Pods-par-ou-impar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = "par-ou-impar/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
