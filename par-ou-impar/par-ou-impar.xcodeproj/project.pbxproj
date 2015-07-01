@@ -7,7 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4DA6740A1B4426E50081BDB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA674091B4426E50081BDB3 /* ViewController.swift */; };
+		4D6DFE211B4445CF00F406E3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6DFE201B4445CF00F406E3 /* User.swift */; };
+		4D6DFE241B4447AD00F406E3 /* LoginProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6DFE231B4447AD00F406E3 /* LoginProvider.swift */; };
+		4D6DFE271B44498F00F406E3 /* PFObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6DFE261B44498F00F406E3 /* PFObjectExtension.swift */; };
+		4D6DFE2C1B44640B00F406E3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6DFE2B1B44640B00F406E3 /* HomeViewController.swift */; };
+		4D6DFE2E1B44641C00F406E3 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D6DFE2D1B44641C00F406E3 /* HomeViewController.xib */; };
+		4D6DFE321B44677400F406E3 /* NewGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6DFE301B44677400F406E3 /* NewGameViewController.swift */; };
+		4D6DFE331B44677400F406E3 /* NewGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D6DFE311B44677400F406E3 /* NewGameViewController.xib */; };
+		4D6DFE371B446A0200F406E3 /* ChooseFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6DFE351B446A0200F406E3 /* ChooseFriendViewController.swift */; };
+		4D6DFE381B446A0200F406E3 /* ChooseFriendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D6DFE361B446A0200F406E3 /* ChooseFriendViewController.xib */; };
 		4DA674121B4426E50081BDB3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DA674101B4426E50081BDB3 /* LaunchScreen.xib */; };
 		4DA6741E1B4426E50081BDB3 /* par_ou_imparTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA6741D1B4426E50081BDB3 /* par_ou_imparTests.swift */; };
 		4DBB9B1C1B44284400B49658 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBB9B121B44284400B49658 /* AppDelegate.swift */; };
@@ -47,9 +55,17 @@
 
 /* Begin PBXFileReference section */
 		48BE49A876F579D1F50DBC18 /* Pods_par_ou_impar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_par_ou_impar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D6DFE201B4445CF00F406E3 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		4D6DFE231B4447AD00F406E3 /* LoginProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginProvider.swift; sourceTree = "<group>"; };
+		4D6DFE261B44498F00F406E3 /* PFObjectExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PFObjectExtension.swift; sourceTree = "<group>"; };
+		4D6DFE2B1B44640B00F406E3 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		4D6DFE2D1B44641C00F406E3 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		4D6DFE301B44677400F406E3 /* NewGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGameViewController.swift; sourceTree = "<group>"; };
+		4D6DFE311B44677400F406E3 /* NewGameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewGameViewController.xib; sourceTree = "<group>"; };
+		4D6DFE351B446A0200F406E3 /* ChooseFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseFriendViewController.swift; sourceTree = "<group>"; };
+		4D6DFE361B446A0200F406E3 /* ChooseFriendViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseFriendViewController.xib; sourceTree = "<group>"; };
 		4DA674021B4426E40081BDB3 /* par-ou-impar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "par-ou-impar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DA674061B4426E50081BDB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4DA674091B4426E50081BDB3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4DA674111B4426E50081BDB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		4DA674171B4426E50081BDB3 /* par-ou-imparTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "par-ou-imparTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DA6741C1B4426E50081BDB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -100,6 +116,89 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D6DFE1D1B44457400F406E3 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				4D6DFE391B44711E00F406E3 /* Game */,
+				4D6DFE3A1B44711E00F406E3 /* Hand */,
+				4D6DFE1F1B4445BD00F406E3 /* User */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		4D6DFE1E1B44457400F406E3 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				4D6DFE221B44479000F406E3 /* LoginProvider */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
+		4D6DFE1F1B4445BD00F406E3 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				4D6DFE201B4445CF00F406E3 /* User.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		4D6DFE221B44479000F406E3 /* LoginProvider */ = {
+			isa = PBXGroup;
+			children = (
+				4D6DFE231B4447AD00F406E3 /* LoginProvider.swift */,
+			);
+			path = LoginProvider;
+			sourceTree = "<group>";
+		};
+		4D6DFE251B44493E00F406E3 /* PFObject */ = {
+			isa = PBXGroup;
+			children = (
+				4D6DFE261B44498F00F406E3 /* PFObjectExtension.swift */,
+			);
+			path = PFObject;
+			sourceTree = "<group>";
+		};
+		4D6DFE2A1B4463E300F406E3 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				4D6DFE2B1B44640B00F406E3 /* HomeViewController.swift */,
+				4D6DFE2D1B44641C00F406E3 /* HomeViewController.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		4D6DFE2F1B44674E00F406E3 /* NewGame */ = {
+			isa = PBXGroup;
+			children = (
+				4D6DFE301B44677400F406E3 /* NewGameViewController.swift */,
+				4D6DFE311B44677400F406E3 /* NewGameViewController.xib */,
+			);
+			path = NewGame;
+			sourceTree = "<group>";
+		};
+		4D6DFE341B4469EE00F406E3 /* ChooseFriend */ = {
+			isa = PBXGroup;
+			children = (
+				4D6DFE351B446A0200F406E3 /* ChooseFriendViewController.swift */,
+				4D6DFE361B446A0200F406E3 /* ChooseFriendViewController.xib */,
+			);
+			path = ChooseFriend;
+			sourceTree = "<group>";
+		};
+		4D6DFE391B44711E00F406E3 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		4D6DFE3A1B44711E00F406E3 /* Hand */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Hand;
+			sourceTree = "<group>";
+		};
 		4DA673F91B4426E40081BDB3 = {
 			isa = PBXGroup;
 			children = (
@@ -130,7 +229,6 @@
 				4DBB9B161B44284400B49658 /* Modules */,
 				4DBB9B191B44284400B49658 /* Resources */,
 				4DBB9B1B1B44284400B49658 /* SupportingFiles */,
-				4DA674091B4426E50081BDB3 /* ViewController.swift */,
 				4DA674101B4426E50081BDB3 /* LaunchScreen.xib */,
 				4DA674051B4426E50081BDB3 /* Supporting Files */,
 			);
@@ -186,6 +284,7 @@
 		4DBB9B141B44284400B49658 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				4D6DFE251B44493E00F406E3 /* PFObject */,
 				4DBB9B471B4428AD00B49658 /* UIView */,
 			);
 			path = Extensions;
@@ -194,6 +293,8 @@
 		4DBB9B151B44284400B49658 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4D6DFE1D1B44457400F406E3 /* Data */,
+				4D6DFE1E1B44457400F406E3 /* Provider */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -201,17 +302,12 @@
 		4DBB9B161B44284400B49658 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				4DBB9B171B44284400B49658 /* Home */,
+				4D6DFE341B4469EE00F406E3 /* ChooseFriend */,
+				4D6DFE2A1B4463E300F406E3 /* Home */,
 				4DBB9B181B44284400B49658 /* Login */,
+				4D6DFE2F1B44674E00F406E3 /* NewGame */,
 			);
 			path = Modules;
-			sourceTree = "<group>";
-		};
-		4DBB9B171B44284400B49658 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Home;
 			sourceTree = "<group>";
 		};
 		4DBB9B181B44284400B49658 /* Login */ = {
@@ -445,8 +541,11 @@
 				4DBB9B3C1B44288700B49658 /* TesteTableViewCell.xib in Resources */,
 				4DBB9B421B44288700B49658 /* Loading.xib in Resources */,
 				4DBB9B401B44288700B49658 /* Header.xib in Resources */,
+				4D6DFE2E1B44641C00F406E3 /* HomeViewController.xib in Resources */,
+				4D6DFE331B44677400F406E3 /* NewGameViewController.xib in Resources */,
 				4DA674121B4426E50081BDB3 /* LaunchScreen.xib in Resources */,
 				4DBB9B461B44288700B49658 /* NewTableViewCell.xib in Resources */,
+				4D6DFE381B446A0200F406E3 /* ChooseFriendViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,15 +613,20 @@
 			files = (
 				4DBB9B1C1B44284400B49658 /* AppDelegate.swift in Sources */,
 				4DBB9B3F1B44288700B49658 /* Header.swift in Sources */,
+				4D6DFE241B4447AD00F406E3 /* LoginProvider.swift in Sources */,
 				4DBB9B411B44288700B49658 /* Loading.swift in Sources */,
 				4DBB9B511B442A7700B49658 /* LoginViewController.swift in Sources */,
+				4D6DFE321B44677400F406E3 /* NewGameViewController.swift in Sources */,
+				4D6DFE371B446A0200F406E3 /* ChooseFriendViewController.swift in Sources */,
+				4D6DFE2C1B44640B00F406E3 /* HomeViewController.swift in Sources */,
+				4D6DFE271B44498F00F406E3 /* PFObjectExtension.swift in Sources */,
 				4DBB9B3B1B44288700B49658 /* TesteTableViewCell.swift in Sources */,
 				4DBB9B3A1B44288700B49658 /* BaseTableViewManager.swift in Sources */,
 				4DBB9B451B44288700B49658 /* NewTableViewCell.swift in Sources */,
 				4DBB9B4A1B4428AD00B49658 /* ConstraintsExtension.swift in Sources */,
+				4D6DFE211B4445CF00F406E3 /* User.swift in Sources */,
 				4DBB9B4E1B4428DF00B49658 /* DataRequestService.swift in Sources */,
 				4DBB9B391B44288700B49658 /* Messages.swift in Sources */,
-				4DA6740A1B4426E50081BDB3 /* ViewController.swift in Sources */,
 				4DBB9B4B1B4428AD00B49658 /* LoadingExtension.swift in Sources */,
 				4DBB9B431B44288700B49658 /* Placeholder.swift in Sources */,
 				4DBB9B371B44288700B49658 /* BaseViewController.swift in Sources */,

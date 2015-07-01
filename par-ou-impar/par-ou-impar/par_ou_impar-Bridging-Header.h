@@ -8,7 +8,6 @@
 #define par_ou_impar_Bridging_Header_h
 
 #import <Parse/Parse.h>
-
-// If you are using Facebook, uncomment this line to get automatic import of the header inside your project.
+#import <ParseFacebookUtils/PFFacebookUtils.h>
 
 #endif
