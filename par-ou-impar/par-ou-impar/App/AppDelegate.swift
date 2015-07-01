@@ -8,6 +8,10 @@
 
 import UIKit
 
+import Bolts
+import Parse
+import FBSDKCoreKit
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -15,14 +19,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var initialViewController: UIViewController?
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        
+        Parse.setApplicationId("E5kplP1f07JlCIXwXW8iaPyzkUon44N2eyDKSB0s",
+            clientKey: "SpHpdIlVhkA7GQzONNuRB55QZjTRbqdWIZaFAPc8")
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds);
-        initialViewController = LoginViewController()
+        initialViewController = UINavigationController(rootViewController: LoginViewController())
         window!.rootViewController = initialViewController
         window!.makeKeyAndVisible();
         window!.backgroundColor = UIColor.whiteColor();
         
-        return true
+        return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions);
+    }
+
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
+        return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
+    }
+    
+    func applicationDidBecomeActive(application: UIApplication) {
+        FBSDKAppEvents.activateApp()
     }
 
 }
