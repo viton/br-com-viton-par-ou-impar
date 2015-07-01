@@ -10,7 +10,7 @@ import UIKit
 import FBSDKCoreKit
 
 class ChooseFriendViewController: BaseViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,8 +20,8 @@ class ChooseFriendViewController: BaseViewController {
     
     func requestFriends() {
         println(FBSDKAccessToken.currentAccessToken().userID)
-        let pictureRequest = FBSDKGraphRequest(graphPath: "me/friends", parameters: nil)
-        pictureRequest.startWithCompletionHandler({
+        let meRequest = FBSDKGraphRequest(graphPath: "me/friends", parameters: nil)
+        meRequest.startWithCompletionHandler({
             (connection, result, error: NSError!) -> Void in
             if error == nil {
                 let dataDict:NSDictionary = result as! NSDictionary

@@ -1,5 +1,5 @@
 //
-//  User.swift
+//  Hand.swift
 //  par-ou-impar
 //
 //  Created by Taqtile on 7/1/15.
@@ -9,16 +9,13 @@
 import UIKit
 import Parse
 
-class User: PFObject, PFSubclassing {
-    
-    @NSManaged var name:String?
-    @NSManaged var facebookId:String?
-    @NSManaged var profileImage:String?
+class Hand: PFObject, PFSubclassing {
+   
+    var count:Int?
+    var imagePrefixName:String?
     
     class func parseClassName() -> String {
-        return "User"
+        return "Hand"
     }
-    
-    
     
 }

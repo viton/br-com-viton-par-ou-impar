@@ -19,6 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var initialViewController: UIViewController?
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        User.registerSubclass()
+        Game.registerSubclass()
+        Hand.registerSubclass()
+        
         Parse.setApplicationId("E5kplP1f07JlCIXwXW8iaPyzkUon44N2eyDKSB0s",
             clientKey: "SpHpdIlVhkA7GQzONNuRB55QZjTRbqdWIZaFAPc8")
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds);

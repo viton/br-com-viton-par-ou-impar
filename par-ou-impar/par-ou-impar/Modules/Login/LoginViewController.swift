@@ -43,16 +43,6 @@ class LoginViewController: BaseViewController, FBSDKLoginButtonDelegate {
             println("CANCELED")
         }else {
             navigationController?.pushViewController(HomeViewController(), animated: false)
-//            println(FBSDKAccessToken.currentAccessToken().userID)
-//            let pictureRequest = FBSDKGraphRequest(graphPath: "me", parameters: nil)
-//            pictureRequest.startWithCompletionHandler({
-//                (connection, result, error: NSError!) -> Void in
-//                if error == nil {
-//                    println("\(result)")
-//                } else {
-//                    println("\(error)")
-//                }
-//            })
         }
     }
     
