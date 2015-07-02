@@ -9,6 +9,16 @@
 import UIKit
 import Parse
 
+protocol GamesCallback:BaseProviderCallback {
+    
+    func onSuccess(games:Array<Game>)
+ 
+    func onEmptyGamesList()
+    
+}
+
+
+
 class GameProvider: NSObject {
  
     class func createGame(game:Game, owner:User, enemy:User) {
@@ -16,7 +26,7 @@ class GameProvider: NSObject {
         
         gameObject["owner"] = game.owner
         gameObject["ownerHand"] = game.ownerHand
-        gameObject["ownerCount"] = game.ownerHand
+        gameObject["ownerCount"] = game.ownerCount
         
         gameObject["enemy"] = game.enemy
         gameObject["enemyHand"] = ""
@@ -47,28 +57,53 @@ class GameProvider: NSObject {
         })
     }
     
-    class func getGames(facebookId: String){
+    class func getGames(facebookId: String, callback:GamesCallback){
         var query = PFQuery(className:"Game")
         query.whereKey("owner", equalTo:facebookId)
-        query.whereKey("enemy", equalTo: facebookId)
+        query.orderByAscending("finish")
         query.findObjectsInBackgroundWithBlock {
             (objects: [AnyObject]?, error: NSError?) -> Void in
-            
             if error == nil {
                 var games = Array<Game>()
                 if let objects = objects as? [PFObject] {
                     for object in objects {
-                        println(object.objectId)
                         let game = Game(object: object)
                         games.append(game)
-                        println(game.betText)
                     }
+                    self.getGamesWithMe(facebookId, myGames: games, callback:callback)
                 }
             } else {
-                println("Error: \(error!) \(error!.userInfo!)")
+                callback.prepareToRespose()
+                callback.onConnectionFailToRequest()
             }
         }
-        
+    }
+    
+    class func getGamesWithMe(facebookId:String, myGames:Array<Game>, callback:GamesCallback) {
+        var query = PFQuery(className:"Game")
+        query.whereKey("enemy", equalTo: facebookId)
+        query.orderByAscending("finish")
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [AnyObject]?, error: NSError?) -> Void in
+            if error == nil {
+                var games:Array<Game> = Array(myGames)
+                if let objects = objects as? [PFObject] {
+                    for object in objects {
+                        let game = Game(object: object)
+                        games.append(game)
+                    }
+                }
+                callback.prepareToRespose()
+                if games.count == 0 {
+                    callback.onEmptyGamesList()
+                }else{
+                    callback.onSuccess(games)
+                }
+            } else {
+                callback.prepareToRespose()
+                callback.onConnectionFailToRequest()
+            }
+        }
     }
     
     

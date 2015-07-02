@@ -10,6 +10,7 @@ pod 'AlamofireObjectMapper', '~> 0.2'
 pod 'Parse'
 pod 'FBSDKCoreKit'
 pod 'FBSDKLoginKit'
+pod 'FBSDKShareKit'
 
 end
 
