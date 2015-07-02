@@ -7,10 +7,11 @@
 //
 
 import UIKit
-import FBSDKCoreKit
+
 
 class NewGameViewController: BaseViewController {
 
+    @IBOutlet weak var betTextField: UITextField!
     var chooseFriendViewController:ChooseFriendViewController?
     var friend:User?
     var me:User?
@@ -20,42 +21,52 @@ class NewGameViewController: BaseViewController {
         
         title = "Novo"
         navigationController?.navigationBarHidden = false
-        loadMe()
+        requestUser()
     }
     
-    func loadMe() {
-        println(FBSDKAccessToken.currentAccessToken().userID)
-        let meRequest = FBSDKGraphRequest(graphPath: "me", parameters: nil)
-        meRequest.startWithCompletionHandler({
-            (connection, result, error: NSError!) -> Void in
-            if error == nil {
-                let dictResult = result as! NSDictionary
-                self.me = User()
-                self.me?.facebookId = FBSDKAccessToken.currentAccessToken().userID
-                self.me?.name = dictResult["name"]! as? String
-                self.me?.profileImage = String(format: "http://graph.facebook.com/%@/picture?type=normal", FBSDKAccessToken.currentAccessToken().userID)
-            } else {
-                println("\(error)")
-            }
-        })
+    func requestUser() {
+        view.startLoading()
+        LoginProvider.loadUser(self)
     }
 
     @IBAction func chooseFriendAction(sender: AnyObject) {
         chooseFriendViewController = ChooseFriendViewController()
-        presentViewController(chooseFriendViewController!, animated: true, completion: {
-            
-        })
+        chooseFriendViewController?.delegate = self
+        presentViewController(chooseFriendViewController!, animated: true, completion: {})
     }
     
     @IBAction func createGameAction(sender: AnyObject) {
         let game = Game()
-        game.enemy = me?.facebookId
+        game.enemy = friend?.facebookId
         game.owner = me?.facebookId
         game.ownerHand = "normal"
         game.ownerCount = 1
-        game.betText = "vamos fazer um teste"
+        game.betText = betTextField.text
         GameProvider.createGame(game, owner:me!, enemy:me!)
     }
+
+    //MARK: BaseProviderCallback
+    override func prepareToRespose() {
+        view.stopLoading()
+    }
     
+}
+
+//MARK: UserProviderCallback
+extension NewGameViewController: UserProviderCallback {
     
+    func onSuccessRetrieveUser(user: User) {
+        me = user
+    }
+    
+}
+
+//MARK: ChooseFriendsDelegate
+extension NewGameViewController: ChooseFriendsDelegate {
+    
+    func didSelectFriend(friend: User) {
+        chooseFriendViewController?.dismissViewControllerAnimated(true, completion: {
+            self.friend = friend
+        })
+    }
 }

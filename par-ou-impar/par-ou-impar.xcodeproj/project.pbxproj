@@ -25,6 +25,8 @@
 		4D6DFE4F1B458F4C00F406E3 /* MatchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6DFE4D1B458F4C00F406E3 /* MatchResultViewController.swift */; };
 		4D6DFE501B458F4C00F406E3 /* MatchResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D6DFE4E1B458F4C00F406E3 /* MatchResultViewController.xib */; };
 		4D6DFE521B459EA800F406E3 /* PlaceholderExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6DFE511B459EA800F406E3 /* PlaceholderExtension.swift */; };
+		4D6DFE551B45B70300F406E3 /* FriendsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6DFE541B45B70300F406E3 /* FriendsProvider.swift */; };
+		4D6DFE581B45BDAD00F406E3 /* FriendsTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6DFE571B45BDAD00F406E3 /* FriendsTableViewManager.swift */; };
 		4DA674121B4426E50081BDB3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DA674101B4426E50081BDB3 /* LaunchScreen.xib */; };
 		4DA6741E1B4426E50081BDB3 /* par_ou_imparTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA6741D1B4426E50081BDB3 /* par_ou_imparTests.swift */; };
 		4DBB9B1C1B44284400B49658 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBB9B121B44284400B49658 /* AppDelegate.swift */; };
@@ -81,6 +83,8 @@
 		4D6DFE4D1B458F4C00F406E3 /* MatchResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchResultViewController.swift; sourceTree = "<group>"; };
 		4D6DFE4E1B458F4C00F406E3 /* MatchResultViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MatchResultViewController.xib; sourceTree = "<group>"; };
 		4D6DFE511B459EA800F406E3 /* PlaceholderExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceholderExtension.swift; sourceTree = "<group>"; };
+		4D6DFE541B45B70300F406E3 /* FriendsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsProvider.swift; sourceTree = "<group>"; };
+		4D6DFE571B45BDAD00F406E3 /* FriendsTableViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsTableViewManager.swift; sourceTree = "<group>"; };
 		4DA674021B4426E40081BDB3 /* par-ou-impar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "par-ou-impar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DA674061B4426E50081BDB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DA674111B4426E50081BDB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -144,6 +148,7 @@
 		4D6DFE1E1B44457400F406E3 /* Provider */ = {
 			isa = PBXGroup;
 			children = (
+				4D6DFE531B45B6EB00F406E3 /* Friends */,
 				4D6DFE3F1B447F6400F406E3 /* Game */,
 				4D6DFE221B44479000F406E3 /* LoginProvider */,
 			);
@@ -242,6 +247,22 @@
 				4D6DFE4E1B458F4C00F406E3 /* MatchResultViewController.xib */,
 			);
 			path = MatchResult;
+			sourceTree = "<group>";
+		};
+		4D6DFE531B45B6EB00F406E3 /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				4D6DFE541B45B70300F406E3 /* FriendsProvider.swift */,
+			);
+			path = Friends;
+			sourceTree = "<group>";
+		};
+		4D6DFE561B45BD8300F406E3 /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				4D6DFE571B45BDAD00F406E3 /* FriendsTableViewManager.swift */,
+			);
+			path = Friends;
 			sourceTree = "<group>";
 		};
 		4DA673F91B4426E40081BDB3 = {
@@ -401,6 +422,7 @@
 		4DBB9B231B44288700B49658 /* TableViewManager */ = {
 			isa = PBXGroup;
 			children = (
+				4D6DFE561B45BD8300F406E3 /* Friends */,
 				4DBB9B241B44288700B49658 /* BaseTableViewManager.swift */,
 				4DBB9B251B44288700B49658 /* TesteTableViewCell.swift */,
 				4DBB9B261B44288700B49658 /* TesteTableViewCell.xib */,
@@ -660,6 +682,7 @@
 				4D6DFE4F1B458F4C00F406E3 /* MatchResultViewController.swift in Sources */,
 				4D6DFE241B4447AD00F406E3 /* LoginProvider.swift in Sources */,
 				4DBB9B411B44288700B49658 /* Loading.swift in Sources */,
+				4D6DFE551B45B70300F406E3 /* FriendsProvider.swift in Sources */,
 				4D6DFE4A1B458BCF00F406E3 /* FightViewController.swift in Sources */,
 				4DBB9B511B442A7700B49658 /* LoginViewController.swift in Sources */,
 				4D6DFE321B44677400F406E3 /* NewGameViewController.swift in Sources */,
@@ -676,6 +699,7 @@
 				4D6DFE521B459EA800F406E3 /* PlaceholderExtension.swift in Sources */,
 				4DBB9B4B1B4428AD00B49658 /* LoadingExtension.swift in Sources */,
 				4DBB9B431B44288700B49658 /* Placeholder.swift in Sources */,
+				4D6DFE581B45BDAD00F406E3 /* FriendsTableViewManager.swift in Sources */,
 				4DBB9B371B44288700B49658 /* BaseViewController.swift in Sources */,
 				4D6DFE411B447F6E00F406E3 /* GameProvider.swift in Sources */,
 				4DBB9B3E1B44288700B49658 /* BaseComponentsView.swift in Sources */,

@@ -11,7 +11,7 @@ import UIKit
 public class BaseTableViewManager: NSObject, UITableViewDataSource {
    
     private var tableView:UITableView?
-    private var data:Array<AnyObject>?
+    var data:Array<AnyObject>?
     private var registeredNibs:Dictionary<String, String>?
     
     init(tableView:UITableView){

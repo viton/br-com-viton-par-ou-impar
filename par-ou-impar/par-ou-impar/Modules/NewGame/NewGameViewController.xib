@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewGameViewController" customModule="par_ou_impar" customModuleProvider="target">
             <connections>
+                <outlet property="betTextField" destination="3JJ-50-vat" id="yxr-rw-gyQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,16 +16,21 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xUM-SY-LIF">
-                    <rect key="frame" x="41" y="88" width="46" height="30"/>
-                    <state key="normal" title="Button">
+                    <rect key="frame" x="41" y="88" width="97" height="30"/>
+                    <state key="normal" title="Choose friend">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="chooseFriendAction:" destination="-1" eventType="touchUpInside" id="iz1-3N-Der"/>
                     </connections>
                 </button>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Bet Text" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3JJ-50-vat">
+                    <rect key="frame" x="41" y="136" width="97" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mms-GW-YoF">
-                    <rect key="frame" x="75" y="166" width="126" height="30"/>
+                    <rect key="frame" x="8" y="268" width="126" height="30"/>
                     <state key="normal" title="Crete">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
