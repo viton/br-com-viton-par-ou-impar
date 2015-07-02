@@ -49,19 +49,13 @@ class NewGameViewController: BaseViewController {
     
     @IBAction func createGameAction(sender: AnyObject) {
         let game = Game()
-        game.enemy = me
-        game.owner = me
-        game.ownerHand = getHand()
+        game.enemy = me?.facebookId
+        game.owner = me?.facebookId
+        game.ownerHand = "normal"
+        game.ownerCount = 1
         game.betText = "vamos fazer um teste"
-        GameProvider.createGame(game)
-        
+        GameProvider.createGame(game, owner:me!, enemy:me!)
     }
     
-    func getHand() -> Hand {
-        let hand = Hand()
-        hand.count = 1
-        hand.imagePrefixName = "img_hand_"
-        return hand
-    }
     
 }

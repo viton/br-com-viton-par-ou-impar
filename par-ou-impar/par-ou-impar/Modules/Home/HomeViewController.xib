@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="par_ou_impar" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="vD0-dp-sIh" id="Mx5-6s-jQj"/>
                 <outlet property="view" destination="iN0-l3-epB" id="vdF-zK-C7D"/>
             </connections>
         </placeholder>
@@ -23,8 +24,18 @@
                         <action selector="newGameAction:" destination="-1" eventType="touchUpInside" id="MKV-5d-b7f"/>
                     </connections>
                 </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="vD0-dp-sIh">
+                    <rect key="frame" x="0.0" y="50" width="600" height="550"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="vD0-dp-sIh" secondAttribute="bottom" id="FIU-sf-uB7"/>
+                <constraint firstItem="vD0-dp-sIh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="SaT-rk-9gY"/>
+                <constraint firstItem="vD0-dp-sIh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="50" id="XTl-je-kPS"/>
+                <constraint firstAttribute="trailing" secondItem="vD0-dp-sIh" secondAttribute="trailing" id="uUS-JG-sok"/>
+            </constraints>
         </view>
     </objects>
 </document>

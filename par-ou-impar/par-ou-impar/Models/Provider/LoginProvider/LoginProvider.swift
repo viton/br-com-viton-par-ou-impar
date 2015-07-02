@@ -11,19 +11,25 @@ import Parse
 
 class LoginProvider: NSObject {
    
-    class func login(user:User) {
+    class func register(user:User) {
         let userObject = PFObject(className: "User")
         userObject["facebookId"] = user.facebookId
         userObject["name"] = user.name
         userObject["profileImageUrl"] = user.profileImage
-//        userObject.objectId = user.facebookId
-        userObject.saveInBackground({ (result:AnyObject?) -> Void in
-            
-        }, errorBlock:{ (result:String) -> Void in
-            
-        }, noConnection:{
-                
-        })
+
+        var query = PFQuery(className:"User")
+        query.whereKey("facebookId", equalTo: user.facebookId!)
+        query.limit = 1
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [AnyObject]?, error: NSError?) -> Void in
+            if error == nil {
+                if let objects = objects as? [PFObject] {
+                    if(objects.count == 0){
+                        userObject.saveInBackground()
+                    }
+                }
+            }
+        }
     }
     
 }
