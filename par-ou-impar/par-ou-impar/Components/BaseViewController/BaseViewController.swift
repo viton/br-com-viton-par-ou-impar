@@ -17,7 +17,7 @@ protocol BaseProviderCallback {
     func onFailRequest(message:String);
 }
 
-class BaseViewController: UIViewController, BaseProviderCallback, PlaceholderActionDelegate {
+class BaseViewController: UIViewController {
 
     var noConnectionPlaceholder:Placeholder?
     
@@ -38,13 +38,18 @@ class BaseViewController: UIViewController, BaseProviderCallback, PlaceholderAct
     func alert(message:String) {
         let alertController = UIAlertController(title: "Title", message:
             message, preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: { (action) in
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default,handler: { (action) in
             
         } ))
         
         self.presentViewController(alertController, animated: true, completion: nil)
     }
+    
+}
 
+//MARK: BaseProviderCallback
+extension BaseViewController: BaseProviderCallback {
+    
     func onConnectionFailToRequest() {
         if(noConnectionPlaceholder == nil){
             noConnectionPlaceholder = view.addPlaceholder("Oh oh!", content: "Wasn't possible to connect", buttonTitle: "Try again", image: nil)
@@ -60,8 +65,22 @@ class BaseViewController: UIViewController, BaseProviderCallback, PlaceholderAct
         view.removePlaceholder(&noConnectionPlaceholder)
     }
     
+}
+
+//MARK: PlaceholderActionDelegate
+extension BaseViewController: PlaceholderActionDelegate {
+
     func didClickPlaceholderAction(placeholder:Placeholder) {
         
+    }
+    
+}
+
+//MARK: BaseTableViewManagerDelegate
+extension BaseViewController: BaseTableViewManagerDelegate {
+    
+    func didSelectObject(object: AnyObject) {
+        println(object)
     }
     
 }

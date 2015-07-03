@@ -18,7 +18,7 @@ protocol UserProviderCallback:BaseProviderCallback {
 
 class LoginProvider: NSObject {
    
-    static let user = User()
+    static var user:User?
     
     class func loadUser(callback:UserProviderCallback) {
         let meRequest = FBSDKGraphRequest(graphPath: "me", parameters: nil)
@@ -27,10 +27,12 @@ class LoginProvider: NSObject {
             callback.prepareToRespose()
             if error == nil {
                 let dictResult = result as! NSDictionary
-                LoginProvider.user.facebookId = FBSDKAccessToken.currentAccessToken().userID
-                LoginProvider.user.name = dictResult["name"]! as? String
-                LoginProvider.user.profileImage = String(format: "http://graph.facebook.com/%@/picture?type=normal", FBSDKAccessToken.currentAccessToken().userID)
-                callback.onSuccessRetrieveUser(LoginProvider.user)
+                var user = User()
+                user.facebookId = FBSDKAccessToken.currentAccessToken().userID
+                user.name = dictResult["name"]! as? String
+                user.profileImage = String(format: "http://graph.facebook.com/%@/picture?type=normal", FBSDKAccessToken.currentAccessToken().userID)
+                LoginProvider.user = user
+                callback.onSuccessRetrieveUser(user)
             } else {
                 callback.onConnectionFailToRequest()
             }
@@ -39,9 +41,9 @@ class LoginProvider: NSObject {
     
     class func register(user:User) {
         let userObject = PFObject(className: "User")
-        userObject["facebookId"] = user.facebookId
-        userObject["name"] = user.name
-        userObject["profileImageUrl"] = user.profileImage
+        userObject["facebookId"] = user.facebookId!
+        userObject["name"] = user.name!
+        userObject["profileImageUrl"] = user.profileImage!
 
         var query = PFQuery(className:"User")
         query.whereKey("facebookId", equalTo: user.facebookId!)

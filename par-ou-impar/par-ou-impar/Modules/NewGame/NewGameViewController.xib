@@ -7,6 +7,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewGameViewController" customModule="par_ou_impar" customModuleProvider="target">
             <connections>
                 <outlet property="betTextField" destination="3JJ-50-vat" id="yxr-rw-gyQ"/>
+                <outlet property="chooseHandView" destination="bas-fi-E1n" id="aJZ-ho-fMq"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,7 +16,7 @@
             <rect key="frame" x="0.0" y="64" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xUM-SY-LIF">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xUM-SY-LIF">
                     <rect key="frame" x="41" y="88" width="97" height="30"/>
                     <state key="normal" title="Choose friend">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -24,13 +25,20 @@
                         <action selector="chooseFriendAction:" destination="-1" eventType="touchUpInside" id="iz1-3N-Der"/>
                     </connections>
                 </button>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Bet Text" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3JJ-50-vat">
-                    <rect key="frame" x="41" y="136" width="97" height="30"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Bet Text" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3JJ-50-vat">
+                    <rect key="frame" x="41" y="136" width="74" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mms-GW-YoF">
-                    <rect key="frame" x="8" y="268" width="126" height="30"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bas-fi-E1n" customClass="ChooseHandView" customModule="par_ou_impar" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="185" width="600" height="85"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="85" placeholder="YES" id="EF5-mv-aI2"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mms-GW-YoF">
+                    <rect key="frame" x="15" y="285" width="38" height="30"/>
                     <state key="normal" title="Crete">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -40,7 +48,24 @@
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="xUM-SY-LIF" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="88" id="4r9-wr-eVQ"/>
+                <constraint firstAttribute="trailing" secondItem="bas-fi-E1n" secondAttribute="trailing" id="D5h-FH-fmg"/>
+                <constraint firstItem="bas-fi-E1n" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="E2V-W1-UVE"/>
+                <constraint firstItem="mms-GW-YoF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="EZK-Fd-DIg"/>
+                <constraint firstItem="mms-GW-YoF" firstAttribute="top" secondItem="bas-fi-E1n" secondAttribute="bottom" constant="15" id="Gfj-OK-4cJ"/>
+                <constraint firstItem="3JJ-50-vat" firstAttribute="top" secondItem="xUM-SY-LIF" secondAttribute="bottom" constant="18" id="cid-b2-SLx"/>
+                <constraint firstItem="3JJ-50-vat" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="41" id="iKA-hs-6LK"/>
+                <constraint firstItem="bas-fi-E1n" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="185" id="n9l-5M-3Pm"/>
+                <constraint firstItem="xUM-SY-LIF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="41" id="qQd-cb-y5Z"/>
+                <constraint firstItem="bas-fi-E1n" firstAttribute="top" secondItem="3JJ-50-vat" secondAttribute="bottom" constant="19" id="tC3-ag-J0z"/>
+            </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="n9l-5M-3Pm"/>
+                </mask>
+            </variation>
         </view>
     </objects>
 </document>

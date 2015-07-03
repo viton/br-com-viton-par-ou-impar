@@ -14,8 +14,6 @@ class ReplyGameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
     }
     
     func requestReplyGame() {
@@ -25,7 +23,5 @@ class ReplyGameViewController: UIViewController {
         game?.winner = game?.decideWinner()
         GameProvider.replyGame(game!)
     }
-    
-    
     
 }

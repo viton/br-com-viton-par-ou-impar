@@ -23,7 +23,7 @@ class LoginViewController: BaseViewController, FBSDKLoginButtonDelegate {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         if(FBSDKAccessToken.currentAccessToken() != nil) {
-            navigationController?.pushViewController(HomeViewController(), animated: false)
+            requestUser()
         }
     }
     
@@ -42,12 +42,39 @@ class LoginViewController: BaseViewController, FBSDKLoginButtonDelegate {
         }else if(result.isCancelled) {
             println("CANCELED")
         }else {
-            navigationController?.pushViewController(HomeViewController(), animated: false)
+            requestUser()
         }
+    }
+    
+    func requestUser() {
+        view.startLoading()
+        LoginProvider.loadUser(self)
     }
     
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
         println("LOGOUT")
+    }
+    
+    override func prepareToRespose() {
+        super.prepareToRespose()
+        view.stopLoading()
+        
+    }
+    
+    override func didClickPlaceholderAction(placeholder: Placeholder) {
+        super.didClickPlaceholderAction(placeholder)
+        if placeholder == noConnectionPlaceholder {
+            requestUser()
+        }
+    }
+    
+}
+
+//MARK: UserProviderCallback
+extension LoginViewController: UserProviderCallback {
+    
+    func onSuccessRetrieveUser(user: User) {
+        navigationController?.pushViewController(HomeViewController(), animated: false)
     }
     
 }

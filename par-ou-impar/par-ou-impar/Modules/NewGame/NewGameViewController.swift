@@ -11,22 +11,24 @@ import UIKit
 
 class NewGameViewController: BaseViewController {
 
+    @IBOutlet weak var chooseHandView: ChooseHandView!
     @IBOutlet weak var betTextField: UITextField!
     var chooseFriendViewController:ChooseFriendViewController?
     var friend:User?
     var me:User?
+    var count:Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setup()
+    }
+
+    func setup() {
         title = "Novo"
         navigationController?.navigationBarHidden = false
-        requestUser()
-    }
-    
-    func requestUser() {
-        view.startLoading()
-        LoginProvider.loadUser(self)
+        chooseHandView.chooseHandViewDelegate = self
+        me = LoginProvider.user
     }
 
     @IBAction func chooseFriendAction(sender: AnyObject) {
@@ -40,9 +42,10 @@ class NewGameViewController: BaseViewController {
         game.enemy = friend?.facebookId
         game.owner = me?.facebookId
         game.ownerHand = "normal"
-        game.ownerCount = 1
+        game.ownerCount = count
         game.betText = betTextField.text
-        GameProvider.createGame(game, owner:me!, enemy:me!)
+        GameProvider.createGame(game, owner:me!, enemy:friend!, callback: self)
+        view.startLoading()
     }
 
     //MARK: BaseProviderCallback
@@ -52,11 +55,18 @@ class NewGameViewController: BaseViewController {
     
 }
 
-//MARK: UserProviderCallback
-extension NewGameViewController: UserProviderCallback {
+extension NewGameViewController: CreateGameCallback {
     
-    func onSuccessRetrieveUser(user: User) {
-        me = user
+    func onSuccessCreateGame() {
+        navigationController?.popViewControllerAnimated(true)
+    }
+    
+}
+
+extension NewGameViewController: ChooseHandViewDelegate {
+    
+    func didSelectHandCount(count: Int) {
+        self.count = count
     }
     
 }

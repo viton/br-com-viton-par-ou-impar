@@ -10,7 +10,7 @@ import UIKit
 import FBSDKCoreKit
 import Parse
 
-class HomeViewController: BaseViewController, GamesCallback, PlaceholderActionDelegate {
+class HomeViewController: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
     var tableManager:BaseTableViewManager?
@@ -18,7 +18,6 @@ class HomeViewController: BaseViewController, GamesCallback, PlaceholderActionDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setup()
     }
     
@@ -35,7 +34,7 @@ class HomeViewController: BaseViewController, GamesCallback, PlaceholderActionDe
     func setup() {
         println(FBSDKAccessToken.currentAccessToken().userID)
         navigationController?.navigationBarHidden = true
-        tableManager = BaseTableViewManager(tableView: tableView)
+        tableManager = BaseTableViewManager(tableView: tableView, delegate:self)
         
     }
     
@@ -43,9 +42,41 @@ class HomeViewController: BaseViewController, GamesCallback, PlaceholderActionDe
         navigationController?.pushViewController(NewGameViewController(), animated: true)
     }
     
+    //MARK: PlaceholderActionDelegate
+    override func didClickPlaceholderAction(placeholder:Placeholder) {
+        if placeholder == noResultsPlaceholder {
+            newGameAction(placeholder)
+        }
+    }
     
+    //MARK: BaseProviderCallback
+    override func prepareToRespose() {
+        super.prepareToRespose()
+        view.stopLoading()
+        view.removePlaceholder(&noResultsPlaceholder)
+    }
+
+}
+
+extension HomeViewController: BaseTableViewManagerDelegate {
     
-    //MARK: GamesCallback
+    func didSelectGameToReply(game:Game) {
+        let replyGameViewController = ReplyGameViewController()
+        replyGameViewController.game = game
+        navigationController?.pushViewController(replyGameViewController, animated: true)
+    }
+    
+    func didSelectFinishGame(game:Game) {
+        let fightViewController = FightViewController()
+        fightViewController.game = game
+        navigationController?.pushViewController(fightViewController, animated: true)
+    }
+    
+}
+
+//MARK: GamesCallback
+extension HomeViewController: GamesCallback {
+    
     func onSuccess(games:Array<Game>) {
         tableManager?.updateWithData(games)
     }
@@ -55,15 +86,4 @@ class HomeViewController: BaseViewController, GamesCallback, PlaceholderActionDe
         noResultsPlaceholder?.delegate = self
     }
     
-    override func prepareToRespose() {
-        super.prepareToRespose()
-        view.stopLoading()
-        view.removePlaceholder(&noResultsPlaceholder)
-    }
-    
-    override func didClickPlaceholderAction(placeholder:Placeholder) {
-        if placeholder == noResultsPlaceholder {
-            newGameAction(placeholder)
-        }
-    }
 }

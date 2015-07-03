@@ -17,11 +17,15 @@ protocol GamesCallback:BaseProviderCallback {
     
 }
 
-
+protocol CreateGameCallback:BaseProviderCallback {
+    
+    func onSuccessCreateGame()
+    
+}
 
 class GameProvider: NSObject {
  
-    class func createGame(game:Game, owner:User, enemy:User) {
+    class func createGame(game:Game, owner:User, enemy:User, callback:CreateGameCallback) {
         let gameObject = PFObject(className: "Game")
         
         gameObject["owner"] = game.owner
@@ -39,11 +43,14 @@ class GameProvider: NSObject {
         LoginProvider.register(owner)
         LoginProvider.register(enemy)
         gameObject.saveInBackground({ (result:AnyObject?) -> Void in
-            
-            }, errorBlock:{ (result:String) -> Void in
-                
-            }, noConnection:{
-                
+            callback.prepareToRespose()
+            callback.onSuccessCreateGame()
+        }, errorBlock:{ (result:String) -> Void in
+            callback.prepareToRespose()
+            callback.onFailRequest(result)
+        }, noConnection:{
+            callback.prepareToRespose()
+            callback.onFailRequest("Something went wrong. Try again")
         })
     }
     

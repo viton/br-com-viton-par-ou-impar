@@ -47,6 +47,13 @@ class ChooseFriendViewController: BaseViewController, FriendsCallback {
         dismissViewControllerAnimated(true, completion: {})
     }
     
+    override func didSelectObject(object:AnyObject) {
+        let friend = object as! User
+        if let chooseFriendDelegate = delegate {
+            chooseFriendDelegate.didSelectFriend(friend)
+        }
+    }
+    
 }
 
 //MARK: PlaceholderActionDelegate
@@ -80,15 +87,3 @@ extension ChooseFriendViewController:FriendsCallback {
     }
     
 }
-
-//MARK: FriendsTableManagerDelegate
-extension ChooseFriendViewController:FriendsTableManagerDelegate {
-    
-    func didSelectFriend(friend:User?) {
-        if let chooseFriendDelegate = delegate {
-            chooseFriendDelegate.didSelectFriend(friend!)
-        }
-    }
-    
-}
-
