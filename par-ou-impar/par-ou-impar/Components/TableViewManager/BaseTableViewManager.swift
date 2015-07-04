@@ -8,21 +8,30 @@
 
 import UIKit
 
+protocol BaseTableViewManagerDelegate {
+    
+    func didSelectObject(object:AnyObject)
+    
+}
+
 public class BaseTableViewManager: NSObject, UITableViewDataSource {
    
     private var tableView:UITableView?
-    private var data:Array<AnyObject>?
+    var data:Array<AnyObject>?
+    var delegate:BaseTableViewManagerDelegate
     private var registeredNibs:Dictionary<String, String>?
     
-    init(tableView:UITableView){
+    init(tableView:UITableView, delegate:BaseTableViewManagerDelegate){
         self.data = []
         self.tableView = tableView
+        self.delegate = delegate
         self.registeredNibs = Dictionary<String, String>()
         super.init()
         self.setupTableView()
     }
     
     private func setupTableView(){
+        self.tableView!.delegate = self
         self.tableView!.dataSource = self
         self.tableView!.tableFooterView = UIView(frame: CGRectZero)
         self.tableView!.backgroundColor = UIColor.clearColor();
@@ -106,6 +115,15 @@ public class BaseTableViewManager: NSObject, UITableViewDataSource {
         setData(item, toCell: cell)
         
         return cell
+    }
+    
+}
+
+extension BaseTableViewManager:UITableViewDelegate {
+    
+    public func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        var object:AnyObject = data![indexPath.row]
+        delegate.didSelectObject(object)
     }
     
 }

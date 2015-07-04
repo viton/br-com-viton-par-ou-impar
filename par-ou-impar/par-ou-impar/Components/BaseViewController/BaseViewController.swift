@@ -10,15 +10,16 @@ import UIKit
 
 protocol BaseProviderCallback {
     
-    func onConnectionFailToRequest(model: DataRequestModel);
+    func prepareToRespose()
     
-    func onFailRequest();
+    func onConnectionFailToRequest();
+    
+    func onFailRequest(message:String);
 }
 
-class BaseViewController: UIViewController, BaseProviderCallback, PlaceholderActionDelegate {
+class BaseViewController: UIViewController {
 
     var noConnectionPlaceholder:Placeholder?
-    var pendingRequest:DataRequestModel?
     
     init(){
         super.init(nibName:NSStringFromClass(self.dynamicType).componentsSeparatedByString(".").last! ,bundle:nil);
@@ -37,36 +38,49 @@ class BaseViewController: UIViewController, BaseProviderCallback, PlaceholderAct
     func alert(message:String) {
         let alertController = UIAlertController(title: "Title", message:
             message, preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: { (action) in
-            if(self.pendingRequest != nil){
-                println("Oi ")
-                self.pendingRequest!.repeat()
-                self.pendingRequest = nil
-            }
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default,handler: { (action) in
+            
         } ))
         
         self.presentViewController(alertController, animated: true, completion: nil)
     }
+    
+}
 
-    func onConnectionFailToRequest(model: DataRequestModel) {
+//MARK: BaseProviderCallback
+extension BaseViewController: BaseProviderCallback {
+    
+    func onConnectionFailToRequest() {
         if(noConnectionPlaceholder == nil){
-            noConnectionPlaceholder = Placeholder(frame: view.frame)
-            view.addSubview(noConnectionPlaceholder!)
-            view.addAllConstraints(noConnectionPlaceholder!)
-            self.pendingRequest = model
+            noConnectionPlaceholder = view.addPlaceholder("Oh oh!", content: "Wasn't possible to connect", buttonTitle: "Try again", image: nil)
             noConnectionPlaceholder?.delegate = self
         }
-        noConnectionPlaceholder?.hidden = false
     }
     
-    func onFailRequest() {
-        alert("Erro")
+    func onFailRequest(message:String) {
+        alert(message)
     }
     
+    func prepareToRespose() {
+        view.removePlaceholder(&noConnectionPlaceholder)
+    }
+    
+}
+
+//MARK: PlaceholderActionDelegate
+extension BaseViewController: PlaceholderActionDelegate {
+
     func didClickPlaceholderAction(placeholder:Placeholder) {
-        if pendingRequest != nil {
-            pendingRequest?.repeat()
-        }
+        
+    }
+    
+}
+
+//MARK: BaseTableViewManagerDelegate
+extension BaseViewController: BaseTableViewManagerDelegate {
+    
+    func didSelectObject(object: AnyObject) {
+        println(object)
     }
     
 }

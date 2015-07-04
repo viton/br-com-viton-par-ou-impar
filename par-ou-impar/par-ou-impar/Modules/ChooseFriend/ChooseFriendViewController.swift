@@ -7,35 +7,83 @@
 //
 
 import UIKit
-import FBSDKCoreKit
 
-class ChooseFriendViewController: BaseViewController {
 
+protocol ChooseFriendsDelegate {
+    
+    func didSelectFriend(friend: User)
+    
+}
+
+class ChooseFriendViewController: BaseViewController, FriendsCallback {
+    
+    @IBOutlet weak var tableView: UITableView!
+    var tableManager:BaseTableViewManager?
+    var noFriendsPlaceholder:Placeholder?
+    var delegate:ChooseFriendsDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setup()
         modalPresentationStyle = UIModalPresentationStyle.PageSheet
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         requestFriends()
     }
     
+    func setup() {
+        tableManager = FriendsTableViewManager(tableView: tableView, delegate: self)
+    }
+    
     func requestFriends() {
-        println(FBSDKAccessToken.currentAccessToken().userID)
-        let pictureRequest = FBSDKGraphRequest(graphPath: "me/friends", parameters: nil)
-        pictureRequest.startWithCompletionHandler({
-            (connection, result, error: NSError!) -> Void in
-            if error == nil {
-                let dataDict:NSDictionary = result as! NSDictionary
-                let friendsArray:Array<NSDictionary> = dataDict.objectForKey("data")! as! Array<NSDictionary>
-                
-                for dict in friendsArray {
-                    println(dict.objectForKey("name"))
-                    println(dict.objectForKey("id"))
-                }
-                println(result)
-            } else {
-                println("\(error)")
-            }
-        })
+        view.startLoading()
+        FriendsProvider.getFriends(self)
+    }
+    
+    @IBAction func cancelAction(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: {})
+    }
+    
+    override func didSelectObject(object:AnyObject) {
+        let friend = object as! User
+        if let chooseFriendDelegate = delegate {
+            chooseFriendDelegate.didSelectFriend(friend)
+        }
+    }
+    
+}
+
+//MARK: PlaceholderActionDelegate
+extension ChooseFriendViewController: PlaceholderActionDelegate {
+    
+    override func didClickPlaceholderAction(placeholder: Placeholder) {
+        super.didClickPlaceholderAction(placeholder)
+        if placeholder == noFriendsPlaceholder {
+            println("Should call friends and create example game")
+        }
+    }
+    
+}
+
+//MARK: FriendsCallback
+extension ChooseFriendViewController:FriendsCallback {
+    
+    func onSuccess(friends:Array<User>) {
+        tableManager?.updateWithData(friends)
+    }
+    
+    func onEmptyFriends() {
+        noFriendsPlaceholder = view.addPlaceholder("I can't believe", content: "You got no friends playing. While we create a game example for you, call your friends to play with you", buttonTitle: "Play game and invite friends", image: nil)
+        noFriendsPlaceholder?.delegate = self
+    }
+    
+    override func prepareToRespose() {
+        super.prepareToRespose()
+        view.stopLoading()
+        view.removePlaceholder(&noFriendsPlaceholder)
     }
     
 }

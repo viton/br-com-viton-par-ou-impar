@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="par_ou_impar" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="vD0-dp-sIh" id="Mx5-6s-jQj"/>
                 <outlet property="view" destination="iN0-l3-epB" id="vdF-zK-C7D"/>
             </connections>
         </placeholder>
@@ -14,17 +15,36 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezN-WN-l5n">
-                    <rect key="frame" x="82" y="17" width="46" height="30"/>
-                    <state key="normal" title="Button">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezN-WN-l5n">
+                    <rect key="frame" x="15" y="15" width="570" height="30"/>
+                    <state key="normal" title="NEW GAME">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="newGameAction:" destination="-1" eventType="touchUpInside" id="MKV-5d-b7f"/>
                     </connections>
                 </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="vD0-dp-sIh">
+                    <rect key="frame" x="0.0" y="50" width="600" height="550"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="ezN-WN-l5n" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="6Rs-Tv-ihL"/>
+                <constraint firstAttribute="bottom" secondItem="vD0-dp-sIh" secondAttribute="bottom" id="FIU-sf-uB7"/>
+                <constraint firstItem="ezN-WN-l5n" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="IZf-0e-9i8"/>
+                <constraint firstItem="vD0-dp-sIh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="SaT-rk-9gY"/>
+                <constraint firstItem="vD0-dp-sIh" firstAttribute="top" secondItem="ezN-WN-l5n" secondAttribute="bottom" constant="5" id="Slp-RP-eEf"/>
+                <constraint firstItem="vD0-dp-sIh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="50" id="XTl-je-kPS"/>
+                <constraint firstAttribute="trailing" secondItem="vD0-dp-sIh" secondAttribute="trailing" id="uUS-JG-sok"/>
+                <constraint firstAttribute="trailing" secondItem="ezN-WN-l5n" secondAttribute="trailing" constant="15" id="vlS-PF-GBa"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="XTl-je-kPS"/>
+                </mask>
+            </variation>
         </view>
     </objects>
 </document>

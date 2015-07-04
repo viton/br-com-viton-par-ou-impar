@@ -7,15 +7,18 @@
 //
 
 import UIKit
+import Parse
 
-class User: NSObject {
+class User: PFObject, PFSubclassing {
     
-    var name:String?
-    var facebookId:String?
-    var profileImage:String?
- 
-    override init() {
-        super.init()
+    @NSManaged var name:String?
+    @NSManaged var facebookId:String?
+    @NSManaged var profileImage:String?
+    
+    class func parseClassName() -> String {
+        return "User"
     }
+    
+    
     
 }

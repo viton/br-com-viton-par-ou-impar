@@ -5,11 +5,10 @@ target 'par-ou-impar' do
 
 use_frameworks!
 
-pod 'Alamofire', '~> 1.2'
-pod 'AlamofireObjectMapper', '~> 0.2'
 pod 'Parse'
 pod 'FBSDKCoreKit'
 pod 'FBSDKLoginKit'
+pod 'FBSDKShareKit'
 
 end
 
