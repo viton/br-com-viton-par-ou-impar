@@ -31,10 +31,14 @@ class GameProvider: NSObject {
         gameObject["owner"] = game.owner
         gameObject["ownerHand"] = game.ownerHand
         gameObject["ownerCount"] = game.ownerCount
+        gameObject["ownerName"] = owner.name
+        gameObject["ownerImage"] = owner.profileImage
         
         gameObject["enemy"] = game.enemy
         gameObject["enemyHand"] = ""
         gameObject["enemyCount"] = 0
+        gameObject["enemyName"] = enemy.name
+        gameObject["enemyImage"] = enemy.profileImage
         
         gameObject["finish"] = 0
         gameObject["betText"] = game.betText

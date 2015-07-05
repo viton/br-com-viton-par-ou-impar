@@ -24,6 +24,7 @@ class HomeViewController: BaseViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         requestGames()
+        navigationController?.navigationBarHidden = true
     }
     
     func requestGames() {
@@ -32,9 +33,7 @@ class HomeViewController: BaseViewController {
     }
     
     func setup() {
-        println(FBSDKAccessToken.currentAccessToken().userID)
-        navigationController?.navigationBarHidden = true
-        tableManager = BaseTableViewManager(tableView: tableView, delegate:self)
+        tableManager = GameTableViewManager(tableView: tableView, delegate:self)
         
     }
     
