@@ -21,7 +21,7 @@ class CollectionViewManager: NSObject {
         collectionViewManagerDelegate = delegate
         self.registeredNibs = Dictionary<String, String>()
         super.init()
-        self.setupCollectionView()
+        setupCollectionView()
     }
     
     private func setupCollectionView(){
@@ -37,7 +37,7 @@ class CollectionViewManager: NSObject {
             var cellClassIdentifier = cellIdentifierForClass(cellClassName)
             if !isNibRegisteredForIdentifier(cellClassIdentifier) {
                 registeredNibs!.updateValue(cellClassIdentifier, forKey: cellClassName)
-                var cellNib = UINib(nibName: cellClassName, bundle: nil)
+                var cellNib = UINib(nibName: cellClassName, bundle: NSBundle(forClass: self.dynamicType))
                 collectionView!.registerNib(cellNib, forCellWithReuseIdentifier: cellClassIdentifier)
             }
             
