@@ -34,7 +34,6 @@
                             </collectionViewFlowLayout>
                         </collectionView>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="X3M-7Y-0Pr" firstAttribute="leading" secondItem="qSU-rG-xSp" secondAttribute="leading" id="MnJ-iP-46b"/>
                         <constraint firstAttribute="bottom" secondItem="X3M-7Y-0Pr" secondAttribute="bottom" id="Rrj-kd-zTX"/>
@@ -44,7 +43,6 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="gFc-hY-DBr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="Dtw-Xi-nJx"/>
                 <constraint firstAttribute="trailing" secondItem="gFc-hY-DBr" secondAttribute="trailing" constant="15" id="GZz-Vw-o6w"/>

@@ -25,9 +25,10 @@ class ColorProvider: NSObject {
     
     class func getColors() -> [UIColor] {
         var colors = Array<UIColor>()
-        colors.append(ColorProvider.getAppColor())
+        var selectedColor = getAppColor()
+        colors.append(selectedColor)
         for color in ColorProvider.getAllColors() {
-            if(!color.isEqual(colors[0])) {
+            if(!color.isEqual(selectedColor)) {
                 colors.append(color)
             }
         }

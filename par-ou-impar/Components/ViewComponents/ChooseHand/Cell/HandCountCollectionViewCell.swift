@@ -11,6 +11,19 @@ import UIKit
 class HandCountCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var countLabel: UILabel!
+    @IBOutlet weak var circleView: UIView!
     
+    override var selected: Bool {
+        didSet {
+            if self.selected {
+                println("Selected \(countLabel.text)")
+                circleView.circle()
+                circleView.backgroundColor = UIColor.whiteColor()
+            }else {
+                circleView.circle()
+                circleView.backgroundColor = UIColor.clearColor()
+            }
+        }
+    }
     
 }
