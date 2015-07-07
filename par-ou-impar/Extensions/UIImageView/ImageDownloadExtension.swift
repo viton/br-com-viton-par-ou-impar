@@ -23,10 +23,4 @@ extension UIImageView {
         }
     }
     
-    func circle() {
-        layer.masksToBounds = false
-        layer.cornerRadius = frame.height/2
-        clipsToBounds = true
-    }
-    
 }

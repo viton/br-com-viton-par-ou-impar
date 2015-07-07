@@ -16,6 +16,9 @@ class HomeViewController: BaseViewController {
     var tableManager:BaseTableViewManager?
     var noResultsPlaceholder:Placeholder?
     
+    @IBOutlet weak var chooseColorWIfthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var chooseColorView: ChooseColorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -34,7 +37,8 @@ class HomeViewController: BaseViewController {
     
     func setup() {
         tableManager = GameTableViewManager(tableView: tableView, delegate:self)
-        
+        chooseColorView.widthConstraint = chooseColorWIfthConstraint
+        chooseColorView.callback = self
     }
     
     @IBAction func newGameAction(sender: AnyObject) {

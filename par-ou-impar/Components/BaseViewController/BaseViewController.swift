@@ -88,3 +88,12 @@ extension BaseViewController: BaseTableViewManagerDelegate {
     }
     
 }
+
+extension BaseViewController: ChooseColorViewCallback {
+    
+    func didChooseColor(color: UIColor) {
+        ColorProvider.saveColor(color)
+        view.backgroundColor = color
+    }
+    
+}
