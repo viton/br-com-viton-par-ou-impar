@@ -11,7 +11,15 @@ import UIKit
 class ColorProvider: NSObject {
    
     class func getAppColor() -> UIColor {
-        return UIColor(red: 86.0/255.0, green: 206.0/255.0, blue: 239.0/255.0, alpha: 1)
+        return UIColor.appBlueColor()
      }
+    
+}
+
+extension UIColor {
+    
+    class func appBlueColor() -> UIColor {
+        return UIColor(red: 86.0/255.0, green: 206.0/255.0, blue: 239.0/255.0, alpha: 1)
+    }
     
 }

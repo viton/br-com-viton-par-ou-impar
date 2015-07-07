@@ -10,19 +10,10 @@ import UIKit
 
 class Loading: BaseComponentsView {
 
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    
-    override func customSetup() {
-        backgroundColor = UIColor.lightGrayColor()
-    }
-    
     func start() {
-        activityIndicator.startAnimating()
     }
     
     func stop() {
-        activityIndicator.stopAnimating()
-        removeFromSuperview()
     }
     
 }
