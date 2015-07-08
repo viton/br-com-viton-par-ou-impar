@@ -19,7 +19,7 @@ class ColorCollectionViewManager: CollectionViewManager {
             if let color = item as? UIColor {
                 colorCell.colorView.backgroundColor = color
                 colorCell.colorView.circle()
-                colorCell.colorView.setupBorder(1, color: UIColor.lightGrayColor())
+                colorCell.colorView.setupBorder(1, color: UIColor.blackColor())
             }
         }
     }

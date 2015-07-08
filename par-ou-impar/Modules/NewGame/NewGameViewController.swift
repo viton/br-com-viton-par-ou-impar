@@ -10,7 +10,9 @@ import UIKit
 
 
 class NewGameViewController: BaseViewController {
-
+    
+    @IBOutlet weak var friendNameLabel: UILabel!
+    @IBOutlet weak var friendImageView: UIImageView!
     @IBOutlet weak var chooseHandView: ChooseHandView!
     @IBOutlet weak var betTextField: UITextField!
     var chooseFriendViewController:ChooseFriendViewController?
@@ -22,6 +24,11 @@ class NewGameViewController: BaseViewController {
         super.viewDidLoad()
         
         setup()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBarHidden = true
     }
 
     func setup() {
@@ -77,6 +84,8 @@ extension NewGameViewController: ChooseFriendsDelegate {
     func didSelectFriend(friend: User) {
         chooseFriendViewController?.dismissViewControllerAnimated(true, completion: {
             self.friend = friend
+            self.friendNameLabel.text = friend.name
+            self.friendImageView.setImage(url: friend.profileImage!)
         })
     }
 }
