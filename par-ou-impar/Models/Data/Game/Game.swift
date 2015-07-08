@@ -11,13 +11,19 @@ import Parse
 
 class Game: PFObject, PFSubclassing {
    
+    var ownerUser:User?
     @NSManaged var owner:String?
     @NSManaged var ownerHand:String?
     @NSManaged var ownerCount:NSNumber?
+    @NSManaged var ownerName:String?
+    @NSManaged var ownerImage:String?
     
+    var enemyUser:User?
     @NSManaged var enemy:String?
     @NSManaged var enemyHand:String?
     @NSManaged var enemyCount:NSNumber?
+    @NSManaged var enemyName:String?
+    @NSManaged var enemyImage:String?
     
     @NSManaged var betText:String?
     @NSManaged var winner:String?
@@ -33,10 +39,46 @@ class Game: PFObject, PFSubclassing {
     
     init(object:PFObject) {
         super.init()
-        owner = object["owner"] as? String
-        enemy = object["enemy"] as? String
+        loadOwner(object)
+        loadEnemy(object)
         betText = object["betText"] as? String
         finish = object["finish"] as? NSNumber
+    }
+    
+    func loadOwner(object:PFObject) {
+        owner = object["owner"] as? String
+        ownerName = object["ownerName"] as? String
+        ownerImage = object["ownerImage"] as? String
+        
+        ownerUser = User()
+        ownerUser?.facebookId = owner
+        ownerUser?.name = ownerName
+        ownerUser?.profileImage = ownerImage
+    }
+    
+    func loadEnemy(object:PFObject) {
+        enemy = object["enemy"] as? String
+        enemyName = object["enemyName"] as? String
+        enemyImage = object["enemyImage"] as? String
+        
+        enemyUser = User()
+        enemyUser?.facebookId = enemy
+        enemyUser?.name = enemyName
+        enemyUser?.profileImage = enemyImage
+    }
+    
+    func getMe() -> User {
+        if LoginProvider.user?.facebookId == owner {
+            return ownerUser!
+        }
+        return enemyUser!
+    }
+    
+    func getOponent() -> User {
+        if LoginProvider.user?.facebookId == enemy {
+            return ownerUser!
+        }
+        return enemyUser!
     }
     
     func decideWinner() -> String? {

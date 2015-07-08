@@ -20,6 +20,21 @@ class GameTableViewManager: BaseTableViewManager {
     
     var gameTableDelegate:GameTableViewManagerDelegate?
     
+    override func setData(item: AnyObject, toCell cell: UITableViewCell) {
+        if let gameCell = cell as? GameTableViewCell {
+            var game = item as! Game
+            gameCell.betTextLabel.text = game.betText
+            let oponent = game.getOponent()
+            gameCell.nameLabel.text = oponent.name
+            gameCell.imageUser.setImage(url: oponent.profileImage!)
+            gameCell.imageUser.circle()
+        }
+    }
+    
+    override func cellClasses() -> Array<AnyClass> {
+        return [GameTableViewCell.classForCoder()]
+    }
+    
     override init(tableView: UITableView, delegate: BaseTableViewManagerDelegate) {
         gameTableDelegate = delegate as? GameTableViewManagerDelegate
         super.init(tableView: tableView, delegate: delegate)
@@ -32,6 +47,10 @@ class GameTableViewManager: BaseTableViewManager {
         }else if(game.owner! == LoginProvider.user!.facebookId) {
             gameTableDelegate?.didSelectGameToReply(game)
         }
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 95
     }
     
 }

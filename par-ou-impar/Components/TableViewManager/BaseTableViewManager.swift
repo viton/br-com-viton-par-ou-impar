@@ -117,6 +117,10 @@ public class BaseTableViewManager: NSObject, UITableViewDataSource {
         return cell
     }
     
+    public func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 100
+    }
+    
 }
 
 extension BaseTableViewManager:UITableViewDelegate {

@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="par_ou_impar" customModuleProvider="target">
             <connections>
-                <outlet property="facebookLoginButton" destination="zgC-d1-q3m" id="IZI-TH-oV0"/>
+                <outlet property="facebookLoginButton" destination="hlz-9q-agO" id="hN3-dn-Nie"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,25 +16,34 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eFN-ed-4oX">
-                    <rect key="frame" x="131" y="50" width="42" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zgC-d1-q3m" customClass="FBSDKLoginButton">
-                    <rect key="frame" x="15" y="136" width="570" height="30"/>
-                    <state key="normal" title="Button">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_parouimpar" translatesAutoresizingMaskIntoConstraints="NO" id="3T5-xP-cf5">
+                    <rect key="frame" x="220" y="45" width="160" height="90"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_hand_1" translatesAutoresizingMaskIntoConstraints="NO" id="627-7f-tPQ">
+                    <rect key="frame" x="242" y="248" width="117" height="352"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hlz-9q-agO" customClass="FBSDKLoginButton">
+                    <rect key="frame" x="40" y="530" width="520" height="50"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="9Pm-o8-Y5m"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="zgC-d1-q3m" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="GyD-6U-5g3"/>
-                <constraint firstAttribute="trailing" secondItem="zgC-d1-q3m" secondAttribute="trailing" constant="15" id="tIP-gr-btB"/>
-                <constraint firstItem="zgC-d1-q3m" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="136" id="xij-AG-oKv"/>
+                <constraint firstAttribute="centerX" secondItem="3T5-xP-cf5" secondAttribute="centerX" id="0yN-dp-lIW"/>
+                <constraint firstAttribute="trailing" secondItem="hlz-9q-agO" secondAttribute="trailing" constant="40" id="4UK-6x-gd6"/>
+                <constraint firstAttribute="centerX" secondItem="627-7f-tPQ" secondAttribute="centerX" id="8mP-HE-eDa"/>
+                <constraint firstItem="hlz-9q-agO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="40" id="Nhf-Qa-TKn"/>
+                <constraint firstAttribute="bottom" secondItem="627-7f-tPQ" secondAttribute="bottom" id="U4M-Ua-0Rc"/>
+                <constraint firstItem="3T5-xP-cf5" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="45" id="YX0-4k-mae"/>
+                <constraint firstAttribute="bottom" secondItem="hlz-9q-agO" secondAttribute="bottom" constant="20" id="b8y-5J-0Zq"/>
             </constraints>
         </view>
     </objects>
+    <resources>
+        <image name="img_hand_1" width="117" height="352"/>
+        <image name="logo_parouimpar" width="160" height="90"/>
+    </resources>
 </document>

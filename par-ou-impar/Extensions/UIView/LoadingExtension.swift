@@ -11,7 +11,7 @@ import UIKit
 extension UIView {
 
     func startLoading() {
-        let loading = Loading(frame:CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height))
+        let loading = OneHandLoading(frame:CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height))
         addSubview(loading)
         addAllConstraints(loading)
         loading.start()
