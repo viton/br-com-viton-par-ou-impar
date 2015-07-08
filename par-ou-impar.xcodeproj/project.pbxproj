@@ -45,6 +45,8 @@
 		4D6DFE611B45E36D00F406E3 /* HandCountCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6DFE5F1B45E36D00F406E3 /* HandCountCollectionViewCell.swift */; };
 		4D6DFE621B45E36D00F406E3 /* HandCountCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D6DFE601B45E36D00F406E3 /* HandCountCollectionViewCell.xib */; };
 		4D6DFE651B4600A200F406E3 /* GameTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6DFE641B4600A200F406E3 /* GameTableViewManager.swift */; };
+		4DA0A71E1B4D5A8200C30561 /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA0A71C1B4D5A8200C30561 /* FriendTableViewCell.swift */; };
+		4DA0A71F1B4D5A8200C30561 /* FriendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DA0A71D1B4D5A8200C30561 /* FriendTableViewCell.xib */; };
 		4DA674121B4426E50081BDB3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DA674101B4426E50081BDB3 /* LaunchScreen.xib */; };
 		4DA6741E1B4426E50081BDB3 /* par_ou_imparTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA6741D1B4426E50081BDB3 /* par_ou_imparTests.swift */; };
 		4DBB9B1C1B44284400B49658 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBB9B121B44284400B49658 /* AppDelegate.swift */; };
@@ -124,6 +126,8 @@
 		4D6DFE5F1B45E36D00F406E3 /* HandCountCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandCountCollectionViewCell.swift; sourceTree = "<group>"; };
 		4D6DFE601B45E36D00F406E3 /* HandCountCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HandCountCollectionViewCell.xib; sourceTree = "<group>"; };
 		4D6DFE641B4600A200F406E3 /* GameTableViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTableViewManager.swift; sourceTree = "<group>"; };
+		4DA0A71C1B4D5A8200C30561 /* FriendTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
+		4DA0A71D1B4D5A8200C30561 /* FriendTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendTableViewCell.xib; sourceTree = "<group>"; };
 		4DA674021B4426E40081BDB3 /* par-ou-impar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "par-ou-impar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DA674061B4426E50081BDB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DA674111B4426E50081BDB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -399,6 +403,15 @@
 			path = Games;
 			sourceTree = "<group>";
 		};
+		4DA0A71B1B4D5A7200C30561 /* Friend */ = {
+			isa = PBXGroup;
+			children = (
+				4DA0A71C1B4D5A8200C30561 /* FriendTableViewCell.swift */,
+				4DA0A71D1B4D5A8200C30561 /* FriendTableViewCell.xib */,
+			);
+			path = Friend;
+			sourceTree = "<group>";
+		};
 		4DA673F91B4426E40081BDB3 = {
 			isa = PBXGroup;
 			children = (
@@ -620,6 +633,7 @@
 		4DBB9B341B44288700B49658 /* UITableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				4DA0A71B1B4D5A7200C30561 /* Friend */,
 				576A20071B485DA3008C24CE /* Game */,
 				4DBB9B351B44288700B49658 /* NewTableViewCell.swift */,
 				4DBB9B361B44288700B49658 /* NewTableViewCell.xib */,
@@ -779,6 +793,7 @@
 				4D6DFE4B1B458BCF00F406E3 /* FightViewController.xib in Resources */,
 				4DBB9B401B44288700B49658 /* Header.xib in Resources */,
 				4D6DFE5D1B45DE3500F406E3 /* ChooseHandView.xib in Resources */,
+				4DA0A71F1B4D5A8200C30561 /* FriendTableViewCell.xib in Resources */,
 				4D6DFE2E1B44641C00F406E3 /* HomeViewController.xib in Resources */,
 				4D6DFE331B44677400F406E3 /* NewGameViewController.xib in Resources */,
 				4DA674121B4426E50081BDB3 /* LaunchScreen.xib in Resources */,
@@ -878,6 +893,7 @@
 				4D6DFE211B4445CF00F406E3 /* User.swift in Sources */,
 				576A200E1B498CFC008C24CE /* ImageDownloadExtension.swift in Sources */,
 				4DBB9B391B44288700B49658 /* Messages.swift in Sources */,
+				4DA0A71E1B4D5A8200C30561 /* FriendTableViewCell.swift in Sources */,
 				4D6DFE3E1B4473DD00F406E3 /* Game.swift in Sources */,
 				4D4E51C81B4C3F0C0049D474 /* SimpleLoading.swift in Sources */,
 				4D6DFE521B459EA800F406E3 /* PlaceholderExtension.swift in Sources */,
