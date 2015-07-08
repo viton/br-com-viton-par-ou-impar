@@ -9,6 +9,7 @@ pod 'Parse'
 pod 'FBSDKCoreKit'
 pod 'FBSDKLoginKit'
 pod 'FBSDKShareKit'
+pod 'IQKeyboardManager',        '3.2.3'
 
 end
 

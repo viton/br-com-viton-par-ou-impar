@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChooseFriendViewController" customModule="par_ou_impar" customModuleProvider="target">
             <connections>
+                <outlet property="searchField" destination="BbN-qn-Irb" id="LdU-lh-gZX"/>
                 <outlet property="tableView" destination="DDZ-lW-C9t" id="62t-f7-AEH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -16,8 +17,8 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ycd-gc-V3m">
-                    <rect key="frame" x="29" y="42" width="48" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ycd-gc-V3m">
+                    <rect key="frame" x="15" y="22" width="48" height="30"/>
                     <state key="normal" title="Cancel">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -26,19 +27,27 @@
                     </connections>
                 </button>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="DDZ-lW-C9t">
-                    <rect key="frame" x="0.0" y="87" width="600" height="513"/>
+                    <rect key="frame" x="0.0" y="67" width="600" height="533"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </tableView>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BbN-qn-Irb">
+                    <rect key="frame" x="78" y="22" width="507" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="DDZ-lW-C9t" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="3zY-A3-4qa"/>
-                <constraint firstItem="Ycd-gc-V3m" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="42" id="Bqp-xY-f9X"/>
+                <constraint firstItem="Ycd-gc-V3m" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="22" id="Bqp-xY-f9X"/>
                 <constraint firstItem="DDZ-lW-C9t" firstAttribute="top" secondItem="Ycd-gc-V3m" secondAttribute="bottom" constant="15" id="DGZ-ET-Luf"/>
                 <constraint firstAttribute="bottom" secondItem="DDZ-lW-C9t" secondAttribute="bottom" id="TX1-v0-TB2"/>
+                <constraint firstItem="BbN-qn-Irb" firstAttribute="leading" secondItem="Ycd-gc-V3m" secondAttribute="trailing" constant="15" id="dFY-oM-MAb"/>
                 <constraint firstAttribute="trailing" secondItem="DDZ-lW-C9t" secondAttribute="trailing" id="hXL-2I-7fd"/>
+                <constraint firstAttribute="trailing" secondItem="BbN-qn-Irb" secondAttribute="trailing" constant="15" id="jnm-IQ-wa6"/>
+                <constraint firstItem="Ycd-gc-V3m" firstAttribute="centerY" secondItem="BbN-qn-Irb" secondAttribute="centerY" id="mo7-qE-taO"/>
                 <constraint firstItem="DDZ-lW-C9t" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="spt-F0-hSO"/>
-                <constraint firstItem="Ycd-gc-V3m" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="29" id="uqR-dR-Euk"/>
+                <constraint firstItem="Ycd-gc-V3m" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="uqR-dR-Euk"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
             <variation key="default">
