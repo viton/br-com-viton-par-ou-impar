@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Foundation
 
 protocol ChooseFriendsDelegate {
     
@@ -17,10 +17,13 @@ protocol ChooseFriendsDelegate {
 
 class ChooseFriendViewController: BaseViewController, FriendsCallback {
     
+    @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var tableView: UITableView!
+    
     var tableManager:BaseTableViewManager?
     var noFriendsPlaceholder:Placeholder?
     var delegate:ChooseFriendsDelegate?
+    var friends:Array<User>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +39,19 @@ class ChooseFriendViewController: BaseViewController, FriendsCallback {
     
     func setup() {
         tableManager = FriendsTableViewManager(tableView: tableView, delegate: self)
+        searchField.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
+    }
+    
+    func textFieldDidChange(textField: UITextField) {
+        var text = textField.text
+        if count(text) == 0 {
+            //reset search
+            tableManager?.updateWithData(friends!)
+        }else {
+            //FILTER and update table
+            var filteredFriends = filterFriends(text)
+            tableManager?.updateWithData(filteredFriends)
+        }
     }
     
     func requestFriends() {
@@ -45,6 +61,16 @@ class ChooseFriendViewController: BaseViewController, FriendsCallback {
     
     @IBAction func cancelAction(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: {})
+    }
+    
+    func filterFriends(filterText:String) -> [User] {
+        var filteredFriends = Array<User>()
+        for friend in friends! {
+            if friend.name?.uppercaseString.rangeOfString(filterText.uppercaseString) != nil {
+                filteredFriends.append(friend)
+            }
+        }
+        return filteredFriends
     }
     
     override func didSelectObject(object:AnyObject) {
@@ -72,6 +98,7 @@ extension ChooseFriendViewController: PlaceholderActionDelegate {
 extension ChooseFriendViewController:FriendsCallback {
     
     func onSuccess(friends:Array<User>) {
+        self.friends = friends
         tableManager?.updateWithData(friends)
     }
     

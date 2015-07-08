@@ -18,6 +18,7 @@ PODS:
     - FBSDKCoreKit
   - FBSDKShareKit (4.3.0):
     - FBSDKCoreKit
+  - IQKeyboardManager (3.2.3)
   - Parse (1.7.5):
     - Bolts/Tasks (>= 1.2.0)
 
@@ -25,6 +26,7 @@ DEPENDENCIES:
   - FBSDKCoreKit
   - FBSDKLoginKit
   - FBSDKShareKit
+  - IQKeyboardManager (= 3.2.3)
   - Parse
 
 SPEC CHECKSUMS:
@@ -32,6 +34,7 @@ SPEC CHECKSUMS:
   FBSDKCoreKit: a3a60225a84abeace291d0fe71cae29a627382c2
   FBSDKLoginKit: 6bc2f8f2628c3b6d2e346762fff8cb55cfd3a58d
   FBSDKShareKit: 15806d69714de39d5dff2c84645f4cde23f5876e
+  IQKeyboardManager: 6ca5c54e3776eb54af4c7caf515833f3cd761d59
   Parse: 7c0f115eff3e0cea3fac08d50bda47154edb8832
 
 COCOAPODS: 0.37.2
