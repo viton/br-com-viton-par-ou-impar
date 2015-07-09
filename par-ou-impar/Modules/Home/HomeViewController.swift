@@ -31,7 +31,7 @@ class HomeViewController: BaseViewController {
     }
     
     func requestGames() {
-        view.startLoading()
+        view.startLoadingRandom("Loading Games")
         GameProvider.getGames(FBSDKAccessToken.currentAccessToken().userID, callback:self)
     }
     

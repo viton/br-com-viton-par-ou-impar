@@ -28,6 +28,7 @@ class GameTableViewManager: BaseTableViewManager {
             gameCell.nameLabel.text = oponent.name
             gameCell.imageUser.setImage(url: oponent.profileImage!)
             gameCell.imageUser.circle()
+            gameCell.statusLabel.text = game.getStatus()
         }
     }
     

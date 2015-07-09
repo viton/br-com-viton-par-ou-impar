@@ -15,10 +15,12 @@ class NewGameViewController: BaseViewController {
     @IBOutlet weak var friendImageView: UIImageView!
     @IBOutlet weak var chooseHandView: ChooseHandView!
     @IBOutlet weak var betTextField: UITextField!
+    
     var chooseFriendViewController:ChooseFriendViewController?
     var friend:User?
     var me:User?
     var count:Int?
+    var hand:FightHand?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +50,7 @@ class NewGameViewController: BaseViewController {
         let game = Game()
         game.enemy = friend?.facebookId
         game.owner = me?.facebookId
-        game.ownerHand = "normal"
+        game.ownerHand = hand?.handId
         game.ownerCount = count
         game.betText = betTextField.text
         GameProvider.createGame(game, owner:me!, enemy:friend!, callback: self)
@@ -74,6 +76,10 @@ extension NewGameViewController: ChooseHandViewDelegate {
     
     func didSelectHandCount(count: Int) {
         self.count = count
+    }
+    
+    func didSelectHand(hand: FightHand) {
+        self.hand = hand
     }
     
 }

@@ -12,12 +12,16 @@ protocol ChooseHandViewDelegate {
     
     func didSelectHandCount(count:Int)
     
+    func didSelectHand(hand:FightHand)
+    
 }
 
 class ChooseHandView: BaseComponentsView {
     
+    @IBOutlet weak var handCollectionView: UICollectionView!
     @IBOutlet private weak var collectionView: UICollectionView!
     var chooseHandViewDelegate:ChooseHandViewDelegate?
+    var handCollectionManager:CollectionViewManager?
     
     override func customSetup() {
         var nib = UINib(nibName: "HandCountCollectionViewCell", bundle: NSBundle(forClass: self.dynamicType))
@@ -25,6 +29,18 @@ class ChooseHandView: BaseComponentsView {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.backgroundColor = UIColor.clearColor()
+        handCollectionManager = HandCollectionViewManager(collectionView: handCollectionView, delegate:self)
+        handCollectionManager?.updateWithData(FightHandProvider.getHands())
+    }
+    
+}
+
+extension ChooseHandView: BaseTableViewManagerDelegate {
+    
+    func didSelectObject(object: AnyObject) {
+        if let hand = object as? FightHand {
+            chooseHandViewDelegate?.didSelectHand(hand)
+        }
     }
     
 }

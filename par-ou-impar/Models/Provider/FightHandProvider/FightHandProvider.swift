@@ -12,8 +12,15 @@ class FightHandProvider: NSObject {
    
     class func getHands() -> [FightHand] {
         var array = Array<FightHand>()
-        array.append(FightHand(name: "Normal", imagePrefix: "img_mao_normal_"))
-        return []
+        array.append(FightHand(name: "Normal", imagePrefix: "img_mao_normal_", handId: "normal"))
+        array.append(FightHand(name: "Rocker", imagePrefix: "img_mao_rocker_", handId: "rocker"))
+        array.append(FightHand(name: "Normal", imagePrefix: "img_mao_normal_", handId: "normal"))
+        array.append(FightHand(name: "Rocker", imagePrefix: "img_mao_rocker_", handId: "rocker"))
+        array.append(FightHand(name: "Normal", imagePrefix: "img_mao_normal_", handId: "normal"))
+        array.append(FightHand(name: "Rocker", imagePrefix: "img_mao_rocker_", handId: "rocker"))
+        array.append(FightHand(name: "Normal", imagePrefix: "img_mao_normal_", handId: "normal"))
+        array.append(FightHand(name: "Rocker", imagePrefix: "img_mao_rocker_", handId: "rocker"))
+        return array
     }
     
 }

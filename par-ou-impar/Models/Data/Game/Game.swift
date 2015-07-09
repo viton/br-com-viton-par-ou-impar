@@ -89,4 +89,17 @@ class Game: PFObject, PFSubclassing {
         return enemy
     }
     
+    func getStatus() -> String {
+        if(finish!.boolValue == false) {
+            if(getMe().facebookId == owner) {
+                return "Waiting for opponent"
+            }else {
+                return "Ready for Fight"
+            }
+        }
+        
+        
+        return "Finish"
+    }
+    
 }

@@ -10,8 +10,15 @@ import UIKit
 
 extension UIView {
 
-    func startLoading() {
+    func startLoadingRandom(message:String) {
         let loading = OneHandLoading(frame:CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height))
+        addSubview(loading)
+        addAllConstraints(loading)
+        loading.start()
+    }
+    
+    func startLoading() {
+        let loading = SimpleLoading(frame:CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height))
         addSubview(loading)
         addAllConstraints(loading)
         loading.start()
