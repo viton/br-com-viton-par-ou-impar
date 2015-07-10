@@ -71,10 +71,13 @@ extension HomeViewController: GameTableViewManagerDelegate {
     }
     
     func didSelectFinishGame(game:Game) {
-        let fightViewController = FightViewController()
+//        let fightViewController = FightViewController()
+//        fightViewController.game = game
+//        navigationController?.pushViewController(fightViewController, animated: true)
+
+        let fightViewController = MatchResultViewController()
         fightViewController.game = game
-        navigationController?.pushViewController(fightViewController, animated: true)
-    }
+        navigationController?.pushViewController(fightViewController, animated: true)}
     
 }
 
