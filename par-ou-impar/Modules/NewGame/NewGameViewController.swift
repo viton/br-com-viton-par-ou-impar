@@ -10,18 +10,27 @@ import UIKit
 
 
 class NewGameViewController: BaseViewController {
-
+    
+    @IBOutlet weak var friendNameLabel: UILabel!
+    @IBOutlet weak var friendImageView: UIImageView!
     @IBOutlet weak var chooseHandView: ChooseHandView!
     @IBOutlet weak var betTextField: UITextField!
+    
     var chooseFriendViewController:ChooseFriendViewController?
     var friend:User?
     var me:User?
     var count:Int?
+    var hand:FightHand?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setup()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBarHidden = true
     }
 
     func setup() {
@@ -41,7 +50,7 @@ class NewGameViewController: BaseViewController {
         let game = Game()
         game.enemy = friend?.facebookId
         game.owner = me?.facebookId
-        game.ownerHand = "normal"
+        game.ownerHand = hand?.handId
         game.ownerCount = count
         game.betText = betTextField.text
         GameProvider.createGame(game, owner:me!, enemy:friend!, callback: self)
@@ -69,6 +78,10 @@ extension NewGameViewController: ChooseHandViewDelegate {
         self.count = count
     }
     
+    func didSelectHand(hand: FightHand) {
+        self.hand = hand
+    }
+    
 }
 
 //MARK: ChooseFriendsDelegate
@@ -77,6 +90,8 @@ extension NewGameViewController: ChooseFriendsDelegate {
     func didSelectFriend(friend: User) {
         chooseFriendViewController?.dismissViewControllerAnimated(true, completion: {
             self.friend = friend
+            self.friendNameLabel.text = friend.name
+            self.friendImageView.setImage(url: friend.profileImage!)
         })
     }
 }

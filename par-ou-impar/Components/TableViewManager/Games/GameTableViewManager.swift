@@ -28,6 +28,7 @@ class GameTableViewManager: BaseTableViewManager {
             gameCell.nameLabel.text = oponent.name
             gameCell.imageUser.setImage(url: oponent.profileImage!)
             gameCell.imageUser.circle()
+            gameCell.statusLabel.text = game.getStatus()
         }
     }
     
@@ -42,9 +43,9 @@ class GameTableViewManager: BaseTableViewManager {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let game = data![indexPath.row] as! Game
-        if game.finish!.boolValue {
+        if game.finish!.boolValue == true {
             gameTableDelegate?.didSelectFinishGame(game)
-        }else if(game.owner! == LoginProvider.user!.facebookId) {
+        }else if(game.owner! != LoginProvider.user!.facebookId!) {
             gameTableDelegate?.didSelectGameToReply(game)
         }
     }

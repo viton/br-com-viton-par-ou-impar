@@ -14,6 +14,10 @@ class OneHandLoading: Loading {
     var timer:NSTimer?
     var imageIndex:Int = 1
     
+    override func customSetup() {
+        backgroundColor = ColorProvider.getAppColor()
+    }
+    
     override func start() {
         timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "updateImage", userInfo: nil, repeats: true)
     }

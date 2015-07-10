@@ -23,6 +23,12 @@ protocol CreateGameCallback:BaseProviderCallback {
     
 }
 
+protocol ReplyGameCallback:BaseProviderCallback {
+    
+    func onSuccessReplyGame(game:Game)
+    
+}
+
 class GameProvider: NSObject {
  
     class func createGame(game:Game, owner:User, enemy:User, callback:CreateGameCallback) {
@@ -58,13 +64,16 @@ class GameProvider: NSObject {
         })
     }
     
-    class func replyGame(game:Game) {
+    class func replyGame(game:Game, callback:ReplyGameCallback) {
         game.saveInBackground({ (result:AnyObject?) -> Void in
-            
+                callback.prepareToRespose()
+                callback.onSuccessReplyGame(game)
             }, errorBlock:{ (result:String) -> Void in
-                
+                callback.prepareToRespose()
+                callback.onFailRequest(result)
             }, noConnection:{
-                
+                callback.prepareToRespose()
+                callback.onFailRequest("Try Again")
         })
     }
     

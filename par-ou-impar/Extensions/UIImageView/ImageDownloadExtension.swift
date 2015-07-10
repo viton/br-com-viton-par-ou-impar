@@ -18,6 +18,8 @@ extension UIImageView {
                 if data != nil {
                     let image = UIImage(data: data)
                     self.image = image
+                    self.circle()
+                    self.circle()
                 }
             })
         }

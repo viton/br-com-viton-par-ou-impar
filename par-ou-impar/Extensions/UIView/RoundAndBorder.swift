@@ -17,8 +17,14 @@ extension UIView {
     
     func circle() {
         layer.masksToBounds = false
-        layer.cornerRadius = frame.height/2
+        layer.cornerRadius = max(frame.width, frame.height)/2
         clipsToBounds = true
+    }
+    
+    func square() {
+        layer.masksToBounds = true
+        layer.cornerRadius = 0
+        clipsToBounds = false
     }
     
 }

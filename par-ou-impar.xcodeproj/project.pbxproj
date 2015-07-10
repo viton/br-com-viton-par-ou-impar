@@ -73,6 +73,11 @@
 		576A200A1B485DD3008C24CE /* GameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576A20081B485DD3008C24CE /* GameTableViewCell.swift */; };
 		576A200B1B485DD3008C24CE /* GameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 576A20091B485DD3008C24CE /* GameTableViewCell.xib */; };
 		576A200E1B498CFC008C24CE /* ImageDownloadExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576A200D1B498CFC008C24CE /* ImageDownloadExtension.swift */; };
+		576A20111B4CC4A1008C24CE /* HandCollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576A20101B4CC4A1008C24CE /* HandCollectionViewManager.swift */; };
+		576A20151B4CC4FA008C24CE /* HandCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576A20131B4CC4FA008C24CE /* HandCollectionViewCell.swift */; };
+		576A20161B4CC4FA008C24CE /* HandCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 576A20141B4CC4FA008C24CE /* HandCollectionViewCell.xib */; };
+		576A20191B4CC6DE008C24CE /* FightHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576A20181B4CC6DE008C24CE /* FightHand.swift */; };
+		576A201C1B4CC7A7008C24CE /* FightHandProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576A201B1B4CC7A7008C24CE /* FightHandProvider.swift */; };
 		7B5DB5E9138467B81526F4C7 /* Pods_par_ou_impar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48BE49A876F579D1F50DBC18 /* Pods_par_ou_impar.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -159,6 +164,11 @@
 		576A20081B485DD3008C24CE /* GameTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTableViewCell.swift; sourceTree = "<group>"; };
 		576A20091B485DD3008C24CE /* GameTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameTableViewCell.xib; sourceTree = "<group>"; };
 		576A200D1B498CFC008C24CE /* ImageDownloadExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloadExtension.swift; sourceTree = "<group>"; };
+		576A20101B4CC4A1008C24CE /* HandCollectionViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandCollectionViewManager.swift; sourceTree = "<group>"; };
+		576A20131B4CC4FA008C24CE /* HandCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandCollectionViewCell.swift; sourceTree = "<group>"; };
+		576A20141B4CC4FA008C24CE /* HandCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HandCollectionViewCell.xib; sourceTree = "<group>"; };
+		576A20181B4CC6DE008C24CE /* FightHand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FightHand.swift; sourceTree = "<group>"; };
+		576A201B1B4CC7A7008C24CE /* FightHandProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FightHandProvider.swift; sourceTree = "<group>"; };
 		6E734F9821E2E00AC2CF5BE6 /* Pods-par-ou-impar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-par-ou-impar.release.xcconfig"; path = "Pods/Target Support Files/Pods-par-ou-impar/Pods-par-ou-impar.release.xcconfig"; sourceTree = "<group>"; };
 		A696C356A9A5315EAD107F01 /* Pods-par-ou-impar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-par-ou-impar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-par-ou-impar/Pods-par-ou-impar.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -224,6 +234,7 @@
 			children = (
 				4D4E51DA1B4C44800049D474 /* Base */,
 				4D4E51E11B4C44B20049D474 /* Color */,
+				576A200F1B4CC483008C24CE /* Hand */,
 			);
 			path = CollectionViewManager;
 			sourceTree = "<group>";
@@ -249,6 +260,7 @@
 		4D6DFE1D1B44457400F406E3 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				576A20171B4CC6CD008C24CE /* FightHand */,
 				4D6DFE391B44711E00F406E3 /* Game */,
 				4D6DFE1F1B4445BD00F406E3 /* User */,
 			);
@@ -259,6 +271,7 @@
 			isa = PBXGroup;
 			children = (
 				576A20041B484788008C24CE /* Color */,
+				576A201A1B4CC798008C24CE /* FightHandProvider */,
 				4D6DFE531B45B6EB00F406E3 /* Friends */,
 				4D6DFE3F1B447F6400F406E3 /* Game */,
 				4D6DFE221B44479000F406E3 /* LoginProvider */,
@@ -589,6 +602,7 @@
 				4DBB9B2B1B44288700B49658 /* Header */,
 				4DBB9B2E1B44288700B49658 /* Loading */,
 				4DBB9B311B44288700B49658 /* Placeholder */,
+				576A20121B4CC4D4008C24CE /* UICollectionViewCell */,
 				4DBB9B341B44288700B49658 /* UITableViewCell */,
 			);
 			path = ViewComponents;
@@ -675,6 +689,39 @@
 				576A200D1B498CFC008C24CE /* ImageDownloadExtension.swift */,
 			);
 			path = UIImageView;
+			sourceTree = "<group>";
+		};
+		576A200F1B4CC483008C24CE /* Hand */ = {
+			isa = PBXGroup;
+			children = (
+				576A20101B4CC4A1008C24CE /* HandCollectionViewManager.swift */,
+			);
+			path = Hand;
+			sourceTree = "<group>";
+		};
+		576A20121B4CC4D4008C24CE /* UICollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				576A20131B4CC4FA008C24CE /* HandCollectionViewCell.swift */,
+				576A20141B4CC4FA008C24CE /* HandCollectionViewCell.xib */,
+			);
+			path = UICollectionViewCell;
+			sourceTree = "<group>";
+		};
+		576A20171B4CC6CD008C24CE /* FightHand */ = {
+			isa = PBXGroup;
+			children = (
+				576A20181B4CC6DE008C24CE /* FightHand.swift */,
+			);
+			path = FightHand;
+			sourceTree = "<group>";
+		};
+		576A201A1B4CC798008C24CE /* FightHandProvider */ = {
+			isa = PBXGroup;
+			children = (
+				576A201B1B4CC7A7008C24CE /* FightHandProvider.swift */,
+			);
+			path = FightHandProvider;
 			sourceTree = "<group>";
 		};
 		ECA33357D748A452C62FF810 /* Frameworks */ = {
@@ -779,6 +826,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D4E51E91B4C5C010049D474 /* ColorCollectionViewCell.xib in Resources */,
+				576A20161B4CC4FA008C24CE /* HandCollectionViewCell.xib in Resources */,
 				4D4E51CA1B4C3F8C0049D474 /* SimpleLoading.xib in Resources */,
 				4D4E51DF1B4C44800049D474 /* BaseCollectionViewCell.xib in Resources */,
 				4DBB9B521B442A7700B49658 /* LoginViewController.xib in Resources */,
@@ -873,6 +921,7 @@
 				4D6DFE4F1B458F4C00F406E3 /* MatchResultViewController.swift in Sources */,
 				4D4E51CC1B4C404D0049D474 /* OneHandLoading.swift in Sources */,
 				4D6DFE241B4447AD00F406E3 /* LoginProvider.swift in Sources */,
+				576A20111B4CC4A1008C24CE /* HandCollectionViewManager.swift in Sources */,
 				4DBB9B411B44288700B49658 /* Loading.swift in Sources */,
 				4D6DFE5B1B45DD1C00F406E3 /* ChooseHandView.swift in Sources */,
 				4D6DFE551B45B70300F406E3 /* FriendsProvider.swift in Sources */,
@@ -880,6 +929,7 @@
 				4DBB9B511B442A7700B49658 /* LoginViewController.swift in Sources */,
 				4D6DFE611B45E36D00F406E3 /* HandCountCollectionViewCell.swift in Sources */,
 				4D6DFE321B44677400F406E3 /* NewGameViewController.swift in Sources */,
+				576A20191B4CC6DE008C24CE /* FightHand.swift in Sources */,
 				4D6DFE371B446A0200F406E3 /* ChooseFriendViewController.swift in Sources */,
 				4D6DFE2C1B44640B00F406E3 /* HomeViewController.swift in Sources */,
 				4D6DFE271B44498F00F406E3 /* PFObjectExtension.swift in Sources */,
@@ -904,10 +954,12 @@
 				4D4E51E51B4C48430049D474 /* RoundAndBorder.swift in Sources */,
 				4D6DFE581B45BDAD00F406E3 /* FriendsTableViewManager.swift in Sources */,
 				4DBB9B371B44288700B49658 /* BaseViewController.swift in Sources */,
+				576A201C1B4CC7A7008C24CE /* FightHandProvider.swift in Sources */,
 				576A20061B4847A5008C24CE /* ColorProvider.swift in Sources */,
 				4D6DFE411B447F6E00F406E3 /* GameProvider.swift in Sources */,
 				4DBB9B3E1B44288700B49658 /* BaseComponentsView.swift in Sources */,
 				4D6DFE651B4600A200F406E3 /* GameTableViewManager.swift in Sources */,
+				576A20151B4CC4FA008C24CE /* HandCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1030,11 +1082,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = "par-ou-impar/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -1044,11 +1098,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = "par-ou-impar/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
