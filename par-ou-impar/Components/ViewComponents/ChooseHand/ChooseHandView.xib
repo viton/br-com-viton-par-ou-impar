@@ -16,14 +16,8 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="169"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Escolha a quantidade" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFc-hY-DBr">
-                    <rect key="frame" x="15" y="15" width="570" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Ygp-PN-Dq0">
-                    <rect key="frame" x="0.0" y="44" width="600" height="75"/>
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="99"/>
                     <inset key="scrollIndicatorInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="10N-C3-drM">
                         <size key="itemSize" width="50" height="50"/>
@@ -33,10 +27,10 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qSU-rG-xSp">
-                    <rect key="frame" x="0.0" y="119" width="600" height="50"/>
+                    <rect key="frame" x="0.0" y="99" width="600" height="70"/>
                     <subviews>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="X3M-7Y-0Pr">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="70"/>
                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="naE-uX-tIh">
                                 <size key="itemSize" width="50" height="50"/>
                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -51,7 +45,7 @@
                         <constraint firstAttribute="height" constant="73" id="aov-Tu-ybe"/>
                         <constraint firstItem="X3M-7Y-0Pr" firstAttribute="top" secondItem="qSU-rG-xSp" secondAttribute="top" id="nHs-Bl-Naa"/>
                         <constraint firstAttribute="trailing" secondItem="X3M-7Y-0Pr" secondAttribute="trailing" id="oQH-DG-SmI"/>
-                        <constraint firstAttribute="height" constant="50" id="ttG-IB-bup"/>
+                        <constraint firstAttribute="height" constant="70" id="ttG-IB-bup"/>
                     </constraints>
                     <variation key="default">
                         <mask key="constraints">
@@ -62,23 +56,14 @@
             </subviews>
             <constraints>
                 <constraint firstItem="Ygp-PN-Dq0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="5Br-wM-NWv"/>
-                <constraint firstItem="Ygp-PN-Dq0" firstAttribute="top" secondItem="gFc-hY-DBr" secondAttribute="bottom" constant="8" id="8nN-ma-kCo"/>
-                <constraint firstItem="gFc-hY-DBr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="Dtw-Xi-nJx"/>
                 <constraint firstItem="qSU-rG-xSp" firstAttribute="top" secondItem="Ygp-PN-Dq0" secondAttribute="bottom" id="GHZ-d1-9fh"/>
-                <constraint firstAttribute="trailing" secondItem="gFc-hY-DBr" secondAttribute="trailing" constant="15" id="GZz-Vw-o6w"/>
                 <constraint firstAttribute="trailing" secondItem="qSU-rG-xSp" secondAttribute="trailing" id="Mol-Vq-JDY"/>
+                <constraint firstItem="Ygp-PN-Dq0" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="N5A-AY-sXN"/>
                 <constraint firstItem="qSU-rG-xSp" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="aB7-Dv-Sew"/>
-                <constraint firstItem="qSU-rG-xSp" firstAttribute="top" secondItem="gFc-hY-DBr" secondAttribute="bottom" constant="21" id="c0l-Gg-d9A"/>
-                <constraint firstItem="gFc-hY-DBr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="cwH-Rn-8AM"/>
                 <constraint firstAttribute="bottom" secondItem="qSU-rG-xSp" secondAttribute="bottom" id="hnd-sh-gYN"/>
                 <constraint firstAttribute="trailing" secondItem="Ygp-PN-Dq0" secondAttribute="trailing" id="xWc-EY-RWY"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <variation key="default">
-                <mask key="constraints">
-                    <exclude reference="c0l-Gg-d9A"/>
-                </mask>
-            </variation>
             <point key="canvasLocation" x="242" y="554.5"/>
         </view>
     </objects>

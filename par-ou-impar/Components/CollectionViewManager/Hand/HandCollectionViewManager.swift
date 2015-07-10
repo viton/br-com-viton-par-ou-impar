@@ -28,7 +28,7 @@ class HandCollectionViewManager: CollectionViewManager {
     }
     
     override func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSize(width: 100, height: collectionView.frame.size.height)
+        return CGSize(width: collectionView.frame.size.height*0.8, height: collectionView.frame.size.height)
     }
    
 }
