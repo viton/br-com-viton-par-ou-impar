@@ -22,12 +22,21 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" image="img_mao_normal_0" translatesAutoresizingMaskIntoConstraints="NO" id="gZg-8C-hTR">
                         <rect key="frame" x="5" y="5" width="90" height="62"/>
                     </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dB7-Wj-Few">
+                        <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="Nvn-Do-Ovz"/>
+                            <constraint firstAttribute="height" constant="20" id="Wqe-eK-3SN"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="xIU-x3-4Gx" secondAttribute="bottom" constant="5" id="50u-q8-VJ7"/>
+                <constraint firstItem="dB7-Wj-Few" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="7Pq-dG-ci0"/>
                 <constraint firstItem="xIU-x3-4Gx" firstAttribute="top" secondItem="gZg-8C-hTR" secondAttribute="bottom" constant="5" id="84L-6V-2Wa"/>
+                <constraint firstItem="dB7-Wj-Few" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="K7U-ji-qXP"/>
                 <constraint firstAttribute="trailing" secondItem="xIU-x3-4Gx" secondAttribute="trailing" constant="5" id="OCW-Tv-gCB"/>
                 <constraint firstItem="xIU-x3-4Gx" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="VA3-Cw-xn7"/>
                 <constraint firstItem="gZg-8C-hTR" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="arP-3W-u0L"/>
@@ -38,6 +47,7 @@
             <connections>
                 <outlet property="handImageView" destination="gZg-8C-hTR" id="lyE-AH-Ela"/>
                 <outlet property="nameLabel" destination="xIU-x3-4Gx" id="OLv-zX-ZcN"/>
+                <outlet property="selectedView" destination="dB7-Wj-Few" id="5ah-3l-RGY"/>
             </connections>
             <point key="canvasLocation" x="345" y="316"/>
         </collectionViewCell>

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MatchResultViewController: UIViewController {
+class MatchResultViewController: BaseViewController {
 
     var me:User?
     var enemy:User?

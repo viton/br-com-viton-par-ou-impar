@@ -8,6 +8,8 @@
 #define par_ou_impar_Bridging_Header_h
 
 #import <Parse/Parse.h>
-#import <ParseFacebookUtils/PFFacebookUtils.h>
+#import "Colors.h"
+#import "Fonts.h"
+#import "MainStyleSheet.h"
 
 #endif

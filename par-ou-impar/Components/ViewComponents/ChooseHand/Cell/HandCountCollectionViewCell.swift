@@ -18,12 +18,8 @@ class HandCountCollectionViewCell: UICollectionViewCell {
             if self.selected {
                 println("Selected \(countLabel.text)")
                 countLabel.textColor = UIColor.redColor()
-//                circleView.circle()
-//                circleView.backgroundColor = UIColor.whiteColor()
             }else {
                 countLabel.textColor = UIColor.whiteColor()
-//                circleView.circle()
-//                circleView.backgroundColor = UIColor.clearColor()
             }
         }
     }

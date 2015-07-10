@@ -11,6 +11,7 @@ import UIKit
 import Bolts
 import Parse
 import FBSDKCoreKit
+import IQKeyboardManager
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var initialViewController: UIViewController?
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        IQKeyboardManager.sharedManager().shouldResignOnTouchOutside = true
         User.registerSubclass()
         Game.registerSubclass()
         

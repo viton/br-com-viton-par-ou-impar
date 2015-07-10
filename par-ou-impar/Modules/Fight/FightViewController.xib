@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FightViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FightViewController" customModule="par_ou_impar" customModuleProvider="target">
             <connections>
+                <outlet property="myHandImageView" destination="ls0-Rf-SOC" id="HuX-hZ-pRb"/>
+                <outlet property="myImageView" destination="ogr-GK-THh" id="crV-OS-ddc"/>
+                <outlet property="opponentHandImageView" destination="sCr-bq-mXA" id="Csj-XY-i0c"/>
+                <outlet property="opponentImageView" destination="fAZ-jk-tPi" id="dli-38-q2k"/>
+                <outlet property="titleLabel" destination="zqx-tJ-h4l" id="cOi-iE-ZXo"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -13,7 +19,64 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zqx-tJ-h4l">
+                    <rect key="frame" x="300" y="299.5" width="0.0" height="0.0"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="style" value="Intro_Label"/>
+                    </userDefinedRuntimeAttributes>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ls0-Rf-SOC" userLabel="MY_HAND_IMAGE">
+                    <rect key="frame" x="0.0" y="400" width="600" height="200"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="c0d-ln-M1n"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fAZ-jk-tPi" userLabel="OPPONENT_IMAGE">
+                    <rect key="frame" x="17" y="21" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="baL-V4-OWg"/>
+                        <constraint firstAttribute="width" constant="60" id="n56-xe-D5y"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ogr-GK-THh" userLabel="MY_IMAGE">
+                    <rect key="frame" x="525" y="525" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="gwh-gk-60Q"/>
+                        <constraint firstAttribute="width" constant="60" id="nFt-Qj-Zws"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sCr-bq-mXA" userLabel="OPPONENT_HAND">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="NoJ-o9-UD6"/>
+                    </constraints>
+                </imageView>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="sCr-bq-mXA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="4y7-0p-swi"/>
+                <constraint firstAttribute="trailing" secondItem="ls0-Rf-SOC" secondAttribute="trailing" id="Avk-LN-29u"/>
+                <constraint firstItem="fAZ-jk-tPi" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="21" id="GX4-Qh-zqn"/>
+                <constraint firstItem="fAZ-jk-tPi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="17" id="Hor-ze-hDx"/>
+                <constraint firstItem="sCr-bq-mXA" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="IXw-d0-IDf"/>
+                <constraint firstAttribute="centerX" secondItem="zqx-tJ-h4l" secondAttribute="centerX" id="POc-eV-Gv7"/>
+                <constraint firstAttribute="centerY" secondItem="zqx-tJ-h4l" secondAttribute="centerY" constant="0.5" id="YqZ-rU-pdR"/>
+                <constraint firstAttribute="bottom" secondItem="ls0-Rf-SOC" secondAttribute="bottom" id="aS7-Zr-FKo"/>
+                <constraint firstAttribute="bottom" secondItem="ogr-GK-THh" secondAttribute="bottom" constant="15" id="g3M-0S-ej6"/>
+                <constraint firstItem="ls0-Rf-SOC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="mtN-XF-WiR"/>
+                <constraint firstAttribute="centerX" secondItem="ls0-Rf-SOC" secondAttribute="centerX" id="oXK-1h-EvP"/>
+                <constraint firstAttribute="trailing" secondItem="ogr-GK-THh" secondAttribute="trailing" constant="15" id="uO2-rp-EAX"/>
+                <constraint firstAttribute="trailing" secondItem="sCr-bq-mXA" secondAttribute="trailing" id="uhm-8d-oW3"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="oXK-1h-EvP"/>
+                </mask>
+            </variation>
         </view>
     </objects>
 </document>

@@ -12,10 +12,12 @@ class FightHand: NSObject {
    
     var imagePrefix:String?
     var name:String?
+    var handId:String?
     
-    init(name:String, imagePrefix:String) {
+    init(name:String, imagePrefix:String, handId:String) {
         self.imagePrefix = imagePrefix
         self.name = name
+        self.handId = handId
         super.init()
     }
     
