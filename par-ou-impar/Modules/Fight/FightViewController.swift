@@ -68,10 +68,19 @@ class FightViewController: BaseViewController {
     }
     
     func nextFightStep() {
+        if(fightIndex == 2) {
+            myHandImageView.image = UIImage(named: myFightHand!.imagePrefix! + game!.getMyCount().description)
+            opponentHandImageView.image = UIImage(named: friendFightHand!.imagePrefix! + game!.getOpponentCount().description)
+        }
+        if(fightIndex == 3) {
+            titleLabel.hidden = false
+            titleLabel.text = game?.getWinnerText()
+        }
         if(fightIndex == 5) {
             fightTimer?.invalidate()
-            
+            navigationController?.pushViewController(MatchResultViewController(), animated: true)
         }
+        
         fightIndex += 1
     }
     

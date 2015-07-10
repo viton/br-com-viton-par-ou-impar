@@ -43,6 +43,7 @@ class Game: PFObject, PFSubclassing {
         loadEnemy(object)
         betText = object["betText"] as? String
         finish = object["finish"] as? NSNumber
+        winner = object["winner"] as? String
     }
     
     func loadOwner(object:PFObject) {
@@ -72,32 +73,46 @@ class Game: PFObject, PFSubclassing {
     }
     
     func getMe() -> User {
-        if LoginProvider.user?.facebookId == owner {
+        if amIOwner() {
             return ownerUser!
         }
         return enemyUser!
     }
     
     func getMyHand() -> FightHand {
-        if LoginProvider.user?.facebookId == owner {
+        if amIOwner() {
             return FightHandProvider.find(ownerHand!)
         }
         return FightHandProvider.find(enemyHand!)
     }
     
     func getOpponentHand() -> FightHand {
-        if LoginProvider.user?.facebookId != owner {
+        if !amIOwner() {
             return FightHandProvider.find(ownerHand!)
         }
         return FightHandProvider.find(enemyHand!)
     }
     
     func getOponent() -> User {
-        if LoginProvider.user?.facebookId == enemy {
+        if !amIOwner() {
             return ownerUser!
         }
         return enemyUser!
     }
+    func getMyCount() -> Int {
+        if amIOwner() {
+            return ownerCount!.integerValue
+        }
+        return enemyCount!.integerValue
+    }
+    
+    func getOpponentCount() -> Int {
+        if amIOwner() {
+            return enemyCount!.integerValue
+        }
+        return ownerCount!.integerValue
+    }
+    
     
     func decideWinner() -> String? {
         var sum:Int = (enemyCount!.integerValue + ownerCount!.integerValue)
@@ -105,6 +120,13 @@ class Game: PFObject, PFSubclassing {
             return owner
         }
         return enemy
+    }
+    
+    private func amIOwner() -> Bool {
+        if LoginProvider.user?.facebookId == owner {
+            return true
+        }
+        return false
     }
     
     func getStatus() -> String {
@@ -115,9 +137,18 @@ class Game: PFObject, PFSubclassing {
                 return "Ready for Fight"
             }
         }
-        
-        
         return "Finish"
+    }
+    
+    func getWinnerText() -> String {
+        if(winner == getMe().facebookId!) {
+            return "YOU WIN"
+        }
+        return "YOU LOOSE"
+    }
+    
+    func amIWinner() -> Bool {
+        return winner == getMe().facebookId!
     }
     
 }
