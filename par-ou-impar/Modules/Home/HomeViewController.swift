@@ -37,6 +37,7 @@ class HomeViewController: BaseViewController {
     
     func setup() {
         tableManager = GameTableViewManager(tableView: tableView, delegate:self)
+        tableManager?.delegate = self
         chooseColorView.widthConstraint = chooseColorWIfthConstraint
         chooseColorView.callback = self
     }
@@ -61,7 +62,7 @@ class HomeViewController: BaseViewController {
 
 }
 
-extension HomeViewController: BaseTableViewManagerDelegate {
+extension HomeViewController: GameTableViewManagerDelegate {
     
     func didSelectGameToReply(game:Game) {
         let replyGameViewController = ReplyGameViewController()

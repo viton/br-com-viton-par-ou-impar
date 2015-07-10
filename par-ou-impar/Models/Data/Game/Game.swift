@@ -49,6 +49,7 @@ class Game: PFObject, PFSubclassing {
         owner = object["owner"] as? String
         ownerName = object["ownerName"] as? String
         ownerImage = object["ownerImage"] as? String
+        ownerCount = object["ownerCount"] as? NSNumber
         
         ownerUser = User()
         ownerUser?.facebookId = owner
@@ -60,6 +61,7 @@ class Game: PFObject, PFSubclassing {
         enemy = object["enemy"] as? String
         enemyName = object["enemyName"] as? String
         enemyImage = object["enemyImage"] as? String
+        enemyCount = object["enemyCount"] as? NSNumber
         
         enemyUser = User()
         enemyUser?.facebookId = enemy

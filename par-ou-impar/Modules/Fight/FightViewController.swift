@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FightViewController: UIViewController {
+class FightViewController: BaseViewController {
 
     var game:Game?
     var me:User?
