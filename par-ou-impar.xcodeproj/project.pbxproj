@@ -47,6 +47,13 @@
 		4D6DFE651B4600A200F406E3 /* GameTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6DFE641B4600A200F406E3 /* GameTableViewManager.swift */; };
 		4DA0A71E1B4D5A8200C30561 /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA0A71C1B4D5A8200C30561 /* FriendTableViewCell.swift */; };
 		4DA0A71F1B4D5A8200C30561 /* FriendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DA0A71D1B4D5A8200C30561 /* FriendTableViewCell.xib */; };
+		4DA0A7611B50047400C30561 /* BaseStylesheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA0A7521B50047400C30561 /* BaseStylesheet.m */; };
+		4DA0A7621B50047400C30561 /* LabelStylesheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA0A7551B50047400C30561 /* LabelStylesheet.m */; };
+		4DA0A7631B50047400C30561 /* ViewStylesheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA0A7581B50047400C30561 /* ViewStylesheet.m */; };
+		4DA0A7641B50047400C30561 /* MainStylesheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA0A75A1B50047400C30561 /* MainStylesheet.m */; };
+		4DA0A7651B50047400C30561 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 4DA0A75B1B50047400C30561 /* README */; };
+		4DA0A7661B50047400C30561 /* UIView+UIViewStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA0A75E1B50047400C30561 /* UIView+UIViewStyle.m */; };
+		4DA0A7671B50047400C30561 /* UIViewAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA0A7601B50047400C30561 /* UIViewAttributes.m */; };
 		4DA674121B4426E50081BDB3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DA674101B4426E50081BDB3 /* LaunchScreen.xib */; };
 		4DA6741E1B4426E50081BDB3 /* par_ou_imparTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA6741D1B4426E50081BDB3 /* par_ou_imparTests.swift */; };
 		4DBB9B1C1B44284400B49658 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBB9B121B44284400B49658 /* AppDelegate.swift */; };
@@ -133,6 +140,22 @@
 		4D6DFE641B4600A200F406E3 /* GameTableViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTableViewManager.swift; sourceTree = "<group>"; };
 		4DA0A71C1B4D5A8200C30561 /* FriendTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
 		4DA0A71D1B4D5A8200C30561 /* FriendTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendTableViewCell.xib; sourceTree = "<group>"; };
+		4DA0A74C1B50047400C30561 /* Colors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Colors.h; sourceTree = "<group>"; };
+		4DA0A74D1B50047400C30561 /* Fonts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fonts.h; sourceTree = "<group>"; };
+		4DA0A74E1B50047400C30561 /* Stylesheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stylesheet.h; sourceTree = "<group>"; };
+		4DA0A7511B50047400C30561 /* BaseStylesheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseStylesheet.h; sourceTree = "<group>"; };
+		4DA0A7521B50047400C30561 /* BaseStylesheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseStylesheet.m; sourceTree = "<group>"; };
+		4DA0A7541B50047400C30561 /* LabelStylesheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelStylesheet.h; sourceTree = "<group>"; };
+		4DA0A7551B50047400C30561 /* LabelStylesheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelStylesheet.m; sourceTree = "<group>"; };
+		4DA0A7571B50047400C30561 /* ViewStylesheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewStylesheet.h; sourceTree = "<group>"; };
+		4DA0A7581B50047400C30561 /* ViewStylesheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewStylesheet.m; sourceTree = "<group>"; };
+		4DA0A7591B50047400C30561 /* MainStylesheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainStylesheet.h; sourceTree = "<group>"; };
+		4DA0A75A1B50047400C30561 /* MainStylesheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainStylesheet.m; sourceTree = "<group>"; };
+		4DA0A75B1B50047400C30561 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		4DA0A75D1B50047400C30561 /* UIView+UIViewStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+UIViewStyle.h"; sourceTree = "<group>"; };
+		4DA0A75E1B50047400C30561 /* UIView+UIViewStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+UIViewStyle.m"; sourceTree = "<group>"; };
+		4DA0A75F1B50047400C30561 /* UIViewAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewAttributes.h; sourceTree = "<group>"; };
+		4DA0A7601B50047400C30561 /* UIViewAttributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewAttributes.m; sourceTree = "<group>"; };
 		4DA674021B4426E40081BDB3 /* par-ou-impar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "par-ou-impar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DA674061B4426E50081BDB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DA674111B4426E50081BDB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -425,6 +448,77 @@
 			path = Friend;
 			sourceTree = "<group>";
 		};
+		4DA0A74A1B50047400C30561 /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				4DA0A74B1B50047400C30561 /* Constants */,
+				4DA0A74F1B50047400C30561 /* Stylesheets */,
+				4DA0A75C1B50047400C30561 /* UIView */,
+			);
+			path = Style;
+			sourceTree = "<group>";
+		};
+		4DA0A74B1B50047400C30561 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				4DA0A74C1B50047400C30561 /* Colors.h */,
+				4DA0A74D1B50047400C30561 /* Fonts.h */,
+				4DA0A74E1B50047400C30561 /* Stylesheet.h */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		4DA0A74F1B50047400C30561 /* Stylesheets */ = {
+			isa = PBXGroup;
+			children = (
+				4DA0A7501B50047400C30561 /* Components */,
+				4DA0A7591B50047400C30561 /* MainStylesheet.h */,
+				4DA0A75A1B50047400C30561 /* MainStylesheet.m */,
+				4DA0A75B1B50047400C30561 /* README */,
+			);
+			path = Stylesheets;
+			sourceTree = "<group>";
+		};
+		4DA0A7501B50047400C30561 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				4DA0A7511B50047400C30561 /* BaseStylesheet.h */,
+				4DA0A7521B50047400C30561 /* BaseStylesheet.m */,
+				4DA0A7531B50047400C30561 /* LabelStylesheet */,
+				4DA0A7561B50047400C30561 /* ViewStylesheet */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		4DA0A7531B50047400C30561 /* LabelStylesheet */ = {
+			isa = PBXGroup;
+			children = (
+				4DA0A7541B50047400C30561 /* LabelStylesheet.h */,
+				4DA0A7551B50047400C30561 /* LabelStylesheet.m */,
+			);
+			path = LabelStylesheet;
+			sourceTree = "<group>";
+		};
+		4DA0A7561B50047400C30561 /* ViewStylesheet */ = {
+			isa = PBXGroup;
+			children = (
+				4DA0A7571B50047400C30561 /* ViewStylesheet.h */,
+				4DA0A7581B50047400C30561 /* ViewStylesheet.m */,
+			);
+			path = ViewStylesheet;
+			sourceTree = "<group>";
+		};
+		4DA0A75C1B50047400C30561 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				4DA0A75D1B50047400C30561 /* UIView+UIViewStyle.h */,
+				4DA0A75E1B50047400C30561 /* UIView+UIViewStyle.m */,
+				4DA0A75F1B50047400C30561 /* UIViewAttributes.h */,
+				4DA0A7601B50047400C30561 /* UIViewAttributes.m */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
 		4DA673F91B4426E40081BDB3 = {
 			isa = PBXGroup;
 			children = (
@@ -454,6 +548,7 @@
 				4DBB9B151B44284400B49658 /* Models */,
 				4DBB9B161B44284400B49658 /* Modules */,
 				4DBB9B191B44284400B49658 /* Resources */,
+				4DA0A74A1B50047400C30561 /* Style */,
 				4DBB9B1B1B44284400B49658 /* SupportingFiles */,
 				4DA674101B4426E50081BDB3 /* LaunchScreen.xib */,
 				4DA674051B4426E50081BDB3 /* Supporting Files */,
@@ -845,6 +940,7 @@
 				4D6DFE2E1B44641C00F406E3 /* HomeViewController.xib in Resources */,
 				4D6DFE331B44677400F406E3 /* NewGameViewController.xib in Resources */,
 				4DA674121B4426E50081BDB3 /* LaunchScreen.xib in Resources */,
+				4DA0A7651B50047400C30561 /* README in Resources */,
 				4DBB9B461B44288700B49658 /* NewTableViewCell.xib in Resources */,
 				4D6DFE381B446A0200F406E3 /* ChooseFriendViewController.xib in Resources */,
 				4D4E51CE1B4C405B0049D474 /* OneHandLoading.xib in Resources */,
@@ -916,6 +1012,7 @@
 			files = (
 				4DBB9B1C1B44284400B49658 /* AppDelegate.swift in Sources */,
 				4D6DFE451B45867A00F406E3 /* ReplyGameViewController.swift in Sources */,
+				4DA0A7661B50047400C30561 /* UIView+UIViewStyle.m in Sources */,
 				4DBB9B3F1B44288700B49658 /* Header.swift in Sources */,
 				4D4E51D11B4C43680049D474 /* ChooseColorView.swift in Sources */,
 				4D6DFE4F1B458F4C00F406E3 /* MatchResultViewController.swift in Sources */,
@@ -936,17 +1033,22 @@
 				576A200A1B485DD3008C24CE /* GameTableViewCell.swift in Sources */,
 				4D4E51E81B4C5C010049D474 /* ColorCollectionViewCell.swift in Sources */,
 				4DBB9B3B1B44288700B49658 /* TesteTableViewCell.swift in Sources */,
+				4DA0A7621B50047400C30561 /* LabelStylesheet.m in Sources */,
 				4DBB9B3A1B44288700B49658 /* BaseTableViewManager.swift in Sources */,
 				4DBB9B451B44288700B49658 /* NewTableViewCell.swift in Sources */,
 				4DBB9B4A1B4428AD00B49658 /* ConstraintsExtension.swift in Sources */,
 				4D4E51E01B4C44800049D474 /* CollectionViewManager.swift in Sources */,
 				4D6DFE211B4445CF00F406E3 /* User.swift in Sources */,
+				4DA0A7671B50047400C30561 /* UIViewAttributes.m in Sources */,
 				576A200E1B498CFC008C24CE /* ImageDownloadExtension.swift in Sources */,
 				4DBB9B391B44288700B49658 /* Messages.swift in Sources */,
+				4DA0A7611B50047400C30561 /* BaseStylesheet.m in Sources */,
+				4DA0A7631B50047400C30561 /* ViewStylesheet.m in Sources */,
 				4DA0A71E1B4D5A8200C30561 /* FriendTableViewCell.swift in Sources */,
 				4D6DFE3E1B4473DD00F406E3 /* Game.swift in Sources */,
 				4D4E51C81B4C3F0C0049D474 /* SimpleLoading.swift in Sources */,
 				4D6DFE521B459EA800F406E3 /* PlaceholderExtension.swift in Sources */,
+				4DA0A7641B50047400C30561 /* MainStylesheet.m in Sources */,
 				4D4E51DE1B4C44800049D474 /* BaseCollectionViewCell.swift in Sources */,
 				4DBB9B4B1B4428AD00B49658 /* LoadingExtension.swift in Sources */,
 				4D4E51E31B4C44C60049D474 /* ColorCollectionViewManager.swift in Sources */,
@@ -1089,6 +1191,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "par-ou-impar/par_ou_impar-Bridging-Header.h";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "par-ou-impar/par_ou_impar-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -1105,6 +1209,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "par-ou-impar/par_ou_impar-Bridging-Header.h";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "par-ou-impar/par_ou_impar-Bridging-Header.h";
 			};
 			name = Release;
 		};
