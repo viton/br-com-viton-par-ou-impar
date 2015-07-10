@@ -23,4 +23,13 @@ class FightHandProvider: NSObject {
         return array
     }
     
+    class func find(id: String) -> FightHand {
+        for hand in FightHandProvider.getHands() {
+            if(hand.handId == id) {
+                return hand
+            }
+        }
+        return FightHand(name: "Normal", imagePrefix: "img_mao_normal_", handId: "normal")
+    }
+    
 }

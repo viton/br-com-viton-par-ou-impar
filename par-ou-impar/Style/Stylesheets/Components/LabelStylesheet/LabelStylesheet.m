@@ -28,6 +28,10 @@
                      PK_LABEL_TEXT_COLOR: COLOR_SWATCH_BLACK_80,
                      PK_LABEL_FONT: [UIFont fontWithName:FONT_APP_LIGHT size:FONT_SIZE_MEDIUM]
                      },
+             @"Intro_Label": @{
+                     PK_LABEL_TEXT_COLOR: COLOR_SWATCH_WHITE_60,
+                     PK_LABEL_FONT: [UIFont fontWithName:FONT_APP_BOLD size:FONT_SIZE_INTRO]
+                     },
              };
 }
 

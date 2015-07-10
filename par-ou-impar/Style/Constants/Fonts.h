@@ -22,5 +22,6 @@
 #define FONT_SIZE_MEDIUM          16
 #define FONT_SIZE_LARGE           20
 #define FONT_SIZE_EXTRA_LARGE     24
+#define FONT_SIZE_INTRO           36
 
 #endif

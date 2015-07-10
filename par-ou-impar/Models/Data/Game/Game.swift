@@ -50,6 +50,7 @@ class Game: PFObject, PFSubclassing {
         ownerName = object["ownerName"] as? String
         ownerImage = object["ownerImage"] as? String
         ownerCount = object["ownerCount"] as? NSNumber
+        ownerHand = object["ownerHand"] as? String
         
         ownerUser = User()
         ownerUser?.facebookId = owner
@@ -62,6 +63,7 @@ class Game: PFObject, PFSubclassing {
         enemyName = object["enemyName"] as? String
         enemyImage = object["enemyImage"] as? String
         enemyCount = object["enemyCount"] as? NSNumber
+        enemyHand = object["enemyHand"] as? String
         
         enemyUser = User()
         enemyUser?.facebookId = enemy
@@ -74,6 +76,20 @@ class Game: PFObject, PFSubclassing {
             return ownerUser!
         }
         return enemyUser!
+    }
+    
+    func getMyHand() -> FightHand {
+        if LoginProvider.user?.facebookId == owner {
+            return FightHandProvider.find(ownerHand!)
+        }
+        return FightHandProvider.find(enemyHand!)
+    }
+    
+    func getOpponentHand() -> FightHand {
+        if LoginProvider.user?.facebookId != owner {
+            return FightHandProvider.find(ownerHand!)
+        }
+        return FightHandProvider.find(enemyHand!)
     }
     
     func getOponent() -> User {
