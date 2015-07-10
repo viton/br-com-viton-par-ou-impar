@@ -54,6 +54,8 @@
 		4DA0A7651B50047400C30561 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 4DA0A75B1B50047400C30561 /* README */; };
 		4DA0A7661B50047400C30561 /* UIView+UIViewStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA0A75E1B50047400C30561 /* UIView+UIViewStyle.m */; };
 		4DA0A7671B50047400C30561 /* UIViewAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA0A7601B50047400C30561 /* UIViewAttributes.m */; };
+		4DA0A76B1B50276700C30561 /* ButtonStylesheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA0A76A1B50276700C30561 /* ButtonStylesheet.m */; };
+		4DA0A7701B5036BB00C30561 /* UIButton+ButtonStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA0A76E1B5036BB00C30561 /* UIButton+ButtonStyle.m */; };
 		4DA674121B4426E50081BDB3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DA674101B4426E50081BDB3 /* LaunchScreen.xib */; };
 		4DA6741E1B4426E50081BDB3 /* par_ou_imparTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA6741D1B4426E50081BDB3 /* par_ou_imparTests.swift */; };
 		4DBB9B1C1B44284400B49658 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBB9B121B44284400B49658 /* AppDelegate.swift */; };
@@ -156,6 +158,10 @@
 		4DA0A75E1B50047400C30561 /* UIView+UIViewStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+UIViewStyle.m"; sourceTree = "<group>"; };
 		4DA0A75F1B50047400C30561 /* UIViewAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewAttributes.h; sourceTree = "<group>"; };
 		4DA0A7601B50047400C30561 /* UIViewAttributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewAttributes.m; sourceTree = "<group>"; };
+		4DA0A7691B50276700C30561 /* ButtonStylesheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonStylesheet.h; sourceTree = "<group>"; };
+		4DA0A76A1B50276700C30561 /* ButtonStylesheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonStylesheet.m; sourceTree = "<group>"; };
+		4DA0A76D1B5036BB00C30561 /* UIButton+ButtonStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+ButtonStyle.h"; sourceTree = "<group>"; };
+		4DA0A76E1B5036BB00C30561 /* UIButton+ButtonStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ButtonStyle.m"; sourceTree = "<group>"; };
 		4DA674021B4426E40081BDB3 /* par-ou-impar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "par-ou-impar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DA674061B4426E50081BDB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DA674111B4426E50081BDB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -453,6 +459,8 @@
 			children = (
 				4DA0A74B1B50047400C30561 /* Constants */,
 				4DA0A74F1B50047400C30561 /* Stylesheets */,
+				4DA0A76C1B5036BB00C30561 /* UIButton */,
+				4DA0A76F1B5036BB00C30561 /* UILabel */,
 				4DA0A75C1B50047400C30561 /* UIView */,
 			);
 			path = Style;
@@ -482,10 +490,11 @@
 		4DA0A7501B50047400C30561 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				4DA0A7511B50047400C30561 /* BaseStylesheet.h */,
-				4DA0A7521B50047400C30561 /* BaseStylesheet.m */,
+				4DA0A7681B50275100C30561 /* Button */,
 				4DA0A7531B50047400C30561 /* LabelStylesheet */,
 				4DA0A7561B50047400C30561 /* ViewStylesheet */,
+				4DA0A7511B50047400C30561 /* BaseStylesheet.h */,
+				4DA0A7521B50047400C30561 /* BaseStylesheet.m */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -517,6 +526,31 @@
 				4DA0A7601B50047400C30561 /* UIViewAttributes.m */,
 			);
 			path = UIView;
+			sourceTree = "<group>";
+		};
+		4DA0A7681B50275100C30561 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				4DA0A7691B50276700C30561 /* ButtonStylesheet.h */,
+				4DA0A76A1B50276700C30561 /* ButtonStylesheet.m */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
+		4DA0A76C1B5036BB00C30561 /* UIButton */ = {
+			isa = PBXGroup;
+			children = (
+				4DA0A76D1B5036BB00C30561 /* UIButton+ButtonStyle.h */,
+				4DA0A76E1B5036BB00C30561 /* UIButton+ButtonStyle.m */,
+			);
+			path = UIButton;
+			sourceTree = "<group>";
+		};
+		4DA0A76F1B5036BB00C30561 /* UILabel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UILabel;
 			sourceTree = "<group>";
 		};
 		4DA673F91B4426E40081BDB3 = {
@@ -1039,8 +1073,10 @@
 				4DBB9B4A1B4428AD00B49658 /* ConstraintsExtension.swift in Sources */,
 				4D4E51E01B4C44800049D474 /* CollectionViewManager.swift in Sources */,
 				4D6DFE211B4445CF00F406E3 /* User.swift in Sources */,
+				4DA0A7701B5036BB00C30561 /* UIButton+ButtonStyle.m in Sources */,
 				4DA0A7671B50047400C30561 /* UIViewAttributes.m in Sources */,
 				576A200E1B498CFC008C24CE /* ImageDownloadExtension.swift in Sources */,
+				4DA0A76B1B50276700C30561 /* ButtonStylesheet.m in Sources */,
 				4DBB9B391B44288700B49658 /* Messages.swift in Sources */,
 				4DA0A7611B50047400C30561 /* BaseStylesheet.m in Sources */,
 				4DA0A7631B50047400C30561 /* ViewStylesheet.m in Sources */,

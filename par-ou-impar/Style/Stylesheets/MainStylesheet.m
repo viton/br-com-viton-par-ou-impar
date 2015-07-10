@@ -10,6 +10,7 @@
 #import "BaseStylesheet.h"
 #import "ViewStylesheet.h"
 #import "LabelStylesheet.h"
+#import "ButtonStylesheet.h"
 
 #define CLASS_SUFFIX @"Stylesheet"
 
@@ -20,6 +21,7 @@
     [MainStylesheet importStylesheetClass:[BaseStylesheet class] toMainDictionary:mainDictionary];
     [MainStylesheet importStylesheetClass:[ViewStylesheet class] toMainDictionary:mainDictionary];
     [MainStylesheet importStylesheetClass:[LabelStylesheet class] toMainDictionary:mainDictionary];
+    [MainStylesheet importStylesheetClass:[ButtonStylesheet class] toMainDictionary:mainDictionary];
     
     return mainDictionary;
 }

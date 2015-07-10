@@ -27,8 +27,10 @@
 
 #define COLOR_SWATCH_CLEAR                     [UIColor clearColor]
 #define COLOR_SWATCH_WHITE                     HEX(0xFFFFFF)
+#define COLOR_SWATCH_WHITE_60                  RGBA(255, 255, 255, 0.6)
 #define COLOR_SWATCH_BLACK                     HEX(0x000000)
 #define COLOR_SWATCH_BLACK_80                  RGBA(0, 0, 0, 0.6)
+#define COLOR_SWATCH_BLACK_40                  RGBA(0, 0, 0, 0.4)
 
 #define COLOR_SWATCH_BLUE                      RGB(86, 206, 239)
 #define COLOR_SWATCH_RED                       RGB(233, 106, 133)

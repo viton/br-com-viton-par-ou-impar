@@ -6,10 +6,10 @@
 //  Copyright (c) 2015 viton. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import "LabelStylesheet.h"
 #import "Colors.h"
 #import "Stylesheet.h"
-#import <UIKit/UIKit.h>
 #import "Fonts.h"
 
 @implementation LabelStylesheet
@@ -18,7 +18,7 @@
     return @{
              @"H1_Label": @{
                      PK_LABEL_TEXT_COLOR: COLOR_SWATCH_WHITE,
-                     PK_LABEL_FONT: [UIFont fontWithName:FONT_APP_LIGHT size:FONT_SIZE_LARGE]
+                     PK_LABEL_FONT: [UIFont fontWithName:FONT_APP_LIGHT size:FONT_SIZE_EXTRA_LARGE]
                      },
              @"Caption_Label": @{
                      PK_LABEL_TEXT_COLOR: COLOR_SWATCH_BLACK_80,
