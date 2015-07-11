@@ -14,5 +14,6 @@ class GameTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var betTextLabel: UILabel!
+    @IBOutlet weak var gameResultImage: UIImageView!
     
 }

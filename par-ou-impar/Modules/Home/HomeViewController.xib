@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
@@ -19,7 +19,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezN-WN-l5n">
-                    <rect key="frame" x="50" y="550" width="510" height="30"/>
+                    <rect key="frame" x="60" y="555" width="525" height="30"/>
                     <state key="normal" title="NEW GAME">
                         <color key="titleColor" red="0.17254902420000001" green="0.4156863093" blue="0.64313727620000005" alpha="1" colorSpace="deviceRGB"/>
                         <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -32,14 +32,14 @@
                     </connections>
                 </button>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="vD0-dp-sIh">
-                    <rect key="frame" x="0.0" y="20" width="600" height="510"/>
+                    <rect key="frame" x="0.0" y="20" width="600" height="515"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tSb-a5-Anx" customClass="ChooseColorView" customModule="par_ou_impar" customModuleProvider="target">
-                    <rect key="frame" x="20" y="555" width="20" height="20"/>
+                    <rect key="frame" x="20" y="555" width="30" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="20" id="5gy-DB-2hg"/>
-                        <constraint firstAttribute="height" constant="20" id="TD4-0S-MnL"/>
+                        <constraint firstAttribute="width" constant="30" id="5gy-DB-2hg"/>
+                        <constraint firstAttribute="height" constant="30" id="TD4-0S-MnL"/>
                     </constraints>
                 </view>
             </subviews>
@@ -55,12 +55,12 @@
                 <constraint firstItem="vD0-dp-sIh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="SaT-rk-9gY"/>
                 <constraint firstItem="vD0-dp-sIh" firstAttribute="top" secondItem="ezN-WN-l5n" secondAttribute="bottom" constant="5" id="Slp-RP-eEf"/>
                 <constraint firstItem="vD0-dp-sIh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="50" id="XTl-je-kPS"/>
-                <constraint firstAttribute="bottom" secondItem="ezN-WN-l5n" secondAttribute="bottom" constant="20" id="dHX-hP-hxU"/>
+                <constraint firstAttribute="bottom" secondItem="ezN-WN-l5n" secondAttribute="bottom" constant="15" id="dHX-hP-hxU"/>
                 <constraint firstItem="vD0-dp-sIh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="fWg-Uj-Lef"/>
                 <constraint firstAttribute="bottom" secondItem="vD0-dp-sIh" secondAttribute="bottom" id="gso-aC-EYd"/>
                 <constraint firstItem="tSb-a5-Anx" firstAttribute="centerY" secondItem="ezN-WN-l5n" secondAttribute="centerY" id="nBg-EF-soI"/>
                 <constraint firstAttribute="trailing" secondItem="vD0-dp-sIh" secondAttribute="trailing" id="uUS-JG-sok"/>
-                <constraint firstAttribute="trailing" secondItem="ezN-WN-l5n" secondAttribute="trailing" constant="40" id="vlS-PF-GBa"/>
+                <constraint firstAttribute="trailing" secondItem="ezN-WN-l5n" secondAttribute="trailing" constant="15" id="vlS-PF-GBa"/>
             </constraints>
             <variation key="default">
                 <mask key="constraints">

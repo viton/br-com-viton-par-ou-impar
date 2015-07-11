@@ -11,7 +11,12 @@ import UIKit
 extension UIView {
 
     func startLoadingRandom(message:String) {
-        let loading = OneHandLoading(frame:CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height))
+        var loading:Loading
+        if random()%2 == 1 {
+            loading = HandCountLoading(frame:CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height))
+        }else {
+            loading = OneHandLoading(frame:CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height))
+        }
         addSubview(loading)
         addAllConstraints(loading)
         loading.start()

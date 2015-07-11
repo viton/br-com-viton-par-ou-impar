@@ -35,13 +35,13 @@ class ChooseColorView: BaseComponentsView {
 extension ChooseColorView: BaseTableViewManagerDelegate {
     
     func didSelectObject(object: AnyObject) {
-        if widthConstraint!.constant != 140 {
-            widthConstraint!.constant = 140
+        if widthConstraint!.constant != 190 {
+            widthConstraint!.constant = 190
             UIView.animateWithDuration(0.5) {
                 self.superview!.layoutIfNeeded()
             }
         }else {
-            widthConstraint!.constant = 20
+            widthConstraint!.constant = 30
             UIView.animateWithDuration(0.5) {
                 self.superview!.layoutIfNeeded()
             }

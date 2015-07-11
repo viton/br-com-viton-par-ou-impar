@@ -57,7 +57,7 @@ class MatchResultViewController: BaseViewController {
     }
     
     @IBAction func backToHomeAction(sender: AnyObject) {
-        
+        navigationController?.popToViewController(navigationController!.viewControllers[1] as! UIViewController, animated: true)
     }
     
 }
