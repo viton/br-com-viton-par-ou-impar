@@ -32,6 +32,7 @@ class LoginViewController: BaseViewController, FBSDKLoginButtonDelegate {
         FBSDKProfile.enableUpdatesOnAccessTokenChange(true)
         facebookLoginButton.delegate = self
         facebookLoginButton.readPermissions = ["public_profile", "user_friends"]
+        facebookLoginButton.publishPermissions = ["publish_actions"]
     }
 
     //MARK: FBSDKLoginButtonDelegate

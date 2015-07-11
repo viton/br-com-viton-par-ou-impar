@@ -27,31 +27,53 @@ class MatchResultViewController: BaseViewController {
     }
 
     @IBAction func shareAction(sender: AnyObject) {
-//        var content = FBSDKShareOpenGraphContent()
-//        content.peopleIDs = [game!.getOponent().facebookId!]
-//        content.action = FBSDKShareOpenGraphAction()
-//        content.previewPropertyName = "og.like"
-//        var dialog = FBSDKShareDialog()
-//        dialog.fromViewController = self
-//        dialog.shareContent = content
-//        dialog.mode = FBSDKShareDialogMode.ShareSheet
-//        if dialog.canShow() {
-//            dialog.show()
-//        }else {
-//            var error:NSError?
-//            dialog.validateWithError(&error)
-//            println(error)
-//        }
-        if SLComposeViewController.isAvailableForServiceType(SLServiceTypeFacebook){
-            var facebookSheet:SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
-            facebookSheet.setInitialText("Vea Software! :D")
-            self.presentViewController(facebookSheet, animated: true, completion: nil)
+        var imageURL = NSURL(string: game!.getOponent().profileImage!)
+        var photo = FBSDKSharePhoto(imageURL: imageURL, userGenerated: false)
+        var properties = ["og:type": "appparouimpar:friend",
+                            "og:title": ("Defeated " + game!.getOponent().name!),
+                            "og:description":"One more hard battle, one more Victory. Will you beat me in this great game?",
+//                            "og:url":"https://www.facebook.com/poweroftwoapp",
+//                            "og:image":photo
+        ]
+        var shareObject = FBSDKShareOpenGraphObject(properties: properties)
+        var shareAction = FBSDKShareOpenGraphAction(type: "appparouimpar:defeat", object: shareObject, key: "object")
+        var shareContent = FBSDKShareOpenGraphContent()
+        shareContent.action = shareAction
+        shareContent.previewPropertyName = "object"
+        
+//        shareContent.peopleIDs = [game!.getOponent().facebookId!]
+        var dialog = FBSDKShareDialog()
+        dialog.fromViewController = self
+        dialog.shareContent = shareContent
+        dialog.delegate = self
+        if dialog.canShow() {
+            dialog.show()
+        }else {
+            var error:NSError?
+            dialog.validateWithError(&error)
+            println(error)
         }
     
     }
     
     @IBAction func backToHomeAction(sender: AnyObject) {
         
+    }
+    
+}
+
+extension MatchResultViewController: FBSDKSharingDelegate {
+    
+    func sharer(sharer: FBSDKSharing!, didCompleteWithResults results: [NSObject : AnyObject]!) {
+        println("SUCCESS")
+    }
+    
+    func sharer(sharer: FBSDKSharing!, didFailWithError error: NSError!) {
+        println("ERROR \(error)")
+    }
+    
+    func sharerDidCancel(sharer: FBSDKSharing!) {
+        println("CANCEL")
     }
     
 }
