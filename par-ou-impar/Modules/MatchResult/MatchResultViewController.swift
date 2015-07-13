@@ -15,17 +15,23 @@ class MatchResultViewController: BaseViewController {
 
     var game:Game?
     
-    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var winnerTitleLabel: UILabel!
+    @IBOutlet weak var looserLabel: UILabel!
+    @IBOutlet weak var disclaimerLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setup()
     }
 
-    @IBAction func rematchAction(sender: AnyObject) {
-        
-    }
 
+    func setup() {
+        winnerTitleLabel.text = Messages.message("winner.title")
+        looserLabel.text = game?.getOponent().name?.uppercaseString
+        disclaimerLabel.text = String(format: Messages.message("winner.disclaimer"), arguments: [game!.getOponent().name!])
+//            Messages.message("winner.disclaimer")
+    }
+    
     @IBAction func shareAction(sender: AnyObject) {
         var imageURL = NSURL(string: game!.getOponent().profileImage!)
         var photo = FBSDKSharePhoto(imageURL: imageURL, userGenerated: false)
@@ -36,12 +42,11 @@ class MatchResultViewController: BaseViewController {
 //                            "og:image":photo
         ]
         var shareObject = FBSDKShareOpenGraphObject(properties: properties)
-        var shareAction = FBSDKShareOpenGraphAction(type: "appparouimpar:defeat", object: shareObject, key: "object")
+        var shareAction = FBSDKShareOpenGraphAction(type: "appparouimpar:defeat", object: shareObject, key: "friend")
         var shareContent = FBSDKShareOpenGraphContent()
         shareContent.action = shareAction
-        shareContent.previewPropertyName = "object"
+        shareContent.previewPropertyName = "friend"
         
-//        shareContent.peopleIDs = [game!.getOponent().facebookId!]
         var dialog = FBSDKShareDialog()
         dialog.fromViewController = self
         dialog.shareContent = shareContent
