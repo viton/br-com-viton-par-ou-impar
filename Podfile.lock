@@ -18,6 +18,7 @@ PODS:
     - FBSDKCoreKit
   - FBSDKShareKit (4.3.0):
     - FBSDKCoreKit
+  - Google-Mobile-Ads-SDK (7.3.1)
   - IQKeyboardManager (3.2.3)
   - Parse (1.7.5):
     - Bolts/Tasks (>= 1.2.0)
@@ -26,6 +27,7 @@ DEPENDENCIES:
   - FBSDKCoreKit
   - FBSDKLoginKit
   - FBSDKShareKit
+  - Google-Mobile-Ads-SDK (~> 7.0)
   - IQKeyboardManager (= 3.2.3)
   - Parse
 
@@ -34,6 +36,7 @@ SPEC CHECKSUMS:
   FBSDKCoreKit: a3a60225a84abeace291d0fe71cae29a627382c2
   FBSDKLoginKit: 6bc2f8f2628c3b6d2e346762fff8cb55cfd3a58d
   FBSDKShareKit: 15806d69714de39d5dff2c84645f4cde23f5876e
+  Google-Mobile-Ads-SDK: 3647bfddc7384c514ab96a8bed86d98b31e623e4
   IQKeyboardManager: 6ca5c54e3776eb54af4c7caf515833f3cd761d59
   Parse: 7c0f115eff3e0cea3fac08d50bda47154edb8832
 

@@ -12,6 +12,7 @@ import Bolts
 import Parse
 import FBSDKCoreKit
 import IQKeyboardManager
+import GoogleMobileAds
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,6 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.sharedManager().shouldResignOnTouchOutside = true
         User.registerSubclass()
         Game.registerSubclass()
+        
+        println("VERSION GAD \(GADRequest.sdkVersion())")
+        
         
         Parse.setApplicationId("E5kplP1f07JlCIXwXW8iaPyzkUon44N2eyDKSB0s",
             clientKey: "SpHpdIlVhkA7GQzONNuRB55QZjTRbqdWIZaFAPc8")

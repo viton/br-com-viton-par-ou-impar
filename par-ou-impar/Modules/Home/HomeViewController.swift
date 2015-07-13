@@ -9,9 +9,13 @@
 import UIKit
 import FBSDKCoreKit
 import Parse
+import GoogleMobileAds
 
 class HomeViewController: BaseViewController {
+    
+    @IBOutlet weak var gadBannerView: GADBannerView!
 
+    @IBOutlet weak var AdsBannerView: UIView!
     @IBOutlet weak var tableView: UITableView!
     var tableManager:BaseTableViewManager?
     var noResultsPlaceholder:Placeholder?
@@ -22,6 +26,9 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        gadBannerView.adUnitID = "ca-app-pub-6732487218165467/7980294632"
+        gadBannerView.rootViewController = self
+        gadBannerView.loadRequest(GADRequest())
     }
     
     override func viewWillAppear(animated: Bool) {

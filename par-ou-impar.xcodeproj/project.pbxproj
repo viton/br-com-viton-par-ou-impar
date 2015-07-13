@@ -45,6 +45,9 @@
 		4D6DFE611B45E36D00F406E3 /* HandCountCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6DFE5F1B45E36D00F406E3 /* HandCountCollectionViewCell.swift */; };
 		4D6DFE621B45E36D00F406E3 /* HandCountCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D6DFE601B45E36D00F406E3 /* HandCountCollectionViewCell.xib */; };
 		4D6DFE651B4600A200F406E3 /* GameTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6DFE641B4600A200F406E3 /* GameTableViewManager.swift */; };
+		4D8866C91B54239E008ED200 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8866C81B54239E008ED200 /* AdSupport.framework */; };
+		4D8866CB1B5423AB008ED200 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8866CA1B5423AB008ED200 /* StoreKit.framework */; };
+		4D8866CD1B5423B9008ED200 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8866CC1B5423B9008ED200 /* CoreMotion.framework */; };
 		4DA0A71E1B4D5A8200C30561 /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA0A71C1B4D5A8200C30561 /* FriendTableViewCell.swift */; };
 		4DA0A71F1B4D5A8200C30561 /* FriendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DA0A71D1B4D5A8200C30561 /* FriendTableViewCell.xib */; };
 		4DA0A7611B50047400C30561 /* BaseStylesheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA0A7521B50047400C30561 /* BaseStylesheet.m */; };
@@ -142,6 +145,9 @@
 		4D6DFE5F1B45E36D00F406E3 /* HandCountCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandCountCollectionViewCell.swift; sourceTree = "<group>"; };
 		4D6DFE601B45E36D00F406E3 /* HandCountCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HandCountCollectionViewCell.xib; sourceTree = "<group>"; };
 		4D6DFE641B4600A200F406E3 /* GameTableViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTableViewManager.swift; sourceTree = "<group>"; };
+		4D8866C81B54239E008ED200 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		4D8866CA1B5423AB008ED200 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		4D8866CC1B5423B9008ED200 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		4DA0A71C1B4D5A8200C30561 /* FriendTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
 		4DA0A71D1B4D5A8200C30561 /* FriendTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendTableViewCell.xib; sourceTree = "<group>"; };
 		4DA0A74C1B50047400C30561 /* Colors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Colors.h; sourceTree = "<group>"; };
@@ -211,6 +217,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D8866CD1B5423B9008ED200 /* CoreMotion.framework in Frameworks */,
+				4D8866CB1B5423AB008ED200 /* StoreKit.framework in Frameworks */,
+				4D8866C91B54239E008ED200 /* AdSupport.framework in Frameworks */,
 				7B5DB5E9138467B81526F4C7 /* Pods_par_ou_impar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -870,6 +879,9 @@
 		ECA33357D748A452C62FF810 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4D8866CC1B5423B9008ED200 /* CoreMotion.framework */,
+				4D8866CA1B5423AB008ED200 /* StoreKit.framework */,
+				4D8866C81B54239E008ED200 /* AdSupport.framework */,
 				48BE49A876F579D1F50DBC18 /* Pods_par_ou_impar.framework */,
 			);
 			name = Frameworks;

@@ -9,10 +9,11 @@
 import UIKit
 import FBSDKCoreKit
 import FBSDKShareKit
-import Social
+import GoogleMobileAds
 
 class MatchResultViewController: BaseViewController {
 
+    var interstitial: GADInterstitial?
     var game:Game?
     
     @IBOutlet weak var winnerTitleLabel: UILabel!
@@ -22,6 +23,8 @@ class MatchResultViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-6732487218165467/6363960639")
+        interstitial?.loadRequest(GADRequest())
     }
 
 
@@ -62,6 +65,9 @@ class MatchResultViewController: BaseViewController {
     }
     
     @IBAction func backToHomeAction(sender: AnyObject) {
+        if interstitial!.isReady {
+            interstitial!.presentFromRootViewController(self)
+        }
         navigationController?.popToViewController(navigationController!.viewControllers[1] as! UIViewController, animated: true)
     }
     
