@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var initialViewController: UIViewController?
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        application.applicationIconBadgeNumber = 0
         IQKeyboardManager.sharedManager().shouldResignOnTouchOutside = true
         User.registerSubclass()
         Game.registerSubclass()
