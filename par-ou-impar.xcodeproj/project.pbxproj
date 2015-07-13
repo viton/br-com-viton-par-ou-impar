@@ -46,7 +46,6 @@
 		4D6DFE621B45E36D00F406E3 /* HandCountCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D6DFE601B45E36D00F406E3 /* HandCountCollectionViewCell.xib */; };
 		4D6DFE651B4600A200F406E3 /* GameTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6DFE641B4600A200F406E3 /* GameTableViewManager.swift */; };
 		4D8866C91B54239E008ED200 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8866C81B54239E008ED200 /* AdSupport.framework */; };
-		4D8866CB1B5423AB008ED200 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8866CA1B5423AB008ED200 /* StoreKit.framework */; };
 		4D8866CD1B5423B9008ED200 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8866CC1B5423B9008ED200 /* CoreMotion.framework */; };
 		4DA0A71E1B4D5A8200C30561 /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA0A71C1B4D5A8200C30561 /* FriendTableViewCell.swift */; };
 		4DA0A71F1B4D5A8200C30561 /* FriendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DA0A71D1B4D5A8200C30561 /* FriendTableViewCell.xib */; };
@@ -146,7 +145,6 @@
 		4D6DFE601B45E36D00F406E3 /* HandCountCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HandCountCollectionViewCell.xib; sourceTree = "<group>"; };
 		4D6DFE641B4600A200F406E3 /* GameTableViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTableViewManager.swift; sourceTree = "<group>"; };
 		4D8866C81B54239E008ED200 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
-		4D8866CA1B5423AB008ED200 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		4D8866CC1B5423B9008ED200 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		4DA0A71C1B4D5A8200C30561 /* FriendTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
 		4DA0A71D1B4D5A8200C30561 /* FriendTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendTableViewCell.xib; sourceTree = "<group>"; };
@@ -218,7 +216,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D8866CD1B5423B9008ED200 /* CoreMotion.framework in Frameworks */,
-				4D8866CB1B5423AB008ED200 /* StoreKit.framework in Frameworks */,
 				4D8866C91B54239E008ED200 /* AdSupport.framework in Frameworks */,
 				7B5DB5E9138467B81526F4C7 /* Pods_par_ou_impar.framework in Frameworks */,
 			);
@@ -880,7 +877,6 @@
 			isa = PBXGroup;
 			children = (
 				4D8866CC1B5423B9008ED200 /* CoreMotion.framework */,
-				4D8866CA1B5423AB008ED200 /* StoreKit.framework */,
 				4D8866C81B54239E008ED200 /* AdSupport.framework */,
 				48BE49A876F579D1F50DBC18 /* Pods_par_ou_impar.framework */,
 			);
@@ -949,6 +945,11 @@
 					4DA674011B4426E40081BDB3 = {
 						CreatedOnToolsVersion = 6.3.2;
 						DevelopmentTeam = 6C4V7RM2SX;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+						};
 					};
 					4DA674161B4426E50081BDB3 = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -1254,7 +1255,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "920c55fe-e541-4327-b6a2-5432d0f477fa";
 				SWIFT_OBJC_BRIDGING_HEADER = "par-ou-impar/par_ou_impar-Bridging-Header.h";
 				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "par-ou-impar/par_ou_impar-Bridging-Header.h";
 			};
@@ -1272,7 +1273,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "920c55fe-e541-4327-b6a2-5432d0f477fa";
 				SWIFT_OBJC_BRIDGING_HEADER = "par-ou-impar/par_ou_impar-Bridging-Header.h";
 				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "par-ou-impar/par_ou_impar-Bridging-Header.h";
 			};
