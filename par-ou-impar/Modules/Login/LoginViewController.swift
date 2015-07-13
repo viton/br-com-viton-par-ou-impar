@@ -74,6 +74,9 @@ class LoginViewController: BaseViewController, FBSDKLoginButtonDelegate {
 extension LoginViewController: UserProviderCallback {
     
     func onSuccessRetrieveUser(user: User) {
+        let installation = PFInstallation.currentInstallation()
+        installation["userFacebookId"] = user.facebookId
+        installation.saveInBackground()
         navigationController?.pushViewController(HomeViewController(), animated: false)
     }
     

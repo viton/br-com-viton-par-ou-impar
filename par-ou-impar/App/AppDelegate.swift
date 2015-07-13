@@ -79,6 +79,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //PARSE NOTIFICATIONS
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
         let installation = PFInstallation.currentInstallation()
+        if let user = LoginProvider.user {
+            installation["userFacebookId"] = user.facebookId
+        }
         installation.setDeviceTokenFromData(deviceToken)
         installation.saveInBackground()
     }
