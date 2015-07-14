@@ -55,6 +55,7 @@ class GameProvider: NSObject {
         gameObject.saveInBackground({ (result:AnyObject?) -> Void in
             callback.prepareToRespose()
             callback.onSuccessCreateGame()
+            GameProvider.sendPush("Você tem um novo jogo. Veja quem te desafiou", facebookId: enemy.facebookId!)
         }, errorBlock:{ (result:String) -> Void in
             callback.prepareToRespose()
             callback.onFailRequest(result)
@@ -68,19 +69,7 @@ class GameProvider: NSObject {
         game.saveInBackground({ (result:AnyObject?) -> Void in
                 callback.prepareToRespose()
                 callback.onSuccessReplyGame(game)
-            
-                var push = PFPush()
-                push.setMessage("Seu adversário respondeu ao seu jogo. Veja quem ganhou!")
-                // Create our Installation query
-            if let pushQuery = PFInstallation.query() {
-                
-                pushQuery.whereKey("userFacebookId", equalTo: game.getOponent().facebookId!);
-            
-                // Send push notification to query
-                push.setQuery(pushQuery) // Set our Installation query
-                push.sendPushInBackground()
-            }
-            
+                GameProvider.sendPush("O seu adversário respondeu. Quer saber quem ganhou?", facebookId: game.getOponent().facebookId!)
             }, errorBlock:{ (result:String) -> Void in
                 callback.prepareToRespose()
                 callback.onFailRequest(result)
@@ -139,5 +128,19 @@ class GameProvider: NSObject {
         }
     }
     
+    class func sendPush(message:String!, facebookId:String!) {
+        var push = PFPush()
+        push.setMessage(message)
+        // Create our Installation query
+        if let pushQuery = PFInstallation.query() {
+            
+            pushQuery.whereKey("userFacebookId", equalTo: facebookId);
+            
+            // Send push notification to query
+            push.setQuery(pushQuery) // Set our Installation query
+            push.sendPushInBackground()
+        }
+
+    }
     
 }
