@@ -68,6 +68,19 @@ class GameProvider: NSObject {
         game.saveInBackground({ (result:AnyObject?) -> Void in
                 callback.prepareToRespose()
                 callback.onSuccessReplyGame(game)
+            
+                var push = PFPush()
+                push.setMessage("Seu adversário respondeu ao seu jogo. Veja quem ganhou!")
+                // Create our Installation query
+            if let pushQuery = PFInstallation.query() {
+                
+                pushQuery.whereKey("userFacebookId", equalTo: game.getOponent().facebookId!);
+            
+                // Send push notification to query
+                push.setQuery(pushQuery) // Set our Installation query
+                push.sendPushInBackground()
+            }
+            
             }, errorBlock:{ (result:String) -> Void in
                 callback.prepareToRespose()
                 callback.onFailRequest(result)
