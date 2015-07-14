@@ -46,6 +46,10 @@ class NewGameViewController: BaseViewController {
         presentViewController(chooseFriendViewController!, animated: true, completion: {})
     }
     
+    @IBAction func closeAction(sender: AnyObject) {
+        navigationController?.popViewControllerAnimated(true)
+    }
+    
     @IBAction func createGameAction(sender: AnyObject) {
         let game = Game()
         game.enemy = friend?.facebookId

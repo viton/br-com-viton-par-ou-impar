@@ -78,7 +78,9 @@ class FightViewController: BaseViewController {
         }
         if(fightIndex == 5) {
             fightTimer?.invalidate()
-            navigationController?.pushViewController(MatchResultViewController(), animated: true)
+            var viewController = MatchResultViewController()
+            viewController.game = game
+            navigationController?.pushViewController(viewController, animated: true)
         }
         
         fightIndex += 1

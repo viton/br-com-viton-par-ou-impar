@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
@@ -8,13 +8,13 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ColorCollectionViewCell" customModule="par_ou_impar" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+            <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YBM-OZ-GYB">
-                        <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </subviews>
@@ -26,11 +26,11 @@
                 <constraint firstAttribute="bottom" secondItem="YBM-OZ-GYB" secondAttribute="bottom" id="Q1U-YS-hri"/>
                 <constraint firstAttribute="trailing" secondItem="YBM-OZ-GYB" secondAttribute="trailing" id="msf-Dw-LMw"/>
             </constraints>
-            <size key="customSize" width="20" height="20"/>
+            <size key="customSize" width="29" height="30"/>
             <connections>
                 <outlet property="colorView" destination="YBM-OZ-GYB" id="8VN-QF-upX"/>
             </connections>
-            <point key="canvasLocation" x="211" y="285"/>
+            <point key="canvasLocation" x="215.5" y="290"/>
         </collectionViewCell>
     </objects>
 </document>

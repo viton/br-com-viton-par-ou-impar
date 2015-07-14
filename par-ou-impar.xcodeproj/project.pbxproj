@@ -87,6 +87,8 @@
 		576A20161B4CC4FA008C24CE /* HandCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 576A20141B4CC4FA008C24CE /* HandCollectionViewCell.xib */; };
 		576A20191B4CC6DE008C24CE /* FightHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576A20181B4CC6DE008C24CE /* FightHand.swift */; };
 		576A201C1B4CC7A7008C24CE /* FightHandProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576A201B1B4CC7A7008C24CE /* FightHandProvider.swift */; };
+		576A20241B50BDC8008C24CE /* HandCountLoading.xib in Resources */ = {isa = PBXBuildFile; fileRef = 576A20231B50BDC8008C24CE /* HandCountLoading.xib */; };
+		576A20261B50BDD6008C24CE /* HandCountLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576A20251B50BDD6008C24CE /* HandCountLoading.swift */; };
 		7B5DB5E9138467B81526F4C7 /* Pods_par_ou_impar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48BE49A876F579D1F50DBC18 /* Pods_par_ou_impar.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -198,6 +200,8 @@
 		576A20141B4CC4FA008C24CE /* HandCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HandCollectionViewCell.xib; sourceTree = "<group>"; };
 		576A20181B4CC6DE008C24CE /* FightHand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FightHand.swift; sourceTree = "<group>"; };
 		576A201B1B4CC7A7008C24CE /* FightHandProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FightHandProvider.swift; sourceTree = "<group>"; };
+		576A20231B50BDC8008C24CE /* HandCountLoading.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HandCountLoading.xib; sourceTree = "<group>"; };
+		576A20251B50BDD6008C24CE /* HandCountLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandCountLoading.swift; sourceTree = "<group>"; };
 		6E734F9821E2E00AC2CF5BE6 /* Pods-par-ou-impar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-par-ou-impar.release.xcconfig"; path = "Pods/Target Support Files/Pods-par-ou-impar/Pods-par-ou-impar.release.xcconfig"; sourceTree = "<group>"; };
 		A696C356A9A5315EAD107F01 /* Pods-par-ou-impar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-par-ou-impar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-par-ou-impar/Pods-par-ou-impar.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -757,6 +761,7 @@
 		4DBB9B2E1B44288700B49658 /* Loading */ = {
 			isa = PBXGroup;
 			children = (
+				576A20221B50BDC0008C24CE /* HandCount */,
 				4D4E51C51B4C3EEB0049D474 /* OneHandLoading */,
 				4D4E51C61B4C3EEB0049D474 /* SimpleLoading */,
 				4DBB9B2F1B44288700B49658 /* Loading.swift */,
@@ -851,6 +856,15 @@
 				576A201B1B4CC7A7008C24CE /* FightHandProvider.swift */,
 			);
 			path = FightHandProvider;
+			sourceTree = "<group>";
+		};
+		576A20221B50BDC0008C24CE /* HandCount */ = {
+			isa = PBXGroup;
+			children = (
+				576A20251B50BDD6008C24CE /* HandCountLoading.swift */,
+				576A20231B50BDC8008C24CE /* HandCountLoading.xib */,
+			);
+			path = HandCount;
 			sourceTree = "<group>";
 		};
 		ECA33357D748A452C62FF810 /* Frameworks */ = {
@@ -965,6 +979,7 @@
 				4DBB9B3C1B44288700B49658 /* TesteTableViewCell.xib in Resources */,
 				576A200B1B485DD3008C24CE /* GameTableViewCell.xib in Resources */,
 				4D6DFE621B45E36D00F406E3 /* HandCountCollectionViewCell.xib in Resources */,
+				576A20241B50BDC8008C24CE /* HandCountLoading.xib in Resources */,
 				4D6DFE461B45867A00F406E3 /* ReplyGameViewController.xib in Resources */,
 				4D6DFE501B458F4C00F406E3 /* MatchResultViewController.xib in Resources */,
 				4D6DFE4B1B458BCF00F406E3 /* FightViewController.xib in Resources */,
@@ -1084,6 +1099,7 @@
 				4D6DFE3E1B4473DD00F406E3 /* Game.swift in Sources */,
 				4D4E51C81B4C3F0C0049D474 /* SimpleLoading.swift in Sources */,
 				4D6DFE521B459EA800F406E3 /* PlaceholderExtension.swift in Sources */,
+				576A20261B50BDD6008C24CE /* HandCountLoading.swift in Sources */,
 				4DA0A7641B50047400C30561 /* MainStylesheet.m in Sources */,
 				4D4E51DE1B4C44800049D474 /* BaseCollectionViewCell.swift in Sources */,
 				4DBB9B4B1B4428AD00B49658 /* LoadingExtension.swift in Sources */,

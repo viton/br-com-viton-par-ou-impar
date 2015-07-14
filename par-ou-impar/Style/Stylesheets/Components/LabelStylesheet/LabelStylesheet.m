@@ -20,6 +20,10 @@
                      PK_LABEL_TEXT_COLOR: COLOR_SWATCH_WHITE,
                      PK_LABEL_FONT: [UIFont fontWithName:FONT_APP_LIGHT size:FONT_SIZE_EXTRA_LARGE]
                      },
+             @"H1_Bold_Label": @{
+                     PK_LABEL_TEXT_COLOR: COLOR_SWATCH_WHITE,
+                     PK_LABEL_FONT: [UIFont fontWithName:FONT_APP_BOLD size:FONT_SIZE_EXTRA_LARGE]
+                     },
              @"Caption_Label": @{
                      PK_LABEL_TEXT_COLOR: COLOR_SWATCH_BLACK_80,
                      PK_LABEL_FONT: [UIFont fontWithName:FONT_APP_BOLD size:FONT_SIZE_SMALL]

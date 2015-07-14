@@ -7,3 +7,7 @@
 */
 
 "test" = "Isso é uma mensagem de teste";
+
+"winner.title" = "#CHUPA";
+"winner.disclaimer" = "A vitória só é plena se todos souberem que seu amigo %@ perdeu. Compartilhe agora mesmo no facebook!";
+"winner.share.button" = "Compartilhar no facebook";

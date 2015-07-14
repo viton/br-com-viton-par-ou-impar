@@ -18,8 +18,8 @@ class ColorCollectionViewManager: CollectionViewManager {
         if let colorCell = cell as? ColorCollectionViewCell {
             if let color = item as? UIColor {
                 colorCell.colorView.backgroundColor = color
+                colorCell.colorView.setupBorder(2, color: UIColor(red: 0, green: 0, blue: 0, alpha: 0.6))
                 colorCell.colorView.circle()
-                colorCell.colorView.setupBorder(1, color: UIColor.blackColor())
             }
         }
     }
@@ -29,7 +29,7 @@ class ColorCollectionViewManager: CollectionViewManager {
 extension ColorCollectionViewManager: UICollectionViewDelegateFlowLayout {
     
     override func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSize(width: 20, height: 20)
+        return CGSize(width: 30, height: 30)
     }
     
 }
