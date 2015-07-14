@@ -28,7 +28,9 @@ class HomeViewController: BaseViewController {
         setup()
         gadBannerView.adUnitID = "ca-app-pub-6732487218165467/7980294632"
         gadBannerView.rootViewController = self
-        gadBannerView.loadRequest(GADRequest())
+        var gadRequest = GADRequest()
+        gadRequest.testDevices = [ kGADSimulatorID ];
+        gadBannerView.loadRequest(gadRequest)
     }
     
     override func viewWillAppear(animated: Bool) {

@@ -24,7 +24,9 @@ class MatchResultViewController: BaseViewController {
         super.viewDidLoad()
         setup()
         interstitial = GADInterstitial(adUnitID: "ca-app-pub-6732487218165467/6363960639")
-        interstitial?.loadRequest(GADRequest())
+        var gadRequest = GADRequest()
+        gadRequest.testDevices = [ kGADSimulatorID ];
+        interstitial?.loadRequest(gadRequest)
     }
 
 
