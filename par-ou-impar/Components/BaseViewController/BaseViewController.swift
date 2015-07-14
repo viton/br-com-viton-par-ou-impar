@@ -56,7 +56,7 @@ extension BaseViewController: BaseProviderCallback {
     
     func onConnectionFailToRequest() {
         if(noConnectionPlaceholder == nil){
-            noConnectionPlaceholder = view.addPlaceholder("Oh oh!", content: "Wasn't possible to connect", buttonTitle: "Try again", image: nil)
+            noConnectionPlaceholder = view.addPlaceholder("Oh oh!", content: "Wasn't possible to connect", buttonTitle: "Try again", image: UIImage(named: "img-no-connection"))
             noConnectionPlaceholder?.delegate = self
         }
     }

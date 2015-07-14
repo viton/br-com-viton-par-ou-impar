@@ -54,7 +54,7 @@ protocol PlaceholderActionDelegate{
         setContent(contentText)
         setImage(imageName)
         setButtonText(actionTitle)
-        
+        backgroundColor = ColorProvider.getAppColor()
     }
 
     func setTitle(title:String) {
