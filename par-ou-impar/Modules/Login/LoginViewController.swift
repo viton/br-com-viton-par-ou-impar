@@ -31,7 +31,7 @@ class LoginViewController: BaseViewController, FBSDKLoginButtonDelegate {
         navigationController?.navigationBarHidden = true
         FBSDKProfile.enableUpdatesOnAccessTokenChange(true)
         facebookLoginButton.delegate = self
-        facebookLoginButton.readPermissions = ["public_profile", "user_friends"]
+        facebookLoginButton.readPermissions = ["user_friends"]
         facebookLoginButton.publishPermissions = ["publish_actions"]
     }
 
