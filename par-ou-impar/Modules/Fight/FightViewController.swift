@@ -56,6 +56,13 @@ class FightViewController: BaseViewController {
         opponentHandImageView.layer.setAffineTransform(CGAffineTransformMakeRotation(CGFloat(M_PI)))
     }
     
+    func setGameVisualized() {
+        if(game!.amIOwner()){
+            game?.ownerVisualized = 1;
+            GameProvider.replyGame(game!, callback: nil)
+        }
+    }
+    
     func nextIntroStep() {
         if(introIndex == 3) {
             introTimer?.invalidate()

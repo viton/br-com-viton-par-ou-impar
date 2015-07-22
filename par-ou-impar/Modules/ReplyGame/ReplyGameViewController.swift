@@ -39,6 +39,7 @@ class ReplyGameViewController: BaseViewController {
         game?.enemyHand = hand?.handId
         game?.finish = 1
         game?.winner = game?.decideWinner()
+        game?.enemyVisualized = 1
         GameProvider.replyGame(game!, callback: self)
     }
     

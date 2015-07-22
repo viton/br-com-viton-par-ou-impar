@@ -17,6 +17,7 @@ class Game: PFObject, PFSubclassing {
     @NSManaged var ownerCount:NSNumber?
     @NSManaged var ownerName:String?
     @NSManaged var ownerImage:String?
+    @NSManaged var ownerVisualized:NSNumber?
     
     var enemyUser:User?
     @NSManaged var enemy:String?
@@ -24,6 +25,7 @@ class Game: PFObject, PFSubclassing {
     @NSManaged var enemyCount:NSNumber?
     @NSManaged var enemyName:String?
     @NSManaged var enemyImage:String?
+    @NSManaged var enemyVisualized:NSNumber?
     
     @NSManaged var betText:String?
     @NSManaged var winner:String?
@@ -53,6 +55,7 @@ class Game: PFObject, PFSubclassing {
         ownerImage = object["ownerImage"] as? String
         ownerCount = object["ownerCount"] as? NSNumber
         ownerHand = object["ownerHand"] as? String
+        ownerVisualized = object["ownerVisualized"] as? NSNumber
         
         ownerUser = User()
         ownerUser?.facebookId = owner
@@ -66,6 +69,7 @@ class Game: PFObject, PFSubclassing {
         enemyImage = object["enemyImage"] as? String
         enemyCount = object["enemyCount"] as? NSNumber
         enemyHand = object["enemyHand"] as? String
+        enemyVisualized = object["enemyVisualized"] as? NSNumber
         
         enemyUser = User()
         enemyUser?.facebookId = enemy
@@ -123,7 +127,7 @@ class Game: PFObject, PFSubclassing {
         return enemy
     }
     
-    private func amIOwner() -> Bool {
+    func amIOwner() -> Bool {
         if LoginProvider.user?.facebookId == owner {
             return true
         }
@@ -150,6 +154,13 @@ class Game: PFObject, PFSubclassing {
     
     func amIWinner() -> Bool {
         return winner == getMe().facebookId!
+    }
+    
+    func isVisualized() -> Bool {
+        if(amIOwner()){
+            return ownerVisualized!.boolValue
+        }
+        return enemyVisualized!.boolValue
     }
     
 }

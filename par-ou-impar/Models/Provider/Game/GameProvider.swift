@@ -39,12 +39,14 @@ class GameProvider: NSObject {
         gameObject["ownerCount"] = game.ownerCount
         gameObject["ownerName"] = owner.name
         gameObject["ownerImage"] = owner.profileImage
+        gameObject["ownerVisualized"] = NSNumber(bool: false)
         
         gameObject["enemy"] = game.enemy
         gameObject["enemyHand"] = ""
         gameObject["enemyCount"] = 0
         gameObject["enemyName"] = enemy.name
         gameObject["enemyImage"] = enemy.profileImage
+        gameObject["enemyVisualized"] = NSNumber(bool: false)
         
         gameObject["finish"] = 0
         gameObject["betText"] = game.betText
@@ -65,17 +67,21 @@ class GameProvider: NSObject {
         })
     }
     
-    class func replyGame(game:Game, callback:ReplyGameCallback) {
+    class func replyGame(game:Game, callback:ReplyGameCallback?) {
+        if callback == nil {
+            game.saveInBackground()
+            return;
+        }
         game.saveInBackground({ (result:AnyObject?) -> Void in
-                callback.prepareToRespose()
-                callback.onSuccessReplyGame(game)
+                callback!.prepareToRespose()
+                callback!.onSuccessReplyGame(game)
                 GameProvider.sendPush("O seu adversário respondeu. Quer saber quem ganhou?", facebookId: game.getOponent().facebookId!)
             }, errorBlock:{ (result:String) -> Void in
-                callback.prepareToRespose()
-                callback.onFailRequest(result)
+                callback!.prepareToRespose()
+                callback!.onFailRequest(result)
             }, noConnection:{
-                callback.prepareToRespose()
-                callback.onFailRequest("Try Again")
+                callback!.prepareToRespose()
+                callback!.onFailRequest("Try Again")
         })
     }
     
