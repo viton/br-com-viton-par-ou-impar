@@ -31,6 +31,8 @@ class Game: PFObject, PFSubclassing {
     @NSManaged var winner:String?
     @NSManaged var finish:NSNumber?
     
+    var date:NSDate?
+    
     class func parseClassName() -> String {
         return "Game"
     }
@@ -42,6 +44,7 @@ class Game: PFObject, PFSubclassing {
     init(object:PFObject) {
         super.init()
         objectId = object.objectId
+        date = object.updatedAt
         loadOwner(object)
         loadEnemy(object)
         betText = object["betText"] as? String
@@ -161,6 +164,12 @@ class Game: PFObject, PFSubclassing {
             return ownerVisualized!.boolValue
         }
         return enemyVisualized!.boolValue
+    }
+    
+    func getReadableDate() -> String {
+        var formatter = NSDateFormatter()
+        formatter.dateFormat = "dd/MM/yy"
+        return formatter.stringFromDate(date!)
     }
     
 }
