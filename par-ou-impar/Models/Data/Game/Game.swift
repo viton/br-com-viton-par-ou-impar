@@ -39,6 +39,7 @@ class Game: PFObject, PFSubclassing {
     
     init(object:PFObject) {
         super.init()
+        objectId = object.objectId
         loadOwner(object)
         loadEnemy(object)
         betText = object["betText"] as? String
