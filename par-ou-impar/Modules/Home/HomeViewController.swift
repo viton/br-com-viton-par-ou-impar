@@ -26,6 +26,10 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        setupAds()
+    }
+    
+    func setupAds(){
         gadBannerView.adUnitID = "ca-app-pub-6732487218165467/7980294632"
         gadBannerView.rootViewController = self
         var gadRequest = GADRequest()
@@ -35,6 +39,7 @@ class HomeViewController: BaseViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        UIApplication.sharedApplication().applicationIconBadgeNumber = 0
         requestGames()
         navigationController?.navigationBarHidden = true
     }

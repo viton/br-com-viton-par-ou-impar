@@ -73,11 +73,24 @@ class LoginViewController: BaseViewController, FBSDKLoginButtonDelegate {
 //MARK: UserProviderCallback
 extension LoginViewController: UserProviderCallback {
     
-    func onSuccessRetrieveUser(user: User) {
+    func onSuccessRetrieveUser(user: User, moreInfo:NSDictionary!) {
         let installation = PFInstallation.currentInstallation()
         installation["userFacebookId"] = user.facebookId
+        appendInfos(moreInfo, toInstallation: installation)
         installation.saveInBackground()
         navigationController?.pushViewController(HomeViewController(), animated: false)
+    }
+    
+    func appendInfos(infos:NSDictionary, toInstallation installation:PFInstallation) {
+        if installation.channels == nil {
+            installation.channels = []
+        }
+        var desirableInfos = ["gender"]
+        for info in desirableInfos {
+            if let userInfo = infos[info] as? String {
+                installation.channels?.append(userInfo)
+            }
+        }
     }
     
 }

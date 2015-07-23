@@ -29,7 +29,7 @@ class GameTableViewManager: BaseTableViewManager {
             gameCell.imageUser.setImage(url: oponent.profileImage!)
             gameCell.imageUser.circle()
             gameCell.statusLabel.text = game.getStatus()
-            gameCell.dateLabel.text = game.getReadableDate()
+            gameCell.dateLabel.text = game.date!.getReadableDate()
             if game.finish!.boolValue && game.isVisualized() {
                 if game.amIWinner() {
                     gameCell.gameResultImage.image = UIImage(named: "ic-win")

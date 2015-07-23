@@ -75,7 +75,7 @@ class GameProvider: NSObject {
         game.saveInBackground({ (result:AnyObject?) -> Void in
                 callback!.prepareToRespose()
                 callback!.onSuccessReplyGame(game)
-                GameProvider.sendPush("O seu adversário respondeu. Quer saber quem ganhou?", facebookId: game.getOponent().facebookId!)
+                GameProvider.sendPush("\(game.getMe().name) respondeu. Quer saber quem ganhou?", facebookId: game.getOponent().facebookId!)
             }, errorBlock:{ (result:String) -> Void in
                 callback!.prepareToRespose()
                 callback!.onFailRequest(result)

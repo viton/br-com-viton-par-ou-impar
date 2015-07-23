@@ -12,7 +12,7 @@ import FBSDKCoreKit
 
 protocol UserProviderCallback:BaseProviderCallback {
     
-    func onSuccessRetrieveUser(user:User)
+    func onSuccessRetrieveUser(user:User, moreInfo:NSDictionary!)
     
 }
 
@@ -21,7 +21,7 @@ class LoginProvider: NSObject {
     static var user:User?
     
     class func loadUser(callback:UserProviderCallback) {
-        let meRequest = FBSDKGraphRequest(graphPath: "me", parameters: nil)
+        let meRequest = FBSDKGraphRequest(graphPath: "me?fields=id,name,gender", parameters: nil)
         meRequest.startWithCompletionHandler({
             (connection, result, error: NSError!) -> Void in
             callback.prepareToRespose()
@@ -32,7 +32,7 @@ class LoginProvider: NSObject {
                 user.name = dictResult["name"]! as? String
                 user.profileImage = String(format: "http://graph.facebook.com/%@/picture?type=normal", FBSDKAccessToken.currentAccessToken().userID)
                 LoginProvider.user = user
-                callback.onSuccessRetrieveUser(user)
+                callback.onSuccessRetrieveUser(user, moreInfo:dictResult)
             } else {
                 callback.onConnectionFailToRequest()
             }

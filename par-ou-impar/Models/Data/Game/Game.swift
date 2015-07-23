@@ -44,7 +44,7 @@ class Game: PFObject, PFSubclassing {
     init(object:PFObject) {
         super.init()
         objectId = object.objectId
-        date = object.updatedAt
+        date = object.createdAt
         loadOwner(object)
         loadEnemy(object)
         betText = object["betText"] as? String
@@ -166,10 +166,41 @@ class Game: PFObject, PFSubclassing {
         return enemyVisualized!.boolValue
     }
     
+}
+
+extension NSDate {
+    
     func getReadableDate() -> String {
+        if isToday() {
+            return "Hoje"
+        }
+        if isYesterday() {
+            return "Ontem"
+        }
+        return simpleFormatted()
+    }
+    
+    func isToday() -> Bool {
+        var today = NSDate()
+        if today.simpleFormatted() == simpleFormatted() {
+            return true
+        }
+        return false
+    }
+    
+    func isYesterday() -> Bool {
+        let calendar = NSCalendar.currentCalendar()
+        let yesterday = calendar.dateByAddingUnit(.CalendarUnitDay, value: -1, toDate: NSDate(), options: nil)
+        if yesterday?.simpleFormatted() == simpleFormatted() {
+            return true
+        }
+        return false
+    }
+    
+    func simpleFormatted() -> String {
         var formatter = NSDateFormatter()
         formatter.dateFormat = "dd/MM/yy"
-        return formatter.stringFromDate(date!)
+        return formatter.stringFromDate(self)
     }
     
 }
