@@ -88,9 +88,22 @@ extension LoginViewController: UserProviderCallback {
         var desirableInfos = ["gender"]
         for info in desirableInfos {
             if let userInfo = infos[info] as? String {
-                installation.channels?.append(userInfo)
+                var copyArray = stringArrayCopy(installation.channels!)
+                if contains(copyArray, userInfo) {
+                    installation.channels?.append(userInfo)
+                }
             }
         }
+    }
+    
+    func stringArrayCopy(original:Array<AnyObject>) -> Array<String> {
+        var result:Array<String> = []
+        for object in original {
+            if let string = object as? String {
+                result.append(string)
+            }
+        }
+        return result
     }
     
 }

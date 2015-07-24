@@ -39,14 +39,14 @@ class GameProvider: NSObject {
         gameObject["ownerCount"] = game.ownerCount
         gameObject["ownerName"] = owner.name
         gameObject["ownerImage"] = owner.profileImage
-        gameObject["ownerVisualized"] = NSNumber(bool: false)
+        gameObject["ownerVisualized"] = false
         
         gameObject["enemy"] = game.enemy
         gameObject["enemyHand"] = ""
         gameObject["enemyCount"] = 0
         gameObject["enemyName"] = enemy.name
         gameObject["enemyImage"] = enemy.profileImage
-        gameObject["enemyVisualized"] = NSNumber(bool: false)
+        gameObject["enemyVisualized"] = false
         
         gameObject["finish"] = 0
         gameObject["betText"] = game.betText

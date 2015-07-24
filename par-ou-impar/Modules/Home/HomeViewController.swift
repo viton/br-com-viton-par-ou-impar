@@ -15,7 +15,6 @@ class HomeViewController: BaseViewController {
     
     @IBOutlet weak var gadBannerView: GADBannerView!
 
-    @IBOutlet weak var AdsBannerView: UIView!
     @IBOutlet weak var tableView: UITableView!
     var tableManager:BaseTableViewManager?
     var noResultsPlaceholder:Placeholder?
