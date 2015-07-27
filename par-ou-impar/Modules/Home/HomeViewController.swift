@@ -32,7 +32,7 @@ class HomeViewController: BaseViewController {
         gadBannerView.adUnitID = "ca-app-pub-6732487218165467/7980294632"
         gadBannerView.rootViewController = self
         var gadRequest = GADRequest()
-        gadRequest.testDevices = [ kGADSimulatorID ];
+        gadRequest.testDevices = [ kGADSimulatorID, "f1abdfdf0b24e308ec273def74fd4fd1" ];
         gadBannerView.loadRequest(gadRequest)
     }
     

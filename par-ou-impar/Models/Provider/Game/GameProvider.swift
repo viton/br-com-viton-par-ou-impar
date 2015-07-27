@@ -68,6 +68,8 @@ class GameProvider: NSObject {
     }
     
     class func replyGame(game:Game, callback:ReplyGameCallback?) {
+        game["ownerVisualized"] = false
+        game["enemyVisualized"] = true
         if callback == nil {
             game.saveInBackground()
             return;

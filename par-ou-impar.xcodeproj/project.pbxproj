@@ -80,6 +80,8 @@
 		4DBB9B4B1B4428AD00B49658 /* LoadingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBB9B491B4428AD00B49658 /* LoadingExtension.swift */; };
 		4DBB9B511B442A7700B49658 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBB9B4F1B442A7700B49658 /* LoginViewController.swift */; };
 		4DBB9B521B442A7700B49658 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DBB9B501B442A7700B49658 /* LoginViewController.xib */; };
+		4DBC4F351B665633004EAE1E /* LooseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBC4F341B665633004EAE1E /* LooseViewController.swift */; };
+		4DBC4F371B66564B004EAE1E /* LooseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DBC4F361B66564B004EAE1E /* LooseViewController.xib */; };
 		576A20061B4847A5008C24CE /* ColorProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576A20051B4847A5008C24CE /* ColorProvider.swift */; };
 		576A200A1B485DD3008C24CE /* GameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576A20081B485DD3008C24CE /* GameTableViewCell.swift */; };
 		576A200B1B485DD3008C24CE /* GameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 576A20091B485DD3008C24CE /* GameTableViewCell.xib */; };
@@ -195,6 +197,8 @@
 		4DBB9B4F1B442A7700B49658 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4DBB9B501B442A7700B49658 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		4DBB9B901B44346B00B49658 /* par_ou_impar-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "par_ou_impar-Bridging-Header.h"; sourceTree = "<group>"; };
+		4DBC4F341B665633004EAE1E /* LooseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LooseViewController.swift; sourceTree = "<group>"; };
+		4DBC4F361B66564B004EAE1E /* LooseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LooseViewController.xib; sourceTree = "<group>"; };
 		576A20051B4847A5008C24CE /* ColorProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorProvider.swift; sourceTree = "<group>"; };
 		576A20081B485DD3008C24CE /* GameTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTableViewCell.swift; sourceTree = "<group>"; };
 		576A20091B485DD3008C24CE /* GameTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameTableViewCell.xib; sourceTree = "<group>"; };
@@ -406,6 +410,7 @@
 		4D6DFE4C1B458F3500F406E3 /* MatchResult */ = {
 			isa = PBXGroup;
 			children = (
+				4DBC4F331B665609004EAE1E /* Loose */,
 				4D6DFE4D1B458F4C00F406E3 /* MatchResultViewController.swift */,
 				4D6DFE4E1B458F4C00F406E3 /* MatchResultViewController.xib */,
 			);
@@ -806,6 +811,15 @@
 			path = UIView;
 			sourceTree = "<group>";
 		};
+		4DBC4F331B665609004EAE1E /* Loose */ = {
+			isa = PBXGroup;
+			children = (
+				4DBC4F341B665633004EAE1E /* LooseViewController.swift */,
+				4DBC4F361B66564B004EAE1E /* LooseViewController.xib */,
+			);
+			path = Loose;
+			sourceTree = "<group>";
+		};
 		576A20041B484788008C24CE /* Color */ = {
 			isa = PBXGroup;
 			children = (
@@ -990,6 +1004,7 @@
 				4DBB9B1D1B44284400B49658 /* Images.xcassets in Resources */,
 				4DBB9B441B44288700B49658 /* Placeholder.xib in Resources */,
 				4DBB9B3C1B44288700B49658 /* TesteTableViewCell.xib in Resources */,
+				4DBC4F371B66564B004EAE1E /* LooseViewController.xib in Resources */,
 				576A200B1B485DD3008C24CE /* GameTableViewCell.xib in Resources */,
 				4D6DFE621B45E36D00F406E3 /* HandCountCollectionViewCell.xib in Resources */,
 				576A20241B50BDC8008C24CE /* HandCountLoading.xib in Resources */,
@@ -1101,6 +1116,7 @@
 				4DBB9B4A1B4428AD00B49658 /* ConstraintsExtension.swift in Sources */,
 				4D4E51E01B4C44800049D474 /* CollectionViewManager.swift in Sources */,
 				4D6DFE211B4445CF00F406E3 /* User.swift in Sources */,
+				4DBC4F351B665633004EAE1E /* LooseViewController.swift in Sources */,
 				4DA0A7701B5036BB00C30561 /* UIButton+ButtonStyle.m in Sources */,
 				4DA0A7671B50047400C30561 /* UIViewAttributes.m in Sources */,
 				576A200E1B498CFC008C24CE /* ImageDownloadExtension.swift in Sources */,

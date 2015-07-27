@@ -58,7 +58,7 @@ class FightViewController: BaseViewController {
     
     func setGameVisualized() {
         if(game!.amIOwner()){
-            game?.ownerVisualized = 1;
+            game!["ownerVisualized"] = true;
             GameProvider.replyGame(game!, callback: nil)
         }
     }
@@ -83,13 +83,19 @@ class FightViewController: BaseViewController {
             titleLabel.hidden = false
             titleLabel.text = game?.getWinnerText()
         }
-        if(fightIndex == 5) {
+        if(fightIndex == 4) {
             fightTimer?.invalidate()
-            var viewController = MatchResultViewController()
-            viewController.game = game
-            navigationController?.pushViewController(viewController, animated: true)
+            if game!.amIWinner() {
+                
+                var viewController = MatchResultViewController()
+                viewController.game = game
+                navigationController?.pushViewController(viewController, animated: true)
+            } else {
+                var viewController = LooseViewController()
+                viewController.game = game
+                navigationController?.pushViewController(viewController, animated: true)
+            }
         }
-        
         fightIndex += 1
     }
     

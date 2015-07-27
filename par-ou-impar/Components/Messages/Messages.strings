@@ -11,3 +11,5 @@
 "winner.title" = "#CHUPA";
 "winner.disclaimer" = "A vitória só é plena se todos souberem que seu amigo %@ perdeu. Compartilhe agora mesmo no facebook!";
 "winner.share.button" = "Compartilhar no facebook";
+
+"looser.disclaimer" = "Hoje não deu, mas vai ter volta. Comece agora mesmo uma revanche contra %@";
