@@ -33,6 +33,16 @@ class ReplyGameViewController: BaseViewController {
         chooseHandView.chooseHandViewDelegate = self
     }
     
+    func validate () -> (Bool, String) {
+        if hand == nil {
+            return (false, "Escolha uma mão")
+        }
+        if count == nil {
+            return (false, "Escolha uma contagem")
+        }
+        return (true, "")
+    }
+    
     func requestReplyGame() {
         view.startLoading()
         game?.enemyCount = count
@@ -44,6 +54,10 @@ class ReplyGameViewController: BaseViewController {
     }
     
     @IBAction func replyAction(sender: AnyObject) {
+        if(!validate().0) {
+            alert(validate().1)
+            return
+        }
         requestReplyGame()
     }
     

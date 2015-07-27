@@ -39,6 +39,19 @@ class NewGameViewController: BaseViewController {
         chooseHandView.chooseHandViewDelegate = self
         me = LoginProvider.user
     }
+    
+    func validate () -> (Bool, String) {
+        if friend == nil {
+            return (false, "Escolha um adversário")
+        }
+        if hand == nil {
+            return (false, "Escolha uma mão")
+        }
+        if count == nil {
+            return (false, "Escolha uma contagem")
+        }
+        return (true, "")
+    }
 
     @IBAction func chooseFriendAction(sender: AnyObject) {
         chooseFriendViewController = ChooseFriendViewController()
@@ -51,6 +64,10 @@ class NewGameViewController: BaseViewController {
     }
     
     @IBAction func createGameAction(sender: AnyObject) {
+        if(!validate().0) {
+            alert(validate().1)
+            return
+        }
         let game = Game()
         game.enemy = friend?.facebookId
         game.owner = me?.facebookId
