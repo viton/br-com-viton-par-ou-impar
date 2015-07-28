@@ -8,6 +8,7 @@
 
 import UIKit
 import Foundation
+import FBSDKShareKit
 
 protocol ChooseFriendsDelegate {
     
@@ -73,6 +74,17 @@ class ChooseFriendViewController: BaseViewController, FriendsCallback {
         return filteredFriends
     }
     
+    func inviteFriends() {
+        var content = FBSDKAppInviteContent()
+
+        content.appLinkURL = NSURL(string: "https://www.mydomain.com/myapplink")
+        //optionally set previewImageURL
+        content.appInvitePreviewImageURL = NSURL(string: "https://www.mydomain.com/my_invite_image.jpg")
+        
+        // present the dialog. Assumes self implements protocol `FBSDKAppInviteDialogDelegate`
+        FBSDKAppInviteDialog.showWithContent(content, delegate: self)
+    }
+    
     override func didSelectObject(object:AnyObject) {
         let friend = object as! User
         if let chooseFriendDelegate = delegate {
@@ -88,7 +100,7 @@ extension ChooseFriendViewController: PlaceholderActionDelegate {
     override func didClickPlaceholderAction(placeholder: Placeholder) {
         super.didClickPlaceholderAction(placeholder)
         if placeholder == noFriendsPlaceholder {
-            println("Should call friends and create example game")
+            inviteFriends()
         }
     }
     
@@ -111,6 +123,18 @@ extension ChooseFriendViewController:FriendsCallback {
         super.prepareToRespose()
         view.stopLoading()
         view.removePlaceholder(&noFriendsPlaceholder)
+    }
+    
+}
+
+extension ChooseFriendViewController:FBSDKAppInviteDialogDelegate {
+    
+    func appInviteDialog(appInviteDialog: FBSDKAppInviteDialog!, didCompleteWithResults results: [NSObject : AnyObject]!) {
+    
+    }
+    
+    func appInviteDialog(appInviteDialog: FBSDKAppInviteDialog!, didFailWithError error: NSError!) {
+    
     }
     
 }
