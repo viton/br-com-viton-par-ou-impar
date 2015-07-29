@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
@@ -19,15 +18,24 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MWW-Lc-Mv4" userLabel="CLOSE_BUTTON">
+                    <rect key="frame" x="15" y="8" width="40" height="40"/>
+                    <state key="normal" image="ic-close">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="closeAction:" destination="-1" eventType="touchUpInside" id="sHx-8j-91F"/>
+                    </connections>
+                </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="F3N-qh-57l">
-                    <rect key="frame" x="15" y="20" width="60" height="60"/>
+                    <rect key="frame" x="15" y="58" width="60" height="60"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="ocU-a3-jWe"/>
                         <constraint firstAttribute="width" constant="60" id="w23-k7-QuK"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ceF-7Q-iQn">
-                    <rect key="frame" x="90" y="40.5" width="42" height="20.5"/>
+                    <rect key="frame" x="90" y="78" width="42" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -36,7 +44,7 @@
                     </userDefinedRuntimeAttributes>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BVE-uK-3BA">
-                    <rect key="frame" x="15" y="95" width="570" height="20.5"/>
+                    <rect key="frame" x="15" y="133" width="570" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -45,7 +53,7 @@
                     </userDefinedRuntimeAttributes>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p2f-Q2-OqN" customClass="ChooseHandView" customModule="par_ou_impar" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="130.5" width="600" height="397.5"/>
+                    <rect key="frame" x="0.0" y="168" width="600" height="359.5"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zAt-ze-paM">
                     <rect key="frame" x="15" y="543" width="570" height="40"/>
@@ -69,13 +77,16 @@
                 <constraint firstItem="zAt-ze-paM" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="55U-sf-5Vn"/>
                 <constraint firstAttribute="trailing" secondItem="p2f-Q2-OqN" secondAttribute="trailing" id="6V0-ft-wQB"/>
                 <constraint firstItem="BVE-uK-3BA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="6pe-fI-fAg"/>
-                <constraint firstItem="F3N-qh-57l" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="8Ri-8S-vYC"/>
+                <constraint firstItem="F3N-qh-57l" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="60" id="8Ri-8S-vYC"/>
+                <constraint firstItem="MWW-Lc-Mv4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="Db9-Bq-th9"/>
                 <constraint firstItem="ceF-7Q-iQn" firstAttribute="leading" secondItem="F3N-qh-57l" secondAttribute="trailing" constant="15" id="FME-J3-PRH"/>
                 <constraint firstAttribute="bottom" secondItem="zAt-ze-paM" secondAttribute="bottom" constant="17" id="RC7-DL-ekk"/>
                 <constraint firstItem="F3N-qh-57l" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="RCD-Qk-fro"/>
                 <constraint firstAttribute="trailing" secondItem="BVE-uK-3BA" secondAttribute="trailing" constant="15" id="SUs-La-Q0U"/>
+                <constraint firstItem="F3N-qh-57l" firstAttribute="top" secondItem="MWW-Lc-Mv4" secondAttribute="bottom" constant="10" id="YUJ-EB-zWw"/>
                 <constraint firstAttribute="trailing" secondItem="zAt-ze-paM" secondAttribute="trailing" constant="15" id="bRA-Ix-cuD"/>
                 <constraint firstAttribute="centerX" secondItem="zAt-ze-paM" secondAttribute="centerX" constant="3.5" id="kDW-Jq-6QQ"/>
+                <constraint firstItem="MWW-Lc-Mv4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="ktx-6r-w1u"/>
                 <constraint firstItem="ceF-7Q-iQn" firstAttribute="centerY" secondItem="F3N-qh-57l" secondAttribute="centerY" id="m2V-W7-O9f"/>
                 <constraint firstItem="p2f-Q2-OqN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="oG9-Rt-7ZD"/>
                 <constraint firstItem="p2f-Q2-OqN" firstAttribute="top" secondItem="BVE-uK-3BA" secondAttribute="bottom" constant="15" id="r45-YU-cQf"/>
@@ -83,9 +94,13 @@
             </constraints>
             <variation key="default">
                 <mask key="constraints">
+                    <exclude reference="8Ri-8S-vYC"/>
                     <exclude reference="kDW-Jq-6QQ"/>
                 </mask>
             </variation>
         </view>
     </objects>
+    <resources>
+        <image name="ic-close" width="40" height="40"/>
+    </resources>
 </document>

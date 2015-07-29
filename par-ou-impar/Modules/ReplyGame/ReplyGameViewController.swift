@@ -27,6 +27,7 @@ class ReplyGameViewController: BaseViewController {
     }
     
     func setup() {
+        chooseHandView.optionValueLabel.text = Messages.message("option.value.odd")
         friendImageView.setImage(url: game!.getOponent().profileImage!)
         friendNameLabel.text = game?.getOponent().name
         betTextLabel.text = game?.betText
@@ -51,6 +52,10 @@ class ReplyGameViewController: BaseViewController {
         game?.winner = game?.decideWinner()
         game?.enemyVisualized = 1
         GameProvider.replyGame(game!, callback: self)
+    }
+    
+    @IBAction func closeAction(sender: AnyObject) {
+        navigationController?.popViewControllerAnimated(true)
     }
     
     @IBAction func replyAction(sender: AnyObject) {

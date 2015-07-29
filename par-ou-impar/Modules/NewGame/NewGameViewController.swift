@@ -34,7 +34,7 @@ class NewGameViewController: BaseViewController {
     }
 
     func setup() {
-        title = "Novo"
+        chooseHandView.optionValueLabel.text = Messages.message("option.value.even")
         navigationController?.navigationBarHidden = false
         chooseHandView.chooseHandViewDelegate = self
         me = LoginProvider.user
