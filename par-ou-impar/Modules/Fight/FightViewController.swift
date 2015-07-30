@@ -14,10 +14,12 @@ class FightViewController: BaseViewController {
     @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var myImageView: UIImageView!
-    @IBOutlet weak var opponentImageView: UIImageView!
+    @IBOutlet weak var myHandImageView: UIImageView!
+    @IBOutlet weak var myOptionValue: UILabel!
     
     @IBOutlet weak var opponentHandImageView: UIImageView!
-    @IBOutlet weak var myHandImageView: UIImageView!
+    @IBOutlet weak var opponentImageView: UIImageView!
+    @IBOutlet weak var opponentOptionValue: UILabel!
     
     var introIndex:Int = 0
     var introTimer:NSTimer?
@@ -46,6 +48,7 @@ class FightViewController: BaseViewController {
     }
 
     func setup() {
+        setupOptions()
         myImageView.setImage(url: game!.getMe().profileImage!)
         opponentImageView.setImage(url: game!.getOponent().profileImage!)
         
@@ -54,6 +57,17 @@ class FightViewController: BaseViewController {
         myHandImageView.image = UIImage(named: myFightHand!.imagePrefix! + "0")
         opponentHandImageView.image = UIImage(named: friendFightHand!.imagePrefix! + "0")
         opponentHandImageView.layer.setAffineTransform(CGAffineTransformMakeRotation(CGFloat(M_PI)))
+    }
+    
+    func setupOptions(){
+        if(game!.amIOwner()){
+            myOptionValue.text = Messages.message("option.value.even")
+            opponentOptionValue.text = Messages.message("option.value.odd")
+        }else{
+            myOptionValue.text = Messages.message("option.value.odd")
+            opponentOptionValue.text = Messages.message("option.value.even")
+        }
+        
     }
     
     func setGameVisualized() {
