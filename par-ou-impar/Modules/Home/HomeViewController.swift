@@ -21,6 +21,7 @@ class HomeViewController: BaseViewController {
     
     @IBOutlet weak var chooseColorWIfthConstraint: NSLayoutConstraint!
     @IBOutlet weak var chooseColorView: ChooseColorView!
+    @IBOutlet weak var newGameButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,11 +45,12 @@ class HomeViewController: BaseViewController {
     }
     
     func requestGames() {
-        view.startLoadingRandom("Loading Games")
+        view.startLoadingRandom(Messages.message("home.loading.games.message"))
         GameProvider.getGames(FBSDKAccessToken.currentAccessToken().userID, callback:self)
     }
     
     func setup() {
+        newGameButton.setTitle(Messages.message("home.new.game.button.title"))
         tableManager = GameTableViewManager(tableView: tableView, delegate:self)
         tableManager?.delegate = self
         chooseColorView.widthConstraint = chooseColorWIfthConstraint
@@ -103,7 +105,7 @@ extension HomeViewController: GamesCallback {
     }
     
     func onEmptyGamesList() {
-        noResultsPlaceholder = view.addPlaceholder("New here?", content: "We found no games for you. Click here and have fun", buttonTitle: "My first Game", image: nil)
+        noResultsPlaceholder = view.addPlaceholder(Messages.message("home.no.games.placeholder.title"), content: Messages.message("home.no.games.placeholder.descriptions"), buttonTitle: Messages.message("home.no.games.placeholder.button.title"), image: nil)
         noResultsPlaceholder?.delegate = self
     }
     

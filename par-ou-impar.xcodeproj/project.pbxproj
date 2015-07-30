@@ -47,6 +47,7 @@
 		4D6DFE651B4600A200F406E3 /* GameTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6DFE641B4600A200F406E3 /* GameTableViewManager.swift */; };
 		4D8866C91B54239E008ED200 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8866C81B54239E008ED200 /* AdSupport.framework */; };
 		4D8866CD1B5423B9008ED200 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8866CC1B5423B9008ED200 /* CoreMotion.framework */; };
+		4DA043491B6ACC9F00DFC34B /* UIButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA043481B6ACC9F00DFC34B /* UIButtonExtensions.swift */; };
 		4DA0A71E1B4D5A8200C30561 /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA0A71C1B4D5A8200C30561 /* FriendTableViewCell.swift */; };
 		4DA0A71F1B4D5A8200C30561 /* FriendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DA0A71D1B4D5A8200C30561 /* FriendTableViewCell.xib */; };
 		4DA0A7611B50047400C30561 /* BaseStylesheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA0A7521B50047400C30561 /* BaseStylesheet.m */; };
@@ -148,6 +149,7 @@
 		4D6DFE641B4600A200F406E3 /* GameTableViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTableViewManager.swift; sourceTree = "<group>"; };
 		4D8866C81B54239E008ED200 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		4D8866CC1B5423B9008ED200 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		4DA043481B6ACC9F00DFC34B /* UIButtonExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtensions.swift; sourceTree = "<group>"; };
 		4DA0A71C1B4D5A8200C30561 /* FriendTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
 		4DA0A71D1B4D5A8200C30561 /* FriendTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendTableViewCell.xib; sourceTree = "<group>"; };
 		4DA0A74C1B50047400C30561 /* Colors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Colors.h; sourceTree = "<group>"; };
@@ -460,6 +462,14 @@
 			path = Games;
 			sourceTree = "<group>";
 		};
+		4DA043471B6ACC8B00DFC34B /* UIButton */ = {
+			isa = PBXGroup;
+			children = (
+				4DA043481B6ACC9F00DFC34B /* UIButtonExtensions.swift */,
+			);
+			path = UIButton;
+			sourceTree = "<group>";
+		};
 		4DA0A71B1B4D5A7200C30561 /* Friend */ = {
 			isa = PBXGroup;
 			children = (
@@ -655,6 +665,7 @@
 			isa = PBXGroup;
 			children = (
 				4D6DFE251B44493E00F406E3 /* PFObject */,
+				4DA043471B6ACC8B00DFC34B /* UIButton */,
 				576A200C1B498CD8008C24CE /* UIImageView */,
 				4DBB9B471B4428AD00B49658 /* UIView */,
 			);
@@ -1120,6 +1131,7 @@
 				4DA0A7701B5036BB00C30561 /* UIButton+ButtonStyle.m in Sources */,
 				4DA0A7671B50047400C30561 /* UIViewAttributes.m in Sources */,
 				576A200E1B498CFC008C24CE /* ImageDownloadExtension.swift in Sources */,
+				4DA043491B6ACC9F00DFC34B /* UIButtonExtensions.swift in Sources */,
 				4DA0A76B1B50276700C30561 /* ButtonStylesheet.m in Sources */,
 				4DBB9B391B44288700B49658 /* Messages.swift in Sources */,
 				4DA0A7611B50047400C30561 /* BaseStylesheet.m in Sources */,
