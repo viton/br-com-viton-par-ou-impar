@@ -8,11 +8,10 @@
 
 "test" = "Isso é uma mensagem de teste";
 
-//Match result
-"winner.title" = "#CHUPA";
-"winner.disclaimer" = "A vitória só é plena se todos souberem que seu amigo %@ perdeu. Compartilhe agora mesmo no facebook!";
-"winner.share.button" = "Compartilhar no facebook";
-"looser.disclaimer" = "Hoje não deu, mas vai ter volta. Comece agora mesmo uma revanche contra %@";
+//No Connection
+"no.connection.placeholder.title" = "Oh oh!";
+"no.connection.placeholder.disclaimer" = "Não foi possível se conectar";
+"no.connection.placeholder.button.title" = "Tentar novamente";
 
 //Option
 "option.title" = "Você é ";
@@ -26,3 +25,8 @@
 "home.no.games.placeholder.descriptions" = "Não encontramos nenhum jogo para você. Toque aqui e vamos começar";
 "home.no.games.placeholder.button.title" = "Criar primeiro jogo";
 
+//Match result
+"winner.title" = "#CHUPA";
+"winner.disclaimer" = "A vitória só é plena se todos souberem que seu amigo %@ perdeu. Compartilhe agora mesmo no facebook!";
+"winner.share.button" = "Compartilhar no facebook";
+"looser.disclaimer" = "Hoje não deu, mas vai ter volta. Comece agora mesmo uma revanche contra %@";
