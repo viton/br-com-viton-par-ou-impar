@@ -24,9 +24,9 @@ class MatchResultViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        interstitial = GADInterstitial(adUnitID: "ca-app-pub-6732487218165467/6363960639")
+        interstitial = GADInterstitial(adUnitID: MATCH_RESULT_GOOGLE_ADS_INTERSTITIAL_UNIT_ID)
         var gadRequest = GADRequest()
-        gadRequest.testDevices = [ kGADSimulatorID, "f1abdfdf0b24e308ec273def74fd4fd1" ];
+        gadRequest.testDevices = GOOGLE_REQUEST_TEST_DEVICES
         interstitial?.loadRequest(gadRequest)
     }
 
@@ -36,7 +36,6 @@ class MatchResultViewController: BaseViewController {
         winnerTitleLabel.text = Messages.message("winner.title")
         looserLabel.text = game?.getOponent().name?.uppercaseString
         disclaimerLabel.text = String(format: Messages.message("winner.disclaimer"), arguments: [game!.getOponent().name!])
-//            Messages.message("winner.disclaimer")
     }
     
     @IBAction func shareAction(sender: AnyObject) {

@@ -34,7 +34,7 @@ class LooseViewController: BaseViewController {
     }
     
     func setupAds() {
-        interstitial = GADInterstitial(adUnitID: GOOGLE_ADS_INTERSTITIAL_UNIT_ID)
+        interstitial = GADInterstitial(adUnitID: LOOSE_MATCH_GOOGLE_ADS_INTERSTITIAL_UNIT_ID)
         var gadRequest = GADRequest()
         gadRequest.testDevices = GOOGLE_REQUEST_TEST_DEVICES
         interstitial?.loadRequest(gadRequest)
