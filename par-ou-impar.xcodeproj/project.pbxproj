@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4D0612691B6BCCAD00385A23 /* AppSettingsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0612681B6BCCAD00385A23 /* AppSettingsProvider.swift */; };
+		4D06126D1B6BEC3900385A23 /* InviteMoreFriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D06126B1B6BEC3900385A23 /* InviteMoreFriendsTableViewCell.swift */; };
+		4D06126E1B6BEC3900385A23 /* InviteMoreFriendsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D06126C1B6BEC3900385A23 /* InviteMoreFriendsTableViewCell.xib */; };
 		4D4E51C81B4C3F0C0049D474 /* SimpleLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4E51C71B4C3F0C0049D474 /* SimpleLoading.swift */; };
 		4D4E51CA1B4C3F8C0049D474 /* SimpleLoading.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D4E51C91B4C3F8C0049D474 /* SimpleLoading.xib */; };
 		4D4E51CC1B4C404D0049D474 /* OneHandLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4E51CB1B4C404D0049D474 /* OneHandLoading.swift */; };
@@ -111,6 +113,8 @@
 /* Begin PBXFileReference section */
 		48BE49A876F579D1F50DBC18 /* Pods_par_ou_impar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_par_ou_impar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D0612681B6BCCAD00385A23 /* AppSettingsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettingsProvider.swift; sourceTree = "<group>"; };
+		4D06126B1B6BEC3900385A23 /* InviteMoreFriendsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteMoreFriendsTableViewCell.swift; sourceTree = "<group>"; };
+		4D06126C1B6BEC3900385A23 /* InviteMoreFriendsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InviteMoreFriendsTableViewCell.xib; sourceTree = "<group>"; };
 		4D4E51C71B4C3F0C0049D474 /* SimpleLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleLoading.swift; sourceTree = "<group>"; };
 		4D4E51C91B4C3F8C0049D474 /* SimpleLoading.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SimpleLoading.xib; sourceTree = "<group>"; };
 		4D4E51CB1B4C404D0049D474 /* OneHandLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneHandLoading.swift; sourceTree = "<group>"; };
@@ -245,6 +249,15 @@
 				4D0612681B6BCCAD00385A23 /* AppSettingsProvider.swift */,
 			);
 			path = AppSettings;
+			sourceTree = "<group>";
+		};
+		4D06126A1B6BEC0E00385A23 /* InviteMoreFriends */ = {
+			isa = PBXGroup;
+			children = (
+				4D06126B1B6BEC3900385A23 /* InviteMoreFriendsTableViewCell.swift */,
+				4D06126C1B6BEC3900385A23 /* InviteMoreFriendsTableViewCell.xib */,
+			);
+			path = InviteMoreFriends;
 			sourceTree = "<group>";
 		};
 		4D4E51C51B4C3EEB0049D474 /* OneHandLoading */ = {
@@ -816,6 +829,7 @@
 			children = (
 				4DA0A71B1B4D5A7200C30561 /* Friend */,
 				576A20071B485DA3008C24CE /* Game */,
+				4D06126A1B6BEC0E00385A23 /* InviteMoreFriends */,
 				4DBB9B351B44288700B49658 /* NewTableViewCell.swift */,
 				4DBB9B361B44288700B49658 /* NewTableViewCell.xib */,
 			);
@@ -1040,6 +1054,7 @@
 				4D6DFE331B44677400F406E3 /* NewGameViewController.xib in Resources */,
 				4DA674121B4426E50081BDB3 /* LaunchScreen.xib in Resources */,
 				4DA0A7651B50047400C30561 /* README in Resources */,
+				4D06126E1B6BEC3900385A23 /* InviteMoreFriendsTableViewCell.xib in Resources */,
 				4DBB9B461B44288700B49658 /* NewTableViewCell.xib in Resources */,
 				4D6DFE381B446A0200F406E3 /* ChooseFriendViewController.xib in Resources */,
 				4D4E51CE1B4C405B0049D474 /* OneHandLoading.xib in Resources */,
@@ -1115,6 +1130,7 @@
 				4DBB9B3F1B44288700B49658 /* Header.swift in Sources */,
 				4D4E51D11B4C43680049D474 /* ChooseColorView.swift in Sources */,
 				4D6DFE4F1B458F4C00F406E3 /* MatchResultViewController.swift in Sources */,
+				4D06126D1B6BEC3900385A23 /* InviteMoreFriendsTableViewCell.swift in Sources */,
 				4D4E51CC1B4C404D0049D474 /* OneHandLoading.swift in Sources */,
 				4D6DFE241B4447AD00F406E3 /* LoginProvider.swift in Sources */,
 				576A20111B4CC4A1008C24CE /* HandCollectionViewManager.swift in Sources */,

@@ -52,6 +52,7 @@
 "choose.friend.placeholder.empty.friends.title" = "Não acredito!";
 "choose.friend.placeholder.empty.friends.disclaimer" = "Você ainda não tem amigos jogando. Toque no botão para convidar seus amigos e jogar agora!";
 "choose.friend.placeholder.empty.friends.button.title" = "Convidar amigos";
+"choose.friend.invite.more.friends" = "Convidar mais amigos";
 
 //Match result
 "winner.title" = "#CHUPA";

@@ -109,7 +109,8 @@ public class BaseTableViewManager: NSObject, UITableViewDataSource {
         var item:AnyObject
         
         item = objectForIndexPath(indexPath)
-        cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifierForClass(getClassName(cellClassForItem(item)))) as! UITableViewCell
+        var cellIdentifier = cellIdentifierForClass(getClassName(cellClassForItem(item)))
+        cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as! UITableViewCell
         
         
         setData(item, toCell: cell)

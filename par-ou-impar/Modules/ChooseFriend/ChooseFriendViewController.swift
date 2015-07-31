@@ -16,7 +16,7 @@ protocol ChooseFriendsDelegate {
     
 }
 
-class ChooseFriendViewController: BaseViewController, FriendsCallback {
+class ChooseFriendViewController: BaseViewController {
     
     @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var tableView: UITableView!
@@ -83,6 +83,15 @@ class ChooseFriendViewController: BaseViewController, FriendsCallback {
         
         // present the dialog. Assumes self implements protocol `FBSDKAppInviteDialogDelegate`
         FBSDKAppInviteDialog.showWithContent(content, delegate: self)
+    }
+    
+}
+
+//MARK: FriendTableViewManagerDelegate
+extension ChooseFriendViewController: FriendTableViewManagerDelegate {
+    
+    func didSelectInviteMoreFriends() {
+        inviteFriends()
     }
     
     override func didSelectObject(object:AnyObject) {
