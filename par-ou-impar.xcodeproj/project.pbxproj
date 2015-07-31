@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D0612691B6BCCAD00385A23 /* AppSettingsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0612681B6BCCAD00385A23 /* AppSettingsProvider.swift */; };
 		4D4E51C81B4C3F0C0049D474 /* SimpleLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4E51C71B4C3F0C0049D474 /* SimpleLoading.swift */; };
 		4D4E51CA1B4C3F8C0049D474 /* SimpleLoading.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D4E51C91B4C3F8C0049D474 /* SimpleLoading.xib */; };
 		4D4E51CC1B4C404D0049D474 /* OneHandLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4E51CB1B4C404D0049D474 /* OneHandLoading.swift */; };
@@ -109,6 +110,7 @@
 
 /* Begin PBXFileReference section */
 		48BE49A876F579D1F50DBC18 /* Pods_par_ou_impar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_par_ou_impar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D0612681B6BCCAD00385A23 /* AppSettingsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettingsProvider.swift; sourceTree = "<group>"; };
 		4D4E51C71B4C3F0C0049D474 /* SimpleLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleLoading.swift; sourceTree = "<group>"; };
 		4D4E51C91B4C3F8C0049D474 /* SimpleLoading.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SimpleLoading.xib; sourceTree = "<group>"; };
 		4D4E51CB1B4C404D0049D474 /* OneHandLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneHandLoading.swift; sourceTree = "<group>"; };
@@ -237,6 +239,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D0612671B6BCC9900385A23 /* AppSettings */ = {
+			isa = PBXGroup;
+			children = (
+				4D0612681B6BCCAD00385A23 /* AppSettingsProvider.swift */,
+			);
+			path = AppSettings;
+			sourceTree = "<group>";
+		};
 		4D4E51C51B4C3EEB0049D474 /* OneHandLoading */ = {
 			isa = PBXGroup;
 			children = (
@@ -315,6 +325,7 @@
 		4D6DFE1E1B44457400F406E3 /* Provider */ = {
 			isa = PBXGroup;
 			children = (
+				4D0612671B6BCC9900385A23 /* AppSettings */,
 				576A20041B484788008C24CE /* Color */,
 				576A201A1B4CC798008C24CE /* FightHandProvider */,
 				4D6DFE531B45B6EB00F406E3 /* Friends */,
@@ -1119,6 +1130,7 @@
 				4D6DFE2C1B44640B00F406E3 /* HomeViewController.swift in Sources */,
 				4D6DFE271B44498F00F406E3 /* PFObjectExtension.swift in Sources */,
 				576A200A1B485DD3008C24CE /* GameTableViewCell.swift in Sources */,
+				4D0612691B6BCCAD00385A23 /* AppSettingsProvider.swift in Sources */,
 				4D4E51E81B4C5C010049D474 /* ColorCollectionViewCell.swift in Sources */,
 				4DBB9B3B1B44288700B49658 /* TesteTableViewCell.swift in Sources */,
 				4DA0A7621B50047400C30561 /* LabelStylesheet.m in Sources */,

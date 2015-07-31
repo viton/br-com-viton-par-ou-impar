@@ -8,6 +8,7 @@
             <connections>
                 <outlet property="disclaimerLabel" destination="hr1-Cq-H9Y" id="IOb-oy-wzw"/>
                 <outlet property="looserLabel" destination="Hni-ka-XxE" id="Cib-RW-6Zb"/>
+                <outlet property="shareButton" destination="hu9-DA-H3n" id="xP9-8f-sD5"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="winnerTitleLabel" destination="7Vv-g2-Ktf" id="ACQ-t7-5V5"/>
             </connections>

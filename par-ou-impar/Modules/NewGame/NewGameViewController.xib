@@ -8,7 +8,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewGameViewController" customModule="par_ou_impar" customModuleProvider="target">
             <connections>
                 <outlet property="betTextField" destination="3JJ-50-vat" id="yxr-rw-gyQ"/>
+                <outlet property="chooseFriendButton" destination="xUM-SY-LIF" id="4AI-AE-EIe"/>
                 <outlet property="chooseHandView" destination="bas-fi-E1n" id="aJZ-ho-fMq"/>
+                <outlet property="createGameButton" destination="mms-GW-YoF" id="iIY-5y-Q6a"/>
                 <outlet property="friendImageView" destination="sSf-H7-pYm" id="K2z-MF-i5u"/>
                 <outlet property="friendNameLabel" destination="cUf-aM-l0s" id="ibp-lz-Ywi"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

@@ -30,10 +30,10 @@ class HomeViewController: BaseViewController {
     }
     
     func setupAds(){
-        gadBannerView.adUnitID = "ca-app-pub-6732487218165467/7980294632"
+        gadBannerView.adUnitID = GOOGLE_ADS_BANNER_UNIT_ID
         gadBannerView.rootViewController = self
         var gadRequest = GADRequest()
-        gadRequest.testDevices = [ kGADSimulatorID, "f1abdfdf0b24e308ec273def74fd4fd1" ];
+        gadRequest.testDevices = GOOGLE_REQUEST_TEST_DEVICES
         gadBannerView.loadRequest(gadRequest)
     }
     

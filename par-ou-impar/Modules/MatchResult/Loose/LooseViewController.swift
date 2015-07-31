@@ -15,7 +15,9 @@ class LooseViewController: BaseViewController {
     var game:Game?
     
     @IBOutlet weak var opponentNameLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var disclaimerLabel: UILabel!
+    @IBOutlet weak var backButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,14 +27,16 @@ class LooseViewController: BaseViewController {
     }
     
     func setup() {
+        titleLabel.text = Messages.message("looser.title");
+        backButton.setTitle(Messages.message("looser.back.button"))
         opponentNameLabel.text = game?.getOponent().name
         disclaimerLabel.text = String(format: Messages.message("looser.disclaimer"), arguments: [game!.getOponent().name!])
     }
     
     func setupAds() {
-        interstitial = GADInterstitial(adUnitID: "ca-app-pub-6732487218165467/6363960639")
+        interstitial = GADInterstitial(adUnitID: GOOGLE_ADS_INTERSTITIAL_UNIT_ID)
         var gadRequest = GADRequest()
-        gadRequest.testDevices = [ kGADSimulatorID, "f1abdfdf0b24e308ec273def74fd4fd1" ];
+        gadRequest.testDevices = GOOGLE_REQUEST_TEST_DEVICES
         interstitial?.loadRequest(gadRequest)
     }
 

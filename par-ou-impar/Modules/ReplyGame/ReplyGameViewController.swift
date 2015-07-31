@@ -15,7 +15,8 @@ class ReplyGameViewController: BaseViewController {
     @IBOutlet weak var friendNameLabel: UILabel!
     @IBOutlet weak var betTextLabel: UILabel!
     @IBOutlet weak var chooseHandView: ChooseHandView!
-
+    @IBOutlet weak var replyGameButton: UIButton!
+    
     var count:Int?
     var hand:FightHand?
     
@@ -27,6 +28,7 @@ class ReplyGameViewController: BaseViewController {
     }
     
     func setup() {
+        replyGameButton.setTitle(Messages.message("game.reply.button"))
         chooseHandView.optionValueLabel.text = Messages.message("option.value.odd")
         friendImageView.setImage(url: game!.getOponent().profileImage!)
         friendNameLabel.text = game?.getOponent().name
@@ -36,10 +38,10 @@ class ReplyGameViewController: BaseViewController {
     
     func validate () -> (Bool, String) {
         if hand == nil {
-            return (false, "Escolha uma mão")
+            return (false, Messages.message("game.validation.hand"))
         }
         if count == nil {
-            return (false, "Escolha uma contagem")
+            return (false, Messages.message("game.validation.count"))
         }
         return (true, "")
     }

@@ -6,8 +6,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LooseViewController" customModule="par_ou_impar" customModuleProvider="target">
             <connections>
+                <outlet property="backButton" destination="Usy-eq-uHi" id="0Qb-HG-AIg"/>
                 <outlet property="disclaimerLabel" destination="obL-8r-MiY" id="glZ-Pf-19U"/>
                 <outlet property="opponentNameLabel" destination="31n-fF-X5R" id="NOR-fs-FDA"/>
+                <outlet property="titleLabel" destination="lfJ-bc-EZw" id="mLK-8u-y58"/>
                 <outlet property="view" destination="iN0-l3-epB" id="BDv-dq-1FU"/>
             </connections>
         </placeholder>
