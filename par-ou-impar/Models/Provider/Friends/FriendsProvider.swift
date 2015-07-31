@@ -8,6 +8,7 @@
 
 import Foundation
 import FBSDKCoreKit
+import FBSDKLoginKit
 
 protocol FriendsCallback: BaseProviderCallback {
     
@@ -20,7 +21,27 @@ protocol FriendsCallback: BaseProviderCallback {
 class FriendsProvider: NSObject {
 
     class func getFriends(callback:FriendsCallback) {
-        println(FBSDKAccessToken.currentAccessToken().userID)
+        if(self.hasFriendsPermission()) {
+            FriendsProvider.getFriendsAfterFacebookLogin(callback)
+        }else {
+            var loginManager = FBSDKLoginManager()
+            loginManager.logInWithReadPermissions(["user_friends"], handler: { (result, error) in
+                println("Result \(result) error \(error)")
+                if error == nil {
+                    FriendsProvider.getFriendsAfterFacebookLogin(callback)
+                }else{
+                    callback.prepareToRespose()
+                    callback.onEmptyFriends()
+                }
+            } )
+        }
+    }
+    
+    class func hasFriendsPermission() -> Bool {
+        return FBSDKAccessToken.currentAccessToken().hasGranted("user_friends")
+    }
+    
+    class func getFriendsAfterFacebookLogin(callback:FriendsCallback) {
         let meRequest = FBSDKGraphRequest(graphPath: "me/friends", parameters: nil)
         meRequest.startWithCompletionHandler({
             (connection, result, error: NSError!) -> Void in
@@ -28,21 +49,21 @@ class FriendsProvider: NSObject {
             if error == nil {
                 let dataDict:NSDictionary = result as! NSDictionary
                 let friendsArray:Array<NSDictionary> = dataDict.objectForKey("data")! as! Array<NSDictionary>
-                var result = Array<User>()
+                var arrayResult = Array<User>()
                 for dict in friendsArray {
                     var user = User()
                     user.name = dict.objectForKey("name") as? String
                     user.facebookId = dict.objectForKey("id") as? String
                     user.profileImage = String(format: "http://graph.facebook.com/%@/picture?type=normal", user.facebookId!)
-                    result.append(user)
+                    arrayResult.append(user)
                 }
                 
-                if result.count == 0 {
+                if arrayResult.count == 0 {
                     callback.onEmptyFriends()
                 }else{
-                    callback.onSuccess(result)
+                    callback.onSuccess(arrayResult)
                 }
-                println(result)
+                println(arrayResult)
             } else {
                 callback.onConnectionFailToRequest()
             }

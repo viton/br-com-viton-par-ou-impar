@@ -11,6 +11,8 @@ import UIKit
 extension UIImageView {
     
     func setImage(url imageURL: String) {
+        image = nil
+        alpha = 0
         if let imageUrl = NSURL(string: imageURL) {
             let imageRequest: NSURLRequest = NSURLRequest(URL: imageUrl)
             let queue: NSOperationQueue = NSOperationQueue.mainQueue()
@@ -19,7 +21,9 @@ extension UIImageView {
                     let image = UIImage(data: data)
                     self.image = image
                     self.circle()
-                    self.circle()
+                    UIView.animateWithDuration(0.3, animations: { () -> Void in
+                        self.alpha = 1
+                    })
                 }
             })
         }

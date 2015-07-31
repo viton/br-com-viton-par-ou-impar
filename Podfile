@@ -9,6 +9,7 @@ pod 'Parse'
 pod 'FBSDKCoreKit'
 pod 'FBSDKLoginKit'
 pod 'FBSDKShareKit'
+pod 'Google-Mobile-Ads-SDK', '~> 7.0'
 pod 'IQKeyboardManager',        '3.2.3'
 
 end

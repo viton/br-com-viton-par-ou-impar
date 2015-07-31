@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
@@ -9,8 +8,10 @@
             <connections>
                 <outlet property="myHandImageView" destination="ls0-Rf-SOC" id="HuX-hZ-pRb"/>
                 <outlet property="myImageView" destination="ogr-GK-THh" id="crV-OS-ddc"/>
+                <outlet property="myOptionValue" destination="ehe-h9-saW" id="yZE-kN-sVb"/>
                 <outlet property="opponentHandImageView" destination="sCr-bq-mXA" id="Csj-XY-i0c"/>
                 <outlet property="opponentImageView" destination="fAZ-jk-tPi" id="dli-38-q2k"/>
+                <outlet property="opponentOptionValue" destination="RMZ-va-VAe" id="wc0-hX-ZAO"/>
                 <outlet property="titleLabel" destination="zqx-tJ-h4l" id="cOi-iE-ZXo"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -66,16 +67,37 @@
                         <constraint firstAttribute="height" constant="200" id="NoJ-o9-UD6"/>
                     </constraints>
                 </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehe-h9-saW" userLabel="MY_OPTION">
+                    <rect key="frame" x="15" y="564.5" width="42" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="style" value="H1_Bold_Label"/>
+                    </userDefinedRuntimeAttributes>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RMZ-va-VAe" userLabel="OPPONENT_OPTION">
+                    <rect key="frame" x="543" y="15" width="42" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="style" value="H1_Bold_Label"/>
+                    </userDefinedRuntimeAttributes>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="UPO-Mi-5w3" secondAttribute="trailing" id="1Hx-CH-M6T"/>
                 <constraint firstItem="sCr-bq-mXA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="4y7-0p-swi"/>
+                <constraint firstItem="ehe-h9-saW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="6PK-1l-VTs"/>
                 <constraint firstItem="UPO-Mi-5w3" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="7Ex-XI-jlk"/>
+                <constraint firstItem="RMZ-va-VAe" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="15" id="A7q-YD-xXP"/>
                 <constraint firstAttribute="trailing" secondItem="ls0-Rf-SOC" secondAttribute="trailing" id="Avk-LN-29u"/>
                 <constraint firstItem="fAZ-jk-tPi" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="21" id="GX4-Qh-zqn"/>
                 <constraint firstItem="fAZ-jk-tPi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="17" id="Hor-ze-hDx"/>
                 <constraint firstItem="sCr-bq-mXA" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="IXw-d0-IDf"/>
+                <constraint firstAttribute="trailing" secondItem="RMZ-va-VAe" secondAttribute="trailing" constant="15" id="OCx-Fo-IS5"/>
                 <constraint firstAttribute="centerX" secondItem="zqx-tJ-h4l" secondAttribute="centerX" id="POc-eV-Gv7"/>
                 <constraint firstAttribute="bottom" secondItem="UPO-Mi-5w3" secondAttribute="bottom" id="WkO-Im-2nb"/>
                 <constraint firstAttribute="centerY" secondItem="zqx-tJ-h4l" secondAttribute="centerY" constant="0.5" id="YqZ-rU-pdR"/>
@@ -83,6 +105,7 @@
                 <constraint firstAttribute="bottom" secondItem="ogr-GK-THh" secondAttribute="bottom" constant="15" id="g3M-0S-ej6"/>
                 <constraint firstItem="ls0-Rf-SOC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="mtN-XF-WiR"/>
                 <constraint firstAttribute="centerX" secondItem="ls0-Rf-SOC" secondAttribute="centerX" id="oXK-1h-EvP"/>
+                <constraint firstAttribute="bottom" secondItem="ehe-h9-saW" secondAttribute="bottom" constant="15" id="pA7-Ik-OTB"/>
                 <constraint firstAttribute="trailing" secondItem="ogr-GK-THh" secondAttribute="trailing" constant="15" id="uO2-rp-EAX"/>
                 <constraint firstItem="ls0-Rf-SOC" firstAttribute="top" secondItem="UPO-Mi-5w3" secondAttribute="top" id="ucC-mp-1oc"/>
                 <constraint firstAttribute="trailing" secondItem="sCr-bq-mXA" secondAttribute="trailing" id="uhm-8d-oW3"/>

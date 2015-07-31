@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import GoogleMobileAds
 
 class NewGameViewController: BaseViewController {
     
@@ -15,6 +15,10 @@ class NewGameViewController: BaseViewController {
     @IBOutlet weak var friendImageView: UIImageView!
     @IBOutlet weak var chooseHandView: ChooseHandView!
     @IBOutlet weak var betTextField: UITextField!
+    @IBOutlet weak var createGameButton: UIButton!
+    @IBOutlet weak var chooseFriendButton: UIButton!
+    
+    var interstitial: GADInterstitial?
     
     var chooseFriendViewController:ChooseFriendViewController?
     var friend:User?
@@ -34,10 +38,33 @@ class NewGameViewController: BaseViewController {
     }
 
     func setup() {
-        title = "Novo"
+        createGameButton.setTitle(Messages.message("game.create.button"))
+        chooseFriendButton.setTitle(Messages.message("game.choose.opponent.button"))
+        chooseHandView.optionValueLabel.text = Messages.message("option.value.even")
         navigationController?.navigationBarHidden = false
         chooseHandView.chooseHandViewDelegate = self
         me = LoginProvider.user
+        setupAds()
+    }
+    
+    func setupAds() {
+        interstitial = GADInterstitial(adUnitID: NEW_GAME_GOOGLE_ADS_INTERSTITIAL_UNIT_ID)
+        var gadRequest = GADRequest()
+        gadRequest.testDevices = GOOGLE_REQUEST_TEST_DEVICES
+        interstitial?.loadRequest(gadRequest)
+    }
+    
+    func validate () -> (Bool, String) {
+        if friend == nil {
+            return (false, Messages.message("game.validation.opponent"))
+        }
+        if hand == nil {
+            return (false, Messages.message("game.validation.hand"))
+        }
+        if count == nil {
+            return (false, Messages.message("game.validation.count"))
+        }
+        return (true, "")
     }
 
     @IBAction func chooseFriendAction(sender: AnyObject) {
@@ -51,6 +78,10 @@ class NewGameViewController: BaseViewController {
     }
     
     @IBAction func createGameAction(sender: AnyObject) {
+        if(!validate().0) {
+            alert(validate().1)
+            return
+        }
         let game = Game()
         game.enemy = friend?.facebookId
         game.owner = me?.facebookId
@@ -71,6 +102,9 @@ class NewGameViewController: BaseViewController {
 extension NewGameViewController: CreateGameCallback {
     
     func onSuccessCreateGame() {
+        if interstitial!.isReady {
+            interstitial!.presentFromRootViewController(self)
+        }
         navigationController?.popViewControllerAnimated(true)
     }
     

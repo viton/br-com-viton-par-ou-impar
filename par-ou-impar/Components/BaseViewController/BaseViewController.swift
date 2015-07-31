@@ -40,7 +40,7 @@ class BaseViewController: UIViewController {
     }
     
     func alert(message:String) {
-        let alertController = UIAlertController(title: "Title", message:
+        let alertController = UIAlertController(title: "Ops", message:
             message, preferredStyle: UIAlertControllerStyle.Alert)
         alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default,handler: { (action) in
             
@@ -56,7 +56,7 @@ extension BaseViewController: BaseProviderCallback {
     
     func onConnectionFailToRequest() {
         if(noConnectionPlaceholder == nil){
-            noConnectionPlaceholder = view.addPlaceholder("Oh oh!", content: "Wasn't possible to connect", buttonTitle: "Try again", image: nil)
+            noConnectionPlaceholder = view.addPlaceholder(Messages.message("no.connection.placeholder.title"), content: Messages.message("no.connection.placeholder.disclaimer"), buttonTitle: Messages.message("no.connection.placeholder.button.title"), image: UIImage(named: "img-no-connection"))
             noConnectionPlaceholder?.delegate = self
         }
     }

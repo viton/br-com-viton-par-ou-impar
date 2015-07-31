@@ -8,6 +8,7 @@
 
 import UIKit
 import Foundation
+import FBSDKShareKit
 
 protocol ChooseFriendsDelegate {
     
@@ -73,6 +74,17 @@ class ChooseFriendViewController: BaseViewController, FriendsCallback {
         return filteredFriends
     }
     
+    func inviteFriends() {
+        var content = FBSDKAppInviteContent()
+
+        content.appLinkURL = NSURL(string: AppSettingsProvider.getAppStoreURL())
+        //optionally set previewImageURL
+        content.appInvitePreviewImageURL = NSURL(string: AppSettingsProvider.getAppImageURL())
+        
+        // present the dialog. Assumes self implements protocol `FBSDKAppInviteDialogDelegate`
+        FBSDKAppInviteDialog.showWithContent(content, delegate: self)
+    }
+    
     override func didSelectObject(object:AnyObject) {
         let friend = object as! User
         if let chooseFriendDelegate = delegate {
@@ -88,7 +100,7 @@ extension ChooseFriendViewController: PlaceholderActionDelegate {
     override func didClickPlaceholderAction(placeholder: Placeholder) {
         super.didClickPlaceholderAction(placeholder)
         if placeholder == noFriendsPlaceholder {
-            println("Should call friends and create example game")
+            inviteFriends()
         }
     }
     
@@ -103,7 +115,7 @@ extension ChooseFriendViewController:FriendsCallback {
     }
     
     func onEmptyFriends() {
-        noFriendsPlaceholder = view.addPlaceholder("I can't believe", content: "You got no friends playing. While we create a game example for you, call your friends to play with you", buttonTitle: "Play game and invite friends", image: nil)
+        noFriendsPlaceholder = view.addPlaceholder(Messages.message("choose.friend.placeholder.empty.friends.title"), content: Messages.message("choose.friend.placeholder.empty.friends.disclaimer"), buttonTitle: Messages.message("choose.friend.placeholder.empty.friends.button.title"), image: nil)
         noFriendsPlaceholder?.delegate = self
     }
     
@@ -111,6 +123,18 @@ extension ChooseFriendViewController:FriendsCallback {
         super.prepareToRespose()
         view.stopLoading()
         view.removePlaceholder(&noFriendsPlaceholder)
+    }
+    
+}
+
+extension ChooseFriendViewController:FBSDKAppInviteDialogDelegate {
+    
+    func appInviteDialog(appInviteDialog: FBSDKAppInviteDialog!, didCompleteWithResults results: [NSObject : AnyObject]!) {
+    
+    }
+    
+    func appInviteDialog(appInviteDialog: FBSDKAppInviteDialog!, didFailWithError error: NSError!) {
+    
     }
     
 }

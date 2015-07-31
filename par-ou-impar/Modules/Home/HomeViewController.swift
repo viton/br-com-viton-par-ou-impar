@@ -9,8 +9,11 @@
 import UIKit
 import FBSDKCoreKit
 import Parse
+import GoogleMobileAds
 
 class HomeViewController: BaseViewController {
+    
+    @IBOutlet weak var gadBannerView: GADBannerView!
 
     @IBOutlet weak var tableView: UITableView!
     var tableManager:BaseTableViewManager?
@@ -18,24 +21,36 @@ class HomeViewController: BaseViewController {
     
     @IBOutlet weak var chooseColorWIfthConstraint: NSLayoutConstraint!
     @IBOutlet weak var chooseColorView: ChooseColorView!
+    @IBOutlet weak var newGameButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        setupAds()
+    }
+    
+    func setupAds(){
+        gadBannerView.adUnitID = GOOGLE_ADS_BANNER_UNIT_ID
+        gadBannerView.rootViewController = self
+        var gadRequest = GADRequest()
+        gadRequest.testDevices = GOOGLE_REQUEST_TEST_DEVICES
+        gadBannerView.loadRequest(gadRequest)
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        UIApplication.sharedApplication().applicationIconBadgeNumber = 0
         requestGames()
         navigationController?.navigationBarHidden = true
     }
     
     func requestGames() {
-        view.startLoadingRandom("Loading Games")
+        view.startLoadingRandom(Messages.message("home.loading.games.message"))
         GameProvider.getGames(FBSDKAccessToken.currentAccessToken().userID, callback:self)
     }
     
     func setup() {
+        newGameButton.setTitle(Messages.message("home.new.game.button.title"))
         tableManager = GameTableViewManager(tableView: tableView, delegate:self)
         tableManager?.delegate = self
         chooseColorView.widthConstraint = chooseColorWIfthConstraint
@@ -71,13 +86,13 @@ extension HomeViewController: GameTableViewManagerDelegate {
     }
     
     func didSelectFinishGame(game:Game) {
-//        let fightViewController = FightViewController()
-//        fightViewController.game = game
-//        navigationController?.pushViewController(fightViewController, animated: true)
-
-        let fightViewController = MatchResultViewController()
+        let fightViewController = FightViewController()
         fightViewController.game = game
         navigationController?.pushViewController(fightViewController, animated: true)
+
+//        let fightViewController = MatchResultViewController()
+//        fightViewController.game = game
+//        navigationController?.pushViewController(fightViewController, animated: true)
     }
     
 }
@@ -90,7 +105,7 @@ extension HomeViewController: GamesCallback {
     }
     
     func onEmptyGamesList() {
-        noResultsPlaceholder = view.addPlaceholder("New here?", content: "We found no games for you. Click here and have fun", buttonTitle: "My first Game", image: nil)
+        noResultsPlaceholder = view.addPlaceholder(Messages.message("home.no.games.placeholder.title"), content: Messages.message("home.no.games.placeholder.descriptions"), buttonTitle: Messages.message("home.no.games.placeholder.button.title"), image: nil)
         noResultsPlaceholder?.delegate = self
     }
     

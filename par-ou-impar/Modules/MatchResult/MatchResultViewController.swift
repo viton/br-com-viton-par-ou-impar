@@ -9,35 +9,41 @@
 import UIKit
 import FBSDKCoreKit
 import FBSDKShareKit
-import Social
+import GoogleMobileAds
 
 class MatchResultViewController: BaseViewController {
 
+    var interstitial: GADInterstitial?
     var game:Game?
     
     @IBOutlet weak var winnerTitleLabel: UILabel!
     @IBOutlet weak var looserLabel: UILabel!
     @IBOutlet weak var disclaimerLabel: UILabel!
+    @IBOutlet weak var shareButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        interstitial = GADInterstitial(adUnitID: MATCH_RESULT_GOOGLE_ADS_INTERSTITIAL_UNIT_ID)
+        var gadRequest = GADRequest()
+        gadRequest.testDevices = GOOGLE_REQUEST_TEST_DEVICES
+        interstitial?.loadRequest(gadRequest)
     }
 
 
     func setup() {
+        shareButton.setTitle(Messages.message("winner.share.button"))
         winnerTitleLabel.text = Messages.message("winner.title")
         looserLabel.text = game?.getOponent().name?.uppercaseString
         disclaimerLabel.text = String(format: Messages.message("winner.disclaimer"), arguments: [game!.getOponent().name!])
-//            Messages.message("winner.disclaimer")
     }
     
     @IBAction func shareAction(sender: AnyObject) {
         var imageURL = NSURL(string: game!.getOponent().profileImage!)
         var photo = FBSDKSharePhoto(imageURL: imageURL, userGenerated: false)
         var properties = ["og:type": "appparouimpar:friend",
-                            "og:title": ("Defeated " + game!.getOponent().name!),
-                            "og:description":"One more hard battle, one more Victory. Will you beat me in this great game?",
+                            "og:title": (Messages.message("winner.share.title") + game!.getOponent().name!),
+                            "og:description":Messages.message("winner.share.text"),
 //                            "og:url":"https://www.facebook.com/poweroftwoapp",
 //                            "og:image":photo
         ]
@@ -62,6 +68,9 @@ class MatchResultViewController: BaseViewController {
     }
     
     @IBAction func backToHomeAction(sender: AnyObject) {
+        if interstitial!.isReady {
+            interstitial!.presentFromRootViewController(self)
+        }
         navigationController?.popToViewController(navigationController!.viewControllers[1] as! UIViewController, animated: true)
     }
     
