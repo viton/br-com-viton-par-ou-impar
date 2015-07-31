@@ -61,7 +61,7 @@ class GameTableViewManager: BaseTableViewManager {
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 95
+        return 85
     }
     
 }

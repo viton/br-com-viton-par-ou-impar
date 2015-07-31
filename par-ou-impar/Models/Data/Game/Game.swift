@@ -140,19 +140,19 @@ class Game: PFObject, PFSubclassing {
     func getStatus() -> String {
         if(finish!.boolValue == false) {
             if(getMe().facebookId == owner) {
-                return "Waiting for opponent"
+                return Messages.message("game.status.waiting.opponent")
             }else {
-                return "Ready for Fight"
+                return Messages.message("game.status.ready.for.fight")
             }
         }
-        return "Finish"
+        return Messages.message("game.status.finish")
     }
     
     func getWinnerText() -> String {
         if(winner == getMe().facebookId!) {
-            return "YOU WIN"
+            return Messages.message("game.result.win").uppercaseString
         }
-        return "YOU LOOSE"
+        return Messages.message("game.result.loose").uppercaseString
     }
     
     func amIWinner() -> Bool {
@@ -172,10 +172,10 @@ extension NSDate {
     
     func getReadableDate() -> String {
         if isToday() {
-            return "Hoje"
+            return Messages.message("date.today")
         }
         if isYesterday() {
-            return "Ontem"
+            return Messages.message("date.yesterday")
         }
         return simpleFormatted()
     }
@@ -199,7 +199,7 @@ extension NSDate {
     
     func simpleFormatted() -> String {
         var formatter = NSDateFormatter()
-        formatter.dateFormat = "dd/MM/yy"
+        formatter.dateFormat = Messages.message("date.format")
         return formatter.stringFromDate(self)
     }
     

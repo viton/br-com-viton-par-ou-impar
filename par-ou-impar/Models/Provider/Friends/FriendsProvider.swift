@@ -42,7 +42,7 @@ class FriendsProvider: NSObject {
     }
     
     class func getFriendsAfterFacebookLogin(callback:FriendsCallback) {
-        let meRequest = FBSDKGraphRequest(graphPath: "me/friends", parameters: nil)
+        let meRequest = FBSDKGraphRequest(graphPath: "me/friends?limit=2000", parameters: nil)
         meRequest.startWithCompletionHandler({
             (connection, result, error: NSError!) -> Void in
             callback.prepareToRespose()
@@ -55,6 +55,9 @@ class FriendsProvider: NSObject {
                     user.name = dict.objectForKey("name") as? String
                     user.facebookId = dict.objectForKey("id") as? String
                     user.profileImage = String(format: "http://graph.facebook.com/%@/picture?type=normal", user.facebookId!)
+                    arrayResult.append(user)
+                    arrayResult.append(user)
+                    arrayResult.append(user)
                     arrayResult.append(user)
                 }
                 

@@ -18,6 +18,11 @@
 "option.value.odd" = "ímpar";
 "option.value.even" = "par";
 
+//Date
+"date.today" = "Hoje";
+"date.yesterday" = "Ontem";
+"date.format" = "dd/MM/yy";
+
 //Home
 "home.new.game.button.title" = "Novo jogo";
 "home.loading.games.message" = "Carregando jogos...";
@@ -25,7 +30,15 @@
 "home.no.games.placeholder.descriptions" = "Não encontramos nenhum jogo para você. Toque aqui e vamos começar";
 "home.no.games.placeholder.button.title" = "Criar primeiro jogo";
 
-//Game
+//Game object
+"game.status.waiting.opponent" = "Aguardando";
+"game.status.ready.for.fight" = "Pronto pra jogar";
+"game.status.finish" = "Finalizado";
+
+"game.result.win" = "Você venceu";
+"game.result.loose" = "Você perdeu";
+
+//Game View
 "game.create.button" = "Criar";
 "game.reply.button" = "Responder";
 "game.choose.opponent.button" = "Escolher adversário";
