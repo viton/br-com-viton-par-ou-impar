@@ -12,5 +12,7 @@ class InviteMoreFriendsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var inviteLabel: UILabel!
     @IBOutlet weak var plusLabel: UILabel!
-    
+ 
+    override func setHighlighted(highlighted: Bool, animated: Bool) {}
+    override func setSelected(selected: Bool, animated: Bool) {}
 }

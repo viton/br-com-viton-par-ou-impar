@@ -16,5 +16,7 @@ class GameTableViewCell: UITableViewCell {
     @IBOutlet weak var betTextLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var gameResultImage: UIImageView!
-    
+ 
+    override func setHighlighted(highlighted: Bool, animated: Bool) {}
+    override func setSelected(selected: Bool, animated: Bool) {}
 }

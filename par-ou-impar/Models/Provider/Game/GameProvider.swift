@@ -77,7 +77,7 @@ class GameProvider: NSObject {
         game.saveInBackground({ (result:AnyObject?) -> Void in
                 callback!.prepareToRespose()
                 callback!.onSuccessReplyGame(game)
-                GameProvider.sendPush("\(game.getMe().name) respondeu. Quer saber quem ganhou?", facebookId: game.getOponent().facebookId!)
+                GameProvider.sendPush("\(game.getMe().name!) respondeu. Quer saber quem ganhou?", facebookId: game.getOponent().facebookId!)
             }, errorBlock:{ (result:String) -> Void in
                 callback!.prepareToRespose()
                 callback!.onFailRequest(result)
@@ -88,8 +88,13 @@ class GameProvider: NSObject {
     }
     
     class func getGames(facebookId: String, callback:GamesCallback){
-        var query = PFQuery(className:"Game")
-        query.whereKey("owner", equalTo:facebookId)
+        var ownerQuery = PFQuery(className:"Game")
+        ownerQuery.whereKey("owner", equalTo:facebookId)
+        
+        var enemyQuery = PFQuery(className:"Game")
+        enemyQuery.whereKey("enemy", equalTo: facebookId)
+        
+        var query = PFQuery.orQueryWithSubqueries([ownerQuery, enemyQuery])
         query.orderByAscending("finish")
         query.findObjectsInBackgroundWithBlock {
             (objects: [AnyObject]?, error: NSError?) -> Void in
@@ -100,7 +105,13 @@ class GameProvider: NSObject {
                         let game = Game(object: object)
                         games.append(game)
                     }
-                    self.getGamesWithMe(facebookId, myGames: games, callback:callback)
+                    println(games.count)
+                    callback.prepareToRespose()
+                    if games.count == 0 {
+                        callback.onEmptyGamesList()
+                    }else{
+                        callback.onSuccess(games)
+                    }
                 }
             } else {
                 callback.prepareToRespose()

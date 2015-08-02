@@ -42,6 +42,7 @@
 "game.create.button" = "Criar";
 "game.reply.button" = "Responder";
 "game.choose.opponent.button" = "Escolher adversário";
+"game.bet.text.hint" = "Se eu ganhar...";
 
 //Game Validation Messages
 "game.validation.opponent" = "Escolha um adversário";

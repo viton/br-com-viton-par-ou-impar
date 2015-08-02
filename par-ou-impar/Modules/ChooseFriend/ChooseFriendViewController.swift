@@ -124,7 +124,7 @@ extension ChooseFriendViewController:FriendsCallback {
     }
     
     func onEmptyFriends() {
-        noFriendsPlaceholder = view.addPlaceholder(Messages.message("choose.friend.placeholder.empty.friends.title"), content: Messages.message("choose.friend.placeholder.empty.friends.disclaimer"), buttonTitle: Messages.message("choose.friend.placeholder.empty.friends.button.title"), image: nil)
+        noFriendsPlaceholder = view.addPlaceholder(Messages.message("choose.friend.placeholder.empty.friends.title"), content: Messages.message("choose.friend.placeholder.empty.friends.disclaimer"), buttonTitle: Messages.message("choose.friend.placeholder.empty.friends.button.title"), image: UIImage(named:"img-invite-friends"))
         noFriendsPlaceholder?.delegate = self
     }
     
@@ -139,11 +139,11 @@ extension ChooseFriendViewController:FriendsCallback {
 extension ChooseFriendViewController:FBSDKAppInviteDialogDelegate {
     
     func appInviteDialog(appInviteDialog: FBSDKAppInviteDialog!, didCompleteWithResults results: [NSObject : AnyObject]!) {
-    
+        dismissViewControllerAnimated(true, completion: {})
     }
     
     func appInviteDialog(appInviteDialog: FBSDKAppInviteDialog!, didFailWithError error: NSError!) {
-    
+        dismissViewControllerAnimated(true, completion: {})
     }
     
 }

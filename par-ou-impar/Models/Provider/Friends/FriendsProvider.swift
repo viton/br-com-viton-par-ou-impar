@@ -56,9 +56,6 @@ class FriendsProvider: NSObject {
                     user.facebookId = dict.objectForKey("id") as? String
                     user.profileImage = String(format: "http://graph.facebook.com/%@/picture?type=normal", user.facebookId!)
                     arrayResult.append(user)
-                    arrayResult.append(user)
-                    arrayResult.append(user)
-                    arrayResult.append(user)
                 }
                 
                 if arrayResult.count == 0 {

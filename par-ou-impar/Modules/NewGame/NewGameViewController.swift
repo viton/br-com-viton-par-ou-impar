@@ -38,6 +38,7 @@ class NewGameViewController: BaseViewController {
     }
 
     func setup() {
+        betTextField.placeholder = Messages.message("game.bet.text.hint")
         createGameButton.setTitle(Messages.message("game.create.button"))
         chooseFriendButton.setTitle(Messages.message("game.choose.opponent.button"))
         chooseHandView.optionValueLabel.text = Messages.message("option.value.even")

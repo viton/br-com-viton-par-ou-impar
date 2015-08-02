@@ -8,6 +8,8 @@
 
 import UIKit
 
+let COMPONENT_MAX_WIDTH:CGFloat = 160.0
+
 protocol ChooseColorViewCallback {
 
     func didChooseColor(color:UIColor)
@@ -35,8 +37,8 @@ class ChooseColorView: BaseComponentsView {
 extension ChooseColorView: BaseTableViewManagerDelegate {
     
     func didSelectObject(object: AnyObject) {
-        if widthConstraint!.constant != 190 {
-            widthConstraint!.constant = 190
+        if widthConstraint!.constant != COMPONENT_MAX_WIDTH {
+            widthConstraint!.constant = COMPONENT_MAX_WIDTH
             UIView.animateWithDuration(0.5) {
                 self.superview!.layoutIfNeeded()
             }

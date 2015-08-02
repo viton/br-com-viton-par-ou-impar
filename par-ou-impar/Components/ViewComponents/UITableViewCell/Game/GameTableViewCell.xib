@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -16,7 +16,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YYs-Hw-qvy">
-                        <rect key="frame" x="15" y="5" width="60" height="59.5"/>
+                        <rect key="frame" x="15" y="5" width="60" height="59"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="60" id="lNn-yz-ax4"/>
                             <constraint firstAttribute="width" secondItem="YYs-Hw-qvy" secondAttribute="height" multiplier="60:59" id="vbI-M7-Apj"/>
@@ -28,7 +28,7 @@
                         </variation>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fow-QC-RPl" userLabel="NAME">
-                        <rect key="frame" x="90" y="5" width="207" height="22.5"/>
+                        <rect key="frame" x="90" y="5" width="207" height="23"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="19"/>
                         <color key="textColor" red="1" green="0.13283819899999999" blue="0.056897615130000002" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -37,7 +37,7 @@
                         </userDefinedRuntimeAttributes>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vs5-y4-YMT" userLabel="STATUS">
-                        <rect key="frame" x="90" y="28" width="207" height="19"/>
+                        <rect key="frame" x="90" y="28" width="207" height="21"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                         <color key="textColor" white="0.0" alpha="0.80000000000000004" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -46,7 +46,7 @@
                         </userDefinedRuntimeAttributes>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ALF-2P-7uH" userLabel="BET_TEXT">
-                        <rect key="frame" x="90" y="44" width="175" height="20.5"/>
+                        <rect key="frame" x="90" y="49" width="175" height="21"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                         <color key="textColor" white="0.0" alpha="0.80000000000000004" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -62,7 +62,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KNM-gh-R7R" userLabel="DATE">
-                        <rect key="frame" x="270" y="44" width="42" height="20.5"/>
+                        <rect key="frame" x="270" y="49" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -79,7 +79,7 @@
                     <constraint firstItem="MsD-iR-xqm" firstAttribute="top" secondItem="YYs-Hw-qvy" secondAttribute="top" id="GlJ-sf-IyL"/>
                     <constraint firstItem="fow-QC-RPl" firstAttribute="leading" secondItem="YYs-Hw-qvy" secondAttribute="trailing" constant="15" id="LqI-Bc-ZLv"/>
                     <constraint firstAttribute="trailingMargin" secondItem="ALF-2P-7uH" secondAttribute="trailing" constant="15" id="SZt-gT-A70"/>
-                    <constraint firstItem="ALF-2P-7uH" firstAttribute="top" secondItem="Vs5-y4-YMT" secondAttribute="bottom" constant="-3" id="U2D-KG-V85"/>
+                    <constraint firstItem="ALF-2P-7uH" firstAttribute="top" secondItem="Vs5-y4-YMT" secondAttribute="bottom" id="U2D-KG-V85"/>
                     <constraint firstItem="KNM-gh-R7R" firstAttribute="centerY" secondItem="ALF-2P-7uH" secondAttribute="centerY" id="X5v-Dp-gjw"/>
                     <constraint firstItem="YYs-Hw-qvy" firstAttribute="top" secondItem="fow-QC-RPl" secondAttribute="top" id="aN4-Qz-F27"/>
                     <constraint firstItem="ALF-2P-7uH" firstAttribute="bottom" secondItem="YYs-Hw-qvy" secondAttribute="bottom" id="aiG-9C-1JY"/>
@@ -96,6 +96,7 @@
                     <mask key="constraints">
                         <exclude reference="9Ak-i8-v6a"/>
                         <exclude reference="SZt-gT-A70"/>
+                        <exclude reference="aiG-9C-1JY"/>
                     </mask>
                 </variation>
             </tableViewCellContentView>

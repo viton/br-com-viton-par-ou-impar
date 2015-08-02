@@ -13,4 +13,6 @@ class FriendTableViewCell: UITableViewCell {
     @IBOutlet weak var friendImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     
+    override func setHighlighted(highlighted: Bool, animated: Bool) {}
+    override func setSelected(selected: Bool, animated: Bool) {}
 }

@@ -14,11 +14,30 @@ protocol GameTableViewManagerDelegate {
     
     func didSelectFinishGame(game:Game)
     
+    func onPullToRefresh()
+    
 }
 
 class GameTableViewManager: BaseTableViewManager {
     
     var gameTableDelegate:GameTableViewManagerDelegate?
+    var refreshControl:UIRefreshControl!
+    
+    override init(tableView: UITableView, delegate: BaseTableViewManagerDelegate) {
+        gameTableDelegate = delegate as? GameTableViewManagerDelegate
+        refreshControl = UIRefreshControl()
+        super.init(tableView: tableView, delegate: delegate)
+        refreshControl.addTarget(self, action: "shouldRefresh", forControlEvents: UIControlEvents.ValueChanged)
+        tableView.addSubview(refreshControl)
+    }
+    
+    func stopRefreshControl() {
+        refreshControl.endRefreshing()
+    }
+    
+    func shouldRefresh(){
+        gameTableDelegate?.onPullToRefresh()
+    }
     
     override func setData(item: AnyObject, toCell cell: UITableViewCell) {
         if let gameCell = cell as? GameTableViewCell {
@@ -46,9 +65,10 @@ class GameTableViewManager: BaseTableViewManager {
         return [GameTableViewCell.classForCoder()]
     }
     
-    override init(tableView: UITableView, delegate: BaseTableViewManagerDelegate) {
-        gameTableDelegate = delegate as? GameTableViewManagerDelegate
-        super.init(tableView: tableView, delegate: delegate)
+    func tableView(tableView: UITableView, canPerformAction action: Selector, forRowAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject) -> Bool {
+        
+        
+        return true
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

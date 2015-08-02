@@ -49,6 +49,7 @@ class FightViewController: BaseViewController {
 
     func setup() {
         setupOptions()
+        setGameVisualized()
         myImageView.setImage(url: game!.getMe().profileImage!)
         opponentImageView.setImage(url: game!.getOponent().profileImage!)
         
@@ -73,7 +74,7 @@ class FightViewController: BaseViewController {
     func setGameVisualized() {
         if(game!.amIOwner()){
             game!["ownerVisualized"] = true;
-            GameProvider.replyGame(game!, callback: nil)
+            game!.saveInBackground()
         }
     }
     
