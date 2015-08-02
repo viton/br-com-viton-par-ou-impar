@@ -7,6 +7,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MatchResultViewController" customModule="par_ou_impar" customModuleProvider="target">
             <connections>
                 <outlet property="disclaimerLabel" destination="hr1-Cq-H9Y" id="IOb-oy-wzw"/>
+                <outlet property="likeButtonContainer" destination="VZd-aR-Stv" id="qiY-wi-NHP"/>
                 <outlet property="looserLabel" destination="Hni-ka-XxE" id="Cib-RW-6Zb"/>
                 <outlet property="shareButton" destination="hu9-DA-H3n" id="xP9-8f-sD5"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -106,8 +107,15 @@
                     </variation>
                 </view>
                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="249" image="ico-win-big" translatesAutoresizingMaskIntoConstraints="NO" id="P9n-yC-mPw">
-                    <rect key="frame" x="0.0" y="80" width="600" height="347"/>
+                    <rect key="frame" x="0.0" y="80" width="600" height="313"/>
                 </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VZd-aR-Stv" userLabel="FACEBOOK_LIKE_BUTTON">
+                    <rect key="frame" x="15" y="398" width="570" height="44"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="tHl-OT-GZD"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -118,9 +126,18 @@
                 <constraint firstItem="egu-bq-6U6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="Laq-zd-00y"/>
                 <constraint firstItem="P9n-yC-mPw" firstAttribute="top" secondItem="mWG-vz-Q0U" secondAttribute="bottom" constant="20" id="NBS-vV-ldT"/>
                 <constraint firstItem="mWG-vz-Q0U" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="Ndd-NI-grF"/>
+                <constraint firstItem="egu-bq-6U6" firstAttribute="top" secondItem="VZd-aR-Stv" secondAttribute="bottom" constant="5" id="ONa-TF-q7B"/>
                 <constraint firstAttribute="trailing" secondItem="P9n-yC-mPw" secondAttribute="trailing" id="X9W-iB-uVC"/>
                 <constraint firstItem="P9n-yC-mPw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Zre-GE-grs"/>
+                <constraint firstItem="VZd-aR-Stv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="bxa-5M-IS7"/>
+                <constraint firstItem="VZd-aR-Stv" firstAttribute="top" secondItem="P9n-yC-mPw" secondAttribute="bottom" constant="5" id="nc9-gv-hf1"/>
+                <constraint firstAttribute="trailing" secondItem="VZd-aR-Stv" secondAttribute="trailing" constant="15" id="uq2-cw-mJ4"/>
             </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="DHH-sR-K6c"/>
+                </mask>
+            </variation>
         </view>
     </objects>
     <resources>

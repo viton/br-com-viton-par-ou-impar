@@ -20,6 +20,7 @@ class MatchResultViewController: BaseViewController {
     @IBOutlet weak var looserLabel: UILabel!
     @IBOutlet weak var disclaimerLabel: UILabel!
     @IBOutlet weak var shareButton: UIButton!
+    @IBOutlet weak var likeButtonContainer: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +37,15 @@ class MatchResultViewController: BaseViewController {
         winnerTitleLabel.text = Messages.message("winner.title")
         looserLabel.text = game?.getOponent().name?.uppercaseString
         disclaimerLabel.text = String(format: Messages.message("winner.disclaimer"), arguments: [game!.getOponent().name!])
+        setupLikeButton()
+    }
+    
+    func setupLikeButton(){
+        let button = FBSDKLikeControl()
+        button.likeControlStyle = FBSDKLikeControlStyle.Standard
+        button.likeControlHorizontalAlignment = FBSDKLikeControlHorizontalAlignment.Left
+        button.objectID = "https://www.facebook.com/parouimpar99"
+        self.likeButtonContainer.addSubview(button)
     }
     
     @IBAction func shareAction(sender: AnyObject) {
