@@ -17,7 +17,6 @@ class HandCollectionViewManager: CollectionViewManager {
     override func setData(item: AnyObject, toCell cell: UICollectionViewCell) {
         if let fightHandCell = cell as? HandCollectionViewCell {
             if let fightHand = item as? FightHand {
-                fightHandCell.nameLabel.text = fightHand.name
                 fightHandCell.handImageView.image = UIImage(named: (fightHand.imagePrefix! + "5"))
             }
         }

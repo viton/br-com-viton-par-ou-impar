@@ -11,7 +11,6 @@ import UIKit
 class HandCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var handImageView: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var selectedView: UIView!
     
     override func awakeFromNib() {

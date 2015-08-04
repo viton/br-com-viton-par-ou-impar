@@ -16,10 +16,13 @@ class HandCountCollectionViewCell: UICollectionViewCell {
     override var selected: Bool {
         didSet {
             if self.selected {
-                println("Selected \(countLabel.text)")
-                countLabel.textColor = UIColor.redColor()
+                circleView.circle()
+                circleView.hidden = false
+                circleView.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.4)
+//                countLabel.textColor = UIColor.redColor()
             }else {
                 countLabel.textColor = UIColor.whiteColor()
+                circleView.hidden = true
             }
         }
     }

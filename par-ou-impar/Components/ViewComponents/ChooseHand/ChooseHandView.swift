@@ -80,7 +80,7 @@ extension ChooseHandView:UICollectionViewDelegateFlowLayout {
         let columns = self.collectionView(collectionView, numberOfItemsInSection: 0)
         let width = Float(collectionView.frame.size.width - 1)/Float(columns)
         let height = Float(collectionView.frame.size.height - 1)
-        return CGSize(width: width.int, height: width.int)
+        return CGSize(width: width.int, height: height.int)
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {

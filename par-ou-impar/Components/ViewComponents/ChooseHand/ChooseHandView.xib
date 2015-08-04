@@ -48,8 +48,8 @@
                         <constraint firstAttribute="trailing" secondItem="3Hd-YN-3el" secondAttribute="trailing" id="u6N-Nb-SDh"/>
                     </constraints>
                 </view>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Ygp-PN-Dq0">
-                    <rect key="frame" x="0.0" y="31" width="600" height="106"/>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Ygp-PN-Dq0">
+                    <rect key="frame" x="0.0" y="31" width="600" height="126"/>
                     <inset key="scrollIndicatorInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="10N-C3-drM">
                         <size key="itemSize" width="50" height="50"/>
@@ -59,10 +59,10 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qSU-rG-xSp">
-                    <rect key="frame" x="0.0" y="137" width="600" height="70"/>
+                    <rect key="frame" x="0.0" y="157" width="600" height="50"/>
                     <subviews>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" bouncesZoom="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="X3M-7Y-0Pr">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="70"/>
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="naE-uX-tIh">
                                 <size key="itemSize" width="50" height="50"/>
                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -77,7 +77,7 @@
                         <constraint firstAttribute="height" constant="73" id="aov-Tu-ybe"/>
                         <constraint firstItem="X3M-7Y-0Pr" firstAttribute="top" secondItem="qSU-rG-xSp" secondAttribute="top" id="nHs-Bl-Naa"/>
                         <constraint firstAttribute="trailing" secondItem="X3M-7Y-0Pr" secondAttribute="trailing" id="oQH-DG-SmI"/>
-                        <constraint firstAttribute="height" constant="70" id="ttG-IB-bup"/>
+                        <constraint firstAttribute="height" constant="50" id="ttG-IB-bup"/>
                     </constraints>
                     <variation key="default">
                         <mask key="constraints">
