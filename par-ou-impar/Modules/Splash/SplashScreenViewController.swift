@@ -22,13 +22,17 @@ class SplashScreenViewController: BaseViewController {
 
     func setupTimer() {
         hands = FightHandProvider.getHands()
+        hands?.appendContentsOf(hands!)
+        hands?.appendContentsOf(hands!)
+        hands?.appendContentsOf(hands!)
         timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "updateTimer", userInfo: nil, repeats: true);
     }
     
     func updateTimer() {
         if hands?.count != 0 {
             let hand = hands?.first
-            imageView.image = UIImage(named: (hand?.imagePrefix)! + "1")
+            let suffix = random()%6
+            imageView.image = UIImage(named: (hand?.imagePrefix)! + suffix.description)
             hands?.removeFirst()
         } else {
             let window = UIApplication.sharedApplication().delegate?.window
