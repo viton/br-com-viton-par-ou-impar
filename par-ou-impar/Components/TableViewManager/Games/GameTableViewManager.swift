@@ -41,7 +41,7 @@ class GameTableViewManager: BaseTableViewManager {
     
     override func setData(item: AnyObject, toCell cell: UITableViewCell) {
         if let gameCell = cell as? GameTableViewCell {
-            var game = item as! Game
+            let game = item as! Game
             gameCell.betTextLabel.text = game.betText
             let oponent = game.getOponent()
             gameCell.nameLabel.text = oponent.name

@@ -24,10 +24,6 @@ class ColorCollectionViewManager: CollectionViewManager {
         }
     }
     
-}
-
-extension ColorCollectionViewManager: UICollectionViewDelegateFlowLayout {
-    
     override func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         return CGSize(width: 30, height: 30)
     }

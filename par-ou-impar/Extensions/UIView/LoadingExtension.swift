@@ -30,7 +30,7 @@ extension UIView {
     }
     
     func stopLoading() {
-        for view in subviews as! [UIView] {
+        for view in subviews {
             if(view.isKindOfClass(Loading)){
                 let loading = view as! Loading
                 loading.stop()

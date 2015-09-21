@@ -17,11 +17,11 @@ extension PFObject {
     
     func saveInBackground(successBlock:POISuccessBlock, errorBlock:POIErrorBlock, noConnection:POINoConnectionBlock) {
         saveInBackgroundWithBlock({ (success: Bool, error: NSError?) -> Void in
-            println(success)
+            print(success)
             if(success) {
                 successBlock(nil)
             }
-            println(error)
+            print(error)
         })
     }
     

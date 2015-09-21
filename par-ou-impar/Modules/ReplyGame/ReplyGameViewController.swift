@@ -78,7 +78,7 @@ extension ReplyGameViewController: ReplyGameCallback {
     }
     
     func onSuccessReplyGame(game: Game) {
-        var viewController = FightViewController()
+        let viewController = FightViewController()
         viewController.game = game
         navigationController?.pushViewController(viewController, animated: true)
     }

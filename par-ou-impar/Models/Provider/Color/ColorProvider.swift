@@ -25,7 +25,7 @@ class ColorProvider: NSObject {
     
     class func getColors() -> [UIColor] {
         var colors = Array<UIColor>()
-        var selectedColor = getAppColor()
+        let selectedColor = getAppColor()
         colors.append(selectedColor)
         for color in ColorProvider.getAllColors() {
             if(!self.colorsAreEqual(color, secondColor: selectedColor)) {
@@ -85,7 +85,7 @@ extension NSUserDefaults {
 extension CGFloat {
     
     func toInt() -> Int {
-        var intValue = self*10000
+        let intValue = self*10000
         
         return Int(intValue)
     }

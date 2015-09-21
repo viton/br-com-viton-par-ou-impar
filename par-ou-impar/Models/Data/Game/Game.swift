@@ -123,7 +123,7 @@ class Game: PFObject, PFSubclassing {
     
     
     func decideWinner() -> String? {
-        var sum:Int = (enemyCount!.integerValue + ownerCount!.integerValue)
+        let sum:Int = (enemyCount!.integerValue + ownerCount!.integerValue)
         if(sum%2 == 0) {
             return owner
         }
@@ -181,7 +181,7 @@ extension NSDate {
     }
     
     func isToday() -> Bool {
-        var today = NSDate()
+        let today = NSDate()
         if today.simpleFormatted() == simpleFormatted() {
             return true
         }
@@ -190,7 +190,7 @@ extension NSDate {
     
     func isYesterday() -> Bool {
         let calendar = NSCalendar.currentCalendar()
-        let yesterday = calendar.dateByAddingUnit(.CalendarUnitDay, value: -1, toDate: NSDate(), options: nil)
+        let yesterday = calendar.dateByAddingUnit(.Day, value: -1, toDate: NSDate(), options: [])
         if yesterday?.simpleFormatted() == simpleFormatted() {
             return true
         }
@@ -198,7 +198,7 @@ extension NSDate {
     }
     
     func simpleFormatted() -> String {
-        var formatter = NSDateFormatter()
+        let formatter = NSDateFormatter()
         formatter.dateFormat = Messages.message("date.format")
         return formatter.stringFromDate(self)
     }

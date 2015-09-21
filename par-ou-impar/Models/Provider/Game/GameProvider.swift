@@ -88,13 +88,13 @@ class GameProvider: NSObject {
     }
     
     class func getGames(facebookId: String, callback:GamesCallback){
-        var ownerQuery = PFQuery(className:"Game")
+        let ownerQuery = PFQuery(className:"Game")
         ownerQuery.whereKey("owner", equalTo:facebookId)
         
-        var enemyQuery = PFQuery(className:"Game")
+        let enemyQuery = PFQuery(className:"Game")
         enemyQuery.whereKey("enemy", equalTo: facebookId)
         
-        var query = PFQuery.orQueryWithSubqueries([ownerQuery, enemyQuery])
+        let query = PFQuery.orQueryWithSubqueries([ownerQuery, enemyQuery])
         query.orderByAscending("finish")
         query.findObjectsInBackgroundWithBlock {
             (objects: [AnyObject]?, error: NSError?) -> Void in
@@ -105,7 +105,7 @@ class GameProvider: NSObject {
                         let game = Game(object: object)
                         games.append(game)
                     }
-                    println(games.count)
+                    print(games.count)
                     callback.prepareToRespose()
                     if games.count == 0 {
                         callback.onEmptyGamesList()
@@ -121,7 +121,7 @@ class GameProvider: NSObject {
     }
     
     class func getGamesWithMe(facebookId:String, myGames:Array<Game>, callback:GamesCallback) {
-        var query = PFQuery(className:"Game")
+        let query = PFQuery(className:"Game")
         query.whereKey("enemy", equalTo: facebookId)
         query.orderByAscending("finish")
         query.findObjectsInBackgroundWithBlock {
@@ -148,7 +148,7 @@ class GameProvider: NSObject {
     }
     
     class func sendPush(message:String!, facebookId:String!) {
-        var push = PFPush()
+        let push = PFPush()
         push.setMessage(message)
         // Create our Installation query
         if let pushQuery = PFInstallation.query() {

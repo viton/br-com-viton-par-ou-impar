@@ -25,7 +25,7 @@ class BaseViewController: UIViewController {
         super.init(nibName:NSStringFromClass(self.dynamicType).componentsSeparatedByString(".").last! ,bundle:nil);
     }
 
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
@@ -84,7 +84,7 @@ extension BaseViewController: PlaceholderActionDelegate {
 extension BaseViewController: BaseTableViewManagerDelegate {
     
     func didSelectObject(object: AnyObject) {
-        println(object)
+        print(object)
     }
     
 }

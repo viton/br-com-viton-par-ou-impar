@@ -102,11 +102,11 @@ class FightViewController: BaseViewController {
             fightTimer?.invalidate()
             if game!.amIWinner() {
                 
-                var viewController = MatchResultViewController()
+                let viewController = MatchResultViewController()
                 viewController.game = game
                 navigationController?.pushViewController(viewController, animated: true)
             } else {
-                var viewController = LooseViewController()
+                let viewController = LooseViewController()
                 viewController.game = game
                 navigationController?.pushViewController(viewController, animated: true)
             }

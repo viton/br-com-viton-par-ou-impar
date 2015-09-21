@@ -38,13 +38,13 @@ public class BaseTableViewManager: NSObject, UITableViewDataSource {
     }
     
     private func registerCellNibs(){
-        var cellClasses = self.cellClasses();
+        let cellClasses = self.cellClasses();
         for cellClass in cellClasses{
-            var cellClassName = getClassName(cellClass)
-            var cellClassIdentifier = cellIdentifierForClass(cellClassName)
+            let cellClassName = getClassName(cellClass)
+            let cellClassIdentifier = cellIdentifierForClass(cellClassName)
             if !isNibRegisteredForIdentifier(cellClassIdentifier) {
                 registeredNibs!.updateValue(cellClassIdentifier, forKey: cellClassName)
-                var cellNib = UINib(nibName: cellClassName, bundle: nil)
+                let cellNib = UINib(nibName: cellClassName, bundle: nil)
                 tableView!.registerNib(cellNib, forCellReuseIdentifier: cellClassIdentifier)
             }
             
@@ -61,7 +61,7 @@ public class BaseTableViewManager: NSObject, UITableViewDataSource {
     
     private func isNibRegisteredForIdentifier(identifier:String) -> Bool {
         var keys:Array<String>
-        keys = self.registeredNibs!.keys.array
+        keys = [String](self.registeredNibs!.keys)
         for key in keys {
             if (key == identifier) {
                 return true
@@ -79,14 +79,14 @@ public class BaseTableViewManager: NSObject, UITableViewDataSource {
     
     /// This function returns an *Array <AnyClass>* of cells classes that will be used in this *UITableView*
     ///
-    /// :returns: *Array <AnyClass>* of cells classes.
+    /// - returns: *Array <AnyClass>* of cells classes.
     func cellClasses() -> Array<AnyClass> {
         return [TesteTableViewCell.classForCoder()]
     }
     
     /// This function returns a *AnyClass* from the list of cells in this *UITableView* provided by method cellClasses()
     ///
-    /// :returns: *AnyClass* of a cell classe. Default return is the first object in array provided by cellClasses().
+    /// - returns: *AnyClass* of a cell classe. Default return is the first object in array provided by cellClasses().
     func cellClassForItem(item:AnyObject) -> AnyClass {
         return cellClasses().first!;
     }
@@ -109,8 +109,8 @@ public class BaseTableViewManager: NSObject, UITableViewDataSource {
         var item:AnyObject
         
         item = objectForIndexPath(indexPath)
-        var cellIdentifier = cellIdentifierForClass(getClassName(cellClassForItem(item)))
-        cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as! UITableViewCell
+        let cellIdentifier = cellIdentifierForClass(getClassName(cellClassForItem(item)))
+        cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier)!
         
         
         setData(item, toCell: cell)
@@ -127,7 +127,7 @@ public class BaseTableViewManager: NSObject, UITableViewDataSource {
 extension BaseTableViewManager:UITableViewDelegate {
     
     public func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        var object:AnyObject = data![indexPath.row]
+        let object:AnyObject = data![indexPath.row]
         delegate.didSelectObject(object)
     }
     

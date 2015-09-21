@@ -11,11 +11,11 @@ import UIKit
 extension UIView {
     
     func addAllConstraints(contentView:UIView){
-        var topConstraint = constraint(contentView, attribute:NSLayoutAttribute.Top);
-        var bottomConstraint = constraint(contentView, attribute:NSLayoutAttribute.Bottom);
-        var leadingConstraint = constraint(contentView, attribute:NSLayoutAttribute.Leading);
-        var trailingConstraint = constraint(contentView, attribute:NSLayoutAttribute.Trailing);
-        contentView.setTranslatesAutoresizingMaskIntoConstraints(false)
+        let topConstraint = constraint(contentView, attribute:NSLayoutAttribute.Top);
+        let bottomConstraint = constraint(contentView, attribute:NSLayoutAttribute.Bottom);
+        let leadingConstraint = constraint(contentView, attribute:NSLayoutAttribute.Leading);
+        let trailingConstraint = constraint(contentView, attribute:NSLayoutAttribute.Trailing);
+        contentView.translatesAutoresizingMaskIntoConstraints = false
         addConstraints([topConstraint, bottomConstraint, leadingConstraint, trailingConstraint]);
     }
     

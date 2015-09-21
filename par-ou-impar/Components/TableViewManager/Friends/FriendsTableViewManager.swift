@@ -40,29 +40,21 @@ class FriendsTableViewManager: BaseTableViewManager {
     }
     
     override func cellClassForItem(item: AnyObject) -> AnyClass {
-        if let user = item as? User {
+        if (item as? User != nil) {
             return FriendTableViewCell.classForCoder()
         }
         return InviteMoreFriendsTableViewCell.classForCoder()
     }
-    
-}
-
-extension FriendsTableViewManager:UITableViewDelegate {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if(indexPath.row == 0) {
             let friendsTableDelegate = delegate as! FriendTableViewManagerDelegate
             friendsTableDelegate.didSelectInviteMoreFriends()
         }else {
-            var object:AnyObject = data![indexPath.row - 1]
+            let object:AnyObject = data![indexPath.row - 1]
             delegate.didSelectObject(object)
         }
     }
-    
-}
-
-extension FriendsTableViewManager: UITableViewDataSource {
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if indexPath.row == 0 {

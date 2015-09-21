@@ -26,7 +26,7 @@ class ChooseHandView: BaseComponentsView {
     var handCollectionManager:CollectionViewManager?
     
     override func customSetup() {
-        var nib = UINib(nibName: "HandCountCollectionViewCell", bundle: NSBundle(forClass: self.dynamicType))
+        let nib = UINib(nibName: "HandCountCollectionViewCell", bundle: NSBundle(forClass: self.dynamicType))
         collectionView.registerNib(nib, forCellWithReuseIdentifier: "HandCountCell")
         optionTitleLabel.text = Messages.message("option.title")
         collectionView.dataSource = self
@@ -56,7 +56,7 @@ extension ChooseHandView:UICollectionViewDataSource {
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        var cell:HandCountCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("HandCountCell", forIndexPath: indexPath) as! HandCountCollectionViewCell
+        let cell:HandCountCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("HandCountCell", forIndexPath: indexPath) as! HandCountCollectionViewCell
         
         cell.countLabel.text = String(indexPath.item+1)
         

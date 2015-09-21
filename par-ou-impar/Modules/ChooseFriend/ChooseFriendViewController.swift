@@ -44,13 +44,13 @@ class ChooseFriendViewController: BaseViewController {
     }
     
     func textFieldDidChange(textField: UITextField) {
-        var text = textField.text
-        if count(text) == 0 {
+        let text = textField.text
+        if text!.characters.count == 0 {
             //reset search
             tableManager?.updateWithData(friends!)
         }else {
             //FILTER and update table
-            var filteredFriends = filterFriends(text)
+            let filteredFriends = filterFriends(text!)
             tableManager?.updateWithData(filteredFriends)
         }
     }
@@ -75,7 +75,7 @@ class ChooseFriendViewController: BaseViewController {
     }
     
     func inviteFriends() {
-        var content = FBSDKAppInviteContent()
+        let content = FBSDKAppInviteContent()
 
         content.appLinkURL = NSURL(string: AppSettingsProvider.getAppStoreURL())
         //optionally set previewImageURL
@@ -83,6 +83,13 @@ class ChooseFriendViewController: BaseViewController {
         
         // present the dialog. Assumes self implements protocol `FBSDKAppInviteDialogDelegate`
         FBSDKAppInviteDialog.showWithContent(content, delegate: self)
+    }
+    
+    override func didClickPlaceholderAction(placeholder: Placeholder) {
+        super.didClickPlaceholderAction(placeholder)
+        if placeholder == noFriendsPlaceholder {
+            inviteFriends()
+        }
     }
     
 }
@@ -104,16 +111,16 @@ extension ChooseFriendViewController: FriendTableViewManagerDelegate {
 }
 
 //MARK: PlaceholderActionDelegate
-extension ChooseFriendViewController: PlaceholderActionDelegate {
-    
-    override func didClickPlaceholderAction(placeholder: Placeholder) {
-        super.didClickPlaceholderAction(placeholder)
-        if placeholder == noFriendsPlaceholder {
-            inviteFriends()
-        }
-    }
-    
-}
+//extension ChooseFriendViewController: PlaceholderActionDelegate {
+//    
+//    override func didClickPlaceholderAction(placeholder: Placeholder) {
+//        super.didClickPlaceholderAction(placeholder)
+//        if placeholder == noFriendsPlaceholder {
+//            inviteFriends()
+//        }
+//    }
+//    
+//}
 
 //MARK: FriendsCallback
 extension ChooseFriendViewController:FriendsCallback {

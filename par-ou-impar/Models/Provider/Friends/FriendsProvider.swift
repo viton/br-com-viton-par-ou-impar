@@ -24,9 +24,9 @@ class FriendsProvider: NSObject {
         if(self.hasFriendsPermission()) {
             FriendsProvider.getFriendsAfterFacebookLogin(callback)
         }else {
-            var loginManager = FBSDKLoginManager()
+            let loginManager = FBSDKLoginManager()
             loginManager.logInWithReadPermissions(["user_friends"], handler: { (result, error) in
-                println("Result \(result) error \(error)")
+                print("Result \(result) error \(error)")
                 if error == nil {
                     FriendsProvider.getFriendsAfterFacebookLogin(callback)
                 }else{
@@ -51,7 +51,7 @@ class FriendsProvider: NSObject {
                 let friendsArray:Array<NSDictionary> = dataDict.objectForKey("data")! as! Array<NSDictionary>
                 var arrayResult = Array<User>()
                 for dict in friendsArray {
-                    var user = User()
+                    let user = User()
                     user.name = dict.objectForKey("name") as? String
                     user.facebookId = dict.objectForKey("id") as? String
                     user.profileImage = String(format: "http://graph.facebook.com/%@/picture?type=normal", user.facebookId!)
@@ -63,7 +63,7 @@ class FriendsProvider: NSObject {
                 }else{
                     callback.onSuccess(arrayResult)
                 }
-                println(arrayResult)
+                print(arrayResult)
             } else {
                 callback.onConnectionFailToRequest()
             }

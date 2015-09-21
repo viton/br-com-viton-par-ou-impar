@@ -31,13 +31,13 @@ class CollectionViewManager: NSObject {
     }
     
     private func registerCellNibs(){
-        var cellClasses = self.cellClasses();
+        let cellClasses = self.cellClasses();
         for cellClass in cellClasses{
-            var cellClassName = getClassName(cellClass)
-            var cellClassIdentifier = cellIdentifierForClass(cellClassName)
+            let cellClassName = getClassName(cellClass)
+            let cellClassIdentifier = cellIdentifierForClass(cellClassName)
             if !isNibRegisteredForIdentifier(cellClassIdentifier) {
                 registeredNibs!.updateValue(cellClassIdentifier, forKey: cellClassName)
-                var cellNib = UINib(nibName: cellClassName, bundle: NSBundle(forClass: self.dynamicType))
+                let cellNib = UINib(nibName: cellClassName, bundle: NSBundle(forClass: self.dynamicType))
                 collectionView!.registerNib(cellNib, forCellWithReuseIdentifier: cellClassIdentifier)
             }
             
@@ -54,7 +54,7 @@ class CollectionViewManager: NSObject {
     
     private func isNibRegisteredForIdentifier(identifier:String) -> Bool {
         var keys:Array<String>
-        keys = self.registeredNibs!.keys.array
+        keys = [String](self.registeredNibs!.keys)
         for key in keys {
             if (key == identifier) {
                 return true
@@ -72,14 +72,14 @@ class CollectionViewManager: NSObject {
     
     /// This function returns an *Array <AnyClass>* of cells classes that will be used in this *UICollectionView*
     ///
-    /// :returns: *Array <AnyClass>* of cells classes.
+    /// - returns: *Array <AnyClass>* of cells classes.
     func cellClasses() -> Array<AnyClass> {
         return [BaseCollectionViewCell.classForCoder()]
     }
     
     /// This function returns a *AnyClass* from the list of cells in this *UICollectionView* provided by method cellClasses()
     ///
-    /// :returns: *AnyClass* of a cell classe. Default return is the first object in array provided by cellClasses().
+    /// - returns: *AnyClass* of a cell classe. Default return is the first object in array provided by cellClasses().
     func cellClassForItem(item:AnyObject) -> AnyClass {
         return cellClasses().first!;
     }
@@ -105,8 +105,8 @@ extension CollectionViewManager: UICollectionViewDataSource {
     
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        var object: AnyObject = objectForIndexPath(indexPath)
-        var cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellIdentifierForClass(getClassName(cellClassForItem(object))), forIndexPath: indexPath) as! UICollectionViewCell
+        let object: AnyObject = objectForIndexPath(indexPath)
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellIdentifierForClass(getClassName(cellClassForItem(object))), forIndexPath: indexPath) 
         setData(object, toCell: cell)
         
         return cell
