@@ -32,7 +32,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Parse.setApplicationId("E5kplP1f07JlCIXwXW8iaPyzkUon44N2eyDKSB0s",
             clientKey: "SpHpdIlVhkA7GQzONNuRB55QZjTRbqdWIZaFAPc8")
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds);
-        initialViewController = UINavigationController(rootViewController: LoginViewController())
+        initialViewController = SplashScreenViewController()
+//        initialViewController = UINavigationController(rootViewController: LoginViewController())
         window!.rootViewController = initialViewController
         window!.makeKeyAndVisible();
         window!.backgroundColor = UIColor.whiteColor();
