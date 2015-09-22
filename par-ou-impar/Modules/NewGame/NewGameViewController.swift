@@ -11,12 +11,10 @@ import GoogleMobileAds
 
 class NewGameViewController: BaseViewController {
     
-    @IBOutlet weak var friendNameLabel: UILabel!
-    @IBOutlet weak var friendImageView: UIImageView!
     @IBOutlet weak var chooseHandView: ChooseHandView!
     @IBOutlet weak var betTextField: UITextField!
     @IBOutlet weak var createGameButton: UIButton!
-    @IBOutlet weak var chooseFriendButton: UIButton!
+    @IBOutlet weak var chooseFriendView: ChooseFriendsView!
     
     var interstitial: GADInterstitial?
     
@@ -40,7 +38,6 @@ class NewGameViewController: BaseViewController {
     func setup() {
         betTextField.placeholder = Messages.message("game.bet.text.hint")
         createGameButton.setTitle(Messages.message("game.create.button"))
-        chooseFriendButton.setTitle(Messages.message("game.choose.opponent.button"))
         chooseHandView.optionValueLabel.text = Messages.message("option.value.even")
         navigationController?.navigationBarHidden = false
         chooseHandView.chooseHandViewDelegate = self
@@ -129,8 +126,6 @@ extension NewGameViewController: ChooseFriendsDelegate {
     func didSelectFriend(friend: User) {
         chooseFriendViewController?.dismissViewControllerAnimated(true, completion: {
             self.friend = friend
-            self.friendNameLabel.text = friend.name
-            self.friendImageView.setImage(url: friend.profileImage!)
         })
     }
 }
