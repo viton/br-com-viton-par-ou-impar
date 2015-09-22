@@ -12,5 +12,11 @@ class FriendCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var selectedView: UIView!
+ 
+    override var selected: Bool {
+        didSet {
+            selectedView.hidden = !self.selected
+        }
+    }
     
 }

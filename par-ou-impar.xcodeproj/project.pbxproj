@@ -16,6 +16,8 @@
 		4D03D8061BB1BED800161941 /* FriendCollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D03D8051BB1BED800161941 /* FriendCollectionViewManager.swift */; settings = {ASSET_TAGS = (); }; };
 		4D03D80D1BB1BF5600161941 /* FriendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D03D80B1BB1BF5600161941 /* FriendCollectionViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		4D03D80E1BB1BF5600161941 /* FriendCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D03D80C1BB1BF5600161941 /* FriendCollectionViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		4D03D8121BB1E17000161941 /* AddFriendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D03D8101BB1E17000161941 /* AddFriendCollectionViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		4D03D8131BB1E17000161941 /* AddFriendCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D03D8111BB1E17000161941 /* AddFriendCollectionViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		4D0612691B6BCCAD00385A23 /* AppSettingsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0612681B6BCCAD00385A23 /* AppSettingsProvider.swift */; };
 		4D06126D1B6BEC3900385A23 /* InviteMoreFriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D06126B1B6BEC3900385A23 /* InviteMoreFriendsTableViewCell.swift */; };
 		4D06126E1B6BEC3900385A23 /* InviteMoreFriendsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D06126C1B6BEC3900385A23 /* InviteMoreFriendsTableViewCell.xib */; };
@@ -130,6 +132,8 @@
 		4D03D8051BB1BED800161941 /* FriendCollectionViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendCollectionViewManager.swift; sourceTree = "<group>"; };
 		4D03D80B1BB1BF5600161941 /* FriendCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendCollectionViewCell.swift; sourceTree = "<group>"; };
 		4D03D80C1BB1BF5600161941 /* FriendCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendCollectionViewCell.xib; sourceTree = "<group>"; };
+		4D03D8101BB1E17000161941 /* AddFriendCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendCollectionViewCell.swift; sourceTree = "<group>"; };
+		4D03D8111BB1E17000161941 /* AddFriendCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddFriendCollectionViewCell.xib; sourceTree = "<group>"; };
 		4D0612681B6BCCAD00385A23 /* AppSettingsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettingsProvider.swift; sourceTree = "<group>"; };
 		4D06126B1B6BEC3900385A23 /* InviteMoreFriendsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteMoreFriendsTableViewCell.swift; sourceTree = "<group>"; };
 		4D06126C1B6BEC3900385A23 /* InviteMoreFriendsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InviteMoreFriendsTableViewCell.xib; sourceTree = "<group>"; };
@@ -303,6 +307,15 @@
 				4D03D80C1BB1BF5600161941 /* FriendCollectionViewCell.xib */,
 			);
 			path = Friend;
+			sourceTree = "<group>";
+		};
+		4D03D80F1BB1E16300161941 /* AddFriend */ = {
+			isa = PBXGroup;
+			children = (
+				4D03D8101BB1E17000161941 /* AddFriendCollectionViewCell.swift */,
+				4D03D8111BB1E17000161941 /* AddFriendCollectionViewCell.xib */,
+			);
+			path = AddFriend;
 			sourceTree = "<group>";
 		};
 		4D0612671B6BCC9900385A23 /* AppSettings */ = {
@@ -958,6 +971,7 @@
 		576A20121B4CC4D4008C24CE /* UICollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				4D03D80F1BB1E16300161941 /* AddFriend */,
 				4D03D80A1BB1BF4B00161941 /* Friend */,
 				576A20131B4CC4FA008C24CE /* HandCollectionViewCell.swift */,
 				576A20141B4CC4FA008C24CE /* HandCollectionViewCell.xib */,
@@ -1102,6 +1116,7 @@
 			files = (
 				4D4E51E91B4C5C010049D474 /* ColorCollectionViewCell.xib in Resources */,
 				4D03D7F91BB0705600161941 /* SplashScreenViewController.xib in Resources */,
+				4D03D8131BB1E17000161941 /* AddFriendCollectionViewCell.xib in Resources */,
 				576A20161B4CC4FA008C24CE /* HandCollectionViewCell.xib in Resources */,
 				4D4E51CA1B4C3F8C0049D474 /* SimpleLoading.xib in Resources */,
 				4D4E51DF1B4C44800049D474 /* BaseCollectionViewCell.xib in Resources */,
@@ -1242,6 +1257,7 @@
 				4DA0A7611B50047400C30561 /* BaseStylesheet.m in Sources */,
 				4DA0A7631B50047400C30561 /* ViewStylesheet.m in Sources */,
 				4DA0A71E1B4D5A8200C30561 /* FriendTableViewCell.swift in Sources */,
+				4D03D8121BB1E17000161941 /* AddFriendCollectionViewCell.swift in Sources */,
 				4D6DFE3E1B4473DD00F406E3 /* Game.swift in Sources */,
 				4D4E51C81B4C3F0C0049D474 /* SimpleLoading.swift in Sources */,
 				4D6DFE521B459EA800F406E3 /* PlaceholderExtension.swift in Sources */,

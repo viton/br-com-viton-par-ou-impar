@@ -33,6 +33,7 @@ class NewGameViewController: BaseViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBarHidden = true
+        requestFriends()
     }
 
     func setup() {
@@ -50,6 +51,11 @@ class NewGameViewController: BaseViewController {
         let gadRequest = GADRequest()
         gadRequest.testDevices = GOOGLE_REQUEST_TEST_DEVICES
         interstitial?.loadRequest(gadRequest)
+    }
+    
+    func requestFriends() {
+        self.view.startLoading()
+        FriendsProvider.getFriends(self);
     }
     
     func validate () -> (Bool, String) {
@@ -128,4 +134,17 @@ extension NewGameViewController: ChooseFriendsDelegate {
             self.friend = friend
         })
     }
+}
+
+//MARK: FriendsCallback
+extension NewGameViewController:FriendsCallback {
+    
+    func onSuccess(friends:Array<User>) {
+        self.chooseFriendView.setupWithFriends(friends)
+    }
+    
+    func onEmptyFriends() {
+        
+    }
+    
 }

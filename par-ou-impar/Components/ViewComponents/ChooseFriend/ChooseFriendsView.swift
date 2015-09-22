@@ -12,9 +12,26 @@ class ChooseFriendsView: BaseComponentsView {
 
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
+    var friendsCollectionViewManager: CollectionViewManager?
     
     override func customSetup() {
         title.text = Messages.message("game.choose.friend.title")
+        friendsCollectionViewManager = FriendCollectionViewManager(collectionView: collectionView, delegate:self)
+    }
+    
+    func setupWithFriends(friends: Array<AnyObject>) {
+        var data = Array<AnyObject>()
+        data.append("")
+        data += friends
+        friendsCollectionViewManager?.updateWithData(data)
     }
 
+}
+
+extension ChooseFriendsView:BaseTableViewManagerDelegate {
+   
+    func didSelectObject(object: AnyObject) {
+        print(object)
+    }
+    
 }
