@@ -35,6 +35,7 @@ class SplashScreenViewController: BaseViewController {
             imageView.image = UIImage(named: (hand?.imagePrefix)! + suffix.description)
             hands?.removeFirst()
         } else {
+            timer?.invalidate()
             let window = UIApplication.sharedApplication().delegate?.window
             window!!.rootViewController = UINavigationController(rootViewController: LoginViewController())
         }

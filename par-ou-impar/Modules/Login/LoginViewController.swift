@@ -47,8 +47,9 @@ class LoginViewController: BaseViewController, FBSDKLoginButtonDelegate {
     }
     
     func requestUser() {
+        print("PREPARE TO REQUEST")
         view.startLoading()
-        LoginProvider.loadUser(self)
+        LoginProvider().loadUser(self)
     }
     
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
@@ -58,7 +59,6 @@ class LoginViewController: BaseViewController, FBSDKLoginButtonDelegate {
     override func prepareToRespose() {
         super.prepareToRespose()
         view.stopLoading()
-        
     }
     
     override func didClickPlaceholderAction(placeholder: Placeholder) {

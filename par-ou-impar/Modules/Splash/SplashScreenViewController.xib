@@ -16,17 +16,31 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_parouimpar" translatesAutoresizingMaskIntoConstraints="NO" id="s8F-Br-pLc">
+                    <rect key="frame" x="220" y="45" width="160" height="90"/>
+                </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yZp-fk-VMI">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <rect key="frame" x="0.0" y="150" width="600" height="450"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="yZp-fk-VMI" firstAttribute="top" secondItem="s8F-Br-pLc" secondAttribute="bottom" constant="15" id="66O-2b-wNk"/>
                 <constraint firstAttribute="trailing" secondItem="yZp-fk-VMI" secondAttribute="trailing" id="HNf-p3-Pgp"/>
                 <constraint firstAttribute="bottom" secondItem="yZp-fk-VMI" secondAttribute="bottom" id="Q9F-eg-1h8"/>
-                <constraint firstItem="yZp-fk-VMI" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="YDz-W5-EPb"/>
+                <constraint firstItem="yZp-fk-VMI" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="YDz-W5-EPb"/>
+                <constraint firstItem="s8F-Br-pLc" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="kb7-Zo-G0J"/>
+                <constraint firstItem="s8F-Br-pLc" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="45" id="l6e-Xc-8TT"/>
                 <constraint firstItem="yZp-fk-VMI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="sUl-Jg-Xyg"/>
             </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="YDz-W5-EPb"/>
+                </mask>
+            </variation>
         </view>
     </objects>
+    <resources>
+        <image name="logo_parouimpar" width="160" height="90"/>
+    </resources>
 </document>

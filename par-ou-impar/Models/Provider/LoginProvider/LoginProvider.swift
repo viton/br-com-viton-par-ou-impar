@@ -20,7 +20,9 @@ class LoginProvider: NSObject {
    
     static var user:User?
     
-    class func loadUser(callback:UserProviderCallback) {
+    
+    
+    func loadUser(callback:UserProviderCallback) {
         let meRequest = FBSDKGraphRequest(graphPath: "me?fields=id,name,gender", parameters: nil)
         meRequest.startWithCompletionHandler({
             (connection, result, error: NSError!) -> Void in
