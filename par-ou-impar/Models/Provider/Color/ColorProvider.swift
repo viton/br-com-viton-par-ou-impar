@@ -23,7 +23,7 @@ class ColorProvider: NSObject {
         NSUserDefaults.standardUserDefaults().setColor(color, forKey: APP_COLOR_KEY)
     }
     
-    class func getColors() -> [UIColor] {
+    class func getColors() -> Array<AnyObject> {
         var colors = Array<UIColor>()
         let selectedColor = getAppColor()
         colors.append(selectedColor)

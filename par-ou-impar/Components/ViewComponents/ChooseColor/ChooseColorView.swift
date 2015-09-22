@@ -8,7 +8,7 @@
 
 import UIKit
 
-let COMPONENT_MAX_WIDTH:CGFloat = 160.0
+let COMPONENT_MAX_WIDTH:CGFloat = 190.0
 
 protocol ChooseColorViewCallback {
 
@@ -29,7 +29,10 @@ class ChooseColorView: BaseComponentsView {
     }
     
     func updateWithLastColors() {
-        collectionViewManager?.updateWithData(ColorProvider.getColors())
+        var data = Array<AnyObject>()
+        data.append("")
+        data += ColorProvider.getColors()
+        collectionViewManager?.updateWithData(data)
     }
 
 }
