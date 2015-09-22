@@ -43,6 +43,7 @@ class NewGameViewController: BaseViewController {
         navigationController?.navigationBarHidden = false
         chooseHandView.chooseHandViewDelegate = self
         me = LoginProvider.user
+        chooseFriendView.delegate = self
         setupAds()
     }
     
@@ -71,7 +72,7 @@ class NewGameViewController: BaseViewController {
         return (true, "")
     }
 
-    @IBAction func chooseFriendAction(sender: AnyObject) {
+    func searchFriend() {
         chooseFriendViewController = ChooseFriendViewController()
         chooseFriendViewController?.delegate = self
         presentViewController(chooseFriendViewController!, animated: true, completion: {})
@@ -145,6 +146,19 @@ extension NewGameViewController:FriendsCallback {
     
     func onEmptyFriends() {
         
+    }
+    
+}
+
+//MARK: FriendsCallback
+extension NewGameViewController:ChooseFriendViewDelegate {
+    
+    func chooseFriendViewDidSelectSearch() {
+        searchFriend()
+    }
+    
+    func chooseFriendViewDidSelectFriend(friend: User?) {
+        self.friend = friend
     }
     
 }

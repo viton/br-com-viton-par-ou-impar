@@ -8,8 +8,17 @@
 
 import UIKit
 
+protocol ChooseFriendViewDelegate {
+ 
+    func chooseFriendViewDidSelectFriend(friend: User?);
+    
+    func chooseFriendViewDidSelectSearch();
+    
+}
+
 class ChooseFriendsView: BaseComponentsView {
 
+    var delegate: ChooseFriendViewDelegate!
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     var friendsCollectionViewManager: CollectionViewManager?
@@ -31,7 +40,12 @@ class ChooseFriendsView: BaseComponentsView {
 extension ChooseFriendsView:BaseTableViewManagerDelegate {
    
     func didSelectObject(object: AnyObject) {
-        print(object)
+        if(object as? User != nil){
+            delegate.chooseFriendViewDidSelectFriend(object as? User)
+        }else{
+            delegate.chooseFriendViewDidSelectFriend(nil)
+            delegate.chooseFriendViewDidSelectSearch()
+        }
     }
     
 }

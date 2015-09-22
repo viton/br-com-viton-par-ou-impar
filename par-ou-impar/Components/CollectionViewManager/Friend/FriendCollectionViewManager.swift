@@ -27,6 +27,8 @@ class FriendCollectionViewManager: CollectionViewManager {
             friendCell.imageView.setImage(url: friend.profileImage!)
             friendCell.selectedView.circle()
             friendCell.selectedView.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.4)
+        }else if let addCell = cell as? AddFriendCollectionViewCell {
+            addCell.backgroundContentView.circle()
         }
     }
     
