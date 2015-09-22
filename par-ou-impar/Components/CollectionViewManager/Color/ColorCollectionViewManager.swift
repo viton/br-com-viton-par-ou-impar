@@ -24,20 +24,20 @@ class ColorCollectionViewManager: CollectionViewManager {
     override func setData(item: AnyObject, toCell cell: UICollectionViewCell) {
         if let colorCell = cell as? ColorCollectionViewCell {
             if let color = item as? UIColor {
-                colorCell.colorView.backgroundColor = color
-                colorCell.colorView.setupBorder(2, color: UIColor.whiteColor().colorWithAlphaComponent(0.8))
-                colorCell.colorView.circle()
+                setupColorsView(color, view: colorCell.colorView);
             }
         }else if let allColorsCell = cell as? AllColorsCollectionViewCell {
-            allColorsCell.topView.backgroundColor = ColorProvider.getAllColors()[0]
-            allColorsCell.topView.circle()
-            allColorsCell.leftView.backgroundColor = ColorProvider.getAllColors()[1]
-            allColorsCell.leftView.circle()
-            allColorsCell.rightView.backgroundColor = ColorProvider.getAllColors()[2]
-            allColorsCell.rightView.circle()
-            allColorsCell.bottomView.backgroundColor = ColorProvider.getAllColors()[3]
-            allColorsCell.bottomView.circle()
+            setupColorsView(ColorProvider.getAllColors()[0], view: allColorsCell.topView);
+            setupColorsView(ColorProvider.getAllColors()[1], view: allColorsCell.leftView);
+            setupColorsView(ColorProvider.getAllColors()[2], view: allColorsCell.rightView);
+            setupColorsView(ColorProvider.getAllColors()[3], view: allColorsCell.bottomView);
         }
+    }
+    
+    func setupColorsView(color:UIColor, view:UIView){
+        view.backgroundColor = color
+        view.circle()
+        view.setupBorder(1, color: UIColor.whiteColor().colorWithAlphaComponent(0.8))
     }
     
     override func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
