@@ -25,6 +25,9 @@ class ChooseFriendsView: BaseComponentsView {
     
     override func customSetup() {
         title.text = Messages.message("game.choose.friend.title")
+
+//        [collectionView setScrollDirection:UICollectionViewScrollDirectionHorizontal];
+        
         friendsCollectionViewManager = FriendCollectionViewManager(collectionView: collectionView, delegate:self)
     }
     
