@@ -11,6 +11,7 @@ import GoogleMobileAds
 
 class NewGameViewController: BaseViewController {
     
+    @IBOutlet weak var betTextTitleLabel: UILabel!
     @IBOutlet weak var chooseHandView: ChooseHandView!
     @IBOutlet weak var betTextField: UITextField!
     @IBOutlet weak var createGameButton: UIButton!
@@ -37,7 +38,7 @@ class NewGameViewController: BaseViewController {
     }
 
     func setup() {
-        betTextField.placeholder = Messages.message("game.bet.text.hint")
+        betTextTitleLabel.text = Messages.message("game.bet.text.hint")
         createGameButton.setTitle(Messages.message("game.create.button"))
         chooseHandView.optionValueLabel.text = Messages.message("option.value.even")
         navigationController?.navigationBarHidden = false
