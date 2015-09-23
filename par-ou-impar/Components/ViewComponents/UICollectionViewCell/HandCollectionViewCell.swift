@@ -16,13 +16,13 @@ class HandCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         selectedView.circle()
-        selectedView.setupBorder(1, color: UIColor.blackColor())
+        selectedView.setupBorder(1, color: UIColor.whiteColor())
     }
     
     override var selected: Bool {
         didSet {
             if self.selected {
-                selectedView.backgroundColor = UIColor.blackColor()
+                selectedView.backgroundColor = UIColor.whiteColor()
             }else {
                 selectedView.backgroundColor = UIColor.clearColor()
             }
