@@ -45,7 +45,15 @@ class BaseViewController: UIViewController {
         alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default,handler: { (action) in
             
         } ))
-        
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    func alert(message:String, title:String) {
+        let alertController = UIAlertController(title: title, message:
+            message, preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default,handler: { (action) in
+            
+        } ))
         self.presentViewController(alertController, animated: true, completion: nil)
     }
     

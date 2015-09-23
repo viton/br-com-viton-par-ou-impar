@@ -32,10 +32,10 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="style" value="H1_Label"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="style" value="H2_Label"/>
                     </userDefinedRuntimeAttributes>
                 </label>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Bet Text" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3JJ-50-vat">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3JJ-50-vat">
                     <rect key="frame" x="15" y="172.5" width="570" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="EUC-Yj-0bN"/>
@@ -55,7 +55,7 @@
                     </variation>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mms-GW-YoF">
-                    <rect key="frame" x="65" y="545" width="520" height="40"/>
+                    <rect key="frame" x="70" y="545" width="515" height="40"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="bWa-BL-EXO"/>
@@ -72,7 +72,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6sp-6z-uDr" userLabel="CLOSE">
-                    <rect key="frame" x="10" y="545" width="40" height="40"/>
+                    <rect key="frame" x="15" y="545" width="40" height="40"/>
                     <state key="normal" image="ic-close">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -106,7 +106,7 @@
                 <constraint firstAttribute="trailing" secondItem="3JJ-50-vat" secondAttribute="trailing" constant="15" id="sGP-oL-iGd"/>
                 <constraint firstItem="bas-fi-E1n" firstAttribute="top" secondItem="3JJ-50-vat" secondAttribute="bottom" constant="15" id="tC3-ag-J0z"/>
                 <constraint firstAttribute="bottom" secondItem="mms-GW-YoF" secondAttribute="bottom" constant="15" id="tUF-E0-hsq"/>
-                <constraint firstItem="6sp-6z-uDr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="uOT-2U-Ubw"/>
+                <constraint firstItem="6sp-6z-uDr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="uOT-2U-Ubw"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <variation key="default">

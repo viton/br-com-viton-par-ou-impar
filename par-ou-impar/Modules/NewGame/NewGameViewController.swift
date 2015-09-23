@@ -112,6 +112,11 @@ extension NewGameViewController: CreateGameCallback {
             interstitial!.presentFromRootViewController(self)
         }
         navigationController?.popViewControllerAnimated(true)
+        NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "popAndAd", userInfo: nil, repeats: false);
+    }
+    
+    func popAndAd() {
+        alert(Messages.message("game.create.success"), title:"")
     }
     
 }

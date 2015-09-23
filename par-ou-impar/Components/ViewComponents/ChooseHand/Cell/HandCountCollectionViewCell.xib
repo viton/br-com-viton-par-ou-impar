@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -19,24 +19,14 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ENs-7N-u8m">
-                        <rect key="frame" x="6" y="6" width="39" height="39"/>
-                        <constraints>
-                            <constraint firstAttribute="width" secondItem="ENs-7N-u8m" secondAttribute="height" multiplier="1:1" id="WJh-Nw-b36"/>
-                        </constraints>
-                    </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="ENs-7N-u8m" secondAttribute="bottom" constant="5" id="OpI-62-taf"/>
-                <constraint firstItem="ENs-7N-u8m" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="6" id="Rvd-4r-mHp"/>
                 <constraint firstAttribute="centerX" secondItem="1NU-Zi-8ck" secondAttribute="centerX" id="bOz-0a-EO1"/>
                 <constraint firstAttribute="centerY" secondItem="1NU-Zi-8ck" secondAttribute="centerY" id="lZb-5t-V2v"/>
-                <constraint firstAttribute="centerX" secondItem="ENs-7N-u8m" secondAttribute="centerX" id="sTT-6u-xhA"/>
             </constraints>
             <connections>
-                <outlet property="circleView" destination="ENs-7N-u8m" id="f3G-z4-9iH"/>
                 <outlet property="countLabel" destination="1NU-Zi-8ck" id="op2-6Z-rnR"/>
             </connections>
         </collectionViewCell>
