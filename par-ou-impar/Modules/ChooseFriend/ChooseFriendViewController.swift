@@ -16,7 +16,7 @@ protocol ChooseFriendsDelegate {
     
 }
 
-class ChooseFriendViewController: BaseViewController, FriendsCallback {
+class ChooseFriendViewController: BaseViewController {
     
     @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var tableView: UITableView!
@@ -44,13 +44,13 @@ class ChooseFriendViewController: BaseViewController, FriendsCallback {
     }
     
     func textFieldDidChange(textField: UITextField) {
-        var text = textField.text
-        if count(text) == 0 {
+        let text = textField.text
+        if text!.characters.count == 0 {
             //reset search
             tableManager?.updateWithData(friends!)
         }else {
             //FILTER and update table
-            var filteredFriends = filterFriends(text)
+            let filteredFriends = filterFriends(text!)
             tableManager?.updateWithData(filteredFriends)
         }
     }
@@ -75,7 +75,7 @@ class ChooseFriendViewController: BaseViewController, FriendsCallback {
     }
     
     func inviteFriends() {
-        var content = FBSDKAppInviteContent()
+        let content = FBSDKAppInviteContent()
 
         content.appLinkURL = NSURL(string: AppSettingsProvider.getAppStoreURL())
         //optionally set previewImageURL
@@ -83,6 +83,22 @@ class ChooseFriendViewController: BaseViewController, FriendsCallback {
         
         // present the dialog. Assumes self implements protocol `FBSDKAppInviteDialogDelegate`
         FBSDKAppInviteDialog.showWithContent(content, delegate: self)
+    }
+    
+    override func didClickPlaceholderAction(placeholder: Placeholder) {
+        super.didClickPlaceholderAction(placeholder)
+        if placeholder == noFriendsPlaceholder {
+            inviteFriends()
+        }
+    }
+    
+}
+
+//MARK: FriendTableViewManagerDelegate
+extension ChooseFriendViewController: FriendTableViewManagerDelegate {
+    
+    func didSelectInviteMoreFriends() {
+        inviteFriends()
     }
     
     override func didSelectObject(object:AnyObject) {
@@ -95,16 +111,16 @@ class ChooseFriendViewController: BaseViewController, FriendsCallback {
 }
 
 //MARK: PlaceholderActionDelegate
-extension ChooseFriendViewController: PlaceholderActionDelegate {
-    
-    override func didClickPlaceholderAction(placeholder: Placeholder) {
-        super.didClickPlaceholderAction(placeholder)
-        if placeholder == noFriendsPlaceholder {
-            inviteFriends()
-        }
-    }
-    
-}
+//extension ChooseFriendViewController: PlaceholderActionDelegate {
+//    
+//    override func didClickPlaceholderAction(placeholder: Placeholder) {
+//        super.didClickPlaceholderAction(placeholder)
+//        if placeholder == noFriendsPlaceholder {
+//            inviteFriends()
+//        }
+//    }
+//    
+//}
 
 //MARK: FriendsCallback
 extension ChooseFriendViewController:FriendsCallback {
@@ -115,7 +131,7 @@ extension ChooseFriendViewController:FriendsCallback {
     }
     
     func onEmptyFriends() {
-        noFriendsPlaceholder = view.addPlaceholder(Messages.message("choose.friend.placeholder.empty.friends.title"), content: Messages.message("choose.friend.placeholder.empty.friends.disclaimer"), buttonTitle: Messages.message("choose.friend.placeholder.empty.friends.button.title"), image: nil)
+        noFriendsPlaceholder = view.addPlaceholder(Messages.message("choose.friend.placeholder.empty.friends.title"), content: Messages.message("choose.friend.placeholder.empty.friends.disclaimer"), buttonTitle: Messages.message("choose.friend.placeholder.empty.friends.button.title"), image: UIImage(named:"img-invite-friends"))
         noFriendsPlaceholder?.delegate = self
     }
     
@@ -130,11 +146,11 @@ extension ChooseFriendViewController:FriendsCallback {
 extension ChooseFriendViewController:FBSDKAppInviteDialogDelegate {
     
     func appInviteDialog(appInviteDialog: FBSDKAppInviteDialog!, didCompleteWithResults results: [NSObject : AnyObject]!) {
-    
+        dismissViewControllerAnimated(true, completion: {})
     }
     
     func appInviteDialog(appInviteDialog: FBSDKAppInviteDialog!, didFailWithError error: NSError!) {
-    
+        dismissViewControllerAnimated(true, completion: {})
     }
     
 }

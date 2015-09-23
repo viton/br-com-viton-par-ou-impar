@@ -18,6 +18,7 @@ protocol ChooseHandViewDelegate {
 
 class ChooseHandView: BaseComponentsView {
     
+    @IBOutlet weak var chooseHandTitleLabel: UILabel!
     @IBOutlet weak var optionValueLabel: UILabel!
     @IBOutlet weak var optionTitleLabel: UILabel!
     @IBOutlet weak var handCollectionView: UICollectionView!
@@ -26,7 +27,8 @@ class ChooseHandView: BaseComponentsView {
     var handCollectionManager:CollectionViewManager?
     
     override func customSetup() {
-        var nib = UINib(nibName: "HandCountCollectionViewCell", bundle: NSBundle(forClass: self.dynamicType))
+        chooseHandTitleLabel.text = Messages.message("game.choose.hand.title")
+        let nib = UINib(nibName: "HandCountCollectionViewCell", bundle: NSBundle(forClass: self.dynamicType))
         collectionView.registerNib(nib, forCellWithReuseIdentifier: "HandCountCell")
         optionTitleLabel.text = Messages.message("option.title")
         collectionView.dataSource = self
@@ -56,7 +58,7 @@ extension ChooseHandView:UICollectionViewDataSource {
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        var cell:HandCountCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("HandCountCell", forIndexPath: indexPath) as! HandCountCollectionViewCell
+        let cell:HandCountCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("HandCountCell", forIndexPath: indexPath) as! HandCountCollectionViewCell
         
         cell.countLabel.text = String(indexPath.item+1)
         
@@ -79,8 +81,8 @@ extension ChooseHandView:UICollectionViewDelegateFlowLayout {
         
         let columns = self.collectionView(collectionView, numberOfItemsInSection: 0)
         let width = Float(collectionView.frame.size.width - 1)/Float(columns)
-        let height = Float(collectionView.frame.size.height)
-        return CGSize(width: width.int, height: width.int)
+        let height = Float(collectionView.frame.size.height - 1)
+        return CGSize(width: width.int, height: height.int)
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {

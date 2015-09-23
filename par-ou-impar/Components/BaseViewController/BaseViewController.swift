@@ -25,7 +25,7 @@ class BaseViewController: UIViewController {
         super.init(nibName:NSStringFromClass(self.dynamicType).componentsSeparatedByString(".").last! ,bundle:nil);
     }
 
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
@@ -45,7 +45,15 @@ class BaseViewController: UIViewController {
         alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default,handler: { (action) in
             
         } ))
-        
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    func alert(message:String, title:String) {
+        let alertController = UIAlertController(title: title, message:
+            message, preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default,handler: { (action) in
+            
+        } ))
         self.presentViewController(alertController, animated: true, completion: nil)
     }
     
@@ -84,7 +92,7 @@ extension BaseViewController: PlaceholderActionDelegate {
 extension BaseViewController: BaseTableViewManagerDelegate {
     
     func didSelectObject(object: AnyObject) {
-        println(object)
+        print(object)
     }
     
 }

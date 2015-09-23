@@ -38,27 +38,27 @@ class LoginViewController: BaseViewController, FBSDKLoginButtonDelegate {
     //MARK: FBSDKLoginButtonDelegate
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
         if(error != nil){
-            println(error)
+            print(error)
         }else if(result.isCancelled) {
-            println("CANCELED")
+            print("CANCELED")
         }else {
             requestUser()
         }
     }
     
     func requestUser() {
+        print("PREPARE TO REQUEST")
         view.startLoading()
-        LoginProvider.loadUser(self)
+        LoginProvider().loadUser(self)
     }
     
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
-        println("LOGOUT")
+        print("LOGOUT")
     }
     
     override func prepareToRespose() {
         super.prepareToRespose()
         view.stopLoading()
-        
     }
     
     override func didClickPlaceholderAction(placeholder: Placeholder) {
@@ -85,11 +85,11 @@ extension LoginViewController: UserProviderCallback {
         if installation.channels == nil {
             installation.channels = []
         }
-        var desirableInfos = ["gender"]
+        let desirableInfos = ["gender"]
         for info in desirableInfos {
             if let userInfo = infos[info] as? String {
-                var copyArray = stringArrayCopy(installation.channels!)
-                if contains(copyArray, userInfo) {
+                let copyArray = stringArrayCopy(installation.channels!)
+                if copyArray.contains(userInfo) {
                     installation.channels?.append(userInfo)
                 }
             }

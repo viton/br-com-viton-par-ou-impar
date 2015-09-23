@@ -7,7 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D03D7F81BB0705600161941 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D03D7F61BB0705600161941 /* SplashScreenViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		4D03D7F91BB0705600161941 /* SplashScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D03D7F71BB0705600161941 /* SplashScreenViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		4D03D7FD1BB1960600161941 /* AllColorsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D03D7FB1BB1960600161941 /* AllColorsCollectionViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		4D03D7FE1BB1960600161941 /* AllColorsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D03D7FC1BB1960600161941 /* AllColorsCollectionViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		4D03D8011BB1A62500161941 /* ChooseFriendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D03D8001BB1A62500161941 /* ChooseFriendsView.swift */; settings = {ASSET_TAGS = (); }; };
+		4D03D8031BB1A63300161941 /* ChooseFriendsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D03D8021BB1A63300161941 /* ChooseFriendsView.xib */; settings = {ASSET_TAGS = (); }; };
+		4D03D8061BB1BED800161941 /* FriendCollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D03D8051BB1BED800161941 /* FriendCollectionViewManager.swift */; settings = {ASSET_TAGS = (); }; };
+		4D03D80D1BB1BF5600161941 /* FriendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D03D80B1BB1BF5600161941 /* FriendCollectionViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		4D03D80E1BB1BF5600161941 /* FriendCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D03D80C1BB1BF5600161941 /* FriendCollectionViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		4D03D8121BB1E17000161941 /* AddFriendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D03D8101BB1E17000161941 /* AddFriendCollectionViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		4D03D8131BB1E17000161941 /* AddFriendCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D03D8111BB1E17000161941 /* AddFriendCollectionViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		4D0612691B6BCCAD00385A23 /* AppSettingsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0612681B6BCCAD00385A23 /* AppSettingsProvider.swift */; };
+		4D06126D1B6BEC3900385A23 /* InviteMoreFriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D06126B1B6BEC3900385A23 /* InviteMoreFriendsTableViewCell.swift */; };
+		4D06126E1B6BEC3900385A23 /* InviteMoreFriendsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D06126C1B6BEC3900385A23 /* InviteMoreFriendsTableViewCell.xib */; };
 		4D4E51C81B4C3F0C0049D474 /* SimpleLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4E51C71B4C3F0C0049D474 /* SimpleLoading.swift */; };
 		4D4E51CA1B4C3F8C0049D474 /* SimpleLoading.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D4E51C91B4C3F8C0049D474 /* SimpleLoading.xib */; };
 		4D4E51CC1B4C404D0049D474 /* OneHandLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4E51CB1B4C404D0049D474 /* OneHandLoading.swift */; };
@@ -110,7 +123,20 @@
 
 /* Begin PBXFileReference section */
 		48BE49A876F579D1F50DBC18 /* Pods_par_ou_impar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_par_ou_impar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D03D7F61BB0705600161941 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
+		4D03D7F71BB0705600161941 /* SplashScreenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SplashScreenViewController.xib; sourceTree = "<group>"; };
+		4D03D7FB1BB1960600161941 /* AllColorsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllColorsCollectionViewCell.swift; sourceTree = "<group>"; };
+		4D03D7FC1BB1960600161941 /* AllColorsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AllColorsCollectionViewCell.xib; sourceTree = "<group>"; };
+		4D03D8001BB1A62500161941 /* ChooseFriendsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseFriendsView.swift; sourceTree = "<group>"; };
+		4D03D8021BB1A63300161941 /* ChooseFriendsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseFriendsView.xib; sourceTree = "<group>"; };
+		4D03D8051BB1BED800161941 /* FriendCollectionViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendCollectionViewManager.swift; sourceTree = "<group>"; };
+		4D03D80B1BB1BF5600161941 /* FriendCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendCollectionViewCell.swift; sourceTree = "<group>"; };
+		4D03D80C1BB1BF5600161941 /* FriendCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendCollectionViewCell.xib; sourceTree = "<group>"; };
+		4D03D8101BB1E17000161941 /* AddFriendCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendCollectionViewCell.swift; sourceTree = "<group>"; };
+		4D03D8111BB1E17000161941 /* AddFriendCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddFriendCollectionViewCell.xib; sourceTree = "<group>"; };
 		4D0612681B6BCCAD00385A23 /* AppSettingsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettingsProvider.swift; sourceTree = "<group>"; };
+		4D06126B1B6BEC3900385A23 /* InviteMoreFriendsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteMoreFriendsTableViewCell.swift; sourceTree = "<group>"; };
+		4D06126C1B6BEC3900385A23 /* InviteMoreFriendsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InviteMoreFriendsTableViewCell.xib; sourceTree = "<group>"; };
 		4D4E51C71B4C3F0C0049D474 /* SimpleLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleLoading.swift; sourceTree = "<group>"; };
 		4D4E51C91B4C3F8C0049D474 /* SimpleLoading.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SimpleLoading.xib; sourceTree = "<group>"; };
 		4D4E51CB1B4C404D0049D474 /* OneHandLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneHandLoading.swift; sourceTree = "<group>"; };
@@ -239,12 +265,74 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D03D7F51BB0704600161941 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				4D03D7F61BB0705600161941 /* SplashScreenViewController.swift */,
+				4D03D7F71BB0705600161941 /* SplashScreenViewController.xib */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		4D03D7FA1BB195F300161941 /* AllColors */ = {
+			isa = PBXGroup;
+			children = (
+				4D03D7FB1BB1960600161941 /* AllColorsCollectionViewCell.swift */,
+				4D03D7FC1BB1960600161941 /* AllColorsCollectionViewCell.xib */,
+			);
+			path = AllColors;
+			sourceTree = "<group>";
+		};
+		4D03D7FF1BB1A5EF00161941 /* ChooseFriend */ = {
+			isa = PBXGroup;
+			children = (
+				4D03D8001BB1A62500161941 /* ChooseFriendsView.swift */,
+				4D03D8021BB1A63300161941 /* ChooseFriendsView.xib */,
+			);
+			path = ChooseFriend;
+			sourceTree = "<group>";
+		};
+		4D03D8041BB1BEA900161941 /* Friend */ = {
+			isa = PBXGroup;
+			children = (
+				4D03D8051BB1BED800161941 /* FriendCollectionViewManager.swift */,
+			);
+			path = Friend;
+			sourceTree = "<group>";
+		};
+		4D03D80A1BB1BF4B00161941 /* Friend */ = {
+			isa = PBXGroup;
+			children = (
+				4D03D80B1BB1BF5600161941 /* FriendCollectionViewCell.swift */,
+				4D03D80C1BB1BF5600161941 /* FriendCollectionViewCell.xib */,
+			);
+			path = Friend;
+			sourceTree = "<group>";
+		};
+		4D03D80F1BB1E16300161941 /* AddFriend */ = {
+			isa = PBXGroup;
+			children = (
+				4D03D8101BB1E17000161941 /* AddFriendCollectionViewCell.swift */,
+				4D03D8111BB1E17000161941 /* AddFriendCollectionViewCell.xib */,
+			);
+			path = AddFriend;
+			sourceTree = "<group>";
+		};
 		4D0612671B6BCC9900385A23 /* AppSettings */ = {
 			isa = PBXGroup;
 			children = (
 				4D0612681B6BCCAD00385A23 /* AppSettingsProvider.swift */,
 			);
 			path = AppSettings;
+			sourceTree = "<group>";
+		};
+		4D06126A1B6BEC0E00385A23 /* InviteMoreFriends */ = {
+			isa = PBXGroup;
+			children = (
+				4D06126B1B6BEC3900385A23 /* InviteMoreFriendsTableViewCell.swift */,
+				4D06126C1B6BEC3900385A23 /* InviteMoreFriendsTableViewCell.xib */,
+			);
+			path = InviteMoreFriends;
 			sourceTree = "<group>";
 		};
 		4D4E51C51B4C3EEB0049D474 /* OneHandLoading */ = {
@@ -268,6 +356,7 @@
 		4D4E51CF1B4C43530049D474 /* ChooseColor */ = {
 			isa = PBXGroup;
 			children = (
+				4D03D7FA1BB195F300161941 /* AllColors */,
 				4D4E51D41B4C440A0049D474 /* CollectonViewCell */,
 				4D4E51D01B4C43680049D474 /* ChooseColorView.swift */,
 				4D4E51D21B4C43760049D474 /* ChooseColorView.xib */,
@@ -289,6 +378,7 @@
 			children = (
 				4D4E51DA1B4C44800049D474 /* Base */,
 				4D4E51E11B4C44B20049D474 /* Color */,
+				4D03D8041BB1BEA900161941 /* Friend */,
 				576A200F1B4CC483008C24CE /* Hand */,
 			);
 			path = CollectionViewManager;
@@ -702,6 +792,7 @@
 				4D6DFE4C1B458F3500F406E3 /* MatchResult */,
 				4D6DFE2F1B44674E00F406E3 /* NewGame */,
 				4D6DFE421B45866000F406E3 /* ReplyGame */,
+				4D03D7F51BB0704600161941 /* Splash */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -764,6 +855,7 @@
 			children = (
 				4DBB9B291B44288700B49658 /* Base */,
 				4D4E51CF1B4C43530049D474 /* ChooseColor */,
+				4D03D7FF1BB1A5EF00161941 /* ChooseFriend */,
 				4D6DFE591B45DCE400F406E3 /* ChooseHand */,
 				4DBB9B2B1B44288700B49658 /* Header */,
 				4DBB9B2E1B44288700B49658 /* Loading */,
@@ -816,6 +908,7 @@
 			children = (
 				4DA0A71B1B4D5A7200C30561 /* Friend */,
 				576A20071B485DA3008C24CE /* Game */,
+				4D06126A1B6BEC0E00385A23 /* InviteMoreFriends */,
 				4DBB9B351B44288700B49658 /* NewTableViewCell.swift */,
 				4DBB9B361B44288700B49658 /* NewTableViewCell.xib */,
 			);
@@ -878,6 +971,8 @@
 		576A20121B4CC4D4008C24CE /* UICollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				4D03D80F1BB1E16300161941 /* AddFriend */,
+				4D03D80A1BB1BF4B00161941 /* Friend */,
 				576A20131B4CC4FA008C24CE /* HandCollectionViewCell.swift */,
 				576A20141B4CC4FA008C24CE /* HandCollectionViewCell.xib */,
 			);
@@ -975,6 +1070,8 @@
 		4DA673FA1B4426E40081BDB3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = Viton;
 				TargetAttributes = {
@@ -1018,6 +1115,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D4E51E91B4C5C010049D474 /* ColorCollectionViewCell.xib in Resources */,
+				4D03D7F91BB0705600161941 /* SplashScreenViewController.xib in Resources */,
+				4D03D8131BB1E17000161941 /* AddFriendCollectionViewCell.xib in Resources */,
 				576A20161B4CC4FA008C24CE /* HandCollectionViewCell.xib in Resources */,
 				4D4E51CA1B4C3F8C0049D474 /* SimpleLoading.xib in Resources */,
 				4D4E51DF1B4C44800049D474 /* BaseCollectionViewCell.xib in Resources */,
@@ -1028,18 +1127,22 @@
 				4DBB9B3C1B44288700B49658 /* TesteTableViewCell.xib in Resources */,
 				4DBC4F371B66564B004EAE1E /* LooseViewController.xib in Resources */,
 				576A200B1B485DD3008C24CE /* GameTableViewCell.xib in Resources */,
+				4D03D80E1BB1BF5600161941 /* FriendCollectionViewCell.xib in Resources */,
 				4D6DFE621B45E36D00F406E3 /* HandCountCollectionViewCell.xib in Resources */,
 				576A20241B50BDC8008C24CE /* HandCountLoading.xib in Resources */,
 				4D6DFE461B45867A00F406E3 /* ReplyGameViewController.xib in Resources */,
 				4D6DFE501B458F4C00F406E3 /* MatchResultViewController.xib in Resources */,
+				4D03D7FE1BB1960600161941 /* AllColorsCollectionViewCell.xib in Resources */,
 				4D6DFE4B1B458BCF00F406E3 /* FightViewController.xib in Resources */,
 				4DBB9B401B44288700B49658 /* Header.xib in Resources */,
 				4D6DFE5D1B45DE3500F406E3 /* ChooseHandView.xib in Resources */,
+				4D03D8031BB1A63300161941 /* ChooseFriendsView.xib in Resources */,
 				4DA0A71F1B4D5A8200C30561 /* FriendTableViewCell.xib in Resources */,
 				4D6DFE2E1B44641C00F406E3 /* HomeViewController.xib in Resources */,
 				4D6DFE331B44677400F406E3 /* NewGameViewController.xib in Resources */,
 				4DA674121B4426E50081BDB3 /* LaunchScreen.xib in Resources */,
 				4DA0A7651B50047400C30561 /* README in Resources */,
+				4D06126E1B6BEC3900385A23 /* InviteMoreFriendsTableViewCell.xib in Resources */,
 				4DBB9B461B44288700B49658 /* NewTableViewCell.xib in Resources */,
 				4D6DFE381B446A0200F406E3 /* ChooseFriendViewController.xib in Resources */,
 				4D4E51CE1B4C405B0049D474 /* OneHandLoading.xib in Resources */,
@@ -1115,8 +1218,10 @@
 				4DBB9B3F1B44288700B49658 /* Header.swift in Sources */,
 				4D4E51D11B4C43680049D474 /* ChooseColorView.swift in Sources */,
 				4D6DFE4F1B458F4C00F406E3 /* MatchResultViewController.swift in Sources */,
+				4D06126D1B6BEC3900385A23 /* InviteMoreFriendsTableViewCell.swift in Sources */,
 				4D4E51CC1B4C404D0049D474 /* OneHandLoading.swift in Sources */,
 				4D6DFE241B4447AD00F406E3 /* LoginProvider.swift in Sources */,
+				4D03D7FD1BB1960600161941 /* AllColorsCollectionViewCell.swift in Sources */,
 				576A20111B4CC4A1008C24CE /* HandCollectionViewManager.swift in Sources */,
 				4DBB9B411B44288700B49658 /* Loading.swift in Sources */,
 				4D6DFE5B1B45DD1C00F406E3 /* ChooseHandView.swift in Sources */,
@@ -1126,9 +1231,11 @@
 				4D6DFE611B45E36D00F406E3 /* HandCountCollectionViewCell.swift in Sources */,
 				4D6DFE321B44677400F406E3 /* NewGameViewController.swift in Sources */,
 				576A20191B4CC6DE008C24CE /* FightHand.swift in Sources */,
+				4D03D8011BB1A62500161941 /* ChooseFriendsView.swift in Sources */,
 				4D6DFE371B446A0200F406E3 /* ChooseFriendViewController.swift in Sources */,
 				4D6DFE2C1B44640B00F406E3 /* HomeViewController.swift in Sources */,
 				4D6DFE271B44498F00F406E3 /* PFObjectExtension.swift in Sources */,
+				4D03D8061BB1BED800161941 /* FriendCollectionViewManager.swift in Sources */,
 				576A200A1B485DD3008C24CE /* GameTableViewCell.swift in Sources */,
 				4D0612691B6BCCAD00385A23 /* AppSettingsProvider.swift in Sources */,
 				4D4E51E81B4C5C010049D474 /* ColorCollectionViewCell.swift in Sources */,
@@ -1146,9 +1253,11 @@
 				4DA043491B6ACC9F00DFC34B /* UIButtonExtensions.swift in Sources */,
 				4DA0A76B1B50276700C30561 /* ButtonStylesheet.m in Sources */,
 				4DBB9B391B44288700B49658 /* Messages.swift in Sources */,
+				4D03D7F81BB0705600161941 /* SplashScreenViewController.swift in Sources */,
 				4DA0A7611B50047400C30561 /* BaseStylesheet.m in Sources */,
 				4DA0A7631B50047400C30561 /* ViewStylesheet.m in Sources */,
 				4DA0A71E1B4D5A8200C30561 /* FriendTableViewCell.swift in Sources */,
+				4D03D8121BB1E17000161941 /* AddFriendCollectionViewCell.swift in Sources */,
 				4D6DFE3E1B4473DD00F406E3 /* Game.swift in Sources */,
 				4D4E51C81B4C3F0C0049D474 /* SimpleLoading.swift in Sources */,
 				4D6DFE521B459EA800F406E3 /* PlaceholderExtension.swift in Sources */,
@@ -1160,6 +1269,7 @@
 				4DBB9B431B44288700B49658 /* Placeholder.swift in Sources */,
 				4D4E51E51B4C48430049D474 /* RoundAndBorder.swift in Sources */,
 				4D6DFE581B45BDAD00F406E3 /* FriendsTableViewManager.swift in Sources */,
+				4D03D80D1BB1BF5600161941 /* FriendCollectionViewCell.swift in Sources */,
 				4DBB9B371B44288700B49658 /* BaseViewController.swift in Sources */,
 				576A201C1B4CC7A7008C24CE /* FightHandProvider.swift in Sources */,
 				576A20061B4847A5008C24CE /* ColorProvider.swift in Sources */,
@@ -1288,10 +1398,10 @@
 			baseConfigurationReference = A696C356A9A5315EAD107F01 /* Pods-par-ou-impar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "par-ou-impar/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1308,10 +1418,10 @@
 			baseConfigurationReference = 6E734F9821E2E00AC2CF5BE6 /* Pods-par-ou-impar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "par-ou-impar/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -8,6 +8,8 @@
 
 import UIKit
 
+let COMPONENT_MAX_WIDTH:CGFloat = 190.0
+
 protocol ChooseColorViewCallback {
 
     func didChooseColor(color:UIColor)
@@ -27,7 +29,10 @@ class ChooseColorView: BaseComponentsView {
     }
     
     func updateWithLastColors() {
-        collectionViewManager?.updateWithData(ColorProvider.getColors())
+        var data = Array<AnyObject>()
+        data.append("")
+        data += ColorProvider.getColors()
+        collectionViewManager?.updateWithData(data)
     }
 
 }
@@ -35,8 +40,8 @@ class ChooseColorView: BaseComponentsView {
 extension ChooseColorView: BaseTableViewManagerDelegate {
     
     func didSelectObject(object: AnyObject) {
-        if widthConstraint!.constant != 190 {
-            widthConstraint!.constant = 190
+        if widthConstraint!.constant != COMPONENT_MAX_WIDTH {
+            widthConstraint!.constant = COMPONENT_MAX_WIDTH
             UIView.animateWithDuration(0.5) {
                 self.superview!.layoutIfNeeded()
             }

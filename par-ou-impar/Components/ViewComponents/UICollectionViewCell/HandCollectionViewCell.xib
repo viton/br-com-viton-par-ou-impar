@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -13,40 +13,30 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="253" text="Normal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xIU-x3-4Gx">
-                        <rect key="frame" x="5" y="72" width="90" height="23"/>
-                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="19"/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" image="img_mao_normal_0" translatesAutoresizingMaskIntoConstraints="NO" id="gZg-8C-hTR">
-                        <rect key="frame" x="5" y="5" width="90" height="62"/>
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dB7-Wj-Few">
-                        <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                        <rect key="frame" x="0.0" y="0.0" width="10" height="10"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="20" id="Nvn-Do-Ovz"/>
-                            <constraint firstAttribute="height" constant="20" id="Wqe-eK-3SN"/>
+                            <constraint firstAttribute="width" constant="10" id="Nvn-Do-Ovz"/>
+                            <constraint firstAttribute="height" constant="10" id="Wqe-eK-3SN"/>
                         </constraints>
                     </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="xIU-x3-4Gx" secondAttribute="bottom" constant="5" id="50u-q8-VJ7"/>
+                <constraint firstAttribute="bottom" secondItem="gZg-8C-hTR" secondAttribute="bottom" id="4oM-y0-mpE"/>
                 <constraint firstItem="dB7-Wj-Few" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="7Pq-dG-ci0"/>
-                <constraint firstItem="xIU-x3-4Gx" firstAttribute="top" secondItem="gZg-8C-hTR" secondAttribute="bottom" constant="5" id="84L-6V-2Wa"/>
                 <constraint firstItem="dB7-Wj-Few" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="K7U-ji-qXP"/>
-                <constraint firstAttribute="trailing" secondItem="xIU-x3-4Gx" secondAttribute="trailing" constant="5" id="OCW-Tv-gCB"/>
-                <constraint firstItem="xIU-x3-4Gx" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="VA3-Cw-xn7"/>
-                <constraint firstItem="gZg-8C-hTR" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="arP-3W-u0L"/>
-                <constraint firstAttribute="trailing" secondItem="gZg-8C-hTR" secondAttribute="trailing" constant="5" id="p8T-7D-f8l"/>
-                <constraint firstItem="gZg-8C-hTR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="yHV-VG-b1n"/>
+                <constraint firstItem="gZg-8C-hTR" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="arP-3W-u0L"/>
+                <constraint firstAttribute="trailing" secondItem="gZg-8C-hTR" secondAttribute="trailing" id="p8T-7D-f8l"/>
+                <constraint firstItem="gZg-8C-hTR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="yHV-VG-b1n"/>
             </constraints>
             <size key="customSize" width="100" height="100"/>
             <connections>
                 <outlet property="handImageView" destination="gZg-8C-hTR" id="lyE-AH-Ela"/>
-                <outlet property="nameLabel" destination="xIU-x3-4Gx" id="OLv-zX-ZcN"/>
                 <outlet property="selectedView" destination="dB7-Wj-Few" id="5ah-3l-RGY"/>
             </connections>
             <point key="canvasLocation" x="345" y="316"/>

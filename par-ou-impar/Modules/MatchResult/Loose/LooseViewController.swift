@@ -35,7 +35,7 @@ class LooseViewController: BaseViewController {
     
     func setupAds() {
         interstitial = GADInterstitial(adUnitID: LOOSE_MATCH_GOOGLE_ADS_INTERSTITIAL_UNIT_ID)
-        var gadRequest = GADRequest()
+        let gadRequest = GADRequest()
         gadRequest.testDevices = GOOGLE_REQUEST_TEST_DEVICES
         interstitial?.loadRequest(gadRequest)
     }
@@ -44,7 +44,7 @@ class LooseViewController: BaseViewController {
         if interstitial!.isReady {
             interstitial!.presentFromRootViewController(self)
         }
-        navigationController?.popToViewController(navigationController!.viewControllers[1] as! UIViewController, animated: true)
+        navigationController?.popToViewController(navigationController!.viewControllers[1] , animated: true)
     }
 
     

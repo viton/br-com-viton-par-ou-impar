@@ -20,12 +20,13 @@ class MatchResultViewController: BaseViewController {
     @IBOutlet weak var looserLabel: UILabel!
     @IBOutlet weak var disclaimerLabel: UILabel!
     @IBOutlet weak var shareButton: UIButton!
+    @IBOutlet weak var likeButtonContainer: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
         interstitial = GADInterstitial(adUnitID: MATCH_RESULT_GOOGLE_ADS_INTERSTITIAL_UNIT_ID)
-        var gadRequest = GADRequest()
+        let gadRequest = GADRequest()
         gadRequest.testDevices = GOOGLE_REQUEST_TEST_DEVICES
         interstitial?.loadRequest(gadRequest)
     }
@@ -36,24 +37,33 @@ class MatchResultViewController: BaseViewController {
         winnerTitleLabel.text = Messages.message("winner.title")
         looserLabel.text = game?.getOponent().name?.uppercaseString
         disclaimerLabel.text = String(format: Messages.message("winner.disclaimer"), arguments: [game!.getOponent().name!])
+        setupLikeButton()
+    }
+    
+    func setupLikeButton(){
+        let button = FBSDKLikeControl()
+        button.likeControlStyle = FBSDKLikeControlStyle.Standard
+        button.likeControlHorizontalAlignment = FBSDKLikeControlHorizontalAlignment.Left
+        button.objectID = "https://www.facebook.com/parouimpar99"
+        self.likeButtonContainer.addSubview(button)
     }
     
     @IBAction func shareAction(sender: AnyObject) {
-        var imageURL = NSURL(string: game!.getOponent().profileImage!)
-        var photo = FBSDKSharePhoto(imageURL: imageURL, userGenerated: false)
-        var properties = ["og:type": "appparouimpar:friend",
+//        let imageURL = NSURL(string: game!.getOponent().profileImage!)
+//        let photo = FBSDKSharePhoto(imageURL: imageURL, userGenerated: false)
+        let properties = ["og:type": "appparouimpar:friend",
                             "og:title": (Messages.message("winner.share.title") + game!.getOponent().name!),
                             "og:description":Messages.message("winner.share.text"),
 //                            "og:url":"https://www.facebook.com/poweroftwoapp",
 //                            "og:image":photo
         ]
-        var shareObject = FBSDKShareOpenGraphObject(properties: properties)
-        var shareAction = FBSDKShareOpenGraphAction(type: "appparouimpar:defeat", object: shareObject, key: "friend")
-        var shareContent = FBSDKShareOpenGraphContent()
+        let shareObject = FBSDKShareOpenGraphObject(properties: properties)
+        let shareAction = FBSDKShareOpenGraphAction(type: "appparouimpar:defeat", object: shareObject, key: "friend")
+        let shareContent = FBSDKShareOpenGraphContent()
         shareContent.action = shareAction
         shareContent.previewPropertyName = "friend"
         
-        var dialog = FBSDKShareDialog()
+        let dialog = FBSDKShareDialog()
         dialog.fromViewController = self
         dialog.shareContent = shareContent
         dialog.delegate = self
@@ -61,8 +71,12 @@ class MatchResultViewController: BaseViewController {
             dialog.show()
         }else {
             var error:NSError?
-            dialog.validateWithError(&error)
-            println(error)
+            do {
+                try dialog.validate()
+            } catch var error1 as NSError {
+                error = error1
+            }
+            print(error)
         }
     
     }
@@ -71,7 +85,7 @@ class MatchResultViewController: BaseViewController {
         if interstitial!.isReady {
             interstitial!.presentFromRootViewController(self)
         }
-        navigationController?.popToViewController(navigationController!.viewControllers[1] as! UIViewController, animated: true)
+        navigationController?.popToViewController(navigationController!.viewControllers[1] , animated: true)
     }
     
 }
@@ -79,15 +93,15 @@ class MatchResultViewController: BaseViewController {
 extension MatchResultViewController: FBSDKSharingDelegate {
     
     func sharer(sharer: FBSDKSharing!, didCompleteWithResults results: [NSObject : AnyObject]!) {
-        println("SUCCESS")
+        print("SUCCESS")
     }
     
     func sharer(sharer: FBSDKSharing!, didFailWithError error: NSError!) {
-        println("ERROR \(error)")
+        print("ERROR \(error)")
     }
     
     func sharerDidCancel(sharer: FBSDKSharing!) {
-        println("CANCEL")
+        print("CANCEL")
     }
     
 }

@@ -14,15 +14,34 @@ protocol GameTableViewManagerDelegate {
     
     func didSelectFinishGame(game:Game)
     
+    func onPullToRefresh()
+    
 }
 
 class GameTableViewManager: BaseTableViewManager {
     
     var gameTableDelegate:GameTableViewManagerDelegate?
+    var refreshControl:UIRefreshControl!
+    
+    override init(tableView: UITableView, delegate: BaseTableViewManagerDelegate) {
+        gameTableDelegate = delegate as? GameTableViewManagerDelegate
+        refreshControl = UIRefreshControl()
+        super.init(tableView: tableView, delegate: delegate)
+        refreshControl.addTarget(self, action: "shouldRefresh", forControlEvents: UIControlEvents.ValueChanged)
+        tableView.addSubview(refreshControl)
+    }
+    
+    func stopRefreshControl() {
+        refreshControl.endRefreshing()
+    }
+    
+    func shouldRefresh(){
+        gameTableDelegate?.onPullToRefresh()
+    }
     
     override func setData(item: AnyObject, toCell cell: UITableViewCell) {
         if let gameCell = cell as? GameTableViewCell {
-            var game = item as! Game
+            let game = item as! Game
             gameCell.betTextLabel.text = game.betText
             let oponent = game.getOponent()
             gameCell.nameLabel.text = oponent.name
@@ -30,7 +49,10 @@ class GameTableViewManager: BaseTableViewManager {
             gameCell.imageUser.circle()
             gameCell.statusLabel.text = game.getStatus()
             gameCell.dateLabel.text = game.date!.getReadableDate()
+            gameCell.notificationView.hidden = game.finish!.boolValue
+            gameCell.notificationView.circle()
             if game.finish!.boolValue && game.isVisualized() {
+                gameCell.backgroundColor = UIColor.clearColor()
                 if game.amIWinner() {
                     gameCell.gameResultImage.image = UIImage(named: "ic-win")
                 }else {
@@ -38,6 +60,7 @@ class GameTableViewManager: BaseTableViewManager {
                 }
             }else {
                 gameCell.gameResultImage.image = nil
+                gameCell.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.2)
             }
         }
     }
@@ -46,9 +69,10 @@ class GameTableViewManager: BaseTableViewManager {
         return [GameTableViewCell.classForCoder()]
     }
     
-    override init(tableView: UITableView, delegate: BaseTableViewManagerDelegate) {
-        gameTableDelegate = delegate as? GameTableViewManagerDelegate
-        super.init(tableView: tableView, delegate: delegate)
+    func tableView(tableView: UITableView, canPerformAction action: Selector, forRowAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject) -> Bool {
+        
+        
+        return true
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -61,7 +85,7 @@ class GameTableViewManager: BaseTableViewManager {
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 95
+        return 85
     }
     
 }

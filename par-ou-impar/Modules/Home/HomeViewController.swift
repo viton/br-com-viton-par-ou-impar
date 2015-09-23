@@ -16,7 +16,7 @@ class HomeViewController: BaseViewController {
     @IBOutlet weak var gadBannerView: GADBannerView!
 
     @IBOutlet weak var tableView: UITableView!
-    var tableManager:BaseTableViewManager?
+    var tableManager:GameTableViewManager?
     var noResultsPlaceholder:Placeholder?
     
     @IBOutlet weak var chooseColorWIfthConstraint: NSLayoutConstraint!
@@ -32,7 +32,7 @@ class HomeViewController: BaseViewController {
     func setupAds(){
         gadBannerView.adUnitID = GOOGLE_ADS_BANNER_UNIT_ID
         gadBannerView.rootViewController = self
-        var gadRequest = GADRequest()
+        let gadRequest = GADRequest()
         gadRequest.testDevices = GOOGLE_REQUEST_TEST_DEVICES
         gadBannerView.loadRequest(gadRequest)
     }
@@ -73,6 +73,7 @@ class HomeViewController: BaseViewController {
         super.prepareToRespose()
         view.stopLoading()
         view.removePlaceholder(&noResultsPlaceholder)
+        tableManager?.stopRefreshControl()
     }
 
 }
@@ -89,10 +90,10 @@ extension HomeViewController: GameTableViewManagerDelegate {
         let fightViewController = FightViewController()
         fightViewController.game = game
         navigationController?.pushViewController(fightViewController, animated: true)
+    }
 
-//        let fightViewController = MatchResultViewController()
-//        fightViewController.game = game
-//        navigationController?.pushViewController(fightViewController, animated: true)
+    func onPullToRefresh() {
+        GameProvider.getGames(FBSDKAccessToken.currentAccessToken().userID, callback:self)
     }
     
 }

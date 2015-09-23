@@ -16,9 +16,9 @@ extension UIImageView {
         if let imageUrl = NSURL(string: imageURL) {
             let imageRequest: NSURLRequest = NSURLRequest(URL: imageUrl)
             let queue: NSOperationQueue = NSOperationQueue.mainQueue()
-            NSURLConnection.sendAsynchronousRequest(imageRequest, queue: queue, completionHandler:{ (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
+            NSURLConnection.sendAsynchronousRequest(imageRequest, queue: queue, completionHandler:{ (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
                 if data != nil {
-                    let image = UIImage(data: data)
+                    let image = UIImage(data: data!)
                     self.image = image
                     self.circle()
                     UIView.animateWithDuration(0.3, animations: { () -> Void in

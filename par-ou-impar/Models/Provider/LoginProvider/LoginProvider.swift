@@ -20,14 +20,16 @@ class LoginProvider: NSObject {
    
     static var user:User?
     
-    class func loadUser(callback:UserProviderCallback) {
+    
+    
+    func loadUser(callback:UserProviderCallback) {
         let meRequest = FBSDKGraphRequest(graphPath: "me?fields=id,name,gender", parameters: nil)
         meRequest.startWithCompletionHandler({
             (connection, result, error: NSError!) -> Void in
             callback.prepareToRespose()
             if error == nil {
                 let dictResult = result as! NSDictionary
-                var user = User()
+                let user = User()
                 user.facebookId = FBSDKAccessToken.currentAccessToken().userID
                 user.name = dictResult["name"]! as? String
                 user.profileImage = String(format: "http://graph.facebook.com/%@/picture?type=normal", FBSDKAccessToken.currentAccessToken().userID)
@@ -45,7 +47,7 @@ class LoginProvider: NSObject {
         userObject["name"] = user.name!
         userObject["profileImageUrl"] = user.profileImage!
 
-        var query = PFQuery(className:"User")
+        let query = PFQuery(className:"User")
         query.whereKey("facebookId", equalTo: user.facebookId!)
         query.limit = 1
         query.findObjectsInBackgroundWithBlock {

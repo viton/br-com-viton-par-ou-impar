@@ -23,12 +23,12 @@ class ColorProvider: NSObject {
         NSUserDefaults.standardUserDefaults().setColor(color, forKey: APP_COLOR_KEY)
     }
     
-    class func getColors() -> [UIColor] {
+    class func getColors() -> Array<AnyObject> {
         var colors = Array<UIColor>()
-        var selectedColor = getAppColor()
+        let selectedColor = getAppColor()
         colors.append(selectedColor)
         for color in ColorProvider.getAllColors() {
-            if(!color.isEqual(selectedColor)) {
+            if(!self.colorsAreEqual(color, secondColor: selectedColor)) {
                 colors.append(color)
             }
         }
@@ -38,6 +38,26 @@ class ColorProvider: NSObject {
     class func getAllColors() -> [UIColor] {
         return [UIColor.appBlueColor(), UIColor.appRedColor(),
         UIColor.appYellowColor(), UIColor.appGreenColor(), UIColor.appBrownColor()]
+    }
+    
+    class func colorsAreEqual(color:UIColor, secondColor:UIColor) -> Bool {
+        var red:CGFloat = 0.0
+        var green:CGFloat = 0.0
+        var blue:CGFloat = 0.0
+        var alpha:CGFloat = 0.0
+        
+        var red2:CGFloat = 0.0
+        var green2:CGFloat = 0.0
+        var blue2:CGFloat = 0.0
+        var alpha2:CGFloat = 0.0
+        
+        color.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+        secondColor.getRed(&red2, green: &green2, blue: &blue2, alpha: &alpha2)
+        
+        if(red.toInt() == red2.toInt() && green.toInt() == green2.toInt() && blue.toInt() == blue2.toInt()) {
+            return true
+        }
+        return false
     }
     
 }
@@ -58,6 +78,16 @@ extension NSUserDefaults {
             colorData = NSKeyedArchiver.archivedDataWithRootObject(color)
         }
         setObject(colorData, forKey: key)
+    }
+    
+}
+
+extension CGFloat {
+    
+    func toInt() -> Int {
+        let intValue = self*10000
+        
+        return Int(intValue)
     }
     
 }
