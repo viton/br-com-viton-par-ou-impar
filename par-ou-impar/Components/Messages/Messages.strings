@@ -45,6 +45,7 @@
 "game.bet.text.hint" = "Escolha o motivo da treta";
 "game.choose.friend.title" = "Escolha o oponente";
 "game.choose.hand.title" = "Escolha sua arma";
+"game.choose.count.title" = "Escolha o número de dedos";
 "game.create.success" = "Batalha criada com sucesso";
 
 //Game Validation Messages

@@ -36,7 +36,7 @@
                     </userDefinedRuntimeAttributes>
                 </label>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3JJ-50-vat">
-                    <rect key="frame" x="15" y="172.5" width="570" height="30"/>
+                    <rect key="frame" x="15" y="167.5" width="570" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="EUC-Yj-0bN"/>
                     </constraints>
@@ -44,15 +44,7 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bas-fi-E1n" customClass="ChooseHandView" customModule="par_ou_impar" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="212.5" width="600" height="317.5"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="85" placeholder="YES" id="EF5-mv-aI2"/>
-                    </constraints>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="EF5-mv-aI2"/>
-                        </mask>
-                    </variation>
+                    <rect key="frame" x="0.0" y="207.5" width="600" height="327.5"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mms-GW-YoF">
                     <rect key="frame" x="70" y="545" width="515" height="40"/>
@@ -86,39 +78,23 @@
                 <constraint firstAttribute="bottom" secondItem="6sp-6z-uDr" secondAttribute="bottom" constant="15" id="7v8-V3-l7q"/>
                 <constraint firstAttribute="trailing" secondItem="bas-fi-E1n" secondAttribute="trailing" id="D5h-FH-fmg"/>
                 <constraint firstItem="bas-fi-E1n" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="E2V-W1-UVE"/>
-                <constraint firstItem="mms-GW-YoF" firstAttribute="top" secondItem="bas-fi-E1n" secondAttribute="bottom" constant="15" id="EOC-Ag-IsE"/>
-                <constraint firstItem="mms-GW-YoF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="EZK-Fd-DIg"/>
+                <constraint firstItem="mms-GW-YoF" firstAttribute="top" secondItem="bas-fi-E1n" secondAttribute="bottom" constant="10" id="EOC-Ag-IsE"/>
                 <constraint firstAttribute="trailing" secondItem="mms-GW-YoF" secondAttribute="trailing" constant="15" id="Efx-X4-HEG"/>
                 <constraint firstAttribute="trailing" secondItem="CBo-GF-9u3" secondAttribute="trailing" constant="15" id="FyZ-n0-vNP"/>
-                <constraint firstItem="mms-GW-YoF" firstAttribute="top" secondItem="bas-fi-E1n" secondAttribute="bottom" constant="15" id="Gfj-OK-4cJ"/>
                 <constraint firstItem="fD1-Jt-d7t" firstAttribute="top" secondItem="CBo-GF-9u3" secondAttribute="bottom" constant="10" id="Kcz-fO-aES"/>
-                <constraint firstItem="3JJ-50-vat" firstAttribute="top" secondItem="CBo-GF-9u3" secondAttribute="bottom" constant="45" id="NLV-ik-b14"/>
-                <constraint firstItem="6sp-6z-uDr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="NOx-0V-TN7"/>
                 <constraint firstItem="CBo-GF-9u3" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="32" id="Vag-Uk-tQ3"/>
                 <constraint firstItem="mms-GW-YoF" firstAttribute="leading" secondItem="6sp-6z-uDr" secondAttribute="trailing" constant="15" id="W82-h5-3q5"/>
                 <constraint firstAttribute="trailing" secondItem="fD1-Jt-d7t" secondAttribute="trailing" constant="15" id="a8e-0H-QCI"/>
                 <constraint firstItem="CBo-GF-9u3" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="fIa-R9-cGS"/>
                 <constraint firstItem="3JJ-50-vat" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="iKA-hs-6LK"/>
-                <constraint firstItem="3JJ-50-vat" firstAttribute="top" secondItem="fD1-Jt-d7t" secondAttribute="bottom" constant="10" id="kUV-Ds-58i"/>
-                <constraint firstItem="bas-fi-E1n" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="185" id="n9l-5M-3Pm"/>
+                <constraint firstItem="3JJ-50-vat" firstAttribute="top" secondItem="fD1-Jt-d7t" secondAttribute="bottom" constant="5" id="kUV-Ds-58i"/>
                 <constraint firstItem="bas-fi-E1n" firstAttribute="top" secondItem="3JJ-50-vat" secondAttribute="bottom" constant="10" id="noS-bf-sRU"/>
                 <constraint firstItem="fD1-Jt-d7t" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="qkC-Ir-KsB"/>
                 <constraint firstAttribute="trailing" secondItem="3JJ-50-vat" secondAttribute="trailing" constant="15" id="sGP-oL-iGd"/>
-                <constraint firstItem="bas-fi-E1n" firstAttribute="top" secondItem="3JJ-50-vat" secondAttribute="bottom" constant="15" id="tC3-ag-J0z"/>
                 <constraint firstAttribute="bottom" secondItem="mms-GW-YoF" secondAttribute="bottom" constant="15" id="tUF-E0-hsq"/>
                 <constraint firstItem="6sp-6z-uDr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="uOT-2U-Ubw"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
-            <variation key="default">
-                <mask key="constraints">
-                    <exclude reference="NLV-ik-b14"/>
-                    <exclude reference="n9l-5M-3Pm"/>
-                    <exclude reference="tC3-ag-J0z"/>
-                    <exclude reference="NOx-0V-TN7"/>
-                    <exclude reference="EZK-Fd-DIg"/>
-                    <exclude reference="Gfj-OK-4cJ"/>
-                </mask>
-            </variation>
             <point key="canvasLocation" x="212" y="284"/>
         </view>
     </objects>

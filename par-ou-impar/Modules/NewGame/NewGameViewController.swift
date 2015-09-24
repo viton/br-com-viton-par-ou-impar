@@ -108,15 +108,19 @@ class NewGameViewController: BaseViewController {
 extension NewGameViewController: CreateGameCallback {
     
     func onSuccessCreateGame() {
+        let alertController = UIAlertController(title: "", message:
+            Messages.message("game.create.success"), preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default,handler: { (action) in
+            self.popAndAd()
+        } ))
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    func popAndAd() {
         if interstitial!.isReady {
             interstitial!.presentFromRootViewController(self)
         }
         navigationController?.popViewControllerAnimated(true)
-        NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "popAndAd", userInfo: nil, repeats: false);
-    }
-    
-    func popAndAd() {
-        alert(Messages.message("game.create.success"), title:"")
     }
     
 }
