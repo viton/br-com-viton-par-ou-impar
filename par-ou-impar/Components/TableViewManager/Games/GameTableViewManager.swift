@@ -49,10 +49,10 @@ class GameTableViewManager: BaseTableViewManager {
             gameCell.imageUser.circle()
             gameCell.statusLabel.text = game.getStatus()
             gameCell.dateLabel.text = game.date!.getReadableDate()
-            gameCell.notificationView.hidden = game.finish!.boolValue
+            gameCell.notificationView.hidden = game.finish!.boolValue || game.amIOwner()
             gameCell.notificationView.circle()
+            gameCell.backgroundColor = UIColor.clearColor()
             if game.finish!.boolValue && game.isVisualized() {
-                gameCell.backgroundColor = UIColor.clearColor()
                 if game.amIWinner() {
                     gameCell.gameResultImage.image = UIImage(named: "ic-win")
                 }else {
@@ -60,7 +60,9 @@ class GameTableViewManager: BaseTableViewManager {
                 }
             }else {
                 gameCell.gameResultImage.image = nil
-                gameCell.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.2)
+                if !game.amIOwner() {
+                    gameCell.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.2)
+                }
             }
         }
     }

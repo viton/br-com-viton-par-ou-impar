@@ -120,33 +120,6 @@ class GameProvider: NSObject {
         }
     }
     
-    class func getGamesWithMe(facebookId:String, myGames:Array<Game>, callback:GamesCallback) {
-        let query = PFQuery(className:"Game")
-        query.whereKey("enemy", equalTo: facebookId)
-        query.orderByAscending("finish")
-        query.findObjectsInBackgroundWithBlock {
-            (objects: [AnyObject]?, error: NSError?) -> Void in
-            if error == nil {
-                var games:Array<Game> = Array(myGames)
-                if let objects = objects as? [PFObject] {
-                    for object in objects {
-                        let game = Game(object: object)
-                        games.append(game)
-                    }
-                }
-                callback.prepareToRespose()
-                if games.count == 0 {
-                    callback.onEmptyGamesList()
-                }else{
-                    callback.onSuccess(games)
-                }
-            } else {
-                callback.prepareToRespose()
-                callback.onConnectionFailToRequest()
-            }
-        }
-    }
-    
     class func sendPush(message:String!, facebookId:String!) {
         let push = PFPush()
         push.setMessage(message)
