@@ -28,7 +28,7 @@ class ChooseFriendViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        Analytics
         setup()
         modalPresentationStyle = UIModalPresentationStyle.PageSheet
     }
@@ -109,18 +109,6 @@ extension ChooseFriendViewController: FriendTableViewManagerDelegate {
     }
     
 }
-
-//MARK: PlaceholderActionDelegate
-//extension ChooseFriendViewController: PlaceholderActionDelegate {
-//    
-//    override func didClickPlaceholderAction(placeholder: Placeholder) {
-//        super.didClickPlaceholderAction(placeholder)
-//        if placeholder == noFriendsPlaceholder {
-//            inviteFriends()
-//        }
-//    }
-//    
-//}
 
 //MARK: FriendsCallback
 extension ChooseFriendViewController:FriendsCallback {

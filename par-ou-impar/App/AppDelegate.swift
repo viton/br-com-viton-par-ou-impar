@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var initialViewController: UIViewController?
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
         application.applicationIconBadgeNumber = 0
         IQKeyboardManager.sharedManager().shouldResignOnTouchOutside = true
         User.registerSubclass()
@@ -31,6 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Parse.setApplicationId("E5kplP1f07JlCIXwXW8iaPyzkUon44N2eyDKSB0s",
             clientKey: "SpHpdIlVhkA7GQzONNuRB55QZjTRbqdWIZaFAPc8")
+        PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds);
         initialViewController = SplashScreenViewController()
 //        initialViewController = UINavigationController(rootViewController: LoginViewController())
