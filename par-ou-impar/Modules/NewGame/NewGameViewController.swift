@@ -27,7 +27,7 @@ class NewGameViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        Analytics.trackOpenScreen(ANALYTICS_SCREEN_NEW_GAME)
         setup()
     }
     

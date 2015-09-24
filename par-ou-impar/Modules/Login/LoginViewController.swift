@@ -17,6 +17,7 @@ class LoginViewController: BaseViewController, FBSDKLoginButtonDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Analytics.trackOpenScreen(ANALYTICS_SCREEN_LOGIN)
         setup()
     }
     

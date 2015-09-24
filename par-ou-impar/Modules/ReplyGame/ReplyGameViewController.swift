@@ -24,6 +24,7 @@ class ReplyGameViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Analytics.trackOpenScreen(ANALYTICS_SCREEN_REPLY_GAME)
         setup()
     }
     

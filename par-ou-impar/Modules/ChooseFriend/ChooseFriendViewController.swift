@@ -28,7 +28,7 @@ class ChooseFriendViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Analytics
+        Analytics.trackOpenScreen(ANALYTICS_SCREEN_SEARCH_FRIENDS)
         setup()
         modalPresentationStyle = UIModalPresentationStyle.PageSheet
     }

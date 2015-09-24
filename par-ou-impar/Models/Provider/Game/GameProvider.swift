@@ -110,7 +110,7 @@ class GameProvider: NSObject {
                     if games.count == 0 {
                         callback.onEmptyGamesList()
                     }else{
-                        callback.onSuccess(games)
+                        callback.onSuccess(sortGames(games))
                     }
                 }
             } else {
@@ -118,6 +118,44 @@ class GameProvider: NSObject {
                 callback.onConnectionFailToRequest()
             }
         }
+    }
+    
+    private class func sortGames(games:Array<Game>) -> Array<Game> {
+        var result = Array<Game>()
+        result += filterReadyForFightGames(games)
+        result += filterWaitingGames(games)
+        result += filterFinishGames(games)
+        return result
+    }
+    
+    private class func filterReadyForFightGames(games:Array<Game>) -> Array<Game> {
+        var result = Array<Game>()
+        for game in games {
+            if !game.finish!.boolValue && !game.amIOwner(){
+                result.append(game)
+            }
+        }
+        return result
+    }
+    
+    private class func filterFinishGames(games:Array<Game>) -> Array<Game> {
+        var result = Array<Game>()
+        for game in games {
+            if game.finish!.boolValue {
+                result.append(game)
+            }
+        }
+        return result
+    }
+    
+    private class func filterWaitingGames(games:Array<Game>) -> Array<Game> {
+        var result = Array<Game>()
+        for game in games {
+            if !game.finish!.boolValue && game.amIOwner(){
+                result.append(game)
+            }
+        }
+        return result
     }
     
     class func sendPush(message:String!, facebookId:String!) {

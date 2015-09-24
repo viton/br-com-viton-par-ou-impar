@@ -24,6 +24,7 @@ class MatchResultViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Analytics.trackOpenScreen(ANALYTICS_SCREEN_RESULT_SUCCESS)
         setup()
         interstitial = GADInterstitial(adUnitID: MATCH_RESULT_GOOGLE_ADS_INTERSTITIAL_UNIT_ID)
         let gadRequest = GADRequest()
@@ -73,7 +74,7 @@ class MatchResultViewController: BaseViewController {
             var error:NSError?
             do {
                 try dialog.validate()
-            } catch var error1 as NSError {
+            } catch let error1 as NSError {
                 error = error1
             }
             print(error)

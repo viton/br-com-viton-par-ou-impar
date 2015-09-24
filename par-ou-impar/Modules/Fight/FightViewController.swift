@@ -36,7 +36,7 @@ class FightViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        Analytics.trackOpenScreen(ANALYTICS_SCREEN_GAME)
         loadInfos()
         setup()
     }
