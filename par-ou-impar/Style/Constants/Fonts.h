@@ -14,12 +14,13 @@
 #define FONT_APP_LIGHT                      @"HelveticaNeue-Light"
 #define FONT_APP_ULTRA_LIGHT                @"HelveticaNeue-UltraLight"
 #define FONT_APP_BOLD                       @"HelveticaNeue-Bold"
+#define FONT_APP_CONDENSED                  @"HelveticaNeue-CondensedBold"
 
 // Font sizes
 // TODO: check pattern for font sizes and apply it on these constants
 #define FONT_SIZE_EXTRA_SMALL     12
 #define FONT_SIZE_SMALL           14
-#define FONT_SIZE_MEDIUM          16
+#define FONT_SIZE_MEDIUM          18
 #define FONT_SIZE_LARGE           20
 #define FONT_SIZE_EXTRA_LARGE     24
 #define FONT_SIZE_INTRO           36

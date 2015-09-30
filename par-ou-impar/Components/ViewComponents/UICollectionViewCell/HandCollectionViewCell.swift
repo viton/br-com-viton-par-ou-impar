@@ -11,20 +11,21 @@ import UIKit
 class HandCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var handImageView: UIImageView!
-    @IBOutlet weak var selectedView: UIView!
+    @IBOutlet weak var backgroundSelectedView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        selectedView.circle()
-        selectedView.setupBorder(1, color: UIColor.whiteColor())
+        backgroundSelectedView.layer.masksToBounds = false
+        backgroundSelectedView.layer.cornerRadius = 10
+        backgroundSelectedView.clipsToBounds = true
     }
     
     override var selected: Bool {
         didSet {
             if self.selected {
-                selectedView.backgroundColor = UIColor.whiteColor()
+                backgroundSelectedView.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.2)
             }else {
-                selectedView.backgroundColor = UIColor.clearColor()
+                backgroundSelectedView.backgroundColor = UIColor.clearColor()
             }
         }
     }

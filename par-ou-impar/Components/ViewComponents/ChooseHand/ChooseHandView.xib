@@ -30,7 +30,7 @@
                     </userDefinedRuntimeAttributes>
                 </label>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Ygp-PN-Dq0">
-                    <rect key="frame" x="0.0" y="25" width="600" height="107.5"/>
+                    <rect key="frame" x="0.0" y="25" width="600" height="91.5"/>
                     <inset key="scrollIndicatorInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="10N-C3-drM">
                         <size key="itemSize" width="50" height="50"/>
@@ -40,7 +40,7 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdv-g6-7dx" userLabel="CHOOSE_COUNT_TITLE">
-                    <rect key="frame" x="15" y="142.5" width="570" height="20.5"/>
+                    <rect key="frame" x="15" y="126.5" width="570" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -49,7 +49,7 @@
                     </userDefinedRuntimeAttributes>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IDm-nY-yT3" userLabel="ODDS_OR_EVEN">
-                    <rect key="frame" x="500" y="172.5" width="85" height="25.5"/>
+                    <rect key="frame" x="500" y="164.5" width="85" height="25.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aAk-tk-TYG" userLabel="TITLE">
                             <rect key="frame" x="0.0" y="5" width="42" height="20.5"/>
@@ -80,10 +80,10 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qSU-rG-xSp" userLabel="COUNT_COLLECTION">
-                    <rect key="frame" x="0.0" y="163" width="490" height="44"/>
+                    <rect key="frame" x="0.0" y="147" width="490" height="60"/>
                     <subviews>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" bouncesZoom="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="X3M-7Y-0Pr">
-                            <rect key="frame" x="0.0" y="0.0" width="490" height="44"/>
+                            <rect key="frame" x="15" y="0.0" width="475" height="60"/>
                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="naE-uX-tIh">
                                 <size key="itemSize" width="50" height="50"/>
                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -93,11 +93,11 @@
                         </collectionView>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="X3M-7Y-0Pr" firstAttribute="leading" secondItem="qSU-rG-xSp" secondAttribute="leading" id="MnJ-iP-46b"/>
+                        <constraint firstItem="X3M-7Y-0Pr" firstAttribute="leading" secondItem="qSU-rG-xSp" secondAttribute="leading" constant="15" id="MnJ-iP-46b"/>
                         <constraint firstAttribute="bottom" secondItem="X3M-7Y-0Pr" secondAttribute="bottom" id="Rrj-kd-zTX"/>
                         <constraint firstItem="X3M-7Y-0Pr" firstAttribute="top" secondItem="qSU-rG-xSp" secondAttribute="top" id="nHs-Bl-Naa"/>
                         <constraint firstAttribute="trailing" secondItem="X3M-7Y-0Pr" secondAttribute="trailing" id="oQH-DG-SmI"/>
-                        <constraint firstAttribute="height" constant="44" id="ttG-IB-bup"/>
+                        <constraint firstAttribute="height" constant="60" id="ttG-IB-bup"/>
                     </constraints>
                 </view>
             </subviews>

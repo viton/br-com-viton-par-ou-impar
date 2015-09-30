@@ -13,39 +13,23 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="65" height="65"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zXF-SS-lks" userLabel="BACKGROUND_CONTENT_VIEW">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-plus" translatesAutoresizingMaskIntoConstraints="NO" id="5NY-ez-zZe">
                         <rect key="frame" x="0.0" y="0.0" width="65" height="65"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nn0-I7-tf8">
-                                <rect key="frame" x="26.5" y="22.5" width="11" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="style" value="H1_Bold_Label"/>
-                                </userDefinedRuntimeAttributes>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.59999999999999998" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Nn0-I7-tf8" firstAttribute="centerY" secondItem="zXF-SS-lks" secondAttribute="centerY" id="FZb-dg-UL9"/>
-                            <constraint firstItem="Nn0-I7-tf8" firstAttribute="centerX" secondItem="zXF-SS-lks" secondAttribute="centerX" id="Gec-eM-pQ6"/>
-                        </constraints>
-                    </view>
+                    </imageView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
-                <constraint firstItem="zXF-SS-lks" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="WTd-Bb-xmf"/>
-                <constraint firstItem="zXF-SS-lks" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="XrE-yr-PbI"/>
-                <constraint firstAttribute="trailing" secondItem="zXF-SS-lks" secondAttribute="trailing" id="krF-J4-toE"/>
-                <constraint firstAttribute="bottom" secondItem="zXF-SS-lks" secondAttribute="bottom" id="sDJ-Oa-CtF"/>
+                <constraint firstItem="5NY-ez-zZe" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="1Ao-tG-vxb"/>
+                <constraint firstAttribute="trailing" secondItem="5NY-ez-zZe" secondAttribute="trailing" id="7Ds-wX-0xQ"/>
+                <constraint firstAttribute="bottom" secondItem="5NY-ez-zZe" secondAttribute="bottom" id="KM3-NH-DTq"/>
+                <constraint firstItem="5NY-ez-zZe" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="avI-2a-2kj"/>
             </constraints>
             <size key="customSize" width="65" height="65"/>
-            <connections>
-                <outlet property="backgroundContentView" destination="zXF-SS-lks" id="5R6-gG-5Rr"/>
-            </connections>
             <point key="canvasLocation" x="222.5" y="325.5"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="icon-plus" width="104" height="104"/>
+    </resources>
 </document>

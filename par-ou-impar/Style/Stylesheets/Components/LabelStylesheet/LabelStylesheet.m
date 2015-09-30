@@ -18,7 +18,7 @@
     return @{
              @"H1_Label": @{
                      PK_LABEL_TEXT_COLOR: COLOR_SWATCH_WHITE,
-                     PK_LABEL_FONT: [UIFont fontWithName:FONT_APP_LIGHT size:FONT_SIZE_EXTRA_LARGE]
+                     PK_LABEL_FONT: [UIFont fontWithName:FONT_APP_LIGHT size:FONT_SIZE_MEDIUM]
                      },
              @"H2_Label": @{
                      PK_LABEL_TEXT_COLOR: COLOR_SWATCH_WHITE,
@@ -30,11 +30,11 @@
                      },
              @"Caption_Label": @{
                      PK_LABEL_TEXT_COLOR: COLOR_SWATCH_BLACK_80,
-                     PK_LABEL_FONT: [UIFont fontWithName:FONT_APP_BOLD size:FONT_SIZE_SMALL]
+                     PK_LABEL_FONT: [UIFont fontWithName:FONT_APP_CONDENSED size:FONT_SIZE_SMALL]
                      },
              @"Disclaimer_Label": @{
                      PK_LABEL_TEXT_COLOR: COLOR_SWATCH_BLACK_80,
-                     PK_LABEL_FONT: [UIFont fontWithName:FONT_APP_LIGHT size:FONT_SIZE_MEDIUM]
+                     PK_LABEL_FONT: [UIFont fontWithName:FONT_APP_LIGHT size:FONT_SIZE_SMALL]
                      },
              @"Intro_Label": @{
                      PK_LABEL_TEXT_COLOR: COLOR_SWATCH_WHITE_60,

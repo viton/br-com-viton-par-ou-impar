@@ -99,7 +99,7 @@ extension UIColor {
     }
     
     class func appRedColor() -> UIColor {
-        return UIColor(red: 233.0/255.0, green: 106.0/255.0, blue: 133.0/255.0, alpha: 1)
+        return UIColor(red: 192.0/255.0, green: 57.0/255.0, blue: 43.0/255.0, alpha: 1)
     }
     
     class func appYellowColor() -> UIColor {
@@ -107,11 +107,11 @@ extension UIColor {
     }
     
     class func appGreenColor() -> UIColor {
-        return UIColor(red: 178.0/255.0, green: 215.0/255.0, blue: 19.0/255.0, alpha: 1)
+        return UIColor(red: 43.0/255.0, green: 188.0/255.0, blue: 155.0/255.0, alpha: 1)
     }
     
     class func appBrownColor() -> UIColor {
-        return UIColor(red: 177.0/255.0, green: 178.0/255.0, blue: 209.0/255.0, alpha: 1)
+        return UIColor(red: 155.0/255.0, green: 89.0/255.0, blue: 182.0/255.0, alpha: 1)
     }
     
 }
