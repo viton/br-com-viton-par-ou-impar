@@ -10,6 +10,5 @@ import UIKit
 
 class AddFriendCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var backgroundContentView: UIView!
     
 }

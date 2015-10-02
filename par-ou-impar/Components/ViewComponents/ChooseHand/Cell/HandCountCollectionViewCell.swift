@@ -15,7 +15,7 @@ class HandCountCollectionViewCell: UICollectionViewCell {
     override var selected: Bool {
         didSet {
             if self.selected {
-                countLabel.textColor = UIColor.blackColor().colorWithAlphaComponent(0.6)
+                countLabel.textColor = UIColor.blackColor().colorWithAlphaComponent(0.4)
             }else {
                 countLabel.textColor = UIColor.whiteColor()
             }

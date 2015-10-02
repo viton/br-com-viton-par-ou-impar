@@ -34,6 +34,9 @@
 		4D4E51E51B4C48430049D474 /* RoundAndBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4E51E41B4C48430049D474 /* RoundAndBorder.swift */; };
 		4D4E51E81B4C5C010049D474 /* ColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4E51E61B4C5C010049D474 /* ColorCollectionViewCell.swift */; };
 		4D4E51E91B4C5C010049D474 /* ColorCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D4E51E71B4C5C010049D474 /* ColorCollectionViewCell.xib */; };
+		4D52D0C81BB4375500BC2FF5 /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D52D0C71BB4375500BC2FF5 /* Analytics.swift */; settings = {ASSET_TAGS = (); }; };
+		4D5886881BBE05660003451E /* DINPro-CondMedium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4D5886861BBE05660003451E /* DINPro-CondMedium.otf */; settings = {ASSET_TAGS = (); }; };
+		4D5886891BBE05660003451E /* DINPro-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4D5886871BBE05660003451E /* DINPro-Medium.otf */; settings = {ASSET_TAGS = (); }; };
 		4D6DFE211B4445CF00F406E3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6DFE201B4445CF00F406E3 /* User.swift */; };
 		4D6DFE241B4447AD00F406E3 /* LoginProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6DFE231B4447AD00F406E3 /* LoginProvider.swift */; };
 		4D6DFE271B44498F00F406E3 /* PFObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6DFE261B44498F00F406E3 /* PFObjectExtension.swift */; };
@@ -150,6 +153,9 @@
 		4D4E51E41B4C48430049D474 /* RoundAndBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundAndBorder.swift; sourceTree = "<group>"; };
 		4D4E51E61B4C5C010049D474 /* ColorCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorCollectionViewCell.swift; sourceTree = "<group>"; };
 		4D4E51E71B4C5C010049D474 /* ColorCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColorCollectionViewCell.xib; sourceTree = "<group>"; };
+		4D52D0C71BB4375500BC2FF5 /* Analytics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
+		4D5886861BBE05660003451E /* DINPro-CondMedium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DINPro-CondMedium.otf"; sourceTree = "<group>"; };
+		4D5886871BBE05660003451E /* DINPro-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DINPro-Medium.otf"; sourceTree = "<group>"; };
 		4D6DFE201B4445CF00F406E3 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4D6DFE231B4447AD00F406E3 /* LoginProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginProvider.swift; sourceTree = "<group>"; };
 		4D6DFE261B44498F00F406E3 /* PFObjectExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PFObjectExtension.swift; sourceTree = "<group>"; };
@@ -400,6 +406,23 @@
 				4D4E51E21B4C44C60049D474 /* ColorCollectionViewManager.swift */,
 			);
 			path = Color;
+			sourceTree = "<group>";
+		};
+		4D52D0C61BB4373D00BC2FF5 /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				4D52D0C71BB4375500BC2FF5 /* Analytics.swift */,
+			);
+			path = Analytics;
+			sourceTree = "<group>";
+		};
+		4D5886851BBE05660003451E /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				4D5886861BBE05660003451E /* DINPro-CondMedium.otf */,
+				4D5886871BBE05660003451E /* DINPro-Medium.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		4D6DFE1D1B44457400F406E3 /* Data */ = {
@@ -753,6 +776,7 @@
 		4DBB9B131B44284400B49658 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				4D52D0C61BB4373D00BC2FF5 /* Analytics */,
 				4DBB9B1E1B44288700B49658 /* BaseViewController */,
 				4D4E51D91B4C44800049D474 /* CollectionViewManager */,
 				4DBB9B201B44288700B49658 /* Messages */,
@@ -809,6 +833,7 @@
 		4DBB9B191B44284400B49658 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4D5886851BBE05660003451E /* Fonts */,
 				4DBB9B1A1B44284400B49658 /* Images.xcassets */,
 			);
 			path = Resources;
@@ -1120,6 +1145,7 @@
 				576A20161B4CC4FA008C24CE /* HandCollectionViewCell.xib in Resources */,
 				4D4E51CA1B4C3F8C0049D474 /* SimpleLoading.xib in Resources */,
 				4D4E51DF1B4C44800049D474 /* BaseCollectionViewCell.xib in Resources */,
+				4D5886881BBE05660003451E /* DINPro-CondMedium.otf in Resources */,
 				4DBB9B521B442A7700B49658 /* LoginViewController.xib in Resources */,
 				4DBB9B381B44288700B49658 /* Messages.strings in Resources */,
 				4DBB9B1D1B44284400B49658 /* Images.xcassets in Resources */,
@@ -1147,6 +1173,7 @@
 				4D6DFE381B446A0200F406E3 /* ChooseFriendViewController.xib in Resources */,
 				4D4E51CE1B4C405B0049D474 /* OneHandLoading.xib in Resources */,
 				4D4E51D31B4C43760049D474 /* ChooseColorView.xib in Resources */,
+				4D5886891BBE05660003451E /* DINPro-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1238,6 +1265,7 @@
 				4D03D8061BB1BED800161941 /* FriendCollectionViewManager.swift in Sources */,
 				576A200A1B485DD3008C24CE /* GameTableViewCell.swift in Sources */,
 				4D0612691B6BCCAD00385A23 /* AppSettingsProvider.swift in Sources */,
+				4D52D0C81BB4375500BC2FF5 /* Analytics.swift in Sources */,
 				4D4E51E81B4C5C010049D474 /* ColorCollectionViewCell.swift in Sources */,
 				4DBB9B3B1B44288700B49658 /* TesteTableViewCell.swift in Sources */,
 				4DA0A7621B50047400C30561 /* LabelStylesheet.m in Sources */,

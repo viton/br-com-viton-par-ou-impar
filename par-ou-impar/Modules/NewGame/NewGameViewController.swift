@@ -27,7 +27,7 @@ class NewGameViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        Analytics.trackOpenScreen(ANALYTICS_SCREEN_NEW_GAME)
         setup()
     }
     
@@ -40,7 +40,7 @@ class NewGameViewController: BaseViewController {
     func setup() {
         betTextTitleLabel.text = Messages.message("game.bet.text.hint")
         createGameButton.setTitle(Messages.message("game.create.button"))
-        chooseHandView.optionValueLabel.text = Messages.message("option.value.even")
+        chooseHandView.optionValueLabel.text = Messages.message("option.value.even").uppercaseString
         navigationController?.navigationBarHidden = false
         chooseHandView.chooseHandViewDelegate = self
         me = LoginProvider.user
@@ -108,15 +108,19 @@ class NewGameViewController: BaseViewController {
 extension NewGameViewController: CreateGameCallback {
     
     func onSuccessCreateGame() {
+        let alertController = UIAlertController(title: "", message:
+            Messages.message("game.create.success"), preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default,handler: { (action) in
+            self.popAndAd()
+        } ))
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    func popAndAd() {
         if interstitial!.isReady {
             interstitial!.presentFromRootViewController(self)
         }
         navigationController?.popViewControllerAnimated(true)
-        NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "popAndAd", userInfo: nil, repeats: false);
-    }
-    
-    func popAndAd() {
-        alert(Messages.message("game.create.success"), title:"")
     }
     
 }

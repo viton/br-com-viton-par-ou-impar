@@ -19,8 +19,8 @@ protocol ChooseHandViewDelegate {
 class ChooseHandView: BaseComponentsView {
     
     @IBOutlet weak var chooseHandTitleLabel: UILabel!
+    @IBOutlet weak var chooseCountTitleLabel: UILabel!
     @IBOutlet weak var optionValueLabel: UILabel!
-    @IBOutlet weak var optionTitleLabel: UILabel!
     @IBOutlet weak var handCollectionView: UICollectionView!
     @IBOutlet private weak var collectionView: UICollectionView!
     var chooseHandViewDelegate:ChooseHandViewDelegate?
@@ -28,9 +28,9 @@ class ChooseHandView: BaseComponentsView {
     
     override func customSetup() {
         chooseHandTitleLabel.text = Messages.message("game.choose.hand.title")
+        chooseCountTitleLabel.text = Messages.message("game.choose.count.title")
         let nib = UINib(nibName: "HandCountCollectionViewCell", bundle: NSBundle(forClass: self.dynamicType))
         collectionView.registerNib(nib, forCellWithReuseIdentifier: "HandCountCell")
-        optionTitleLabel.text = Messages.message("option.title")
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.backgroundColor = UIColor.clearColor()

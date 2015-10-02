@@ -7,10 +7,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChooseHandView" customModule="par_ou_impar" customModuleProvider="target">
             <connections>
+                <outlet property="chooseCountTitleLabel" destination="kdv-g6-7dx" id="ViP-Ea-ggI"/>
                 <outlet property="chooseHandTitleLabel" destination="5wZ-lb-tNN" id="yO0-UR-BUV"/>
                 <outlet property="collectionView" destination="X3M-7Y-0Pr" id="V93-A4-e4Z"/>
                 <outlet property="handCollectionView" destination="Ygp-PN-Dq0" id="awE-TI-Pq1"/>
-                <outlet property="optionTitleLabel" destination="aAk-tk-TYG" id="a8W-zF-Ped"/>
                 <outlet property="optionValueLabel" destination="3Hd-YN-3el" id="06T-8y-GuP"/>
             </connections>
         </placeholder>
@@ -29,7 +29,7 @@
                     </userDefinedRuntimeAttributes>
                 </label>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Ygp-PN-Dq0">
-                    <rect key="frame" x="0.0" y="25" width="600" height="131.5"/>
+                    <rect key="frame" x="0.0" y="25" width="600" height="91.5"/>
                     <inset key="scrollIndicatorInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="10N-C3-drM">
                         <size key="itemSize" width="50" height="50"/>
@@ -38,42 +38,40 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdv-g6-7dx" userLabel="CHOOSE_COUNT_TITLE">
+                    <rect key="frame" x="15" y="126.5" width="570" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="style" value="H2_Label"/>
+                    </userDefinedRuntimeAttributes>
+                </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IDm-nY-yT3" userLabel="ODDS_OR_EVEN">
-                    <rect key="frame" x="500" y="169.5" width="85" height="25.5"/>
+                    <rect key="frame" x="543" y="167" width="42" height="20.5"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aAk-tk-TYG" userLabel="TITLE">
-                            <rect key="frame" x="0.0" y="5" width="42" height="20.5"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Hd-YN-3el" userLabel="VALUE">
+                            <rect key="frame" x="0.0" y="0.0" width="42" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                             <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="style" value="H1_Label"/>
-                            </userDefinedRuntimeAttributes>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Hd-YN-3el" userLabel="VALUE">
-                            <rect key="frame" x="43" y="5" width="42" height="20.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="style" value="H1_Bold_Label"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="style" value="Option_Label"/>
                             </userDefinedRuntimeAttributes>
                         </label>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="3Hd-YN-3el" firstAttribute="leading" secondItem="aAk-tk-TYG" secondAttribute="trailing" constant="1" id="2jg-rJ-H5V"/>
-                        <constraint firstItem="aAk-tk-TYG" firstAttribute="leading" secondItem="IDm-nY-yT3" secondAttribute="leading" id="6UY-vA-Dhj"/>
                         <constraint firstAttribute="bottom" secondItem="3Hd-YN-3el" secondAttribute="bottom" id="FoU-xB-Xug"/>
-                        <constraint firstAttribute="bottom" secondItem="aAk-tk-TYG" secondAttribute="bottom" id="YKJ-uy-gr8"/>
-                        <constraint firstItem="3Hd-YN-3el" firstAttribute="top" secondItem="IDm-nY-yT3" secondAttribute="top" constant="5" id="fZH-Vb-Dg5"/>
+                        <constraint firstItem="3Hd-YN-3el" firstAttribute="top" secondItem="IDm-nY-yT3" secondAttribute="top" id="fZH-Vb-Dg5"/>
+                        <constraint firstItem="3Hd-YN-3el" firstAttribute="leading" secondItem="IDm-nY-yT3" secondAttribute="leading" id="iw8-Z5-afF"/>
                         <constraint firstAttribute="trailing" secondItem="3Hd-YN-3el" secondAttribute="trailing" id="u6N-Nb-SDh"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qSU-rG-xSp" userLabel="COUNT_COLLECTION">
-                    <rect key="frame" x="0.0" y="157" width="490" height="50"/>
+                    <rect key="frame" x="0.0" y="147" width="533" height="60"/>
                     <subviews>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" bouncesZoom="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="X3M-7Y-0Pr">
-                            <rect key="frame" x="0.0" y="0.0" width="490" height="50"/>
+                            <rect key="frame" x="15" y="0.0" width="518" height="60"/>
                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="naE-uX-tIh">
                                 <size key="itemSize" width="50" height="50"/>
                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -83,41 +81,32 @@
                         </collectionView>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="X3M-7Y-0Pr" firstAttribute="leading" secondItem="qSU-rG-xSp" secondAttribute="leading" id="MnJ-iP-46b"/>
+                        <constraint firstItem="X3M-7Y-0Pr" firstAttribute="leading" secondItem="qSU-rG-xSp" secondAttribute="leading" constant="15" id="MnJ-iP-46b"/>
                         <constraint firstAttribute="bottom" secondItem="X3M-7Y-0Pr" secondAttribute="bottom" id="Rrj-kd-zTX"/>
-                        <constraint firstAttribute="height" constant="73" id="aov-Tu-ybe"/>
                         <constraint firstItem="X3M-7Y-0Pr" firstAttribute="top" secondItem="qSU-rG-xSp" secondAttribute="top" id="nHs-Bl-Naa"/>
                         <constraint firstAttribute="trailing" secondItem="X3M-7Y-0Pr" secondAttribute="trailing" id="oQH-DG-SmI"/>
-                        <constraint firstAttribute="height" constant="50" id="ttG-IB-bup"/>
+                        <constraint firstAttribute="height" constant="60" id="ttG-IB-bup"/>
                     </constraints>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="aov-Tu-ybe"/>
-                        </mask>
-                    </variation>
                 </view>
             </subviews>
             <constraints>
                 <constraint firstItem="Ygp-PN-Dq0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="5Br-wM-NWv"/>
-                <constraint firstAttribute="bottom" secondItem="IDm-nY-yT3" secondAttribute="bottom" id="6Yp-Lz-rkL"/>
+                <constraint firstItem="kdv-g6-7dx" firstAttribute="top" secondItem="Ygp-PN-Dq0" secondAttribute="bottom" constant="10" id="6iU-7V-O0A"/>
                 <constraint firstItem="5wZ-lb-tNN" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="BXz-EW-Pem"/>
-                <constraint firstItem="qSU-rG-xSp" firstAttribute="top" secondItem="Ygp-PN-Dq0" secondAttribute="bottom" id="GHZ-d1-9fh"/>
                 <constraint firstAttribute="trailing" secondItem="5wZ-lb-tNN" secondAttribute="trailing" constant="15" id="GaX-WQ-ism"/>
                 <constraint firstItem="IDm-nY-yT3" firstAttribute="centerY" secondItem="qSU-rG-xSp" secondAttribute="centerY" id="GwJ-Kh-M30"/>
+                <constraint firstAttribute="trailing" secondItem="kdv-g6-7dx" secondAttribute="trailing" constant="15" id="Ksg-RT-B2h"/>
                 <constraint firstItem="IDm-nY-yT3" firstAttribute="leading" secondItem="qSU-rG-xSp" secondAttribute="trailing" constant="10" id="O9M-3U-DCA"/>
                 <constraint firstItem="Ygp-PN-Dq0" firstAttribute="top" secondItem="5wZ-lb-tNN" secondAttribute="bottom" constant="5" id="Roc-7A-An6"/>
+                <constraint firstItem="qSU-rG-xSp" firstAttribute="top" secondItem="kdv-g6-7dx" secondAttribute="bottom" id="Sb0-Jh-ojL"/>
                 <constraint firstItem="qSU-rG-xSp" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="aB7-Dv-Sew"/>
                 <constraint firstAttribute="bottom" secondItem="qSU-rG-xSp" secondAttribute="bottom" id="hnd-sh-gYN"/>
+                <constraint firstItem="kdv-g6-7dx" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="lzD-2g-baA"/>
                 <constraint firstAttribute="trailing" secondItem="IDm-nY-yT3" secondAttribute="trailing" constant="15" id="tx2-EJ-xeZ"/>
                 <constraint firstItem="5wZ-lb-tNN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="xRj-B1-bUg"/>
                 <constraint firstAttribute="trailing" secondItem="Ygp-PN-Dq0" secondAttribute="trailing" id="xWc-EY-RWY"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <variation key="default">
-                <mask key="constraints">
-                    <exclude reference="6Yp-Lz-rkL"/>
-                </mask>
-            </variation>
             <point key="canvasLocation" x="242" y="535.5"/>
         </view>
     </objects>

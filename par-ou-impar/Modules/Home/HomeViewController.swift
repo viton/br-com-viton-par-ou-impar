@@ -25,6 +25,7 @@ class HomeViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Analytics.trackOpenScreen(ANALYTICS_SCREEN_HOME)
         setup()
         setupAds()
     }

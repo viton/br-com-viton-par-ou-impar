@@ -1,12 +1,9 @@
 /* 
   Messages.strings
-  SwiftPOC
 
-  Created by Taqtile on 6/26/15.
-  Copyright (c) 2015 ProtocolsTesteSwift. All rights reserved.
+  Created by Viton on 6/26/15.
+  Copyright (c) 2015 ParOuImpar. All rights reserved.
 */
-
-"test" = "Isso é uma mensagem de teste";
 
 //No Connection
 "no.connection.placeholder.title" = "Oh oh!";
@@ -14,7 +11,6 @@
 "no.connection.placeholder.button.title" = "Tentar novamente";
 
 //Option
-"option.title" = "Você é ";
 "option.value.odd" = "ímpar";
 "option.value.even" = "par";
 
@@ -45,7 +41,8 @@
 "game.bet.text.hint" = "Escolha o motivo da treta";
 "game.choose.friend.title" = "Escolha o oponente";
 "game.choose.hand.title" = "Escolha sua arma";
-"game.create.success" = "Batalha criada com sucesso";
+"game.choose.count.title" = "Escolha o número de dedos";
+"game.create.success" = "Batalha criada com sucesso!\nVocê será avisado quando seu oponente estiver preparado pra guerra.";
 
 //Game Validation Messages
 "game.validation.opponent" = "Escolha um adversário";
@@ -65,5 +62,5 @@
 "winner.share.text" = "Mais uma difícil batalha, mais uma vitória. Você consegue me vencer nesse incrível jogo?";
 "winner.share.button" = "Compartilhar";
 "looser.title" = "#CHATEADO";
-"looser.back.button" = "Voltar";
+"looser.back.button" = "OK";
 "looser.disclaimer" = "Hoje não deu, mas vai ter volta. Comece agora mesmo uma revanche contra %@";

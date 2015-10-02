@@ -4,6 +4,11 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="DINPro-Medium.otf">
+            <string>DINPro-Medium</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -14,8 +19,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1NU-Zi-8ck">
-                        <rect key="frame" x="18" y="11" width="14" height="29"/>
-                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
+                        <rect key="frame" x="17.5" y="6.5" width="16" height="38.5"/>
+                        <fontDescription key="fontDescription" name="DINPro-Medium" family="DIN Pro" pointSize="30"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -26,6 +31,9 @@
                 <constraint firstAttribute="centerX" secondItem="1NU-Zi-8ck" secondAttribute="centerX" id="bOz-0a-EO1"/>
                 <constraint firstAttribute="centerY" secondItem="1NU-Zi-8ck" secondAttribute="centerY" id="lZb-5t-V2v"/>
             </constraints>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="string" keyPath="style" value="Option_Label"/>
+            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="countLabel" destination="1NU-Zi-8ck" id="op2-6Z-rnR"/>
             </connections>

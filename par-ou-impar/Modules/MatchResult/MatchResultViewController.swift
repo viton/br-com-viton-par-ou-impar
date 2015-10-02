@@ -24,6 +24,7 @@ class MatchResultViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Analytics.trackOpenScreen(ANALYTICS_SCREEN_RESULT_SUCCESS)
         setup()
         interstitial = GADInterstitial(adUnitID: MATCH_RESULT_GOOGLE_ADS_INTERSTITIAL_UNIT_ID)
         let gadRequest = GADRequest()
@@ -54,7 +55,7 @@ class MatchResultViewController: BaseViewController {
         let properties = ["og:type": "appparouimpar:friend",
                             "og:title": (Messages.message("winner.share.title") + game!.getOponent().name!),
                             "og:description":Messages.message("winner.share.text"),
-//                            "og:url":"https://www.facebook.com/poweroftwoapp",
+                            "og:url":"https://www.facebook.com/parouimpar99",
 //                            "og:image":photo
         ]
         let shareObject = FBSDKShareOpenGraphObject(properties: properties)
@@ -73,7 +74,7 @@ class MatchResultViewController: BaseViewController {
             var error:NSError?
             do {
                 try dialog.validate()
-            } catch var error1 as NSError {
+            } catch let error1 as NSError {
                 error = error1
             }
             print(error)

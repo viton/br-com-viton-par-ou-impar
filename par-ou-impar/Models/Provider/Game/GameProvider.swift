@@ -110,7 +110,7 @@ class GameProvider: NSObject {
                     if games.count == 0 {
                         callback.onEmptyGamesList()
                     }else{
-                        callback.onSuccess(games)
+                        callback.onSuccess(sortGames(games))
                     }
                 }
             } else {
@@ -120,31 +120,42 @@ class GameProvider: NSObject {
         }
     }
     
-    class func getGamesWithMe(facebookId:String, myGames:Array<Game>, callback:GamesCallback) {
-        let query = PFQuery(className:"Game")
-        query.whereKey("enemy", equalTo: facebookId)
-        query.orderByAscending("finish")
-        query.findObjectsInBackgroundWithBlock {
-            (objects: [AnyObject]?, error: NSError?) -> Void in
-            if error == nil {
-                var games:Array<Game> = Array(myGames)
-                if let objects = objects as? [PFObject] {
-                    for object in objects {
-                        let game = Game(object: object)
-                        games.append(game)
-                    }
-                }
-                callback.prepareToRespose()
-                if games.count == 0 {
-                    callback.onEmptyGamesList()
-                }else{
-                    callback.onSuccess(games)
-                }
-            } else {
-                callback.prepareToRespose()
-                callback.onConnectionFailToRequest()
+    private class func sortGames(games:Array<Game>) -> Array<Game> {
+        var result = Array<Game>()
+        result += filterReadyForFightGames(games)
+        result += filterWaitingGames(games)
+        result += filterFinishGames(games)
+        return result
+    }
+    
+    private class func filterReadyForFightGames(games:Array<Game>) -> Array<Game> {
+        var result = Array<Game>()
+        for game in games {
+            if !game.finish!.boolValue && !game.amIOwner(){
+                result.append(game)
             }
         }
+        return result
+    }
+    
+    private class func filterFinishGames(games:Array<Game>) -> Array<Game> {
+        var result = Array<Game>()
+        for game in games {
+            if game.finish!.boolValue {
+                result.append(game)
+            }
+        }
+        return result
+    }
+    
+    private class func filterWaitingGames(games:Array<Game>) -> Array<Game> {
+        var result = Array<Game>()
+        for game in games {
+            if !game.finish!.boolValue && game.amIOwner(){
+                result.append(game)
+            }
+        }
+        return result
     }
     
     class func sendPush(message:String!, facebookId:String!) {

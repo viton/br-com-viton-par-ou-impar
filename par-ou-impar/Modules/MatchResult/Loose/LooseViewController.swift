@@ -21,7 +21,7 @@ class LooseViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        Analytics.trackOpenScreen(ANALYTICS_SCREEN_RESULT_ERROR)
         setup()
         setupAds()
     }
