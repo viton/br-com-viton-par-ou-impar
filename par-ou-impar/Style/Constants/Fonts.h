@@ -14,7 +14,8 @@
 #define FONT_APP_LIGHT                      @"HelveticaNeue-Light"
 #define FONT_APP_ULTRA_LIGHT                @"HelveticaNeue-UltraLight"
 #define FONT_APP_BOLD                       @"HelveticaNeue-Bold"
-#define FONT_APP_CONDENSED                  @"HelveticaNeue-CondensedBold"
+#define FONT_APP_CONDENSED                  @"DINPro-Medium"
+#define FONT_APP_CONDENSED_BOLD             @"DINPro-CondMedium"
 
 // Font sizes
 // TODO: check pattern for font sizes and apply it on these constants

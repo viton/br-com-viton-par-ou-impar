@@ -55,7 +55,7 @@ class MatchResultViewController: BaseViewController {
         let properties = ["og:type": "appparouimpar:friend",
                             "og:title": (Messages.message("winner.share.title") + game!.getOponent().name!),
                             "og:description":Messages.message("winner.share.text"),
-//                            "og:url":"https://www.facebook.com/poweroftwoapp",
+                            "og:url":"https://www.facebook.com/parouimpar99",
 //                            "og:image":photo
         ]
         let shareObject = FBSDKShareOpenGraphObject(properties: properties)

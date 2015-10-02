@@ -40,7 +40,7 @@ class NewGameViewController: BaseViewController {
     func setup() {
         betTextTitleLabel.text = Messages.message("game.bet.text.hint")
         createGameButton.setTitle(Messages.message("game.create.button"))
-        chooseHandView.optionValueLabel.text = Messages.message("option.value.even")
+        chooseHandView.optionValueLabel.text = Messages.message("option.value.even").uppercaseString
         navigationController?.navigationBarHidden = false
         chooseHandView.chooseHandViewDelegate = self
         me = LoginProvider.user

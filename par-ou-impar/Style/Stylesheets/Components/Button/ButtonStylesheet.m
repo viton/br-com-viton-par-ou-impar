@@ -17,7 +17,7 @@
 + (NSDictionary *)stylesheet {
     return @{
              @"Default_Button": @{
-                     PK_BUTTON_NORMAL_TITLE_COLOR: COLOR_SWATCH_WHITE_60,
+                     PK_BUTTON_NORMAL_TITLE_COLOR: COLOR_SWATCH_WHITE,
                      },
              };
 }

@@ -30,7 +30,7 @@ class ReplyGameViewController: BaseViewController {
     
     func setup() {
         replyGameButton.setTitle(Messages.message("game.reply.button"))
-        chooseHandView.optionValueLabel.text = Messages.message("option.value.odd")
+        chooseHandView.optionValueLabel.text = Messages.message("option.value.odd").uppercaseString
         friendImageView.setImage(url: game!.getOponent().profileImage!)
         friendNameLabel.text = game?.getOponent().name
         betTextLabel.text = game?.betText

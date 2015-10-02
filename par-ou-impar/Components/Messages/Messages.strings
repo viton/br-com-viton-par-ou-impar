@@ -46,7 +46,7 @@
 "game.choose.friend.title" = "Escolha o oponente";
 "game.choose.hand.title" = "Escolha sua arma";
 "game.choose.count.title" = "Escolha o número de dedos";
-"game.create.success" = "Batalha criada com sucesso";
+"game.create.success" = "Batalha criada com sucesso!\nVocê será avisado quando seu oponente estiver preparado pra guerra.";
 
 //Game Validation Messages
 "game.validation.opponent" = "Escolha um adversário";
@@ -66,5 +66,5 @@
 "winner.share.text" = "Mais uma difícil batalha, mais uma vitória. Você consegue me vencer nesse incrível jogo?";
 "winner.share.button" = "Compartilhar";
 "looser.title" = "#CHATEADO";
-"looser.back.button" = "Voltar";
+"looser.back.button" = "OK";
 "looser.disclaimer" = "Hoje não deu, mas vai ter volta. Comece agora mesmo uma revanche contra %@";

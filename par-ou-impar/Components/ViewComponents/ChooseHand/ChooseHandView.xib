@@ -11,7 +11,6 @@
                 <outlet property="chooseHandTitleLabel" destination="5wZ-lb-tNN" id="yO0-UR-BUV"/>
                 <outlet property="collectionView" destination="X3M-7Y-0Pr" id="V93-A4-e4Z"/>
                 <outlet property="handCollectionView" destination="Ygp-PN-Dq0" id="awE-TI-Pq1"/>
-                <outlet property="optionTitleLabel" destination="aAk-tk-TYG" id="a8W-zF-Ped"/>
                 <outlet property="optionValueLabel" destination="3Hd-YN-3el" id="06T-8y-GuP"/>
             </connections>
         </placeholder>
@@ -49,41 +48,30 @@
                     </userDefinedRuntimeAttributes>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IDm-nY-yT3" userLabel="ODDS_OR_EVEN">
-                    <rect key="frame" x="500" y="164.5" width="85" height="25.5"/>
+                    <rect key="frame" x="543" y="167" width="42" height="20.5"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aAk-tk-TYG" userLabel="TITLE">
-                            <rect key="frame" x="0.0" y="5" width="42" height="20.5"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Hd-YN-3el" userLabel="VALUE">
+                            <rect key="frame" x="0.0" y="0.0" width="42" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                             <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="style" value="H1_Label"/>
-                            </userDefinedRuntimeAttributes>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Hd-YN-3el" userLabel="VALUE">
-                            <rect key="frame" x="43" y="5" width="42" height="20.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="style" value="H1_Bold_Label"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="style" value="Option_Label"/>
                             </userDefinedRuntimeAttributes>
                         </label>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="3Hd-YN-3el" firstAttribute="leading" secondItem="aAk-tk-TYG" secondAttribute="trailing" constant="1" id="2jg-rJ-H5V"/>
-                        <constraint firstItem="aAk-tk-TYG" firstAttribute="leading" secondItem="IDm-nY-yT3" secondAttribute="leading" id="6UY-vA-Dhj"/>
                         <constraint firstAttribute="bottom" secondItem="3Hd-YN-3el" secondAttribute="bottom" id="FoU-xB-Xug"/>
-                        <constraint firstAttribute="bottom" secondItem="aAk-tk-TYG" secondAttribute="bottom" id="YKJ-uy-gr8"/>
-                        <constraint firstItem="3Hd-YN-3el" firstAttribute="top" secondItem="IDm-nY-yT3" secondAttribute="top" constant="5" id="fZH-Vb-Dg5"/>
+                        <constraint firstItem="3Hd-YN-3el" firstAttribute="top" secondItem="IDm-nY-yT3" secondAttribute="top" id="fZH-Vb-Dg5"/>
+                        <constraint firstItem="3Hd-YN-3el" firstAttribute="leading" secondItem="IDm-nY-yT3" secondAttribute="leading" id="iw8-Z5-afF"/>
                         <constraint firstAttribute="trailing" secondItem="3Hd-YN-3el" secondAttribute="trailing" id="u6N-Nb-SDh"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qSU-rG-xSp" userLabel="COUNT_COLLECTION">
-                    <rect key="frame" x="0.0" y="147" width="490" height="60"/>
+                    <rect key="frame" x="0.0" y="147" width="533" height="60"/>
                     <subviews>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" bouncesZoom="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="X3M-7Y-0Pr">
-                            <rect key="frame" x="15" y="0.0" width="475" height="60"/>
+                            <rect key="frame" x="15" y="0.0" width="518" height="60"/>
                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="naE-uX-tIh">
                                 <size key="itemSize" width="50" height="50"/>
                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
